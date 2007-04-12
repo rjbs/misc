@@ -1,9 +1,0 @@
-#!/bin/bash
-
-mount /mnt/cf
-if [ ! -d ~/public_html/tmp/$1 ]; then
-	mkdir ~/public_html/tmp/$1
-fi
-mv /mnt/cf/dcim/*canon/img* ~/public_html/tmp/$1
-umount /mnt/cf
-chmod a-x ~/public_html/tmp/$1/img_*.jpg
