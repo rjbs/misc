@@ -12,7 +12,7 @@ my $host        = 'use.perl.org';
 my $journal = Slash::Client::Journal->new({
   host => 'use.perl.org',
   uid  => 4671,
-  pass => '45tr1d',
+  pass => 'password',
 });
 
 sub add_entry { shift;
