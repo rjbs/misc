@@ -1,0 +1,69 @@
+#!/usr/bin/make -f
+
+SERVER=cheshire
+RSYNC=rsync --delete -ave ssh
+
+default: home iqe gnupg logs
+
+all: default mirrors maildir ipod
+
+home: web code documents bin desktop music pictures
+
+## from ${SERVER} to knave
+
+web:
+	# just in case
+	#rsync --delete -ave ssh ${HOME}/www/rjbs/ ${SERVER}:~/www/rjbs/
+
+	${RSYNC} zodiac:~/www/rjbs/wiki/ ${HOME}/www/rjbs/wiki/
+	${RSYNC} ${HOME}/www/            zodiac:~/www/     
+  ${RSYNC} zodiac:~/rubric/        ${HOME}/backup/rubric/
+
+gnupg:
+	${RSYNC} ${SERVER}:~/.gnupg/ ${HOME}/backup/gnupg/
+
+logs:
+	${RSYNC} ${SERVER}:/var/www/ ${HOME}/backup/www/
+	${RSYNC} ${SERVER}:~/log/    ${HOME}/backup/log/
+
+code:
+	${RSYNC} ${HOME}/code/       ${SERVER}:~/backup/code/
+	${RSYNC} ${SERVER}:~/svn/    ${HOME}/backup/svn/
+	svk sync -a
+
+documents:
+	${RSYNC} ${HOME}/Documents/ ${SERVER}:~/backup/documents/
+	${RSYNC} ${HOME}/Library/Application\ Support ${SERVER}:~/backup/lib/appsupport/
+	${RSYNC} ${HOME}/Library/Preferences ${SERVER}:~/backup/lib/preferences/
+
+bin:
+	${RSYNC} ${HOME}/bin/ ${SERVER}:~/backup/bin/
+
+desktop:
+	${RSYNC} ${HOME}/Desktop/ ${SERVER}:~/backup/desktop/
+
+music:
+	${RSYNC} ${HOME}/Music/ ${SERVER}:~/backup/music/
+	${HOME}/bin/musicsync
+
+pictures:
+	${RSYNC} ${HOME}/Pictures/ ${SERVER}:~/backup/pictures/
+
+maildir:
+	offlineimap
+
+## big mirrors (non-default targets)
+
+mirrors: minicpan ifarchive
+
+ifarchive:
+	${RSYNC} ${SERVER}:/usr/share/mirrors/ifarchive/games/zcode/  ${HOME}/mirrors/zcode/
+
+minicpan:
+	/usr/local/bin/minicpan
+
+ipod:
+	${HOME}/bin/shufsync
+
+.PHONY: iqe code documents web gnupg logs ifarchive minicpan ipod
+

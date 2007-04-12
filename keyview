@@ -1,0 +1,2 @@
+#!/bin/sh
+open /System/Library/Components/KeyboardViewer.component/Contents/SharedSupport/KeyboardViewerServer.app/

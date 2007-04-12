@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use WWW::Mechanize;
+
+my $RSS = 'https://wiki.pobox.com:10443/index.cgi?action=RecentChangesRSS';
+
+my $mech = WWW::Mechanize->new;
+
+{
+  package W;
+  use base qw(WWW::Mechanize);
+  sub get_basic_credentials { return ('rjbs', 'z3phYr') }
+}
+
+bless $mech => 'W';
+
+$mech->get($RSS);
+
+print $mech->content;

@@ -1,0 +1,21 @@
+#!/usr/local/bin/perl
+
+use strict;
+use warnings;
+
+use File::Temp qw(tempfile);
+
+my ($fh, $fn) = tempfile(UNLINK => 1);
+
+my @lines = `CRONTAB_NOHEADER=N /usr/bin/crontab -l`;
+splice @lines, 0, 3 if $lines[0] =~ /\A# DO NOT EDIT/;
+
+print {$fh} @lines;
+
+close $fh;
+
+my $result = system("vi", $fn);
+
+die "editor exited with bad status" if $result;
+
+`/usr/bin/crontab $fn`;

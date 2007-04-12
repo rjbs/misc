@@ -1,0 +1,2 @@
+#!/bin/bash
+AEDebug=1 AEDebugSends=1 AEDebugReceives=1 AEDebugVerbose=1 AEDebugOSL=1 "$@"

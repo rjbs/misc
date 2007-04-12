@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $filename = "/tmp/todo." . time . ".$$";
+system("vi",'-S','~/.vim/todo.vim', $filename);
+
+exit unless -f $filename;
+
+my $filetext; {
+	open my $in, '<', $filename;
+	local $/;
+	$filetext = <$in>;
+}
+
+use Email::Simple;
+my $entry = Email::Simple->new($filetext);
+
+my %document;
+$document{$_} = $entry->header($_)
+	for (qw(title description tags uri));
+
+($document{body} = $entry->body) =~ s/(?<!\n)\n(?!\n)/ /smg;
+
+use Rubric::User;
+my $rjbs = Rubric::User->retrieve('rjbs') or die "didn't find me!";
+
+my $e = $rjbs->quick_entry(\%document);
+print "created entry $e\n";

@@ -1,0 +1,2 @@
+#!/bin/sh
+open /System/Library/Components/CharacterPalette.component/Contents/SharedSupport/CharPaletteServer.app/

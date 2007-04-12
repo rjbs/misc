@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+use Games::Die::Dice;
+
+while ($arg = shift @ARGV) {
+	$total = 0;
+	$dice = Games::Die::Dice->new($arg);
+
+	@roll = $dice->roll;
+	print "--( $arg )-------------------------\n";
+	print "result: ", join(" ",@roll), "\n";
+	foreach (@roll) { $total += $_; }
+	print "total : ", $total, "\n";
+	$gt += $total;
+}
+
+print "GRAND TOTAL: $gt\n";

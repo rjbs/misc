@@ -1,0 +1,13 @@
+#!/bin/sh
+
+SYNC_FROM=/Volumes/music/
+SYNC_TO=/Volumes/misc.bak/
+
+if [ -d $SYNC_FROM -a -d $SYNC_TO ]; then
+  rsync --delete -av \
+        '--exclude=*.Trash*' '--exclude=*Spotlight-V100*' \
+        /Volumes/music/ /Volumes/misc.bak/
+else
+  echo music sync drives are not avaialble
+  exit
+fi

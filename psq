@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Perl::Squish;
+
+my $doc = PPI::Document->new( $ARGV[0] );
+
+my $squish = Perl::Squish->new;
+
+$squish->apply($doc);
+
+print $doc;

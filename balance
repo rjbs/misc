@@ -1,0 +1,27 @@
+#!/usr/bin/ruby
+
+# checkbook balancer
+
+## CONFIGURATION
+$:.push("~/code/projects/ledger/trunk");
+checkdir = "/Users/rjbs/Documents/ledger"
+## END CONFIGURATION
+
+require "Journal"
+
+journal = Journal::new
+Dir.foreach(checkdir) { |year|
+	unless year =~ /^\./
+		journal.ledger_from_file("#{checkdir}/#{year}")
+	end
+}
+
+journal.reconcile
+
+puts "Suspected actual balanced: %0.2f" % (journal.balance)
+puts "Pending transaction total: %0.2f" % (journal.pending)
+puts "Suspected available balanced: %0.2f" % (journal.balance + journal.pending)
+puts
+puts journal.comment
+
+journal.compile_history

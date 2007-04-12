@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo find /var/qmail/queue/remote -type f | wc -l
