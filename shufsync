@@ -1,0 +1,14 @@
+#!/bin/sh
+
+VOLUME=/Volumes/RJBSHUFFLE
+
+if [ ! -d $VOLUME ]; then
+  echo the rjbShuffle isn\'t mounted\; skipping
+  exit
+fi
+
+rsync --delete -rcv /Users/rjbs/Documents/essentials $VOLUME
+
+for repo in $VOLUME/svn/*; do
+  svn update $repo
+done

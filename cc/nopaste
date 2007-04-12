@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+use File::Slurp;
+use Getopt::Long::Descriptive;
+use WWW::Mechanize;
+
+my ($opt, $usage) = describe_options(
+  "$0 %o [file]",
+  [ "channel|c=s", "channel to paste to" ],
+  [ "nick|n=s",    "nick to paste as", { default => $ENV{USER} } ],
+);
+
+my $text = $ARGV[0] ? read_file($ARGV[0]) : do { local $/; <> };
+
+die $usage->text unless $text;
+
+my $mech = WWW::Mechanize->new;
+
+$mech->get("http://nopaste.snit.ch/") or die "couldn't contact nopaste";
+
+$mech->submit_form(
+  form_number => 1,
+  fields => {
+    nick    => $ENV{USER},
+    summary => $file,
+    paste   => $text,
+    ($opt->{channel} ? (channel => "#$opt->{channel}") : ()),
+  }
+);
+
+print $mech->find_link(url_regex => qr{nopaste.snit.ch:8001/\d+})->url, "\n";

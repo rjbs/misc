@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Date::Format qw(time2str);
+use Date::Parse qw(str2time);
+use Text::Table;
+use Time::Duration;
+
+my @events;
+
+while (my $line = <DATA>) {
+  chomp $line;
+  my ($time, $event) = split /\s+/, $line, 2;
+  push @events, [ str2time($time), $event ];
+}
+
+my $table = Text::Table->new(
+  { align => 'right' },
+  { is_sep => 1, body => ' | ' }, {},
+  { is_sep => 1, body => ' | ' }, {},
+);
+
+for (sort { $a->[0] <=> $b->[0] } @events) {
+  my ($time, $event) = @$_;
+  next if $time < $^T;
+  $table->add(
+    duration($time - $^T, 1),
+    $event,
+    time2str("%Y-%m-%d", $time),
+  );
+}
+
+print $table;
+
+__DATA__
+2006-09-20  closing on the house
+2006-09-23  moving day!
+2007-03-21  baby due!

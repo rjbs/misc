@@ -1,0 +1,2 @@
+#!/bin/sh
+open /Applications/Zoom.app $1

@@ -1,0 +1,18 @@
+#!/bin/bash
+# n2pm
+if [[ $1 == "-t" ]]; then
+	export MODULE_TEMPLATE_DIR=~/.ms-tt2/$2
+	export MODULES=$3
+else
+	export MODULE_TEMPLATE_DIR=~/.ms-tt2/default
+	export MODULES=$1
+fi
+
+module-starter \
+	--plugin=Module::Starter::Simple           \
+	--plugin=Module::Starter::Plugin::Template \
+	--plugin=Module::Starter::Plugin::DirStore \
+	--plugin=Module::Starter::Plugin::TT2      \
+	--author="Ricardo SIGNES"                  \
+	--email=rjbs@cpan.org                      \
+	--module=$MODULES

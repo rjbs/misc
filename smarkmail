@@ -1,0 +1,40 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Email::MIME;
+use Email::MIME::Creator;
+use Email::Send ();
+use Text::Markdown ();
+
+sub markdown_email {
+  my ($email) = @_;
+
+  my $body_text = $email->body;
+
+  my $html = Text::Markdown::markdown($body_text, { tab_width => 2 });
+
+  my $html_part = Email::MIME->create(
+    attributes => { content_type => 'text/html', },
+    body       => $html,
+  );
+
+  my $text_part = Email::MIME->create(
+    attributes => { content_type => 'text/plain', },
+    body       => $body_text,
+  );
+
+  $email->content_type_set('multipart/alternative');
+  $email->parts_set([ $html_part, $text_part ]);
+}
+
+my $text = do { local $/; <STDIN> };
+
+my $email = Email::MIME->new(\$text);
+
+# We should get better at this, eventually.
+markdown_email($email) unless $email->subparts;
+
+print $email->header_obj->as_string;
+# my $rv = Email::Send->new({ mailer => 'SMTP' })->send($email);
+# die "$rv" unless $rv;

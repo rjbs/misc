@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Date::Format;
+use File::Copy;
+use File::Path;
+
+my $month = time2str("%Y.%m", time);
+
+# Learn from our spam, and put it away!
+{
+  my $from_folder = "/home/rjbs/Maildir/.spam/cur";
+  my $to_maildir  = "/home/rjbs/Maildir/.spam.$month";
+  my   $to_folder = "/home/rjbs/Maildir/.spam.$month/cur";
+
+  unless (-d $to_maildir) {
+    mkpath($to_maildir);
+    mkpath("$to_maildir/$_") for qw(cur tmp new);
+  }
+
+  mkpath($to_folder);
+
+  for my $file (<$from_folder/*>) {
+    `sa-learn --spam --sync $file`;
+    move $file => $to_folder;
+    print "processed spam mail $file\n" if $ENV{VERBOSE};
+  }
+}
+
+# Organize mail sent from knight
+{
+  my $from_folder = "/home/rjbs/Maildir/.sent/cur";
+  my $to_maildir  = "/home/rjbs/Maildir/.sent.$month";
+  my   $to_folder = "/home/rjbs/Maildir/.sent.$month/cur";
+
+  unless (-d $to_maildir) {
+    mkpath($to_maildir);
+    mkpath("$to_maildir/$_") for qw(cur tmp new);
+  }
+
+  for my $file (<$from_folder/*>) {
+    move $file => $to_folder;
+    print "processed sent mail $file\n" if $ENV{VERBOSE};
+  }
+}

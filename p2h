@@ -1,0 +1,13 @@
+#!/usr/local/bin/perl
+
+use Pod::HtmlEasy;
+
+my $podhtml = Pod::HtmlEasy->new(
+	_on_item => sub {
+		my ( $this , $txt ) = @_ ;
+		return "<li>" if $txt =~ /^(\*|<b>\*<\/b>)$/;
+		return "<li>$txt</li>\n" ;
+	}
+);
+my $html = $podhtml->pod2html( $ARGV[0] ) ;
+print "$html\n" ;
