@@ -2,7 +2,11 @@
 use strict;
 use warnings;
 
-use lib '/Users/rjbs/bin/';
+use File::HomeDir;
+use File::Spec;
+
+push @INC, File::Spec->catpath(File::HomeDir->my_home, 'bin', 'lib');
+
 our $p;
 
 my $queue = "/Users/rjbs/tmp/blog/";

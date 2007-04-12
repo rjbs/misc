@@ -17,7 +17,7 @@ sub add_entry { shift;
 		description => $entry->{subtitle},
 		submit   => 'save',
 		user     => 'rjbs',
-		password => '45tr1d',
+		password => 'password',
 	});
 
   # die "can't post: $result" unless $result->is_success;
