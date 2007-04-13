@@ -12,15 +12,23 @@ my %seen_pkg = do {
   map { chomp; $_ => 1 } <$seen_fh>;
 };
 
+my @dist_names = @ARGV;
+
 my $p = Parse::CPAN::Packages->new(
   "/home/rjbs/minicpan/modules/02packages.details.txt.gz"
 );
 
-my @packages = grep {
-  not(exists $seen_pkg{ $_->package })
-  and
-  $_->package =~ /^(?:Email|Mail|MIME|Net::(?:SMTP|POP|IMAP|QMTP|LMTP))/
-} $p->packages;
+my @packages;
+
+if (@dist_names) {
+  @packages = map { $p->distribution($_)->packages } @package_names;
+} else {
+  @packages = grep {
+    not(exists $seen_pkg{ $_->package })
+    and
+    $_->package =~ /^(?:Email|Mail|MIME|Net::(?:SMTP|POP|IMAP|QMTP|LMTP))/
+  } $p->packages;
+}
 
 my $agent = WWW::Mechanize->new;
 
