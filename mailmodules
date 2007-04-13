@@ -21,7 +21,7 @@ my $p = Parse::CPAN::Packages->new(
 my @packages;
 
 if (@dist_names) {
-  @packages = map { $p->distribution($_)->packages } @package_names;
+  @packages = map { @{ $p->latest_distribution($_)->packages } } @dist_names;
 } else {
   @packages = grep {
     not(exists $seen_pkg{ $_->package })
