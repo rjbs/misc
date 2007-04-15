@@ -14,7 +14,7 @@ use Text::Table;
 use Time::Duration::Parse;
 use WWW::Mechanize;
 
-my $CPAN = '/home/rjbs/minicpan';
+my $CPAN = $ENV{BUGAGG_CPAN} || '/home/rjbs/minicpan';
 
 my %CONFIG = (
   rjbs => {
@@ -140,6 +140,9 @@ my @headers = map {
 pop @headers;
 
 my $table = Text::Table->new(@headers);
+my $html  = "<table><tr>"
+          . join('', map { "<th>$_</th>" } grep { ! ref $_ } @headers)
+          . "</tr>";
 
 my %xform = (
   severity => \&sev_trunc,
@@ -157,6 +160,15 @@ for my $bug (sort bug_sort @bugs) {
   $table->add(map {
     exists $xform{$_} ? $xform{$_}($bug->{$_}) : $bug->{$_}
   } @columns);
+
+  $html .= "<tr>"
+        .  join('', map {
+             "<td>"
+             . (exists $xform{$_} ? $xform{$_}($bug->{$_}) : $bug->{$_})
+             . "</td>"
+           } @columns)
+        .  "</tr>";
+
 }
 
 my $email = Email::Simple->create(
@@ -169,8 +181,10 @@ my $email = Email::Simple->create(
   body => "$table"
 );
 
+print $html;
+
 my $sender = Email::Send->new({ mailer => 'SMTP' });
    $sender->mailer_args([ Host => $config{via} ]);
-my $rv = $sender->send($email);
+#my $rv = $sender->send($email);
 
-die "failed to send: $rv" unless $rv;
+#die "failed to send: $rv" unless $rv;
