@@ -6,7 +6,7 @@ use Config::Simple;
 use Log::Dispatch::Screen;
 use Net::Flickr::Backup;
 
-my $cfg = Config::Simple->new('/Users/rjbs/.flickr-backup');
+my $cfg = Config::Simple->new('/home/rjbs/.flickr-backup');
 
 my $flickr = Net::Flickr::Backup->new($cfg);
 
