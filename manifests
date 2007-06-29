@@ -1,5 +1,8 @@
 #!/bin/zsh
 
 for dir in *(/); do
-	find $dir -type f ! -name MANIFEST -exec md5sum '{}' ';' > $dir/MANIFEST
+  (
+    chdir $dir;
+    find . -type f ! -name MANIFEST -exec md5sum '{}' ';' > MANIFEST
+  )
 done

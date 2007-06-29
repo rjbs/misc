@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Digest::MD5;
+use File::Next;
+use IPC::Run qw(run);
+
+my $iter = File::Next::files(".");
+
+my %found;
+
+while (my $file = $iter->()) {
+  my $output;
+  run [ md5sum => $file ], \undef, \$output;
+  chomp $output;
+  my ($md5sum) = split / /, $output, 2;
+
+  my $this = $found{ $md5sum } ||= [];
+
+  push @$this, $file;
+}
+
+for my $key (grep { @{ $found{ $_ } } > 1 } keys %found) {
+  my $this = $found{$key};
+  print "!!! $key has multiple hits:\n";
+  print "    * $_\n" for @$this;
+}
