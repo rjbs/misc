@@ -28,6 +28,7 @@ sub add_entry { shift;
 
     my $tb = HTML::TreeBuilder->new;
     $tb->implicit_tags(0);
+    $tb->no_space_compacting(1);
 
     my $root = $tb->parse($content);
     $tb->eof;
