@@ -27,7 +27,11 @@ logs:
 	${RSYNC} ${SERVER}:~/log/    ${HOME}/backup/log/
 
 code:
-	${RSYNC} ${HOME}/code/       ${SERVER}:~/backup/code/
+	# projects is the codesimply.com repo
+	# pep is the emailproject.perl.org repo
+	# icg is the svn.pobox.com repo
+	${RSYNC} --exclude "projects" --exclude "pep" --exclude "icg" \
+					 ${HOME}/code/       ${SERVER}:~/backup/code/
 	${RSYNC} ${SERVER}:~/svn/    ${HOME}/backup/svn/
 	svk sync -a
 
@@ -43,7 +47,9 @@ desktop:
 	${RSYNC} ${HOME}/Desktop/ ${SERVER}:~/backup/desktop/
 
 music:
-	${RSYNC} ${HOME}/Music/ ${SERVER}:~/backup/music/
+	${RSYNC} ${HOME}/Music/iTunes/iTunes\ Library \
+	         ${HOME}/Music/iTunes/iTunes\ Music\ Library.xml \
+	         ${SERVER}:~/backup/music/
 	${HOME}/bin/musicsync
 
 pictures:
@@ -54,13 +60,16 @@ maildir:
 
 ## big mirrors (non-default targets)
 
-mirrors: minicpan ifarchive
+mirrors: minicpan ifarchive rfcs
+
+minicpan:
+	/usr/local/bin/minicpan
 
 ifarchive:
 	${RSYNC} ${SERVER}:/usr/share/mirrors/ifarchive/games/zcode/  ${HOME}/mirrors/zcode/
 
-minicpan:
-	/usr/local/bin/minicpan
+rfcs:
+	rsync --delete -avz ftp.rfc-editor.org::rfcs ${HOME}/mirrors/rfcs
 
 ipod:
 	${HOME}/bin/shufsync
