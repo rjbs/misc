@@ -26,7 +26,7 @@ foreach my $file (glob("${queue}*")) {
 	next if $file =~ /^\./;
 	exit unless -r $file;
 
-	my $entry_text; { open my $in, '<', $file; local $/; $entry_text = <$in>; }
+	my $entry_text = do { open my $in, '<', $file; local $/; <$in>; };
 	exit unless $entry_text;
 
 	# my @messages = split /\s*^\.\n\s*/ms, $entry_text;
