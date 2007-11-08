@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Email::Folder;
+use Email::Date;
+use List::Util qw(sum);
+use Time::Duration;
+
+my $folder = Email::Folder->new($ENV{HOME} . "/Maildir/");
+
+my @ages;
+for my $message ($folder->messages) {
+  my $date = find_date($message);
+  push @ages, $^T - $date->epoch;
+}
+
+my $avg = sum(@ages) / @ages;
+
+print duration($avg), "\n";
