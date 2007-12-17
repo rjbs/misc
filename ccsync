@@ -3,7 +3,7 @@
 SERVER=cheshire
 RSYNC=rsync --delete -ave ssh
 
-default: home iqe gnupg logs
+default: home iqe logs
 
 all: default mirrors maildir ipod
 
@@ -12,15 +12,8 @@ home: web code documents bin desktop music pictures
 ## from ${SERVER} to knave
 
 web:
-	# just in case
-	#rsync --delete -ave ssh ${HOME}/www/rjbs/ ${SERVER}:~/www/rjbs/
-
-	${RSYNC} zodiac:~/www/rjbs/wiki/ ${HOME}/www/rjbs/wiki/
 	${RSYNC} ${HOME}/www/            zodiac:~/www/     
-  ${RSYNC} zodiac:~/rubric/        ${HOME}/backup/rubric/
-
-gnupg:
-	${RSYNC} ${SERVER}:~/.gnupg/ ${HOME}/backup/gnupg/
+	${RSYNC} zodiac:~/rubric/        ${HOME}/backup/rubric/
 
 logs:
 	${RSYNC} ${SERVER}:/var/www/ ${HOME}/backup/www/
@@ -32,8 +25,6 @@ code:
 	# icg is the svn.pobox.com repo
 	${RSYNC} --exclude "projects" --exclude "pep" --exclude "icg" \
 					 ${HOME}/code/       ${SERVER}:~/backup/code/
-	${RSYNC} ${SERVER}:~/svn/    ${HOME}/backup/svn/
-	svk sync -a
 
 documents:
 	${RSYNC} ${HOME}/Documents/ ${SERVER}:~/backup/documents/
@@ -74,5 +65,5 @@ rfcs:
 ipod:
 	${HOME}/bin/shufsync
 
-.PHONY: iqe code documents web gnupg logs ifarchive minicpan ipod
+.PHONY: iqe code documents web logs ifarchive minicpan ipod
 
