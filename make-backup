@@ -4,7 +4,6 @@ DATE=`date +%Y%m%d`
 
 # Mirror or dump Subversion repositories
 printf "%-40s" " * syncing subversion repositories"
-SVMREPOS=~/backup/svn/cs  svn-mirror sync / > /dev/null
 SVMREPOS=~/backup/svn/pep svn-mirror sync / > /dev/null
 svnadmin dump ~/svn/repo -q > ~/backup/svn/rjbs.svndump
 echo '[ok]'
@@ -21,7 +20,7 @@ mkdir /tmp/backup-$DATE
 
 # tarbals to back up
 printf "%-40s" " * building misc. backup tarball"
-tar jcf /tmp/backup-$DATE/misc.tar.bz2 backup/{bin,code,documents,lib,music,svn}
+tar jcf /tmp/backup-$DATE/misc.tar.bz2 backup/{bin,code,documents,lib,music,svn,git}
 echo '[ok]'
 
 printf "%-40s" " * building maildir tarball"
