@@ -27,4 +27,4 @@ $mech->submit_form(
   }
 );
 
-print $mech->find_link(url_regex => qr{nopaste.snit.ch:8001/\d+})->url, "\n";
+print $mech->find_link(url_regex => qr{nopaste.snit.ch(?::\d+)?/\d+})->url, "\n";
