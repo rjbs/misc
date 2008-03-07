@@ -12,8 +12,8 @@ home: web code documents bin desktop music pictures
 ## from ${SERVER} to knave
 
 web:
-	${RSYNC} ${HOME}/www/            zodiac:~/www/     
-	${RSYNC} zodiac:~/rubric/        ${HOME}/backup/rubric/
+	${RSYNC} ${HOME}/www/            cancer:~/www/     
+	${RSYNC} cancer:~/rubric/        ${HOME}/backup/rubric/
 
 logs:
 	${RSYNC} ${SERVER}:/var/www/ ${HOME}/backup/www/
