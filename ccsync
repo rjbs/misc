@@ -57,7 +57,7 @@ minicpan:
 	/usr/local/bin/minicpan
 
 ifarchive:
-	${RSYNC} ${SERVER}:/usr/share/mirrors/ifarchive/games/zcode/  ${HOME}/mirrors/zcode/
+	${RSYNC} ${SERVER}:mirrors/ifarchive/games/zcode/  ${HOME}/mirrors/zcode/
 
 rfcs:
 	rsync --delete -avz ftp.rfc-editor.org::rfcs ${HOME}/mirrors/rfcs
