@@ -23,28 +23,29 @@ my %remote = (
 sub clone_from_to {
   my ($remote, $path) = @_;
 
-  my ($dest_dir) = $path   =~ m{/?([^/]+)/?\z};
+  my ($remote_leaf) = $path =~ m{/?([^/]+)/?\z};
+
   my ($local_root, $local_leaf) = $remote =~ m{(.+)/([^/]+)\z};
 
-  my $local_dir = $local_leaf eq $dest_dir
-                ? $ROOT->subdir($local_root)
-                : $ROOT->subdir($remote);
+  my $is_starry = $remote{$remote}->[1] =~ m{\*\z};
 
-  my $to = $remote{$remote}->[1] =~ m{\*\z}
-         ? $local_dir->subdir($dest_dir)
-         : $local_dir;
+  my $clone_in = $is_starry
+               ? $ROOT->subdir($remote)
+               : $ROOT->subdir($local_root);
 
-  if (-d $to) {
-    chdir $to;
-    print `git pull`;
+  my $pull_in = $clone_in->subdir($remote_leaf);
+
+  if (-d $pull_in) {
+    chdir $pull_in;
+    print "$pull_in: $_" for `git pull -q`;
   } else {
-    $local_dir->mkpath;
-    chdir $local_dir;
+    $clone_in->mkpath;
+    chdir $clone_in;
     my $host = $remote{$remote}->[0];
     my $prefix = $path =~ m{^/} ? '' : '/~rjbs/';
     $path =~ s/ /\\ /g;
     my $url = "ssh://$host$prefix$path";
-    print `git clone $url`;
+    print "$pull_in: $_" for `git clone -q $url`;
   }
 }
 
