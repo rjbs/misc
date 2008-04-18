@@ -58,6 +58,6 @@ for my $remote (keys %remote) {
     @dirs = $path;
   }
 
-  clone_from_to($remote, $_) for @dirs;
+  clone_from_to($remote, $_) for sort @dirs;
 }
 
