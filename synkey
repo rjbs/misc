@@ -35,9 +35,11 @@ sub clone_from_to {
 
   my $pull_in = $clone_in->subdir($remote_leaf);
 
+  my $prefix = $pull_in->relative($ROOT);
+
   if (-d $pull_in) {
     chdir $pull_in;
-    print "$pull_in: $_" for `git pull -q`;
+    print "$prefix: $_" for `git pull -q`;
   } else {
     $clone_in->mkpath;
     chdir $clone_in;
@@ -45,7 +47,7 @@ sub clone_from_to {
     my $prefix = $path =~ m{^/} ? '' : '/~rjbs/';
     $path =~ s/ /\\ /g;
     my $url = "ssh://$host$prefix$path";
-    print "$pull_in: $_" for `git clone -q $url`;
+    print "$prefix: $_" for `git clone -q $url`;
   }
 }
 
