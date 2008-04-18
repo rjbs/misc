@@ -8,11 +8,12 @@ my $ROOT = dir("$ENV{HOME}/tmp/RJBS-KEY");
 print "key drive not mounted; skipping\n", exit unless -d $ROOT;
 
 my %remote = (
-  'rjbs/code'     => [ 'git.rjbs.manxome.org' => 'git/code'      ],
   'rjbs/conf'     => [ 'git.rjbs.manxome.org' => 'git/conf'      ],
   'rjbs/talks'    => [ 'git.rjbs.manxome.org' => 'git/talks/*'   ],
   'rjbs/writing'  => [ 'git.rjbs.manxome.org' => 'git/writing/*' ],
+
   'code/projects' => [ 'git.codesimply.com'   => '/git/*'        ],
+  'code/rjbs'     => [ 'git.rjbs.manxome.org' => 'git/code'      ],
 );
 
 sub clone_from_to {
@@ -46,7 +47,8 @@ sub clone_from_to {
   }
 }
 
-for my $remote (keys %remote) {
+for my $remote (@ARGV ? @ARGV : keys %remote) {
+  next unless exists $remote{ $remote };
   my ($host, $path) = @{ $remote{$remote} };
 
   my @dirs;
