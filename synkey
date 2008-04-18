@@ -3,9 +3,11 @@ use strict;
 use warnings;
 use Path::Class;
 
-my $ROOT = dir("$ENV{HOME}/tmp/RJBS-KEY");
+my $ROOT = dir(
+  $ENV{TEST} ? "$ENV{HOME}/tmp/RJBS-KEY" : "/Volumes/RJBS-KEY/git"
+);
 
-print "key drive not mounted; skipping\n", exit unless -d $ROOT;
+print "key drive not mounted; skipping\n" and exit unless -d $ROOT;
 
 my %remote = (
   'rjbs/conf'     => [ 'git.rjbs.manxome.org' => 'git/conf'      ],
@@ -29,7 +31,7 @@ sub clone_from_to {
                ? $ROOT->subdir($remote)
                : $ROOT->subdir($local_root);
 
-  my $pull_in = $clone_in->subdir($remote_leaf);
+  my $pull_in = $clone_in->subdir($local_leaf);
 
   my $prefix = $pull_in->relative($ROOT);
 
@@ -41,9 +43,10 @@ sub clone_from_to {
     chdir $clone_in;
     my $host = $remote{$remote}->[0];
     my $root = $path =~ m{^/} ? '' : '/~rjbs/';
-    $path =~ s/ /\\ /g;
+    s/ /\\ /g for ($path, $remote_leaf);
     my $url = "ssh://$host$root$path";
-    print "$prefix: $_" for `git clone -q $url`;
+    my $call_it = $is_starry ? $remote_leaf : $local_leaf;
+    print "$prefix: $_" for `git clone -q $url $call_it`;
   }
 }
 
