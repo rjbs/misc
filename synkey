@@ -1,16 +1,11 @@
 #!/usr/local/bin/perl
-use 5.010;
 use strict;
 use warnings;
-
 use Path::Class;
 
 my $ROOT = dir("$ENV{HOME}/tmp/RJBS-KEY");
 
-unless (-d $ROOT) {
-  say "key drive not mounted; skipping";
-  exit;
-}
+print "key drive not mounted; skipping\n", exit unless -d $ROOT;
 
 my %remote = (
   'rjbs/code'     => [ 'git.rjbs.manxome.org' => 'git/code'      ],
@@ -44,9 +39,9 @@ sub clone_from_to {
     $clone_in->mkpath;
     chdir $clone_in;
     my $host = $remote{$remote}->[0];
-    my $prefix = $path =~ m{^/} ? '' : '/~rjbs/';
+    my $root = $path =~ m{^/} ? '' : '/~rjbs/';
     $path =~ s/ /\\ /g;
-    my $url = "ssh://$host$prefix$path";
+    my $url = "ssh://$host$root$path";
     print "$prefix: $_" for `git clone -q $url`;
   }
 }
