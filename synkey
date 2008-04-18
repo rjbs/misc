@@ -31,7 +31,7 @@ sub clone_from_to {
                ? $ROOT->subdir($remote)
                : $ROOT->subdir($local_root);
 
-  my $pull_in = $clone_in->subdir($local_leaf);
+  my $pull_in = $clone_in->subdir($is_starry ? $remote_leaf : $local_leaf);
 
   my $prefix = $pull_in->relative($ROOT);
 
