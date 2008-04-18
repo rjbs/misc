@@ -1,14 +1,65 @@
-#!/bin/sh
+#!/usr/local/bin/perl
+use 5.010;
+use strict;
+use warnings;
 
-VOLUME=/Volumes/RJBSHUFFLE
+use Path::Class;
 
-if [ ! -d $VOLUME ]; then
-  echo the rjbShuffle isn\'t mounted\; skipping
-  exit
-fi
+my $ROOT = dir("$ENV{HOME}/tmp/RJBS-KEY");
 
-rsync --delete -rcv /Users/rjbs/Documents/essentials $VOLUME
+unless (-d $ROOT) {
+  say "key drive not mounted; skipping";
+  exit;
+}
 
-for repo in $VOLUME/svn/*; do
-  svn update $repo
-done
+my %remote = (
+  'rjbs/code'     => [ 'git.rjbs.manxome.org' => 'git/code'      ],
+  'rjbs/conf'     => [ 'git.rjbs.manxome.org' => 'git/conf'      ],
+  'rjbs/talks'    => [ 'git.rjbs.manxome.org' => 'git/talks/*'   ],
+  'rjbs/writing'  => [ 'git.rjbs.manxome.org' => 'git/writing/*' ],
+  'code/projects' => [ 'git.codesimply.com'   => '/git/*'        ],
+);
+
+sub clone_from_to {
+  my ($remote, $path) = @_;
+
+  my ($dest_dir) = $path   =~ m{/?([^/]+)/?\z};
+  my ($local_root, $local_leaf) = $remote =~ m{(.+)/([^/]+)\z};
+
+  my $local_dir = $local_leaf eq $dest_dir
+                ? $ROOT->subdir($local_root)
+                : $ROOT->subdir($remote);
+
+  my $to = $remote{$remote}->[1] =~ m{\*\z}
+         ? $local_dir->subdir($dest_dir)
+         : $local_dir;
+
+  if (-d $to) {
+    chdir $to;
+    print `git pull`;
+  } else {
+    $local_dir->mkpath;
+    chdir $local_dir;
+    my $host = $remote{$remote}->[0];
+    my $prefix = $path =~ m{^/} ? '' : '/~rjbs/';
+    $path =~ s/ /\\ /g;
+    my $url = "ssh://$host$prefix$path";
+    print `git clone $url`;
+  }
+}
+
+for my $remote (keys %remote) {
+  my ($host, $path) = @{ $remote{$remote} };
+
+  my @dirs;
+  if ($path =~ m{(.+/)\*\z}) {
+    $path = $1;
+    @dirs =`ssh $host find $path -type d -mindepth 1 -maxdepth 1`;
+    chomp @dirs;
+  } else {
+    @dirs = $path;
+  }
+
+  clone_from_to($remote, $_) for @dirs;
+}
+
