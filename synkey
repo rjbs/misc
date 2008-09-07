@@ -10,12 +10,12 @@ my $ROOT = dir(
 print "key drive not mounted; skipping\n" and exit unless -d $ROOT;
 
 my %remote = (
-  'rjbs/conf'     => [ 'git.rjbs.manxome.org' => 'git/conf'      ],
-  'rjbs/talks'    => [ 'git.rjbs.manxome.org' => 'git/talks/*'   ],
-  'rjbs/writing'  => [ 'git.rjbs.manxome.org' => 'git/writing/*' ],
+  'rjbs/conf'     => [ 'git.rjbs.manxome.org', 'git/conf'      ],
+  'rjbs/talks'    => [ 'git.rjbs.manxome.org', 'git/talks/*'   ],
+  'rjbs/writing'  => [ 'git.rjbs.manxome.org', 'git/writing/*' ],
 
-  'code/projects' => [ 'git.codesimply.com'   => '/git/*'        ],
-  'code/rjbs'     => [ 'git.rjbs.manxome.org' => 'git/code'      ],
+  'code/projects' => [   'git.codesimply.com', '/var/lib/gitosis/repositories/*', 'git' ],
+  'code/rjbs'     => [ 'git.rjbs.manxome.org', 'git/code'      ],
 );
 
 sub clone_from_to {
@@ -42,10 +42,13 @@ sub clone_from_to {
     $clone_in->mkpath;
     chdir $clone_in;
     my $host = $remote{$remote}->[0];
-    my $root = $path =~ m{^/} ? '' : '/~rjbs/';
+    my $user = $remote{$remote}->[2] ? "$remote{$remote}->[2]@" : '';
+    # my $root = $path =~ m{^/} ? '' : '~rjbs/';
     s/ /\\ /g for ($path, $remote_leaf);
-    my $url = "ssh://$host$root$path";
+    $path =~ s{.+/gitosis/repositories/}{}; # XXX worst line in here?
+    my $url = "$user$host:$path";
     my $call_it = $is_starry ? $remote_leaf : $local_leaf;
+    print "--> git clone -q $url $call_it\n";
     print "$prefix: $_" for `git clone -q $url $call_it`;
   }
 }
@@ -59,6 +62,7 @@ for my $remote (@ARGV ? @ARGV : keys %remote) {
     $path = $1;
     @dirs =`ssh $host find $path -type d -mindepth 1 -maxdepth 1`;
     chomp @dirs;
+    s/\.git$// for @dirs;
   } else {
     @dirs = $path;
   }
