@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html
+	PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 
+	'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'
+> 
+<html>
+
+<head>
+	<title>RJBS :: Hacks :: MUSH</title>
+	<link rel='stylesheet' type='text/css' href='http://www.manxome.org/style/manxome.css' /> 
+</head>
+
+<body>
+
+<div id='header'>
+	<h1>Ricardo Signes</h1>
+	<h2>Hacks :: MUSH</h2>
+</div>
+
+<div id='content'>
+
+	<h3><a href='ocp.mush'>OCP: Othello's Car Parent</a></h3>
+	<p>
+		This is a parent for automobiles.
+	</p>
+
+	<h3><a href='charsheet.tar.gz'>Character Sheet</a></h3>
+	<p>
+		This implemented the +sheet command at Dark Metal.
+	</p>
+	
+	<h3><a href='comsys.tar.gz'>Com Sys</a></h3>
+	<p>
+		This provides a basic channels system for chatting.
+	</p>
+
+	<h3><a href='odp.mush'>ODP: Othello's Datapad Parent</a></h3>
+	<p>
+		This is a parent for PDAs.
+	</p>
+	
+	<h3><a href='ohs.mush'>OHS: Othello's Hunting System</a></h3>
+	<p>
+		This provided DarkMetal's +hunt system for vampires.  I rewrote it when
+		I was Vampire Admin, because no one could explain how the rules for the
+		existing system had been derived.  They were <em>really</em> weird.
+	</p>
+
+	<h3><a href='info_files.tar.gz'>+info files</a></h3>
+	<p>
+		These files, which took forever to input, provide the text of +info and
+		+infolist, which were quick-refs for the White Wolf rules at Dark Metal
+		and elsewhere.
+	</p>
+
+	<h3><a href='ols.tar.gz'>OLS: Othello's Language System</a></h3>
+	<p>
+		This was going to replace the awful language system on DM.  I don't
+		know if it ever did.  Talking and posing speech with languages was
+		always a big problem for MUSH, in my opinion.  The system just wasn't
+		built to allow simple plug-in solutions.
+	</p>
+
+	<h3><a href='osd.mush'>OSD: Othello's Shapeshifting Data</a></h3>
+	<p>
+		I rewrote the (awful) +shift system for Garou (etc) at Dark Metal;  I
+		think I tried to get myself some kind of silly Bete character out of
+		the deal, but I'm not sure if that ever happened.  Anyway, this
+		contains the data for stats and messages for the system.  I don't know
+		where the commands are.
+	</p>
+
+	<h3><a href='places.tar.gz'>+places code</a></h3>
+	<p>
+		This is some simple +places code for tables and bars.
+	</p>
+	
+	<h3><a href='vc.mush'>VC: View Commands</a></h3>
+	<p>
+		This object provides the ubiquitous +view command.
+	</p>
+
+	<h3><a href='ows.tar.gz'>OWS: Othello's Weapons System</a></h3>
+	<p>
+		This was my <i>magnum opus</i> when I was MUSHcoding.  That's a little
+		pathetic, both because this code isn't all that perfect and because I
+		even can call something a <i>magnum opus</i> in MUSH code.  This is a
+		relatively large solution for weapons, ammunition, and weapon
+		accessories.  The existing system on DM was really clunky and no one
+		used it properly, which meant that the enforcement of the "guns are
+		hard to get" rules was nearly impossible.  My friend Todd and I redid
+		the actual weapons list, too, to replace things like .666 caliber
+		revolvers, but that was quashed by the (unbearable) weapons wizard,
+		Treason.
+	</p>
+
+</div>
+
+<!--#include virtual="/copy.html" -->
+
+</body>
+
+</html>

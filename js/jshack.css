@@ -1,0 +1,20 @@
+		body { background-color: white; color: black; }
+		h1 { text-align: center; border-bottom: medium black solid; }
+		form {
+			width: 50%; margin-left: 25%;
+			padding: 1em;
+			border: thin black solid;
+		}
+		select { width: 75% }
+		input[type="text"] { width: 75% }
+		table { width: 100%; }
+		th { width: 40% }
+		td { padding-left: 1%; padding-right: 1%; }
+		td.null, th.rownum { width: 5% }
+		td select { width: 95%; margin-left: 2.5% }
+		td input { width: 95%; margin-left: 2.5% }
+		div#footer {
+			border-top: thin black solid;
+			text-align: center;
+			font-style: italic;
+		}

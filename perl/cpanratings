@@ -1,0 +1,52 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use HTML::TreeBuilder;
+use WWW::Mechanize;
+
+my $user = $ARGV[0] || $ENV{USER};
+
+my $url = "http://search.cpan.org/~$user/";
+my $dist_re = qr{\A[-.\w]+/\z};
+
+my $agent = WWW::Mechanize->new;
+
+$agent->get($url);
+
+my ($total_stars, $total_reviews) = (0, 0);
+
+for my $dist_link ($agent->find_all_links(url_regex => $dist_re)) {
+  (my $dist_name = $dist_link->url) =~ s{-[-_\d.]+/}{};
+  $agent->get($url . $dist_link->url);
+
+  my $tree = HTML::TreeBuilder->new;
+  $tree->parse($agent->content);
+
+  my ($link) = $tree->look_down(_tag => 'img', src => qr{/s/img/stars});
+
+  if ($link) {
+    my ($stars) = $link->attr('src') =~ m{stars-(\d\.\d)\.gif};
+
+    my ($reviews) = $agent->content =~ /(\d+) Reviews/i;
+
+    if (! $reviews) {
+      $reviews = q{?};
+    } else {
+      $total_stars   += $stars * $reviews;
+      $total_reviews += $reviews;
+    }
+
+    printf "%-45s - %s stars, %2s reviews\n", $dist_name, $stars, $reviews;
+  } else {
+    printf "%-45s - couldn't get rating\n", $dist_name;
+  }
+}
+
+if ($total_reviews) {
+  printf
+    "average rating: %1.3f (%u reviews)\n",
+    ($total_stars / $total_reviews),
+    $total_reviews,
+  ;
+}

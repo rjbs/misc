@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+open(IPF,"<$ARGV[0]");
+open(OPF,STDIN);
+$splits=0;
+while ($line=<IPF>) {
+  if ($line =~ /From \w+@\w+/) {
+    close(OPF);
+    $splits++;
+    $filename=">$ARGV[0]." . $splits;
+    print $filename, "\n";
+    open(OPF,$filename);
+  }
+  print OPF $line;
+}

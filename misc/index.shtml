@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html
+	PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 
+	'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'
+> 
+<html>
+
+<head>
+	<title>RJBS :: Hacks :: Random Stuff</title>
+	<link rel='stylesheet' type='text/css' href='http://www.manxome.org/style/manxome.css' /> 
+</head>
+
+<body>
+
+<div id='header'>
+	<h1>Ricardo Signes</h1>
+	<h2>Hacks :: Miscellaneous</h2>
+</div>
+
+<div id='content'>
+	<h3 id='todo'><a href='todo.pdf'>todo</a></h3>
+	<p>
+		This is a half-sheet form on which I list things I want to do today.  I
+		check the left column when they're done and the right column when
+		they're logged into our ticketing system.
+	</p>
+
+	<h3 id='done'><a href='done.pdf'>done</a></h3>
+	<p>
+		This is another half-sheet form that I was using briefly to track how I
+		spent my life.  Once you see how much time you spend asleep, you want to
+		get more things done in the rest of the day.
+	</p>
+	
+	<h3 id='diary'><a href='diary.pdf'>diary</a></h3>
+	<p>
+		This is a full-size form that combines the above two.  It needs more work,
+		but it's what I plan to start using full-time.
+	</p>
+
+</div>
+
+<!--#include virtual="/copy.html" -->
+
+</body>
+
+</html>

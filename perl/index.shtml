@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html
+	PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 
+	'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'
+> 
+<html>
+
+<head>
+	<title>RJBS :: Hacks :: Perl</title>
+	<link rel='stylesheet' type='text/css' href='http://www.manxome.org/style/manxome.css' /> 
+</head>
+
+<body>
+
+<div id='header'>
+	<h1>Ricardo Signes</h1>
+	<h2>Hacks :: Perl</h2>
+</div>
+
+<div id='content'>
+	<h3 id='abook'><a href='abook'>abook</a></h3>
+	<p>
+    This is small, but makes my life so much easier: it produces a mutt alias
+    file and a procmail recipefor the entries in my Mac Address Book.
+    Obviously, you need Address Book.  You'll also need Mac::Glue.
+	</p>
+
+	<h3 id='amfv'><a href='amfv'>amfvcode</a></h3>
+	<p>
+		This tiny script generates the correct code response for security
+		challenges in the Infocom game, "A Mind Forever Voyaging."
+	</p>
+
+	<h3 id='bdcal'><a href='bdcal'>bdcal</a></h3>
+	<p>
+		This little Mac::Glue script will create/empty an iCal calendar named
+		"Birthdays" and fill it with events for your contacts birthdays.
+	</p>
+
+	<h3 id='bugagg'><a href='bugagg'>bugagg</a></h3>
+	<p>
+		This script will provide a summary of all the bugs in a given set of
+    distributions, read from the 02packages file.  I use it to generate lists
+    of bugs in my code and in <a href='http://emailproject.perl.org/'>PEP</a>'s
+    code.
+	</p>
+
+	<h3 id='ccnt'><a href='ccnt'>ccnt</a></h3>
+	<p>
+		This counts the occurance of each unique character in a file.  You can
+		use it to check (very roughly) for matched enclosures, or the
+		statistical normalcy of a document.  I wrote it to determine Esperanto
+		letter frequency for the purpose of playing Esperanto Scrabble.
+	</p>
+
+	<h3 id='cpanratings'><a href='cpanratings'>cpanratings</a></h3>
+	<p>
+		This script looks up an author's distributions on search.cpan.org and
+    reports on their ratings (from cpanratings.perl.org).
+	</p>
+
+	<h3 id='cpants'><a href='cpants.ql'>cpants.ql</a></h3>
+	<p>
+		This script tells you all the opportunities for improving the Kwalitee of
+		an author's CPAN distributions.  It uses by beloved Querylet.
+	</p>
+
+	<h3 id='del2ns'><a href='del2ns'>del2ns</a></h3>
+	<p>
+		I wanted to start using <a href='http://del.icio.us/'>del.icio.us</a>, but
+		not if I couldn't back up my bookmarks.  Rich Lafferty gave me a script he
+		used to dump his bookmarks to a Netscape-style bookmarks file, but I
+		figured it would be fun to use Net::Delicious.  Actually, it was painful,
+		because it took me ages to realize that the show-stopping bug was a
+		misdefined constant in Net::Delicious::Api, not a mistake on my part.
+	</p>
+
+	<h3 id='fromsplit'><a href='fromsplit'>fromsplit</a></h3>
+	<p>
+		This splits a file at message headers, looking for /^From /.  I wrote
+		this to help break apart some huge USENET threads I'd dumped to disk.
+	</p>
+
+	<h3 id='mprand'><a href='mprand'>mprand</a></h3>
+	<p>
+		I wrote this for a member of the local LUG who was having trouble getting
+		Rhythmbox to work with a very large playlist.  It reads a list of filenames
+		from a named file and plays them in random order, never repeating a song
+		until all the other songs have been played.  It can be HUP'd to reread its
+		playlist.
+	</p>
+
+	<h3 id='nopaste'><a href='nopaste'>nopaste</a></h3>
+	<p>
+    For use on #perl, this pastes a file to nopaste.
+	</p>
+
+	<h3 id='jgal2flickr'><a href='jgal2flickr'>jgal2flickr</a></h3>
+	<p>
+    I used this to upload my jGal galleries to Flickr.
+	</p>
+
+	<h3 id='go_board'><a href='go_board.tar.gz'>Games::Go::Board</a></h3>
+	<p>
+		This perl module should eventually output go board diagrams, partial
+		and complete, annotated or plain.  At present, it can display plain,
+		complete boards as PNGs or text diagrams, but there is no pleasant
+		way to populate the board with stones.  (A nested array must be passed.)
+		An example script is included.
+	</p>
+
+	<h3 id='ow5sh'><a href='ow5sh'>ow5sh</a></h3>
+	<p>
+		OmniWeb has "shortcuts," which are like Mozilla bookmarks with keywords.
+		I'm not sure why they're not part of normal bookmarks, but they're darn
+		useful.  Mostly, I use OmniWeb.  At work, I want my normal shortcuts.  This
+		script exports a Netscape-style bookmarks file that includes my OW5
+		shortcuts, properly parameterized.
+	</p>
+
+	<h3 id='rl'><a href='rl'>rl</a></h3>
+	<p>
+		This filter will print the lines handed to it out in random order.  It's
+		only worth putting in a file because it's useful in piping.
+	</p>
+
+	<h3 id='stubborn'><a href='Stubborn.pm'>Stubborn</a></h3>
+	<p>
+		This is more of a joke than a hack.  I wrote it when I was first trying
+		to understand <tt>tie</tt>, and it was amusing enough that I kept it
+		around.  It's pretty useless, but it would be pretty amusing to sneak
+		this kind of behaviour into someone else's code, like switching around
+		their keyboard scancodes.
+	</p>
+
+	<h3 id='synrtf'><a href='synrtf'>synrtf</a></h3>
+	<p>
+		This takes input, syntax highlights it using Vim, and outputs RTF.  It
+    still needs work, but it works pretty well as it is.  Here's <a
+    href='synrtf.rtf'>sample output</a>
+	</p>
+
+	<h3 id='tree'><a href='tree'>tree</a></h3>
+	<p>
+		Here's a crappy directory tree lister I wrote for <a
+		href='http://www.phunnel.org'>phUnbalanced</a>.
+	</p>
+
+</div>
+
+<!--#include virtual="/copy.html" -->
+
+</body>
+
+</html>

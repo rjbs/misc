@@ -1,0 +1,34 @@
+#!/usr/bin/perl
+
+use Date::Parse;
+use strict;
+use warnings;
+
+use Config::Auto;
+use Net::Delicious;
+use Netscape::Bookmarks::Category;
+use Netscape::Bookmarks::Link;
+
+my $conf = Config::Auto::parse();
+my $del  = Net::Delicious->new({user => $conf->{user}, pswd => $conf->{pswd}});
+my $root = Netscape::Bookmarks::Category->new({title => 'del.icio.us'});
+
+my %tags;
+$root->add(
+	$tags{$_->tag} = Netscape::Bookmarks::Category->new({title => $_->tag})
+) for ($del->tags);
+
+for ($del->recent_posts({ count => 1000 })) {
+	my $date = str2time($_->time);
+	my $link = Netscape::Bookmarks::Link->new({
+		TITLE       => scalar $_->description,
+		HREF        => scalar $_->href,
+		DESCRIPTION => scalar $_->extended,
+		ADD_DATE    => $date,
+		LAST_VISIT  => $date,
+		LAST_MODIFIED => $date,
+	});
+	$tags{$_}->add($link) foreach (split /\s+/, $_->tag);
+}
+
+print $root->as_string;

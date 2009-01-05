@@ -1,0 +1,32 @@
+@Desc ODP=A sleek, small computer system for the businessman on the go. Designed for practicality and style, the [v(str.productname)] is one of the most proclaimed new systems on the market. It has a sleek, black shell, rounded at the edges, and a small, full-color screen. A small datajack in the side is its only 'decoration', the keypad oddly blank unless the machine is turned on.%r[rjust(.padhelp for instructions,78)]
+
+&status.POWER ODP=0
+&status.OPEN ODP=0
+&status.user ODP=
+
+&data.file.-1 ODP=kernel|481328576|312|RS|This file contains data vital to the operating systems of your [v(str.productname)].
+&data.user ODP=root|password
+
+&str.PRODUCTNAME ODP=R.A. Pocketworks
+&str.files ODP=\[\]=[center(%b[v(str.productname)] Library%b,72,-)]=\[\]%r[space(3)][center(filename,30)] [center(time/date,24)][space(8)]size attr%r[space(3)][repeat(-,72)][iter(sortby(sortby.filename,lattrp(me/data.file.*)),%r[space(3)][ljust(left(first(setr(0,v(##)),|),30),30)] [convsecs(extract(%q0,2,1,|))][space(5)][rjust(extract(%q0,3,1,|),7)] [extract(%q0,4,1,|)])]%r\[\]=[repeat(-,72)]=\[\]
+
+&fn.file ODP=trim(iter(lattrp(me/data.file.*),ifelse(match(v(##),%0|*),##,)))
+
+&sortby.filename ODP=comp(first(v(%0),|),first(v(%1),|))
+
+&cmd.PADHELP ODP=$.padhelp:@pemit %#=\[PAD\] Insert help here.
+&cmd.CONCEAL ODP=$.conceal pad:@switch/first 0=!hasflag(me,dark),@pemit %#=\[PAD\] It's already concealed.,!v(status.open),@pemit %#=\[PAD\] You'll have to turn it off and close it before concealing it.,{@pemit %#=\[PAD\] Concealed.;@oemit/room %#=%N unconceals %p datapad.;@set me=dark}
+&cmd.UNCONCEAL ODP=$.unconceal pad:@switch/first 0=hasflag(me,dark),@pemit %#=\[PAD\] I'm already unconcealed.,{@pemit %#=\[PAD\] Unconcealed.;@oemit/room %#=%N unconceals %p datapad.;@set me=!dark}
+&cmd.OPEN ODP=$.open pad:@switch/first 0=!v(status.open),@pemit %#=\[PAD\] The datapad is already open.,{@pemit %#=\[PAD\] You unfold the datapad.;@oemit/room %#=%N unfolds %p datapad.;&status.open me=1}
+&cmd.CLOSE ODP=$.close pad:@switch/first 0=v(status.open),@pemit %#=\[PAD\] The datapad is already closed.,!v(status.power),@pemit %#=\[PAD\] You have to logout before closing the datapad.,{&status.open me=0;@pemit %#=\[PAD\] You fold the datapad.;@oemit/room %#=%N folds %p datapad closed.}
+&cmd.LOGOUT ODP=$.logout:@switch/first 0=v(status.power),@pemit %#=\[PAD\] The datapad is off already.,{&status.power me=0;&status.user me=;@pemit %#=<PAD> Settling memory.  Closing interfaces. System shut down.;@pemit %#=\[PAD\] The system halts and the screen darkens. You are logged out.}
+&cmd.LOGIN ODP=$.login *=*:@switch/first 0=v(status.open),@pemit %#=\[PAD\] You need to open the datapad before logging in.,!v(status.power),@pemit %#=\[PAD\] There's already someone logged in.,and(strmatch(first(setr(0,v(data.user)),|),%0),strmatch(last(%q0,|),%1)),@pemit %#=<PAD> Login attempt unsuccessful.,{&status.power me=1;&status.user me=%0;@pemit %#=<PAD> Opening memory.  Opening interfaces.  System initialized.}
+&cmd.LIBRARY ODP=$.library:@switch/first 0=v(status.power),@pemit %#=\[PAD\] Currently off.,{@pemit %#=[u(str.files)]}
+&cmd.VIEWFILE ODP=$.view *:@switch/first 0=v(status.power),@pemit %#=\[PAD\] Currently off.,strlen(setr(0,u(fn.file,%0))),@pemit %#=<PAD> File: '%0' not found.,@pemit %#=\[\]=[center(%b[v(str.productname)]: %0%b,72,-)]=\[\]%r[last(u(%q0),|)]%r\[\]=[repeat(-,72)]=\[\]
+&cmd.DELETEFILE ODP=$.delete *:@switch/first 0=v(status.power),@pemit %#=\[PAD\] Currently off.,strlen(setr(0,u(fn.file,%0))),@pemit %#=<PAD> File '%0' not found.,!match(extract(setr(1,v(%q0)),4,1,|),*R*),@pemit %#=<PAD> File '%0' is read-only.,{@pemit %#=<PDA> '%0' deleted. [extract(%q1,3,1,|)] units freed.;&[r(0)] me}
+&cmd.ADDFILE ODP=$.create *=*:@switch/first 0=v(status.power),@pemit %#=\[PAD\] Currently off.,!strlen(u(fn.file,left(%0,30))),@pemit %#=<PAD> A file with that name already exists.,{@pemit %#=<PAD> File '%0' created, consuming [strlen(%1)] units.;&data.file.[secs()] me=[left(%0,30)]|[vsecs()]|[strlen(%1)]||[edit(%1,|,)]}
+&cmd.LOCKFILE ODP=$.lock *:@switch/first 0=v(status.power),@pemit %#=\[PAD\] Currently off.,strlen(setr(0,u(fn.file,%0))),@pemit %#=<PAD> File '%0' not found.,!match(extract(v(%q0),4,1,|),*R*),@pemit %#=<PAD> File '%0' is already read-only.,{&[r(0)] me=[replace(v(%q0),4,R,|)];@pemit %#=<PAD> File '%0' locked.}
+&cmd.UNLOCKFILE ODP=$.unlock *:@switch/first 0=v(status.power),@pemit %#=\[PAD\] Currently off.,strlen(setr(0,u(fn.file,%0))),@pemit %#=<PAD> File '%0' not found.,match(extract(v(%q0),4,1,|),*R*),@pemit %#=<PAD> File '%0' is not read-only.,!match(extract(v(%q0),4,1,|),*S*),@pemit %#=<PAD> File '%0' is a system file.,{&[r(0)] me=[replace(v(%q0),4,,|)];@pemit %#=<PAD> File '%0' unlocked.}
+
+&cmd.ADDUSER ODP=$.adduser *=*:@switch/first 0=v(status.power),@pemit %#=\[PAD\] Currently off.,match(v(status.user),root),@pemit %#=<PAD> Permission denied.,{@pemit %#=<> <> User adding goes here.}
+&cmd.DELETEUSER ODP=$.deleteuser *:@switch/first 0=v(status.power),@pemit %#=\[PAD\] Currently off.,match(v(status.user),root),@pemit %#=<PAD> Permission denied.,{@pemit %#=<> <> User deleting goes here.}

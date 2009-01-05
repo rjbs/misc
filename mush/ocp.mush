@@ -1,0 +1,64 @@
+&CMD.ASCEND OCP=$.ascend:@switch [u(fn.inme,%#)][v(status.engine)][v(status.flight)][and(hasattr(here,sky),gte(first(v(stat-flight)),get(get(here/sky)/elevation)))]=0???,,10??,@pemit %#=[name(me)]: The engine is off.,110?,@pemit %#=You're not flying.,1110,@pemit %#=You can't go up from here.,1111,{@pemit/contents %l=[get_eval(me/oascend)];+fly},@pemit %#=Something is wrong here. Contact VehicleBLDR
+&CMD.AUTHADD OCP=$.authorize/add *=*:@switch [strmatch(locate(%#,%0,in),num(me))][u(fn.passlock,%#)][strmatch(type(setr(0,locate(%#,%1,*P))),PLAYER)][!!u(fn.passlock,%q0)]=0???,,10??,@pemit %#=[name(me)]: You can't authorize someone if you're not authorized.,110?,@pemit %#=[name(me)]: Couldn't locate player '%1'.,1110,{&data.authorized me=[cat(v(data.authorized),%q0)];@pemit/list %# %q0=[name(me)]: [name(%q0)] added to authorization list by [name(%#)].},1111,@pemit %#=[name(me)]: [name(%q0)] already authorized for this vehicle.
+&CMD.AUTHLIST OCP=$.authorize/list:@pemit %#=ifelse(!!match(v(data.owner),*%#*),[name(me)]: Authorized Users: [andnames(v(data.authorized))],[name(me)]: You can't access the authorized users list.)
+&CMD.AUTHREM OCP=$.authorize/remove *:@switch [strmatch(locate(%#,%0,in),num(me))][u(fn.passlock,%#)]=0?,,10,@pemit %#=You can't unauthorize yourself if you aren't authorized to begin with.,11,{&data.authorized me=[edit(v(data.authorized),%#,)];@pemit %#=Unauthorized.}
+
+&CMD.DRIVE OCP=$.drive *:@switch [u(fn.inme,%#)][eq(comp(type(%0),EXIT),0)][u(fn.hasfuel,drive)][v(status.engine)][v(status.flight)]=0????,,10???,@pemit %#=No such exit here.,110??,@pemit %#=You're out of gas!,1110?,@pemit %#=[name(me)]: The engine is off.,11110,{@pemit/contents %l=[get_eval(me/odrive)];move %0},11111,@pemit %#=Use .fly.,@pemit %#=Something is wrong here. Contact VehicleBLDR
+&CMD.FLY OCP=$.fly *:@switch [u(fn.inme,%#)][eq(comp(type(%0),EXIT),0)][u(fn.hasfuel,fly)][v(status.engine)][v(status.flight)][or(eq(get(setr(0,loc(%0))/elevation),0),!hasattr(%q0,elevation))]=0?????,,10????,@pemit %#=No such exit here.,110???,@pemit %#=You're out of gas!,1110??,@pemit %#=[name(me)]: The engine is off.,11110?,@pemit %#=Use .drive.,111110,{@pemit/contents %l=[get_eval(me/ofly)];move %0},111111,@pemit %#=You need to .land to go there.,@pemit %#=Something is wrong here. Contact VehicleBLDR
+
+&CMD.IGNITION-OFF OCP=$.ignition off:@switch [u(fn.inme,%#)][v(status.engine)]=0?,,11,{&status.engine me=0;@emit [get_eval(me/msg.engine-off)]},10,@pemit %#=[get_eval(me/fail.off-off)]
+&CMD.IGNITION-ON OCP=$.ignition on:@switch [u(fn.inme,%#)][v(status.engine)][u(fn.hasfuel,start)]=0??,,11?,@emit [get_eval(me/fail.on-on)],100,@emit [get_eval(me/fail.start-no_fuel)],101,{&status.engine me=1;@emit [get_eval(me/msg.engine-on)]}
+&CMD.LAND OCP=$.land *:@switch [u(fn.inme,%#)][eq(comp(type(%0),EXIT),0)][v(status.engine)][v(status.flight)][or(eq(get(setr(0,loc(%0))/elevation),0),!hasattr(%q0,elevation))]=0????,,10???,@pemit %#=No such exit here.,110??,@pemit %#=[name(me)]: The engine is off.,1110?,@pemit %#=How can you land if you're not flying?,11110,@pemit %#=There's no terra firma there.,11111,{@pemit/contents %l=[get_eval(me/oland)];&status.flight me=0;move %0;@pemit/contents %q0=get_eval(me/oldrop)},@pemit %#=Something is wrong here. Contact VehicleBLDR
+&CMD.LOCK OCP=$.lock:@switch [u(fn.inme,%#)][u(status.lock)]=0?,,11,@emit [u(fail.lock-lock)],10,{&status.lock me=1;@emit [u(msg.lock,%#)]}
+&CMD.LOCK2 OCP=$.lock *:@switch [strmatch(locate(%#,%0,in),num(me))][u(fn.passlock,%#)][u(status.lock)]=0??,@pemit %#=[name(me)]: I'm not a '%0',10?,@pemit %#=[name(me)]: [u(fail.cant-lock)],110,{&status.lock me=1;@emit [u(msg.lock,%#)]},111,@emit [u(fail.lock-lock)]
+&CMD.LOOK OCP=$.look:@switch u(fn.inme,%#)=0,,1,@pemit %#=[name(here)]%r[u(here/desc)]%rNearby Objects: [andnames(iter(lcon(here),ifelse(and(andflags(##,!P!D),!strmatch(##,num(me))),##,)))]%rNearby Players: [andnames(iter(lcon(here),ifelse(andflags(##,Pc!D),##,)))]%rObvious Exits : [trim(iter(lexits(here),ifelse(hasflag(##,dark),,name(##))))]
+&CMD.LOOK2 OCP=$.look *:@switch/case/first 0=u(fn.inme,%#),,!strmatch(setr(0,locate(me,%0,nh)),#-1*),@pemit %#=No such object nearby.,!strmatch(%q0,#-2*),@pemit %#=Be more specific.,@pemit %#=[name(%q0)]%r[u(%q0/desc)][ifelse(or(hasflag(%q0,opaque),!strlen(setr(1,lcon(%q0)))),,%rCarrying: [andnames(iter(%q1,ifelse(hasflag(##,dark),,##)))])]
+&CMD.POSE OCP=$.pose *:@switch u(fn.inme,%#)=0,,1,@emit [emittingemote([name(me)],{%0})]
+&CMD.TAKEOFF OCP=$.takeoff:@switch [u(fn.inme,%#)][v(status.engine)][v(status.flight)][and(hasattr(here,sky),gte(first(v(stat-flight)),get(get(here/sky)/elevation)))]=0???,,10??,@pemit %#=[name(me)]: The engine is off.,111?,@pemit %#=You're already flying.,1100,@pemit %#=You can't go up from here.,1101,{@pemit/contents %l=[get_eval(me/otakeoff)];&status.flight me=1;+fly},@pemit %#=Something is wrong here. Contact VehicleBLDR
+&CMD.UNLOCK OCP=$.unlock:@switch [u(fn.inme,%#)][u(status.lock)]=0?,,10,{&status.lock me=0;@emit [u(msg.unlock,%#)]},11,@emit %#=[u(fail.unlock-unlock)]
+&CMD.UNLOCK2 OCP=$.unlock *:@switch [strmatch(locate(%#,%0,in),num(me))][u(fn.passlock,%#)][u(status.lock)]=0??,@pemit %#=[name(me)]: I'm not a '%0',10?,@pemit %#=[name(me)]: [u(fail.cant-unlock)],110,@emit [u(msg.unlock-unlock)],111,{&status.lock me=0;@emit [u(msg.unlock,%#)]}
+
+&DATA.AUTHORIZED OCP=#4960
+&DATA.OWNER OCP=#4960
+&DATA.FUELUSE.DRIVE OCP=1
+&DATA.FUELUSE.FLY OCP=1
+&DATA.FUELUSE.START OCP=1
+
+&DESC.MODEL OCP=This is a totally generic vehicle.
+&DESC.STATUS OCP=The engine is [ifelse(v(status.engine),on,off)]. It is [ifelse(v(status.flight),flying,grounded)].
+&DESC.USER OCP=It's unmodified.
+
+&FAIL.CANT-LOCK OCP=You can't lock the [name(me)].
+&FAIL.CANT-UNLOCK OCP=You can't unlock the [name(me)].
+&FAIL.LOCK-LOCK OCP=The [name(me)]'s locks twitch in their locked position.
+&FAIL.OFF-OFF OCP=The engine is already off.
+&FAIL.ON-ON OCP=The [name(me)]'s engine grinds as someone attempts to start it while it's running.
+&FAIL.START-NO_FUEL OCP=The [name(me)] attempts to start, but has no fuel.
+&FAIL.UNLOCK-UNLOCK OCP=The [name(me)]'s locks twitch in their locked position.
+
+&FN.HASFUEL OCP=gt(v(status.fuel),v(data.fueluse.%0))
+&FN.INME OCP=!!match(lcon(me),*%0*)
+&FN.PASSLOCK OCP=[!!match(cat(v(data.authorized),v(data.owner)),*%0*)]
+
+&MSG.ENGINE-OFF OCP=The [name(me)]'s engine slows to a halt.
+&MSG.ENGINE-ON OCP=The [name(me)] starts its engine.
+&MSG.LOCK OCP=[name(%0)] locks the [name(me)].
+&MSG.UNLOCK OCP=[name(%0)] unlocks the [name(me)].
+
+&OASCEND OCP=The [name(me)] ascends further.
+&ODRIVE OCP=The [name(me)] drives off.
+&OFLY OCP=The [name(me)] flies off.
+&OLAND OCP=The [name(me)] descends and lands.
+&OLDROP OCP=The [name(me)] lands nearby.
+&OTAKEOFF OCP=The [name(me)] takes off, ascending.
+
+&STATUS.ENGINE OCP=0
+&STATUS.FLIGHT OCP=0
+&STATUS.FUEL OCP=0
+&STATUS.LOCK OCP=1
+
+@Desc OCP=[u(desc.model)]%r[u(desc.user)]%r[u(desc.status)]
+@Inprefix OCP=Outside,
+@Lalias OCP=out;stand;o
+@lock/EnterLock OCP=STATUS.LOCK/0
+@lock/GiveLock OCP=FN.PASSLOCK/1

@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+# Last modified 2006-07-24
+
+open my $infile, '<', $ARGV[0] or die "couldn't open $ARGV[0]: $!";
+
+while ($inline=lc(<$infile>)) {
+  my @c = split //, $inline;
+
+  for (my $i = 0; $i < @c; $i++) {
+    my $c = $c[$i];
+    # Because we're expecting x-coded Esperanto!
+    if ($c =~ tr/cgjshu// and $c[$i + 1] eq 'x') {
+      $occ{$c . "x"}++;
+      $i++;
+    } else { 
+      $occ{$c}++;
+    }
+  }
+}
+
+my %xlate = ("\n" => '\n');
+
+printf "%2s : $occ{$_}\n", exists $xlate{$_} ? $xlate{$_} : $_
+  for sort keys %occ;

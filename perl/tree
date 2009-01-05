@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+sub recursedir {
+	my ($dir, $tab) = @_;
+
+	if (-d $dir) {
+		my @dir = glob("$dir/*");
+		foreach my $d (@dir) {
+			$d =~ /([^\/]+)$/;
+			my $fname = $1;
+			print "  " x $tab, $fname, "\n";
+			if (-d $d and not -l $d) {
+				recursedir("$d",$tab+1);
+			}
+		}
+	} else {
+		print "error: $dir is not a directory\n";
+	}
+}
+
+recursedir($ARGV[0] || '.',1);

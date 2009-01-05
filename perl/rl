@@ -1,0 +1,2 @@
+#!/usr/bin/perl
+print sort{rand()<=>0.5}<>;
