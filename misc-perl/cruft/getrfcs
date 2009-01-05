@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+## by rjbs
+## origin: creation of the reference
+## fetches all the known RFCs from faqs.org
+
+for ($i=0;$i<3010;$i++) { 
+  system("lynx -source http://www.faqs.org/rfcs/rfc$i.html > rfc$i.html");
+}

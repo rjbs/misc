@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+
+=head1 NAME
+
+cdyml - export an iCal calendar to YAML
+
+=cut
+
+use Mac::Glue ':glue';
+use strict;
+
+my $ical = new Mac::Glue("iCal");
+
+my $cal = $ical->obj(calendar => whose(title => equals => 'Countdowns'));
+
+my @events = $cal->prop("events")->get;
+
+my ($countdowns, $i);
+foreach (@events) {
+	$countdowns->{++$i} = {
+		name => $_->prop("summary")->get,
+		time => $_->prop("start date")->get,
+		link => $_->prop("url")->get,
+		#allday => $_->prop("allday event")->get,
+	};
+	$_ = $_ - ($_ % 86400) for $countdowns->{$i}{time} 
+}
+
+use YAML;
+print Dump $countdowns;

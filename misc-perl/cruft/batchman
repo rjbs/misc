@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+## by rjbs
+## origin: during creation of the reference
+## creates an HTML file of each man page
+
+  $files = `echo *.$ARGV[0]`;
+  @files = split(" ",$files);
+  for ($j=0; $j<@files; $j++) {
+    system("man2html $files[$j] > html/$files[$j].html");
+  }
+
+

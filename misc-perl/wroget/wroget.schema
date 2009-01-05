@@ -1,0 +1,99 @@
+--
+-- PostgreSQL database dump
+--
+
+SET client_encoding = 'UNICODE';
+SET check_function_bodies = false;
+
+SET SESSION AUTHORIZATION 'postgres';
+
+--
+-- TOC entry 4 (OID 2200)
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+SET SESSION AUTHORIZATION 'mdxi';
+
+SET search_path = public, pg_catalog;
+
+--
+-- TOC entry 5 (OID 33687)
+-- Name: subsections; Type: TABLE; Schema: public; Owner: mdxi
+--
+
+CREATE TABLE subsections (
+    sec text,
+    subsec integer,
+    data text
+);
+
+
+--
+-- TOC entry 6 (OID 33687)
+-- Name: subsections; Type: ACL; Schema: public; Owner: mdxi
+--
+
+REVOKE ALL ON TABLE subsections FROM PUBLIC;
+GRANT SELECT ON TABLE subsections TO nobody;
+
+
+SET SESSION AUTHORIZATION 'mdxi';
+
+--
+-- TOC entry 7 (OID 44438)
+-- Name: sections; Type: TABLE; Schema: public; Owner: mdxi
+--
+
+CREATE TABLE sections (
+    id serial NOT NULL,
+    sec text,
+    name text
+);
+
+
+--
+-- TOC entry 8 (OID 44438)
+-- Name: sections; Type: ACL; Schema: public; Owner: mdxi
+--
+
+REVOKE ALL ON TABLE sections FROM PUBLIC;
+GRANT SELECT ON TABLE sections TO nobody;
+
+
+SET SESSION AUTHORIZATION 'mdxi';
+
+--
+-- TOC entry 9 (OID 55188)
+-- Name: idx; Type: TABLE; Schema: public; Owner: mdxi
+--
+
+CREATE TABLE idx (
+    idx text,
+    sec text
+);
+
+
+--
+-- TOC entry 10 (OID 55188)
+-- Name: idx; Type: ACL; Schema: public; Owner: mdxi
+--
+
+REVOKE ALL ON TABLE idx FROM PUBLIC;
+GRANT SELECT ON TABLE idx TO nobody;
+
+
+SET SESSION AUTHORIZATION 'postgres';
+
+--
+-- TOC entry 3 (OID 2200)
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: postgres
+--
+
+COMMENT ON SCHEMA public IS 'Standard public namespace';
+
+

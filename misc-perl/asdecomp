@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+=head1 NAME
+
+osadecomp - decompile a compiled AppleScript
+
+=cut
+
+use Mac::OSA::Simple;
+$s = load_osa_script(shift); 
+print $s->source;

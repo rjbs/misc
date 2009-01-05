@@ -1,0 +1,34 @@
+[% %]
+<html>
+	<head>
+		<title>To Do!</title>
+		<style type='text/css'>
+		table { border: medium black solid }
+		td,th { border: thin black solid }
+		th { background-color: black; color: white }
+		td.high.one { background-color: red; }
+		td.high.two { background-color: red; }
+		td.high.three { background-color: red; }
+		td.medium.one { background-color: yellow; }
+		td.medium.two { background-color: yellow; }
+		td.low.one { background-color: green; }
+		</style>
+	</head>
+<body>
+[% FOREACH todo = todos %]
+<table>
+	<tr>
+		<th>[% todo.brief %]</th>
+		<td class='[% todo.priority %] three'>&nbsp;</td>
+	</tr>
+	<tr>
+		<td rowspan='2'>DESC WILL GO HERE</td>
+		<td class='[% todo.priority %] two'>&nbsp;</td>
+	</tr>
+	<tr>
+		<td class='[% todo.priority %] one'>&nbsp;</td>
+	</tr>
+</table>
+[% END %]
+</body>
+</html>

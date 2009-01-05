@@ -1,0 +1,55 @@
+#!/usr/bin/perl
+use WWW::Mechanize;
+use strict;
+use warnings;
+
+my %product = (
+	oop => { pos => 1, menu => 'OmniOutliner Pro', ver => '3.0.1' },
+	oo  => { pos => 2, menu => 'OmniOutliner',     ver => '3.0.1' },
+	ogp => { pos => 3, menu => 'OmniGraffle Pro',  ver => '3.1.2' },
+	og  => { pos => 4, menu => 'OmniGraffle',      ver => '3.1.2' },
+#	ods => { pos => 5, menu => 'OmniDiskSweeper',  ver => '?.?.?' },
+#	oom => { pos => 6, menu => 'OmniObjectMeter',  ver => '?.?.?' }
+);
+
+die "usage: omni productcode" unless my $app = $product{$ARGV[0]};
+
+($app->{name} = $app->{menu}) =~ s/Pro/Professional/;
+
+my $ua = WWW::Mechanize->new;
+   $ua->get("http://store.omnigroup.com/");
+   $ua->follow_link( text => 'Trial License', n => $app->{pos} );
+
+my ($owner, $key) =
+	$ua->content =~ /License Owner: (.+?)<br>\s+License Key: (.+?)<br>/;
+
+my $owner_h = substr $owner, 0, -1;
+my $owner_t = substr $owner, -1, 1;
+
+my $applescript = <<END_TELL;
+	tell application "$app->{name}" to activate
+
+	tell application "System Events"
+		tell process "$app->{name}"
+			tell menu bar 1
+				tell menu bar item "$app->{menu}"
+					tell menu "$app->{menu}" to click menu item "Licenses..."
+				end tell
+			end tell
+			tell window "Licenses for $app->{menu} $app->{ver}"
+				click button "Add License..."
+				tell sheet 1
+					set value of text field 1 to "$owner_h"
+					set value of text field 2 to "$key"
+					keystroke "$owner_t"
+					click button "Save"
+				end tell
+				click button 1
+			end tell
+		end tell
+	end tell
+END_TELL
+
+open  APPLESCRIPT, "|osascript";
+print APPLESCRIPT $applescript;
+close $applescript;

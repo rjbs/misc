@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="3"
+   name=""
+   committed-date="2005-03-13T20:23:57.808786Z"
+   url="svn+ssh://cvs.manxome.org/home/rjbs/svn/code/minicpan2/cpan"
+   last-author="rjbs"
+   kind="dir"
+   revision="3"/>
+<entry
+   name="authors"
+   kind="dir"/>
+<entry
+   name="modules"
+   kind="dir"/>
+</wc-entries>

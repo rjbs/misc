@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+
+use Bryar::DataSource::RJBS;
+use Rubric::User;
+
+my $config = { entrydir => "/Users/rjbs/public_html/bryar/gamesite/" };
+my $user = Rubric::User->retrieve('rjbs');
+
+sub isodate {
+  my $secs = shift;
+
+  my @time = localtime($secs);
+  
+  sprintf("%0.4u-%0.2u-%0.2u",
+    $time[5] + 1900,
+    $time[4] + 1,
+    $time[3],
+    $time[2],
+    $time[1],
+    $time[0]
+  );
+    
+}
+
+for (Bryar::DataSource::RJBS->all_documents($config)) {
+#for (Bryar::DataSource::RJBS->search($config, id => 369)) {
+	my $title = $_->{title};
+	$title = ("unknown gamesite entry on " . isodate($_->epoch)) if $title eq '(untitled)';
+
+	print "TITLE: ", $title,    "\n";
+	print "EPOCH: ", $_->epoch, "\n";
+	if ($_->keywords) { print "TAGS : $_->{keywords}", "\n"; }
+
+	my $body = $_->content;  $body =~ s/\A\n+//;
+	print "BODY : \n", $body, "\n";
+
+	$user->quick_entry({
+		title  => $title,
+		created=> $_->epoch,
+		modified=> $_->epoch,
+		tags   => $_->{keywords} . " games videogames gamesite",
+		body   => $body
+	});
+
+}
+

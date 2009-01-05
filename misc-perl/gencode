@@ -1,0 +1,71 @@
+#!/usr/bin/perl
+
+=head1 NAME
+
+gencode - encode your file as base pairs
+
+=cut
+
+my @bases = qw(A C G T);
+
+sub ncode {
+	my ($n, @chars) = @_;
+	my $s = '';
+	for (3,2,1,0) { 
+		$s .= $chars [ int($n / @chars**$_) ];
+		$n %= @chars**$_ if $_;
+	}
+	return $s;
+}
+
+sub dcode {
+	my ($s, @chars) = @_;
+	my %chars = map { $chars[$_] => $_ } (0 .. $#chars);
+
+	die "invalid quad $s" if length $s > 4;
+	my @digits = split //, $s;
+	my $n = 0;
+	for (0 .. 3) {
+		$n += $chars{$digits[$_]} * (@chars ** (3-$_));
+	}
+	return $n;
+}
+
+sub ncode_file {
+	my ($filename) = @_;
+
+	open my $fh, "<", $filename
+		or die "can't open input file: $!";
+	
+	my $string = join '',
+	             map { ncode(ord($_), @bases) } 
+	             map { split //, $_ } <$fh>;
+
+	print "$_\n" for chunk_by_n(60, $string);
+}
+
+sub chunk_by_n {
+	my ($n, $string) = @_;
+	my @chunks;
+	while ($string =~ /(.{$n})/og) { push @chunks, $1 }
+	return @chunks;
+}
+
+sub dcode_file {
+	my ($filename) = @_;
+
+	open my $fh, "<", $filename
+		or die "can't open input file: $!";
+	
+	for my $line (<$fh>) { 
+		chomp $line;
+		print chr dcode($_, @bases) for chunk_by_n(4, $line)
+	}
+}
+
+my ($opt, $filename) = @_;
+
+if ($opt eq '-e') { ncode_file($filename); exit; }
+if ($opt eq '-d') { dcode_file($filename); exit; }
+else { print "usage: gencode [ -e | -d ] filename\n"; exit; }
+

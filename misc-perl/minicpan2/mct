@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use CPAN::Mini::Archive;
+
+my $remote = CPAN::Mini::Archive->new(root => 'file:///Users/rjbs/code/perl/minicpan2/cpan/');
+my $local  = CPAN::Mini::Archive->new(root => 'file:///Users/rjbs/code/perl/minicpan2/mirror/');
+
+CPAN::Mini::Mirror->mirror($remote, $local);

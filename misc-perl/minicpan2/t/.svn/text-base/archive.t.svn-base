@@ -1,0 +1,20 @@
+use Test::More 'no_plan';
+
+BEGIN { use_ok('CPAN::Mini::Archive'); }
+
+use Cwd;
+use URI;
+
+my $root = URI->new("file://" . cwd . "/cpan/");
+
+my $archive = CPAN::Mini::Archive->new(root => $root);
+
+isa_ok($archive, "CPAN::Mini::Archive");
+
+is($archive->authors, 20, "there! are! twenty! authors!");
+
+is($archive->packages, 43, "archive contains 53 packages");
+
+is($archive->distributions, 26, "archive contains 26 distributions");
+
+is($archive->latest_distributions, 24, "one of those dists is out of date");

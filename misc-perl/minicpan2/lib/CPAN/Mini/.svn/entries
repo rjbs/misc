@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2005-03-13T02:43:35.286262Z"
+   url="svn+ssh://cvs.manxome.org/home/rjbs/svn/code/minicpan2/lib/CPAN/Mini"
+   last-author="rjbs"
+   kind="dir"
+   uuid="5f481ac0-28f2-0310-be36-d1ba004871d1"
+   revision="1"/>
+<entry
+   name="Archive"
+   kind="dir"/>
+<entry
+   committed-rev="5"
+   name="Archive.pm"
+   text-time="2005-03-14T03:17:26.000000Z"
+   committed-date="2005-03-14T03:17:03.126120Z"
+   checksum="7445133c3642d8a042d489cc4a24cb7b"
+   last-author="rjbs"
+   kind="file"
+   prop-time="2005-03-13T20:27:28.000000Z"
+   revision="5"/>
+</wc-entries>
