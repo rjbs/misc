@@ -1,0 +1,36 @@
+
+; Bring it on!
+severity = 2
+
+[Documentation::RequirePodSections]
+lib_sections = NAME | DESCRIPTION | AUTHOR
+
+[Miscellanea::RequireRcsKeywords]
+keywords = Id
+severity = 4
+
+[ValuesAndExpressions::RequireNumberSeparators]
+min_value = 100000
+
+[Variables::ProhibitPunctuationVars]
+allow = $@ $!
+
+; I don't agree with these policies, and disabled them.
+[-Documentation::RequirePodAtEnd]
+[-ControlStructures::ProhibitUnlessBlocks]
+[-ControlStructures::ProhibitPostfixControls]
+[-References::ProhibitDoubleSigils]
+[-RegularExpressions::RequireExtendedFormatting]
+[-RegularExpressions::RequireLineBoundaryMatching]
+[-Subroutines::RequireFinalReturn]
+
+[-Bangs::ProhibitFlagComments]
+[-Bangs::ProhibitCommentedOutCode]
+
+; These policies are replaced by policies in Perl-Critic-Lax
+  ; [-BuiltinFunctions::ProhibitComplexMappings] ; not yet released
+
+[-BuiltinFunctions::ProhibitStringyEval]
+[-Modules::RequireEndWithOne]
+[-Modules::RequireExplicitPackage]
+[-ValuesAndExpressions::ProhibitEmptyQuotes]

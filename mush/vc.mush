@@ -1,0 +1,5 @@
+@create VC: View Commands=10
+&DO-MASTER VC: View Commands=$+view *:@pemit %#=[setq(1,locate(%#,before(%0,/),imnh))]switch(%q1,#-1,<X> Object '%0' not found.,switch(words(%0,/),1,[setq(0,lattr(%q1/view-*))][switch(strlen(%q0),0,<-> There are no +view's set on [capstr(name(%q1))].,<-> [capstr(name(%q1))] has the following +view's: [iter(%q0,lcstr(after(##,VIEW-)))])],2,[setq(0,view-[after(%0,/)])][switch(strlen(u(%q1/%q0)),0,<X> [capstr(name(%q1))] has no such +view.,<-> [ucstr(name(%q1))] / [ucstr(after(%q0,-))]%r[u(%q1/%q0)])],))
+&DO-VIEWSCAN VC: View Commands=$+view:@pemit %#=<-> The following nearby objects have +view's: [setq(0,trim(iter(lcon(%l),switch(hasflag(##,dark),0,switch(strlen(lattr(##/view-*)),0,,name(##)),1,,))))][switch(strlen(%q0),0,>none<,%q0)][switch(strlen(lattr(%l/view-*)),0,,%r<-> Your current location\, [name(%l)]\, has +view's set.)]
+@set VC: View Commands=INHERIT
+@set VC: View Commands=COMMANDS

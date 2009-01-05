@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+default: web gnupg logs
+
+mirrors: ifarchive minicpan
+
+all: default mirrors
+
+web:
+	rsync --delete -ave ssh ${HOME}/public_html/ cheshire:~/public_html/
+
+gnupg:
+	rsync --delete -ave ssh cheshire:~/.gnupg/ ${HOME}/backup/gnupg/
+
+logs:
+	rsync --delete -ave ssh cheshire:/var/www/ ${HOME}/backup/www/
+	rsync --delete -ave ssh cheshire:~/cvs/    ${HOME}/backup/cvs/
+	rsync --delete -ave ssh cheshire:~/log/    ${HOME}/backup/log/
+
+ifarchive:
+	rsync --delete -ave ssh cheshire:~/ifarchive/  ${HOME}/mirrors/ifarchive/
+
+minicpan:
+	/usr/local/bin/minicpan -r http://cpan.mirrors.manxome.org/ -l /Users/rjbs/mirrors/minicpan/

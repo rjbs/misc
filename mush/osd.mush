@@ -1,0 +1,204 @@
+&DATA.STATS OSD: Othellos Shifting Data=strength dexterity stamina charisma manipulation appearance perception
+&FN.HASFORM OSD: Othellos Shifting Data=or(hasflag(%0,wizard),haspower(%0,POLYMORPH))
+&FORML.BAT OSD: Othellos Shifting Data=or(u(fn.hasform,%0,bat),gte(stat(%0/protean),4))
+&FORML.CHATRO-AJABA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-ajaba),strmatch(string(%0/race),Shifter Ajaba))
+&FORML.CHATRO-BAGHEERA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-Bagheera),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Bagheera)))
+&FORML.CHATRO-BALAM OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-Balam),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Balam)))
+&FORML.CHATRO-BUBASTI OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-Bubasti),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Bubasti)))
+&FORML.CHATRO-CEILICAN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-Ceilican),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Ceilican)))
+&FORML.CHATRO-KHAN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-Khan),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Khan)))
+&FORML.CHATRO-PUMONCA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-Pumonca),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Pumonca)))
+&FORML.CHATRO-QUALMI OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-Qualmi),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Qualmi)))
+&FORML.CHATRO-SIMBA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-Simba),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Simba)))
+&FORML.CHATRO-SWARA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,chatro-Swara),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Swara)))
+&FORML.CORVID OSD: Othellos Shifting Data=or(u(fn.hasform,%0,corvid),strmatch(string(%0/race),Shifter Corax))
+&FORML.CRAWLERLING OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crawlerling),strmatch(string(%0/race),Shifter Ananasi))
+&FORML.CRINOS-AJABA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-ajaba),strmatch(string(%0/race),Shifter Ajaba))
+&FORML.CRINOS-BAGHEERA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-Bagheera),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Bagheera)))
+&FORML.CRINOS-BALAM OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-Balam),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Balam)))
+&FORML.CRINOS-BUBASTI OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-Bubasti),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Bubasti)))
+&FORML.CRINOS-CEILICAN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-Ceilican),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Ceilican)))
+&FORML.CRINOS-CORAX OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-corax),strmatch(string(%0/race),Shifter Corax))
+&FORML.CRINOS-GAROU OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-garou),strmatch(string(%0/race),Shifter Garou))
+&FORML.CRINOS-GURAHL OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-gurahl),strmatch(string(%0/race),Shifter Gurahl))
+&FORML.CRINOS-KHAN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-Khan),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Khan)))
+&FORML.CRINOS-PUMONCA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-Pumonca),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Pumonca)))
+&FORML.CRINOS-QUALMI OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-Qualmi),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Qualmi)))
+&FORML.CRINOS-RATKIN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-ratkin),strmatch(string(%0/race),Shifter Ratkin))
+&FORML.CRINOS-ROKEA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-rokea),strmatch(string(%0/race),Shifter Rokea))
+&FORML.CRINOS-SIMBA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-Simba),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Simba)))
+&FORML.CRINOS-SWARA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,crinos-Swara),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Swara)))
+&FORML.FELINE-BAGHEERA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,feline-Bagheera),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Bagheera)))
+&FORML.FELINE-BALAM OSD: Othellos Shifting Data=or(u(fn.hasform,%0,feline-Balam),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Balam)))
+&FORML.FELINE-BUBASTI OSD: Othellos Shifting Data=or(u(fn.hasform,%0,feline-Bubasti),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Bubasti)))
+&FORML.FELINE-CEILICAN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,feline-Ceilican),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Ceilican)))
+&FORML.FELINE-KHAN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,feline-Khan),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Khan)))
+&FORML.FELINE-PUMONCA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,feline-Pumonca),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Pumonca)))
+&FORML.FELINE-QUALMI OSD: Othellos Shifting Data=or(u(fn.hasform,%0,feline-Qualmi),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Qualmi)))
+&FORML.FELINE-SIMBA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,feline-Simba),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Simba)))
+&FORML.FELINE-SWARA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,feline-Swara),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Swara)))
+&FORML.GLABRO OSD: Othellos Shifting Data=or(u(fn.hasform,%0,glabro),strmatch(string(%0/race),Shifter Garou))
+&FORML.GLABRO-GURAHL OSD: Othellos Shifting Data=or(u(fn.hasform,%0,glabro-gurahl),strmatch(string(%0/race),Shifter Gurahl))
+&FORML.HISPO OSD: Othellos Shifting Data=or(u(fn.hasform,%0,hispo),strmatch(string(%0/race),Shifter Garou))
+&FORML.HISPO-GURAHL OSD: Othellos Shifting Data=or(u(fn.hasform,%0,hispo-gurahl),strmatch(string(%0/race),Shifter Gurahl))
+&FORML.HORRID OSD: Othellos Shifting Data=or(u(fn.hasform,%0,horrid),gte(stat(%0/vicissitude),4))
+&FORML.HUMAN OSD: Othellos Shifting Data=1
+&FORML.HYAENA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,hyaena),strmatch(string(%0/race),Shifter Ajaba))
+&FORML.LATRANI OSD: Othellos Shifting Data=or(u(fn.hasform,%0,latrani),strmatch(string(%0/race),Shifter Nuwisha))
+&FORML.LILIAN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,lilian),strmatch(string(%0/race),Shifter Ananasi))
+&FORML.LUPUS OSD: Othellos Shifting Data=or(u(fn.hasform,%0,lupus),strmatch(string(%0/race),Shifter Garou))
+&FORML.MANABOZHO OSD: Othellos Shifting Data=or(u(fn.hasform,%0,manabozho),strmatch(string(%0/race),Shifter Nuwisha))
+&FORML.MIST OSD: Othellos Shifting Data=or(u(fn.hasform,%0,mist),gte(stat(%0/protean),5))
+&FORML.PITHUS OSD: Othellos Shifting Data=or(u(fn.hasform,%0,pithus),strmatch(string(%0/race),Shifter Ananasi))
+&FORML.RODENS OSD: Othellos Shifting Data=or(u(fn.hasform,%0,rodens),strmatch(string(%0/race),Shifter Ratkin))
+&FORML.SENDEH OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sendeh),strmatch(string(%0/race),Shifter Nuwisha))
+&FORML.SERPENT OSD: Othellos Shifting Data=or(u(fn.hasform,%0,serpent),gte(stat(%0/serpentis),4))
+&FORML.SOKTO-AJABA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-ajaba),strmatch(string(%0/race),Shifter Ajaba))
+&FORML.SOKTO-BAGHEERA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-Bagheera),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Bagheera)))
+&FORML.SOKTO-BALAM OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-Balam),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Balam)))
+&FORML.SOKTO-BUBASTI OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-Bubasti),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Bubasti)))
+&FORML.SOKTO-CEILICAN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-Ceilican),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Ceilican)))
+&FORML.SOKTO-KHAN OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-Khan),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Khan)))
+&FORML.SOKTO-PUMONCA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-Pumonca),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Pumonca)))
+&FORML.SOKTO-QUALMI OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-Qualmi),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Qualmi)))
+&FORML.SOKTO-SIMBA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-Simba),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Simba)))
+&FORML.SOKTO-SWARA OSD: Othellos Shifting Data=or(u(fn.hasform,%0,sokto-Swara),and(strmatch(string(%0/race),Shifter Bastet),strmatch(string(%0/tribe),Swara)))
+&FORML.SQUAMUS OSD: Othellos Shifting Data=or(u(fn.hasform,%0,squamus),strmatch(string(%0/race),Shifter Rokea))
+&FORML.TSITSU OSD: Othellos Shifting Data=or(u(fn.hasform,%0,tsitsu),strmatch(string(%0/race),Shifter Nuwisha))
+&FORML.URSINE OSD: Othellos Shifting Data=or(u(fn.hasform,%0,ursine),strmatch(string(%0/race),Shifter Gurahl))
+&FORML.WOLF OSD: Othellos Shifting Data=or(u(fn.hasform,%0,wolf),gte(stat(%0/protean),4))
+&FORMO.BAT OSD: Othellos Shifting Data=shifts and blurs, turning into a bat.
+&FORMO.CHATRO-AJABA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge hyaena-like beast.
+&FORMO.CHATRO-BAGHEERA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge panther-like beast.
+&FORMO.CHATRO-BALAM OSD: Othellos Shifting Data=shifts and blurs, turning into a huge jaguar-like beast.
+&FORMO.CHATRO-BUBASTI OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cat-like beast.
+&FORMO.CHATRO-CEILICAN OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cat-like beast.
+&FORMO.CHATRO-KHAN OSD: Othellos Shifting Data=shifts and blurs, turning into a huge tiger-like beast.
+&FORMO.CHATRO-PUMONCA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cougar-like beast.
+&FORMO.CHATRO-QUALMI OSD: Othellos Shifting Data=shifts and blurs, turning into a huge lynx-like beast.
+&FORMO.CHATRO-SIMBA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge lion-like beast.
+&FORMO.CHATRO-SWARA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cheeta-like beast.
+&FORMO.CORVID OSD: Othellos Shifting Data=shifts and blurs, turning into a large raven.
+&FORMO.CRAWLERLING OSD: Othellos Shifting Data=shifts and blurs, collapsing into a mass of spiders.
+&FORMO.CRINOS-AJABA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge hyaena-man.
+&FORMO.CRINOS-BAGHEERA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge panther-man.
+&FORMO.CRINOS-BALAM OSD: Othellos Shifting Data=shifts and blurs, turning into a huge jaguar-man.
+&FORMO.CRINOS-BUBASTI OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cat-man.
+&FORMO.CRINOS-CEILICAN OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cat-man.
+&FORMO.CRINOS-CORAX OSD: Othellos Shifting Data=shifts and blurs, turning into a huge, black bird-man.
+&FORMO.CRINOS-GAROU OSD: Othellos Shifting Data=shifts and blurs, turning into a huge wolf-man.
+&FORMO.CRINOS-GURAHL OSD: Othellos Shifting Data=shifts and blurs, turning into a titanic bear-man.
+&FORMO.CRINOS-KHAN OSD: Othellos Shifting Data=shifts and blurs, turning into a huge tiger-man.
+&FORMO.CRINOS-PUMONCA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cougar-man.
+&FORMO.CRINOS-QUALMI OSD: Othellos Shifting Data=shifts and blurs, turning into a huge lynx-man.
+&FORMO.CRINOS-RATKIN OSD: Othellos Shifting Data=shifts and blurs, turning into a huge rat-man.
+&FORMO.CRINOS-ROKEA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge shark-man.
+&FORMO.CRINOS-SIMBA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge lion-man.
+&FORMO.CRINOS-SWARA OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cheeta-man.
+&FORMO.FELINE-BAGHEERA OSD: Othellos Shifting Data=shifts and blurs, turning into a panther.
+&FORMO.FELINE-BALAM OSD: Othellos Shifting Data=shifts and blurs, turning into a jaguar.
+&FORMO.FELINE-BUBASTI OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cat.
+&FORMO.FELINE-CEILICAN OSD: Othellos Shifting Data=shifts and blurs, turning into a cat.
+&FORMO.FELINE-KHAN OSD: Othellos Shifting Data=shifts and blurs, turning into a tiger.
+&FORMO.FELINE-PUMONCA OSD: Othellos Shifting Data=shifts and blurs, turning into a cougar.
+&FORMO.FELINE-QUALMI OSD: Othellos Shifting Data=shifts and blurs, turning into a lynx.
+&FORMO.FELINE-SIMBA OSD: Othellos Shifting Data=shifts and blurs, turning into a lion.
+&FORMO.FELINE-SWARA OSD: Othellos Shifting Data=shifts and blurs, turning into a cheeta.
+&FORMO.GLABRO OSD: Othellos Shifting Data=shifts and blurs, taking on the form of a large, hairy human.
+&FORMO.GLABRO-GURAHL OSD: Othellos Shifting Data=shifts and blurs, turning into a massive, hairy human.
+&FORMO.HISPO OSD: Othellos Shifting Data=shifts and blurs, turning into a huge, pony-sized wolf.
+&FORMO.HISPO-GURAHL OSD: Othellos Shifting Data=shifts and blurs, turning into a huge cave bear.
+&FORMO.HORRID OSD: Othellos Shifting Data=shifts and blurs, turning into a huge, oily monstrosity.
+&FORMO.HUMAN OSD: Othellos Shifting Data=shifts and blurs, turning into a human.
+&FORMO.HYAENA OSD: Othellos Shifting Data=shifts and blurs, turning into a hyaena.
+&FORMO.LATRANI OSD: Othellos Shifting Data=shifts and blurs, turning into a coyote.
+&FORMO.LILIAN OSD: Othellos Shifting Data=shifts and blurs, turning into a large, six-armed human.
+&FORMO.LUPUS OSD: Othellos Shifting Data=shifts and blurs, turning into a wolf.
+&FORMO.MANABOZHO OSD: Othellos Shifting Data=shifts and blurs, turning into a large coyote-man.
+&FORMO.MIST OSD: Othellos Shifting Data=slowly dissolves into a thin cloud of mist.
+&FORMO.PITHUS OSD: Othellos Shifting Data=shifts and blurs, turning into a massive spider, some five feet across.
+&FORMO.RODENS OSD: Othellos Shifting Data=shifts and blurs, turning into a cat-sized rat.
+&FORMO.SENDEH OSD: Othellos Shifting Data=shifts and blurs, turning into a large coyote.
+&FORMO.SERPENT OSD: Othellos Shifting Data=shifts and blurs, turning into a serpent.
+&FORMO.SOKTO-AJABA OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feral human.
+&FORMO.SOKTO-BAGHEERA OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feline human.
+&FORMO.SOKTO-BALAM OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feline human.
+&FORMO.SOKTO-BUBASTI OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feline human.
+&FORMO.SOKTO-CEILICAN OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feline human.
+&FORMO.SOKTO-KHAN OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feline human.
+&FORMO.SOKTO-PUMONCA OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feline human.
+&FORMO.SOKTO-QUALMI OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feline human.
+&FORMO.SOKTO-SIMBA OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feline human.
+&FORMO.SOKTO-SWARA OSD: Othellos Shifting Data=shifts and blurs, turning into a large, feline human.
+&FORMO.SQUAMUS OSD: Othellos Shifting Data=shifts and blurs, turning into a shark.
+&FORMO.TSITSU OSD: Othellos Shifting Data=shifts and blurs, taking on the form of a large, hairy human.
+&FORMO.URSINE OSD: Othellos Shifting Data=shifts and blurs, turning into a bear.
+&FORMO.WOLF OSD: Othellos Shifting Data=shifts and blurs, turning into a wolf.
+&FORMS.BAT OSD: Othellos Shifting Data=strength-2 dexterity+1 stamina-2
+&FORMS.CHATRO-AJABA OSD: Othellos Shifting Data=strength+2 dexterity+2 stamina+3 manipulation-2
+&FORMS.CHATRO-BAGHEERA OSD: Othellos Shifting Data=strength+2 dexterity+3 stamina+3 manipulation-3 appearance-2
+&FORMS.CHATRO-BALAM OSD: Othellos Shifting Data=strength+3 dexterity+2 stamina+3 manipulation-4 appearance=0
+&FORMS.CHATRO-BUBASTI OSD: Othellos Shifting Data=strength+2 dexterity+4 stamina+1 manipulation-2 appearance=0
+&FORMS.CHATRO-CEILICAN OSD: Othellos Shifting Data=dexterity+4 stamina+1 manipulation-2 appearance-2
+&FORMS.CHATRO-KHAN OSD: Othellos Shifting Data=strength+4 dexterity+2 stamina+3 manipulation-3 appearance=0
+&FORMS.CHATRO-PUMONCA OSD: Othellos Shifting Data=strength+3 dexterity+3 stamina+3 manipulation-3 appearance=0
+&FORMS.CHATRO-QUALMI OSD: Othellos Shifting Data=strength+1 dexterity+4 stamina+1 manipulation-2 appearance=0
+&FORMS.CHATRO-SIMBA OSD: Othellos Shifting Data=strength+3 dexterity+2 stamina+3 manipulation-2 appearance=0
+&FORMS.CHATRO-SWARA OSD: Othellos Shifting Data=strength+2 dexterity+4 stamina+3 manipulation-3 appearance=0
+&FORMS.CORVID OSD: Othellos Shifting Data=strength-1 dexterity+1 manipulation-3 perception+4
+&FORMS.CRAWLERLING OSD: Othellos Shifting Data=strength=0 dexterity=0 stamina=0 manipulation=0 appearance=0
+&FORMS.CRINOS-AJABA OSD: Othellos Shifting Data=strength+3 dexterity+1 stamina+3 manipulation-2 appearance=0
+&FORMS.CRINOS-BAGHEERA OSD: Othellos Shifting Data=strength+3 dexterity+3 stamina+3 manipulation-3 appearance=0
+&FORMS.CRINOS-BALAM OSD: Othellos Shifting Data=strength+3 dexterity+3 stamina+3 manipulation-4 appearance=0
+&FORMS.CRINOS-BUBASTI OSD: Othellos Shifting Data=strength+1 dexterity+3 stamina+1 manipulation-2 appearance-3
+&FORMS.CRINOS-CEILICAN OSD: Othellos Shifting Data=strength+1 dexterity+3 stamina+1 appearance-2
+&FORMS.CRINOS-CORAX OSD: Othellos Shifting Data=strength+1 stamina+1 dexterity+1 appearance-2 manipulation-2 perception+3
+&FORMS.CRINOS-GAROU OSD: Othellos Shifting Data=strength+4 dexterity+1 stamina+3 manipulation-3 appearance=0
+&FORMS.CRINOS-GURAHL OSD: Othellos Shifting Data=strength+5 stamina+4 dexterity-1 appearance=0 manipulation-2 perception-1
+&FORMS.CRINOS-KHAN OSD: Othellos Shifting Data=strength+3 dexterity+2 stamina+3 manipulation-3 appearance=0
+&FORMS.CRINOS-PUMONCA OSD: Othellos Shifting Data=strength+3 dexterity+3 stamina+4 manipulation-3 appearance=0
+&FORMS.CRINOS-QUALMI OSD: Othellos Shifting Data=strength+1 dexterity+3 stamina+1 manipulation-2 appearance=0
+&FORMS.CRINOS-RATKIN OSD: Othellos Shifting Data=strength+1 dexterity+4 stamina+3 perception+1 charisma-2 appearance=0
+&FORMS.CRINOS-ROKEA OSD: Othellos Shifting Data=strength+4 stamina+4 dexterity+1 charisma=0 appearance=0 manipulation=0 intimidation+4
+&FORMS.CRINOS-SIMBA OSD: Othellos Shifting Data=strength+3 dexterity+2 stamina+3 manipulation-2 appearance=0
+&FORMS.CRINOS-SWARA OSD: Othellos Shifting Data=strength+2 dexterity+4 stamina+3 manipulation-3 appearance=0
+&FORMS.FELINE-BAGHEERA OSD: Othellos Shifting Data=strength+1 dexterity+3 stamina+2 manipulation-3
+&FORMS.FELINE-BALAM OSD: Othellos Shifting Data=strength+2 dexterity+3 stamina+2 manipulation-3
+&FORMS.FELINE-BUBASTI OSD: Othellos Shifting Data=strength-1 dexterity+4 stamina+1
+&FORMS.FELINE-CEILICAN OSD: Othellos Shifting Data=strength-1 dexterity+4 manipulation-2
+&FORMS.FELINE-KHAN OSD: Othellos Shifting Data=strength+2 dexterity+2 stamina+3 manipulation-3
+&FORMS.FELINE-PUMONCA OSD: Othellos Shifting Data=strength+2 dexterity+3 stamina+3
+&FORMS.FELINE-QUALMI OSD: Othellos Shifting Data=dexterity+4 manipulation-2
+&FORMS.FELINE-SIMBA OSD: Othellos Shifting Data=strength+3 dexterity+3 stamina+2 manipulation-1
+&FORMS.FELINE-SWARA OSD: Othellos Shifting Data=strength+1 dexterity+4 stamina+2 manipulation-3
+&FORMS.GLABRO OSD: Othellos Shifting Data=strength+2 stamina+2 manipulation-1 appearance-1
+&FORMS.GLABRO-GURAHL OSD: Othellos Shifting Data=strength+3 stamina+3 appearance-2 manipulation-1
+&FORMS.HISPO OSD: Othellos Shifting Data=strength+3 dexterity+2 stamina+3 manipulation-3
+&FORMS.HISPO-GURAHL OSD: Othellos Shifting Data=strength+4 stamina+5 dexterity-2 manipulation-2
+&FORMS.HORRID OSD: Othellos Shifting Data=strength+3 dexterity+3 stamina+3 charisma=0 appearance=0 manipulation=0
+&FORMS.HUMAN OSD: Othellos Shifting Data=strength+0
+&FORMS.HYAENA OSD: Othellos Shifting Data=strength+2 dexterity+2 stamina+2 manipulation-2
+&FORMS.LATRANI OSD: Othellos Shifting Data=stamina+3 dexterity+3 manipulation-3
+&FORMS.LILIAN OSD: Othellos Shifting Data=strength+3 dexterity+2 stamina+2 appearance=0 manipulation=0
+&FORMS.LUPUS OSD: Othellos Shifting Data=strength+1 dexterity+2 stamina+2 manipulation-3
+&FORMS.MANABOZHO OSD: Othellos Shifting Data=strength+2 stamina+3 dexterity+3 appearance=0 manipulation-2
+&FORMS.MIST OSD: Othellos Shifting Data=strength=0 dexterity=0 stamina=0 appearance=0 manipulation=0
+&FORMS.PITHUS OSD: Othellos Shifting Data=strength+4 stamina+2 dexterity+2 appearance=0 manipulation=0
+&FORMS.RODENS OSD: Othellos Shifting Data=strength-1 dexterity+2 stamina+2 charisma-3 perception+3
+&FORMS.SENDEH OSD: Othellos Shifting Data=strength+2 stamina+3 dexterity+3 manipulation-3
+&FORMS.SERPENT OSD: Othellos Shifting Data=strength-1 dexterity+1
+&FORMS.SOKTO-AJABA OSD: Othellos Shifting Data=strength+1 dexterity+1 stamina+2 manipulation-1 appearance-3
+&FORMS.SOKTO-BAGHEERA OSD: Othellos Shifting Data=strength+1 dexterity+1 stamina+2 manipulation-1 appearance-1
+&FORMS.SOKTO-BALAM OSD: Othellos Shifting Data=strength+2 dexterity+1 stamina+2 manipulation-1 appearance-1
+&FORMS.SOKTO-BUBASTI OSD: Othellos Shifting Data=dexterity+1 appearance+1
+&FORMS.SOKTO-CEILICAN OSD: Othellos Shifting Data=dexterity+2 stamina+1 appearance+1
+&FORMS.SOKTO-KHAN OSD: Othellos Shifting Data=strength+2 dexterity+1 stamina+2 manipulation-1 appearance-1
+&FORMS.SOKTO-PUMONCA OSD: Othellos Shifting Data=strength+1 dexterity+2 stamina+2 manipulation-1
+&FORMS.SOKTO-QUALMI OSD: Othellos Shifting Data=dexterity+2 appearance+1
+&FORMS.SOKTO-SIMBA OSD: Othellos Shifting Data=strength+2 dexterity+1 stamina+2 manipulation-1 appearance+1
+&FORMS.SOKTO-SWARA OSD: Othellos Shifting Data=strength+1 dexterity+2 stamina+1 manipulation-1
+&FORMS.SQUAMUS OSD: Othellos Shifting Data=strength+4 stamina+3 charisma=0 appearance=0 manipulation=0 intimidation+4
+&FORMS.TSITSU OSD: Othellos Shifting Data=strength+1 stamina+2 dexterity+1 manipulation-1
+&FORMS.URSINE OSD: Othellos Shifting Data=strength+2 stamina+3 dexterity-1 manipulation-3
+&FORMS.WOLF OSD: Othellos Shifting Data=strength+1 stamina+1 dexterity+1
+

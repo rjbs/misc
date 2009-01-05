@@ -1,0 +1,31 @@
+&CAN-USE OHS=[ifelse(and(match(lightlevel(),LIGHT),match(string(%0/race),Vampire)),2,[or(match(string(%0/race),Vampire),match(llists(%0),blood_sucker))])]
+&OK-ATTRS OHS=[and(hasattr(me,diff-[get(%0/hunt-method)].[get(%0/hunt-prey)]-fn),hasattr(me,dice-[get(%0/hunt-method)].[get(%0/hunt-prey)]-fn))]
+&ADD OHS=add(%0,%1)
+
+&HELP-CMD OHS=$+thunt:@pemit %#=New Hunt Demo:%r%t +thunt/info - See info on your hunting.%r%t+thunt/method <social|stalk> - set your method%r%t+thunt/prey <human|animal> - set your prey%r%t+thunt/area <sewer|city|rural|park> - set your area
+&INFO-CMD OHS=$+thunt/info:@pemit %#=[switch(u(can-use,%#),2,You can't hunt when the sun is out.,0,You can't use +hunt.,<=> Hunting System%r%b-%b%b%bSelected Area %b: [default(%#/hunt-area,<unset>)]%r%b-%b%b%bSelected Method: [default(%#/hunt-method,<unset>)]%r%b-%b%b%bSelected Prey%b%b: [default(%#/hunt-prey,<unset>)]%r%b-%b%b%bDifficulty[space(5)]: [u(me/diff-fn,%#)]%r%b-%b%b%bDice[space(11)]: [u(me/dice-fn,%#)][ifelse(lt(default(%#/hunt-next,0),vsecs()),,%r%b-%b%b%bHunting until%b%b: [convsecs(get(%#/hunt-next))])])]
+&METHOD-CMD OHS=$+thunt/method *:@switch [u(can-use,%#)][!!member(SOCIAL STALK,capstr(%0))]=0?,@pemit %#=You can't use +hunt.,10,@pemit %#='%0' isn't a valid hunting method.  Try SOCIAL or STALK.,11,{&hunt-method %#=[lcstr(%0)];@pemit %#=Changed. Now hunting with '%0' method.}
+&PREY-CMD OHS=$+thunt/prey *:@switch [u(can-use,%#)][!!member(HUMAN ANIMAL,capstr(%0))]=0?,@pemit %#=You can't use +hunt.,10,@pemit %#='%0' isn't valid prey.  Try HUMAN or ANIMAL.,11,{&hunt-prey %#=[lcstr(%0)];@pemit %#=Changed. Now hunting %0s.}
+&AREA-CMD OHS=$+thunt/area *:@switch [u(can-use,%#)][!!member(CITY RURAL PARK SEWER,capstr(%0))]=0?,@pemit %#=You can't use +hunt.,10,@pemit %#='%0' isn't a valid area.  Try [orlist(CITY RURAL PARK SEWER)].,11,{&hunt-area %#=[lcstr(%0)];@pemit %#=Changed. Now hunting in the %0.}
+
+&DIFF-FN OHS=ifelse(u(ok-attrs,%0),ifelse(gt(setr(3,add(u(diff-common-fn,%0),u(diff-[first(get(%0/hunt-area),/)]-fn,%0),u(diff-[get(%0/hunt-method)].[get(%0/hunt-prey)]-fn,%0),u(diff-time-fn))),10),<impossible>,%q3),<unset>)
+
+&DIFF-COMMON-FN OHS=fold(add,caseall(1,hasattr(%0,string-restriction),2,!!match(setr(7,llists(%0)),prey_exclusion),1,and(match(%q7,light_sensitive),strmatch(lightlevel(),TWILIGHT)),1,!!match(%q7,selective_digestion),2))
+&DIFF-TIME-FN OHS=case(1,beq(setr(6,div(mod(vsecs(),86400),3600)),14,16),9%b,beq(%q6,17,19),8%b,beq(%q6,20,22),7%b,or(eq(%q6,23),beq(%q6,0,1)),8%b,beq(%q6,2,4),9%b,beq(%q6,5,9),10%b,beq(%q6,10,16),100%b)
+&DIFF-APPEARANCE-FN OHS=switch(ifelse(gte(stat(%0/obfuscate),3),max(stat(%0/appearance),stat(%0/manipulation)),stat(%0/appearance)),-*,5,0,3,1,2,2,0,3,0,4,-1,5,-2)
+
+&DIFF-SOCIAL.HUMAN-FN OHS=fold(add,caseall(1,gte(stat(%0/auspex),4),-1%b,gte(stat(%0/auspex),2),-1%b,gte(stat(%0/dementation),3),-1%b,gte(stat(%0/dominate),1),[sub(0,min(stat(%0/dominate),3))]%b,gte(stat(%0/presence),1),-1%b,gte(stat(%0/presence),3),-1%b,gte(stat(%0/presence),5),-1%b,1,u(DIFF-APPEARANCE-FN,%0)))
+&DIFF-STALK.HUMAN-FN OHS=fold(add,caseall(1,gte(stat(%0/auspex),1),-1%b,gte(stat(%0/auspex),2),-1%b,gte(stat(%0/obeah),2),-1%b,gte(stat(%0/dementation),4),-1%b,gte(stat(%0/obfuscate),1),-1%b,gte(stat(%0/obfuscate),2),-1%b,gte(stat(%0/quietus),1),-1%b,gte(stat(%0/serpentis),1),-1%b,gte(stat(%0/serpentis),2),-1%b,gte(stat(%0/potence),1),-1%b,gte(stat(%0/obtenebration),2),-1%b,gte(list(%0/gift_of_morpheus),1),-1%b))
+&DIFF-SOCIAL.ANIMAL-FN OHS=fold(add,caseall(1,gte(stat(%0/animalism),1),-1%b,gte(stat(%0/animalism),2),-1%b,!match(setr(7,llists(%0)),inoffensive_to_animals),2%b,match(%q7,offensive_to_animals),2))
+&DIFF-STALK.ANIMAL-FN OHS=fold(add,caseall(1,gte(stat(%0/animalism),1),-1%n,gte(stat(%0/animalism),2),-1%b,!match(setr(7,llists(%0)),inoffensive_to_animals),2%b,match(%q7,offensive_to_animals),2))
+
+&DIFF-CITY-FN OHS=case(get(%0/hunt-prey),human,0,animal,4)
+&DIFF-RURAL-FN OHS=case(get(%0/hunt-prey),human,3,animal,0)
+&DIFF-PARK-FN OHS=case(get(%0/hunt-prey),human,2,animal,2)
+&DIFF-SEWER-FN OHS=case(get(%0/hunt-prey),human,2,animal,2)
+
+&DICE-FN OHS=ifelse(u(ok-attrs,%0),[ifelse(match(lightlevel(),TWILIGHT),min(u(dice-[get(%0/hunt-method)].[get(%0/hunt-prey)]-fn,%0),max(stat(%0/humanity),stat(%0/path_rating))),u(dice-[get(%0/hunt-method)].[get(%0/hunt-prey)]-fn,%0))],<unset>)
+&DICE-SOCIAL.HUMAN-FN OHS=div(add(stat(%0/charisma),stat(%0/manipulation),stat(%0/subterfuge),stat(%0/empathy)),3)
+&DICE-STALK.HUMAN-FN OHS=div(add(stat(%0/wits),stat(%0/dexterity),stat(%0/stealth),stat(%0/brawl)),3)
+&DICE-SOCIAL.ANIMAL-FN OHS=div(add(stat(%0/charisma),stat(%0/manipulation),stat(%0/animal_ken),stat(%0/empathy)),3)
+&DICE-STALK.ANIMAL-FN OHS=div(add(stat(%0/wits),stat(%0/dexterity),stat(%0/animal_ken),stat(%0/stealth)),3)
