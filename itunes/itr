@@ -1,0 +1,31 @@
+#!/usr/bin/perl
+
+$template = << 'ITR';
+tell Application "iTunes"
+  tell Playlist "Library"
+	repeat with song in (every track whose size is SIZE)
+	  set rating of song to RATING
+	  set played count of song to PCOUNT
+	end repeat
+  end tell
+end tell
+ITR
+
+$working = '';
+
+open ITUNES, "tracks.txt";
+
+$time = time;
+
+while (<ITUNES>) { 
+  chomp;
+  @fields = split;
+  my $new = $template;
+  $new =~ s/SIZE/$fields[0]/;
+  $new =~ s/RATING/$fields[1]/;
+  $new =~ s/PCOUNT/$fields[2]/;
+  print "setting ", ++$i, "; time taken: ", time - $time, "s...\n";
+  $time = time;
+  open SCRIPT, "|osascript";
+  print SCRIPT $new;
+}

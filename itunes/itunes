@@ -1,0 +1,45 @@
+#!/usr/bin/perl
+
+use Data::Dumper;
+
+@columns = qw(
+  tid
+  uid
+  pod
+  album
+  artist
+  bitrate
+  dateadded
+  datemodified
+  discnumber
+  equalizer
+  genre
+  realgenre
+  kind
+  name
+  playcount
+  rating
+  samplerate
+  size
+  totaltime
+  trackcount
+  trackid
+  tracknumber
+  year
+);
+
+$filename = 'itunes.txt';
+
+open ITUNES, $filename;
+open TRACKS, ">tracks.txt";
+
+while ($song = <ITUNES>) {
+  chomp $song;
+  my @song = split "\t", $song;
+  my $i = 0;
+  my @song = map { ($i++%2) ? $_ : () } @song;
+
+  @song{@columns} = @song;
+  print TRACKS "$song{size} $song{rating} $song{playcount}\n"
+	if $song{rating};
+}

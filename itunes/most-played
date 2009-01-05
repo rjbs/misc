@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use Date::Format;
+use Mac::Glue qw(:glue);
+use String::Truncate qw(elide);
+use Text::Table;
+
+my $itunes = Mac::Glue->new('iTunes');
+
+my $pl = $itunes->obj(playlist => whose(name => equals => 'Most Played'))->get;
+my @tracks = $pl->obj('tracks')->get;
+
+my @cols   = qw(name artist album played_count played_date);
+my @labels = qw(name artist album count last);
+my $tt = Text::Table->new(@labels);
+
+for my $track (@tracks) {
+  my @data = map { $track->prop($_)->get } @cols;
+  $data[0] = elide($data[0], 25);
+  $data[2] = elide($data[2] || '?', 15);
+  my @lt = localtime $data[-1];
+  $data[-1] = strftime('%Y-%m-%d', @lt);
+  $tt->add(@data);
+}
+
+print $tt;

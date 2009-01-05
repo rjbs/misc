@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use Mac::Glue ':glue';
+
+my $itunes  = Mac::Glue->new('iTunes');
+my $library = $itunes->prop('current_playlist');
+
+print $library->prop('name')->get, "\n";
+print $library->prop('duration')->get, "\n";
+
+use Data::Dumper;
+print Dumper $library->prop('track')->get;
