@@ -1,0 +1,67 @@
+#!/usr/bin/perl
+
+package RandomPerson;
+use Getopt::Long::Descriptive;
+use Module::Pluggable search_path => 'Data::RandomPerson::Names';
+
+my %plugins_for;
+for (RandomPerson->plugins) {
+  my ($part) = $_ =~ /(Last|Female|Male)\z/;
+  push @{ $plugins_for{lc $part} }, $_;
+}
+
+my ($opt, $usage) = describe_options(
+  "person %o",
+  [ "gender" => hidden => { one_of => [
+    [ "male|m"   => "get a male name"   ],
+    [ "female|f" => "get a female name" ],
+  ] } ],
+  [ "nationality|n=s", "nationality of name" ],
+  [ "random|r",        "choose each part's nationality randomly" ],
+);
+
+sub nationality_class {
+  my ($part) = @_;
+
+  if ($opt->{random}) {
+    my @plugins = @{ $plugins_for{ $part } };
+    return ($part, $plugins[ rand @plugins ]);
+  }
+
+  my $default = 'Data::RandomPerson::Names::' . ucfirst $part;
+  
+  return ($part, $default) unless $opt->{nationality};
+
+  my $nat_class = 'Data::RandomPerson::Names::'
+                . $opt->{nationality}
+                . ucfirst $part;
+
+  return ($part, $nat_class) if eval "require $nat_class";
+
+  print "couldn't find $nat_class -- using $default for $part names\n";
+  return ($part, $default);
+}
+
+my %part = map { nationality_class($_) } qw(male female last);
+
+my $person_factory = Person->new(%part);
+
+my $person = $person_factory->create;
+
+print "name  : $person->{firstname} $person->{lastname}\n";
+if ($opt->{random}) {
+  printf "%6s: %s\n", $_, $part{$_}
+    for grep { $_ ne ($person->{gender} eq 'm' ? 'female' : 'male') }
+    qw(male female last);
+}
+
+package Person;
+use base qw(Data::RandomPerson);
+
+sub _pick_gender {
+  if ($opt->{gender}) {
+    return 'm' if ($opt->{gender} eq 'male');
+    return 'f' if ($opt->{gender} eq 'female');
+  }
+  $_[0]->SUPER::_pick_gender;
+}

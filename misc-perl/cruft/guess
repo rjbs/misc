@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+
+## by rjbs
+## origin: when learning Perl
+## plays "guess the number"
+
+#print "Greetings, Professor Falken.\nWould you like to play a game?\n? ";
+#  chomp($answer=<STDIN>);
+#  if ($answer =~ /^(yes|no)$/) {
+#        $wanttoplay = ($answer eq "yes")
+#  } else {
+#    print "Please answer yes or no.\nWould you like to play a game?\n? ";
+#  }
+#if ($wanttoplay) {
+  $value=int(rand 100) + 1;
+  $guesses=0;
+  @answers=("too low", "right on", "too high");
+  print "I am thinking of a number between one and one hundred.  Guess.\n";
+  until ($guess[$guesses]==$value) {
+    ++$guesses;
+    print "Guess #$guesses: ";
+    chomp($guess[$guesses]=<STDIN>);
+    print "Your guess was $answers[($guess[$guesses]<=>$value)+1].\n";
+  }
+  print "Good job!  You took $guesses guesses.\n";
+#} else {
+#  print "Fine then, pansy!\n";
+#}

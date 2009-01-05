@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+
+## by rjbs
+## origin: when creating reference
+## for each file on the commandline, create that file in ./new/ with an html
+## wrapper, beginning at the found <TITLE> tag
+##
+## when on earth was this ever useful?
+
+
+for ($i=0; $i<@ARGV; $i++) {
+  $status=0;
+  open(INFILE,"$ARGV[$i]");
+  print "Now processing $ARGV[$i]!\n";
+
+  open(OUTFILE,">new/$ARGV[$i]");
+
+  while ($status==0) {
+    $inline=<INFILE>;
+    if ($inline =~ /<TITLE>/) { $status=1; }
+    print OUTFILE $inline;
+  }
+
+  print OUTFILE "</HEAD>\n";
+  print OUTFILE "<BODY style=\"background-color: white; color: black\">\n";
+
+  while ($status==1) {
+    $inline=<INFILE>;
+    if ($inline eq "<PRE>\n") { $status=2; }
+  } 
+
+  print OUTFILE "<PRE>\n";
+
+  while ($status==2) { 
+    $inline=<INFILE>;
+    if ($inline eq "</PRE>\n") { $status=3; }
+    print OUTFILE $inline;
+  }
+   
+  print OUTFILE "</BODY></HTML>\n";
+
+  close(OUTFILE);
+  close(INFILE);
+}

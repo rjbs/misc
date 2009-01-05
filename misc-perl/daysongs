@@ -1,0 +1,68 @@
+#!/usr/bin/perl
+
+=head1 NAME
+
+daysongs - what songs did you listen to on a given date?
+
+=cut
+
+use strict;
+use warnings;
+
+use Mac::Glue qw(:all);
+use Date::Span;
+
+my $itunes = Mac::Glue->new("iTunes");
+
+sub _unit_from_string {
+	my ($datetime) = @_;
+	return unless my @unit = $datetime =~ 
+		qr/^(\d{4})(?:-(\d{2})(?:-(\d{2})(?:(?:T|)(\d{2})(?::(\d{2}))?)?)?)?$/o;
+	$unit[1]-- if $unit[1];
+	return @unit;
+}
+
+my @unit;
+if ($ARGV[0]) {
+  @unit = _unit_from_string($ARGV[0]);
+} else {
+  @unit = (localtime(time-86400))[5,4,3];
+  $unit[0] += 1900;
+}
+
+my ($start, $end) = range_from_unit(@unit);
+
+my $library = $itunes->obj(playlist => 'Library');
+#my $tracks = $library->obj(tracks => whose(qw(artist equals Cranes)));
+my $tracks = $library->obj( tracks => whose(
+  AND =>
+    [ "played date", "g_t", param_type(typeLongDateTime, $start) ],
+    [ "played date", "l_t", param_type(typeLongDateTime, $end  ) ]
+  )
+);
+
+my @obj = $itunes->get($tracks);
+
+sub iso8601 {
+	my $time = shift;
+	my @time;
+
+  @time = localtime($time);
+	
+	return sprintf("%0.4u-%0.2u-%0.2u %0.2u:%0.2u", 
+		$time[5]+1900,
+		$time[4]+1,
+		$time[3],
+		$time[2],
+		$time[1]
+	);
+}
+
+sub o2h { my $o = shift; map { $_ => ($o->prop($_)->get || '') } @_ }
+
+my %song = map
+  { $_->prop("played date")->get => { o2h($_, qw(name artist)) } } @obj;
+
+for (sort keys %song) {
+  print iso8601($_), ": $song{$_}{name} by $song{$_}{artist}\n";
+}

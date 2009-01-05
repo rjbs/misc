@@ -1,0 +1,18 @@
+A facet is a tag with a value.
+
+A facet is stringified as "tag:value" and is created by the inclusion of such a
+string in the tagstring.
+
+An entry with a value for tag X has tag X.
+
+Given an entry with the facet "tag:value" a user find the entry by querying
+for: (1) tags => [ 'tag' ] (2) tags => [ 'tag:value' ]
+
+Facets are stored in the entrytags table.  The table will go from { id, entry,
+tag} to { id, entry, tag, value }
+
+An entry may have only one value for a tag. (?)
+
+a tag set is an arrayref of tag names
+a facet set is a hashref of tag names as keys and tag values as values; undef
+indicates no constraint on value, "" indicates null

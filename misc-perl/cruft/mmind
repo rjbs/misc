@@ -1,0 +1,42 @@
+#!/usr/bin/perl
+
+## by rjbs
+## origin: when learning perl
+## plays the game of mastermind
+
+$debug = ($ARGV[0] eq "-d") ? 1 : 0;
+for ($i=0; $i<4; $i++) {
+  $j=rand(5) % 5;
+  $pattern[$i]=$j+1;
+}
+$guesses=0;
+while ($justright != 4) {
+  @buffer = (@pattern, 0, 0);
+  $guesses++;
+  $justright = $right = 0;
+  @hit = (0, 0, 0, 0);
+  print "I'm thinking of sequence of four 1-5 numbers.  Make your guess!\n? ";
+  $g=<STDIN>;
+  chomp($g);
+  @guess=split(" ",$g);
+  if ($debug) {
+    print "Given the pattern (@pattern), what is the accuracy of (@guess)?\n";
+  }
+  for ($i=0; $i<@pattern; $i++) {
+    if ($debug) { print "i: $i\n"; }
+    if (($guess[$i]==$pattern[$i]) and ($hit[$i] ne "true")) {
+      $justright++; $right++; $hit[$i]="true"; 
+      if ($debug) { print " Right on!\n"; }
+    }
+    for ($j=0; $j<@guess; $j++) {
+      if (($guess[$j]==$pattern[$i]) and ($hit[$i] ne "true") and ($j != $i)) {
+        $right++; $hit[$i] = "true"; 
+        if ($debug) { print " matched with j:$j\n"; }
+      }
+    }
+    if ($debug) { print " @hit\n Right: $right\n Exact: $justright\n"; }
+  }
+  if ($debug) { print "Right: $right\nExact: $justright\n"; }
+  print "Your guess had $right correct numbers, $justright of which were in the right place.\n";
+}
+print "Congratulations!  You win!  It took you $guesses guesses.\n";

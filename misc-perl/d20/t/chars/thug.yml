@@ -1,0 +1,29 @@
+---
+name  : Thug Thuggerton
+race  : Human
+gender: male
+age   : 19
+hp    : 5
+alignment: Chaotic Evil
+
+classes:
+  - { class: Programmer, level: 3 }
+  - { class: Fighter,    level: 0 }
+attributes:
+  - { attribute: Strength,     value: 10 }
+  - { attribute: Dexterity,    value: 12 }
+  - { attribute: Constitution, value: 15 }
+  - { attribute: Intelligence, value: 13 }
+  - { attribute: Wisdom,       value:  9 }
+  - { attribute: Charisma,     value: 12 }
+skills:
+  - { skill: Ride,        focus: Bicycle, ranks: 1 }
+  - { skill: Programming,                 ranks: 2 }
+
+extra_rules_notes: 
+  - brief  : mtn biker
+    affects: [ skill, ride ]
+    note   :  -1 to Ride for road bikes
+  - brief  : villager
+    affects: [ skill, ride ]
+    note   : +2 to Ride for penny-farthings

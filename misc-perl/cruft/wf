@@ -1,0 +1,74 @@
+#!/usr/bin/perl
+
+## by rjbs
+## origin: unknown
+## fetches weather from wunderground (with lynx!?) and pretty prints
+
+if (($ARGV[0] eq "") or ($ARGV[1] eq "")) 
+  { die "Usage: wf <state> <city>\n       replace spaces with underscores\n"; }
+open(WEATHER,"lynx -dump http://www.wunderground.com/US/$ARGV[0]/$ARGV[1].html|");
+$inline="Reticulating splines."; 
+$done=0; 
+until ($done==1) {
+  $inline=<WEATHER>;
+  if ($inline =~ /([\s\w]+, [\s\w]+) Forecast (\d{1,3}\.\d). ([NS]) (\d{1,3}\.\d). ([EW]).*/) {
+    $location =$1;  $longitude=$2;  $lo2=$3;  $latitude=$4;  $la2=$5;
+    $done=1;
+  }
+}
+
+$done=0;
+
+until ($done==1) {
+  $inline=<WEATHER>;
+  if ($inline =~ /Temperature (\d{1,3}). ([FC])/) {
+    $temp=$1;  $tempscale=$2;  $heatindex=$1; 
+  } elsif ($inline =~ /HeatIndex (\d{1,3}). [FC]/) { 
+    $heatindex=$1;
+  } elsif ($inline =~ /Humidity (\d{1,3})%/) {
+    $humidity=$1; 
+  } elsif ($inline =~ /Dewpoint (\d{1,3}). [CF]/) {
+    $dewpoint=$1; 
+  } elsif ($inline =~ /Wind (\w{1,3}) at (\d{1,3}) (kmph|mph)/) {
+    $winddir=$1;  $windspeed=$2;  $speedscale=$3; 
+  } elsif ($inline =~ /Pressure (\d{2}.\d{2}) (in|cm)/) {
+    $pressure=$1;  $lengthscale=$2;
+  } elsif ($inline =~ /Conditions ([\w\s]+)\n/) {
+    $conditions=$1; 
+  } elsif ($inline =~ /Visibility (\d{1,3}) (miles|kilometers)/) {
+    $visibility=$1; $longscale=$2; 
+  } elsif ($inline =~ /Moon Phase/) {  
+    $done=1;
+ }
+}
+$done=0; $i=0;
+until ($done==1) {
+  $inline=<WEATHER>;
+  if ($inline =~ /\[\w+\.GIF\] ([\w\s]+)\n/) {
+    $forecasttime[$i++]=$1; 
+  } elsif ($inline =~ /Please Visit Our Sponsors:/) {
+    $done=1;
+  } elsif (($i>0) and ($inline=~ /^\s\s\s(.+)\n$/)) { 
+    $forecasttext[$i-1]=$forecasttext[$i-1].$1." ";
+  }
+}
+
+printf "+=== %60s ============+\n", "Weather in $location ($longitude o $lo2 x $latitude o $la2)";
+print "|---------------------------- Current conditions -----------------------------|\n";
+printf "| Temperature: %23s | Heat Index: %24s |\n","$temp o $tempscale","$heatindex o $tempscale";
+printf "| Humidity: %26s | Dewpoint: %26s |\n","$humidity%","$dewpoint o $tempscale";
+printf "| Winds: %29s | Pressure: %26s |\n","$windspeed $speedscale from $winddir","$pressure $lengthscale";
+printf "| Conditions: %24s | Visibility: %24s |\n","$conditions","$visibility $longscale";
+print "|---------------------------------- Forecast ---------------------------------|\n";
+for ($j=0;$j<$i;$j++) {
+  printf "+-------------------------- %24s -------------------------+\n",$forecasttime[$j];
+  @fc2=split('\. ',$forecasttext[$j]);
+#  print @fc2;
+  for ($k=0;$k<@fc2;$k++) {
+    printf "| %75s |\n","$fc2[$k].";
+  }
+#  print "| $forecasttext[$j]\n";
+}
+print "+-----------------------------------------------------------------------------+\n";
+
+close(WEATHER);

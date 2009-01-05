@@ -1,0 +1,6 @@
+?
+--This line, and those below, will be ignored--
+
+M    t/archive.t
+M    lib/CPAN/Mini/Archive.pm
+M    minicpan

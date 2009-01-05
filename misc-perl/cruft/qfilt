@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+
+## by rjbs
+## origin: unknown
+## reads tab-delimited lines from ARG1 and prints the line's CDR, CAR times.
+## possibly the worst of my old code I've found
+
+sub multiply {
+  chomp($intext);
+  @words = split("	",$intext);
+  for ($i=0; $i<$words[0]; $i++) {
+    $j=1;
+    while (($words[$j+1]) or ($words[$j])) {
+      print OUTFILE $words[$j]; 
+      $j++;
+      print OUTFILE "	";
+    }
+    print OUTFILE "\n";
+  }
+}
+
+open(INFILE,$ARGV[0]);
+open(OUTFILE,">$ARGV[1]");
+
+while ($intext = <INFILE>) {
+  multiply;
+}
+
+close(INFILE);
+close(OUTFILE);

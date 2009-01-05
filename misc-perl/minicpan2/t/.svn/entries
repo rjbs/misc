@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2005-03-13T02:43:35.286262Z"
+   url="svn+ssh://cvs.manxome.org/home/rjbs/svn/code/minicpan2/t"
+   last-author="rjbs"
+   kind="dir"
+   uuid="5f481ac0-28f2-0310-be36-d1ba004871d1"
+   revision="1"/>
+<entry
+   committed-rev="2"
+   name="archive.t"
+   text-time="2005-03-13T20:20:25.000000Z"
+   committed-date="2005-03-13T20:21:58.586074Z"
+   checksum="af2dbcebb5db3980cdb3dbdf9c3046a8"
+   last-author="rjbs"
+   kind="file"
+   prop-time="2005-03-13T02:44:12.000000Z"
+   revision="2"/>
+<entry
+   committed-rev="1"
+   name="pod.t"
+   text-time="2005-03-13T02:44:13.000000Z"
+   committed-date="2005-03-13T02:43:35.286262Z"
+   checksum="cb43d6874892d3d70bfc849d170c98ed"
+   last-author="rjbs"
+   kind="file"
+   prop-time="2005-03-13T02:44:13.000000Z"/>
+<entry
+   committed-rev="6"
+   name="writeindex.t"
+   text-time="2005-03-14T03:23:52.000000Z"
+   committed-date="2005-03-14T03:24:00.522499Z"
+   checksum="5d464b51bbccaebae51bab5494d07fe1"
+   last-author="rjbs"
+   kind="file"
+   revision="6"/>
+<entry
+   committed-rev="1"
+   name="pod-coverage.t"
+   text-time="2005-03-13T02:44:13.000000Z"
+   committed-date="2005-03-13T02:43:35.286262Z"
+   checksum="bf081e87ce86d433d1bb3df6ec357e02"
+   last-author="rjbs"
+   kind="file"
+   prop-time="2005-03-13T02:44:13.000000Z"/>
+<entry
+   committed-rev="1"
+   name="00-load.t"
+   text-time="2005-03-13T02:44:13.000000Z"
+   committed-date="2005-03-13T02:43:35.286262Z"
+   checksum="069c5c081329781a88cdbbd285f5d60f"
+   last-author="rjbs"
+   kind="file"
+   prop-time="2005-03-13T02:44:13.000000Z"/>
+</wc-entries>

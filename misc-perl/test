@@ -1,0 +1,6 @@
+use strict; use warnings;
+use Parse::GutenbergRoget;                                                      
+use Data::Dumper;                                                               
+my %section = parse_roget("./roget15a.txt");                                    
+print "done\n";
+

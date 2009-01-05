@@ -1,0 +1,88 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Compress::Zlib qw(gzopen);
+use Parse::CPAN::Packages;
+use Sort::Versions;
+use LWP::Simple qw(mirror RC_OK RC_NOT_MODIFIED);
+
+my $local  = { prefix => '/Users/rjbs/mirrors/minicpan2/' };
+my $remote = { prefix => '/tmp/', uri => 'http://cpan.mirrors.manxome.org/' };
+
+sub mirror_index {
+	my $remote_uri = $remote->{uri} . 'modules/02packages.details.txt.gz';
+	warn "mirroring $remote_uri\n";
+	my $status = mirror($remote_uri, '/tmp/modules/02packages.details.txt.gz');
+	die "nothing to do" unless $status == RC_OK;
+}
+
+mirror_index;
+
+for my $cpan ($remote, $local) {
+	my $p = Parse::CPAN::Packages->new("$cpan->{prefix}/modules/02packages.details.txt.gz");
+	$cpan->{dists} = { map { ($_->dist => $_) } $p->latest_distributions };
+}
+
+sub delete_local {
+	my ($dist) = @_;
+	my $file = $local->{prefix} . "authors/id/" . $dist->prefix;
+	print "D $file\n";
+	unlink $file;
+}
+
+sub mirror_file {
+	my ($dist) = @_;
+	my $uri  = $remote->{uri}   . "authors/id/" . $dist->prefix;
+	my $file = $local->{prefix} . "authors/id/" . $dist->prefix;
+	print "M $uri\n";
+	print " -> $file\n";
+	my $status = mirror($uri, $file);
+	index_file($dist);
+}
+
+my @index;
+sub index_file {
+	my ($dist) = @_;
+	push @index,
+		map { _fmtmodule($_->package, $dist->prefix, $_->version) } $dist->contains;
+}
+
+for my $dist (keys %{$remote->{dists}}) {
+	my ($rd, $ld) = ($remote->{dists}{$dist}, $local->{dists}{$dist});
+	if ($ld) {
+		if (versioncmp($ld->version , $rd->version) == -1) {
+			delete_local($ld);
+			mirror_file($rd);
+		} else {
+			index_file($ld);
+		}
+	} else {
+		mirror_file($rd);
+	}
+}
+
+my $size = @index;
+my $time = gmtime;
+
+my $indexfile = gzopen("$local->{prefix}/modules/02packages.details.txt", 'wb');
+
+$indexfile->gzwrite(<<"END_HEADER");
+File:         02packages.details.txt
+Description:  Package names found in directory \$CPAN/authors/id/
+Columns:      package name, version, path
+Intended-For: Automated fetch routines, namespace documentation.
+Written-By:   CPAN::Mini
+Line-Count:   $size
+Last-Updated: $time
+
+END_HEADER
+
+$indexfile->gzwrite("$_\n") for sort { lc $a cmp lc $b } @index;
+$indexfile->gzclose;
+
+sub _fmtmodule {
+	my ($module,$file,$version)=@_;
+	$module.=' ' while(length($module)+length($version) < 38);
+	return "$module $version  $file";
+}

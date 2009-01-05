@@ -1,0 +1,59 @@
+#!/icg/bin/perl
+
+use strict;
+use warnings;
+
+use DBI;
+
+my %family = (
+  pobox   => {
+    master => 'orb',
+    user   => 'cust',
+    passwd => 'pw',
+  },
+  listbox => {
+    master => 'puzzle',
+    user   => 'myslave',
+    passwd => 'pw',
+  },
+);
+
+die "usage: db-agree <family> <database> <table> <key> <field>\n"
+  unless @ARGV == 5;
+
+my ($family, $db, $table, $key, $field) = @ARGV;
+chomp(my @slaves = `group $family-slaves`);
+
+sub icg_dbh {
+  my ($server) = @_;
+  DBI->connect(
+    "dbi:mysql:host=$server;database=$db",
+    $family{$family}{user},
+    $family{$family}{passwd},
+  );
+}
+
+
+my $master = icg_dbh($family{$family}{master});
+
+my %slave;
+$slave{$_} = icg_dbh($_) for @slaves;
+
+my $master_items = $master->selectall_hashref(
+  "SELECT $key, $field FROM $table",
+  $key
+);
+
+my %slave_items = map
+  { $_, $slave{$_}->selectall_hashref("SELECT $key, $field FROM $table", $key) }
+  @slaves;
+
+for my $item (values %$master_items) {
+  if (grep { $_ ne $item->{$field} }
+      map  { $slave_items{$_}{$item->{$key}}{$field} } @slaves
+     ) {
+    print  "disagreement on $key $item->{$key}:\n";
+    printf "  %10s: %s\n", "*$family{$family}{master}", $item->{$field};
+    printf "  %10s: %s\n", $_, $slave_items{$_}{$item->{$key}}{$field} for @slaves;
+  }
+}

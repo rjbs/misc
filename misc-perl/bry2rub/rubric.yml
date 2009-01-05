@@ -1,0 +1,2 @@
+dsn: |-
+  dbi:SQLite:dbname=rubric.db

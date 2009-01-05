@@ -1,0 +1,4 @@
+#!/bin/zsh
+for i in **/*.pm
+  do (echo -n $i:; grep -c '^=' $i) | grep ':0$' | sed -e 's/:0$//'
+done

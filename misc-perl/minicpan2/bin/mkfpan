@@ -1,0 +1,24 @@
+#!perl
+
+use File::Basename qw(dirname);
+use File::Copy qw(copy);
+use File::Path qw(mkpath);
+use Parse::CPAN::Packages;
+
+my ($path) = @ARGV;
+
+my $p = Parse::CPAN::Packages->new("$path/modules/02packages.details.txt.gz");
+
+for ($p->distributions) {
+  my $filepath = "$path/authors/id/" . dirname($_->prefix);
+  my $filename = "$filepath/" . $_->filename;
+  
+  mkpath($filepath);
+
+  if (not -e $filename) {
+    open my $file, ">", $filename;
+    print $file "\n";
+    close $file;
+  }
+}
+
