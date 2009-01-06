@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+use strict;
+use File::chdir;
+
+for my $dir (@ARGV) {
+  $dir =~ s{/$}{};
+  print "-- $dir --\n";
+
+  my $repo = (lc $dir) . '.git';
+
+  local $CWD = $dir;
+  print `git remote add gh git\@github.com:rjbs/$repo`;
+  print `git push gh master`;
+  print `git push --tags gh master`;
+}

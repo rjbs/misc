@@ -1,0 +1,67 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use WWW::Mechanize;
+use Mac::Glue qw(:glue);
+
+my $title = $ARGV[0];
+
+my $iTunes = Mac::Glue->new('iTunes');
+
+my $playlist = $iTunes->obj(
+  playlist => whose(name => equals => $title)
+);
+
+my @tracks = @{ $playlist->obj('tracks')->get || [] };
+die "couldn't find tracks in playlist <$title>" unless @tracks;
+
+die "too many tracks" if @tracks > 12;
+
+for (@tracks) {
+  die "track too large" if $_->prop('size')->get > 10_000_000;
+}
+
+my $mech = WWW::Mechanize->new;
+
+$mech->get('http://muxtape.com/login');
+
+$mech->submit_form(
+  with_fields => {
+    name => 'rjbs',
+    pass => 'password',
+  },
+);
+
+$mech->get('http://muxtape.com/organize');
+
+my @ids = $mech->content =~ m{li id="(song[0-9a-f]{32})"}g;
+
+for my $id (@ids) {
+  $id =~ s/^song//;
+  print "deleting $id\n";
+
+  $mech->post(
+    'http://muxtape.com/organize/ajax',
+    Content => "command=delete&args=$id",
+  );
+}
+
+for my $track (reverse @tracks) {
+  $mech->get('http://muxtape.com/upload');
+  my $path = $track->prop('location')->get;
+  print "uploading $path\n";
+  $mech->submit_form(with_fields => { file => $path });
+}
+
+my @month = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
+my @lt    = localtime;
+my $date  = "$month[ $lt[4] ] $lt[3]";
+
+$title =~ s/.+: //;
+$mech->post(
+  'http://muxtape.com/settings/ajax',
+  Content => qq{command=bannercaption&args="none"&banner=$date: $title},
+);
+
+print $mech->content;

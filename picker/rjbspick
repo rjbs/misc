@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Module::Picker;
+use Parse::CPAN::Packages;
+my $p = Parse::CPAN::Packages->new(
+  '/Users/rjbs/mirrors/minicpan/modules/02packages.details.txt.gz'
+);
+
+my @packages
+  = Module::Picker->pick_packages($p, sub { $_[0]->cpanid eq 'RJBS' });
+
+for my $package (@packages) {
+  print $package->package, "\n";
+}

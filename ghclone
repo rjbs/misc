@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use JSON::XS;
+use LWP::Simple qw(get);
+
+my $api_uri = get('http://github.com/api/v1/json/rjbs');
+my $data    = JSON::XS->new->decode($api_uri);
+
+my @repositories = @{ $data->{user}{repositories} };
+
+for my $repo (sort { $a->{name} cmp $b->{name} } @repositories) {
+  my $name = $repo->{name};
+  my $uri  = sprintf 'git@github.com:%s/%s.git', 'rjbs', $name;
+
+  if (-d $name) {
+    print `cd $name && git pull 2>&1`;
+  } else {
+    print `git clone $uri 2>&1`;
+  }
+}
+
