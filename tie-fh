@@ -1,0 +1,21 @@
+use strict;
+use warnings;
+use Data::Dumper;
+my @values = '';
+
+{
+  package LogStr;
+  sub TIESCALAR { bless {} }
+  sub FETCH { $values[-1] }
+  sub STORE { push @values, $_[1]; }
+}
+
+tie my $string, 'LogStr';
+$string = 'first';
+$string = 'second';
+
+open my $fh, '>', \$string or die "can't open ref to tied str: $!";
+print $fh "third" or die "can't print to handle on ref to tied str: $!";
+close $fh, or die "can't open ref to tied str: $!";
+
+print Dumper({ values => \@values, string => $string });
