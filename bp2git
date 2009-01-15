@@ -1,0 +1,48 @@
+#!/usr/local/bin/perl
+use strict;
+use warnings;
+use 5.010;
+
+use Parse::BACKPAN::Packages;
+use Parse::CPAN::Authors;
+
+my $P = Parse::BACKPAN::Packages->new;
+my $A = Parse::CPAN::Authors->new(
+  "$ENV{HOME}/mirrors/minicpan/authors/01mailrc.txt.gz"
+);
+
+my $distname = $ARGV[0] or die "must pass dist name";
+my @dists = sort { $a->version <=> $b->version } $P->distributions($distname);
+
+die "no dists found for $distname" unless @dists;
+
+my $dest = "$ENV{PWD}/$distname";
+mkdir $dest;
+chdir $dest or die;
+`chdir $dest; git init`;
+
+while (my $dist = shift @dists) {
+  my $url  = sprintf 'http://backpan.perl.org/%s', $dist->prefix;
+  my $file = $dist->filename;
+  my $dir  = $dist->distvname;
+  my $ver  = $dist->version;
+
+  my $cpan_author = $A->author($dist->cpanid);
+  my $author_arg  = sprintf '%s <%s>', $cpan_author->name, $cpan_author->email;
+
+  `wget $url && tar zxvf $file && rm $file`;
+  my @distfiles = `find $dir -mindepth 1 -maxdepth 1`;
+  chomp @distfiles;
+  `mv $_  .` for @distfiles;
+  rmdir $dir or die "can't rmdir $dir: $!";
+  $ENV{"GIT_$_\_DATE"} = $dist->date for qw(COMMIT AUTHOR COMMITTER);
+  `git add . && git commit -a -m 'import version $ver from backpan' --author="$author_arg"`;
+  `git tag $ver`;
+
+  if (@dists) {
+    my @purgefiles = `find . -maxdepth 1`;
+    chomp @purgefiles;
+    `rm -R $_` for grep { $_ ne './.git' } @purgefiles;
+  }
+}
+
