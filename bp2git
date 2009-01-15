@@ -30,7 +30,7 @@ while (my $dist = shift @dists) {
   my $cpan_author = $A->author($dist->cpanid);
   my $author_arg  = sprintf '%s <%s>', $cpan_author->name, $cpan_author->email;
 
-  `wget $url && tar zxvf $file && rm $file`;
+  `wget $url && tar zxvf $file && rm -f $file`;
   my @distfiles = `find $dir -mindepth 1 -maxdepth 1`;
   chomp @distfiles;
   `mv $_  .` for @distfiles;
@@ -42,7 +42,7 @@ while (my $dist = shift @dists) {
   if (@dists) {
     my @purgefiles = `find . -maxdepth 1`;
     chomp @purgefiles;
-    `rm -R $_` for grep { $_ ne './.git' } @purgefiles;
+    `rm -rf $_` for grep { $_ ne './.git' } @purgefiles;
   }
 }
 
