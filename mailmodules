@@ -44,7 +44,7 @@ $agent->submit_form(
   form_name => 'userlogin',
   fields => {
     wpName      => "MechaRJBS",
-    wpPassword  => 'cherrycokezero',
+    wpPassword  => 'password',
   }
 );
 
