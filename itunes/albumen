@@ -135,6 +135,10 @@ ADDITION: for my $key (sort { $avg_age{$b} <=> $avg_age{$a} } keys %album) {
     $total_size += $t->prop('size')->get; # in bytes
 
     my $dupe_track = $itunes->duplicate($t, to => $albumen);
+    unless ($dupe_track) {
+      warn "could not dupe track\n";
+      next;
+    }
     $included_track{ $dupe_track->prop('database id')->get } = 1;
   }
 
