@@ -15,9 +15,14 @@ for my $repo (sort { $a->{name} cmp $b->{name} } @repositories) {
   my $uri  = sprintf 'git@github.com:%s/%s.git', 'rjbs', $name;
 
   if (-d $name) {
-    print `cd $name && git pull 2>&1`;
+    do_cmd("cd $name && git pull 2>&1");
   } else {
-    print `git clone $uri 2>&1`;
+    do_cmd("git clone $uri 2>&1");
   }
 }
 
+sub do_cmd {
+  my ($cmd) = @_;
+  print "$cmd\n";
+  print `$cmd`;
+}

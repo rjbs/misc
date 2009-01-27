@@ -1,0 +1,75 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use 5.010;
+use DBI;
+use JSON::XS;
+
+my $dbh = DBI->connect('dbi:SQLite:dbname=cpants_all.db', undef, undef);
+
+my $authors = $dbh->selectall_arrayref(
+  "SELECT id, pauseid
+  FROM author
+  WHERE pauseid IS NOT NULL
+  ORDER BY pauseid"
+);
+
+my @results;
+
+for my $author (@$authors) {
+  my ($author_id, $pauseid) = @$author;
+
+  my $dists = $dbh->selectall_arrayref(
+    "SELECT id, dist FROM dist WHERE author = ? ORDER BY dist",
+    undef,
+    $author_id,
+  );
+
+  my %analysis;
+
+  analyze_dist(\%analysis, $author_id, $_) for @$dists;
+
+  my $sum = 0;
+  $sum += $_ for values %analysis;
+
+  next unless $sum;
+
+  warn "$pauseid,$sum\n";
+  push @results, {
+    pauseid => $pauseid,
+    result  => $sum,
+    dists   => \%analysis,
+  };
+}
+
+my $JSON = JSON::XS->new;
+for my $author (sort { $b->{result} <=> $a->{result} } @results) {
+  say $JSON->encode($author);
+}
+
+sub analyze_dist {
+  my ($analysis, $author_id, $dist, $seen, $add_to) = @_;
+  $seen ||= {};
+  $add_to ||= $dist->[1];
+
+  my @queue = $dist;
+
+  $analysis->{ $add_to }++;
+
+  my $needed_by = $dbh->selectall_arrayref(
+    "SELECT p.dist, d.dist AS name
+    FROM prereq p
+    JOIN dist d ON d.id = p.dist
+    WHERE p.in_dist = ?
+    AND author <> ?",
+    undef,
+    $dist->[0],
+    $author_id
+  );
+
+  for my $needed (@$needed_by) {
+    next if $seen->{ $needed->[1] };
+    $seen->{ $dist->[1] }++;
+    analyze_dist($analysis, $author_id, $needed, $seen, $add_to);
+  }
+}
