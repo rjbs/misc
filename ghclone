@@ -2,15 +2,24 @@
 use strict;
 use warnings;
 
+use Config::INI::Reader;
 use JSON::XS;
 use LWP::Simple qw(get);
 
-my $api_uri = get('http://github.com/api/v1/json/rjbs');
+my $config  = Config::INI::Reader->read_file("$ENV{HOME}/.gitconfig");
+my $login   = $config->{github}{login};
+my $token   = $config->{github}{token};
+
+my $api_uri =
+  get("http://github.com/api/v1/json/$login?login=$login&token=$token");
+
 my $data    = JSON::XS->new->decode($api_uri);
 
 my @repositories = @{ $data->{user}{repositories} };
 
 for my $repo (sort { $a->{name} cmp $b->{name} } @repositories) {
+  next if $repo->{private};
+
   my $name = $repo->{name};
   my $uri  = sprintf 'git@github.com:%s/%s.git', 'rjbs', $name;
 
