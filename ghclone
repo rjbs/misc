@@ -7,8 +7,8 @@ use JSON::XS;
 use LWP::Simple qw(get);
 
 my $config  = Config::INI::Reader->read_file("$ENV{HOME}/.gitconfig");
-my $login   = $config->{github}{login};
-my $token   = $config->{github}{token};
+my $login   = $ENV{GITHUB_LOGIN} || $config->{github}{login};
+my $token   = $ENV{GITHUB_TOKEN} || $config->{github}{token};
 
 my $api_uri =
   get("http://github.com/api/v1/json/$login?login=$login&token=$token");
@@ -18,15 +18,16 @@ my $data    = JSON::XS->new->decode($api_uri);
 my @repositories = @{ $data->{user}{repositories} };
 
 for my $repo (sort { $a->{name} cmp $b->{name} } @repositories) {
-  next if $repo->{private};
+  next if $repo->{private} and not $ENV{GITHUB_PRIVATE};
 
   my $name = $repo->{name};
-  my $uri  = sprintf 'git@github.com:%s/%s.git', 'rjbs', $name;
+  my $uri  = sprintf 'git@github.com:%s/%s.git', $login, $name;
 
   if (-d $name) {
     do_cmd("cd $name && git pull 2>&1");
   } else {
-    do_cmd("git clone $uri 2>&1");
+    my $bare = $ENV{GIT_BARE} ? '--bare' : '';
+    do_cmd("git clone $bare $uri 2>&1");
   }
 }
 
