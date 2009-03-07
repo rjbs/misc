@@ -3,12 +3,21 @@ use strict;
 use warnings;
 
 use Config::INI::Reader;
+use Getopt::Long::Descriptive;
 use JSON::XS;
 use LWP::Simple qw(get);
 
+my ($opt, $usage) = describe_options(
+  '%c %o',
+  [ 'private|p!', 'include private repositories'     ],
+  [ 'base|b!',    'produce bare clones'              ],
+  [ 'login|l=s',  'login to use (instead of config)' ],
+  [ 'token|t=s',  'token to use (instead of config)' ],
+);
+
 my $config  = Config::INI::Reader->read_file("$ENV{HOME}/.gitconfig");
-my $login   = $ENV{GITHUB_LOGIN} || $config->{github}{login};
-my $token   = $ENV{GITHUB_TOKEN} || $config->{github}{token};
+my $login   = $opt->{login} || $config->{github}{login};
+my $token   = $opt->{token} || $config->{github}{token};
 
 my $api_uri =
   get("http://github.com/api/v1/json/$login?login=$login&token=$token");
@@ -17,8 +26,10 @@ my $data    = JSON::XS->new->decode($api_uri);
 
 my @repositories = @{ $data->{user}{repositories} };
 
+my %existing_dir  = map { $_ => 1 } grep { $_ !~ m{\A\.} and -d $_ } <*>;
+
 for my $repo (sort { $a->{name} cmp $b->{name} } @repositories) {
-  next if $repo->{private} and not $ENV{GITHUB_PRIVATE};
+  next if $repo->{private} and not $opt->{private};
 
   my $name = $repo->{name};
   my $uri  = sprintf 'git@github.com:%s/%s.git', $login, $name;
@@ -26,9 +37,15 @@ for my $repo (sort { $a->{name} cmp $b->{name} } @repositories) {
   if (-d $name) {
     do_cmd("cd $name && git pull 2>&1");
   } else {
-    my $bare = $ENV{GIT_BARE} ? '--bare' : '';
+    my $bare = $opt->{bare} ? '--bare' : '';
     do_cmd("git clone $bare $uri 2>&1");
   }
+
+  delete $existing_dir{ $name };
+}
+
+for (keys %existing_dir) {
+  warn "unknown directory found: $_\n";
 }
 
 sub do_cmd {
