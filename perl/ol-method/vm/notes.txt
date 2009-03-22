@@ -1,0 +1,6 @@
+
+* overload methods
+* recursive invoke_method
+* changes from my original "only on blessed things"
+* the mro-define v. just variable magic thing
+* why is 5.10 needed? (fetch magic?)
