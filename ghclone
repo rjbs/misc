@@ -13,6 +13,7 @@ my ($opt, $usage) = describe_options(
   [ 'base|b!',    'produce bare clones'              ],
   [ 'login|l=s',  'login to use (instead of config)' ],
   [ 'token|t=s',  'token to use (instead of config)' ],
+  [ 'clonely|c',  'only clone things that do not exist; skip others' ],
 );
 
 my $config  = Config::INI::Reader->read_file("$ENV{HOME}/.gitconfig");
@@ -35,7 +36,7 @@ for my $repo (sort { $a->{name} cmp $b->{name} } @repositories) {
   my $uri  = sprintf 'git@github.com:%s/%s.git', $login, $name;
 
   if (-d $name) {
-    do_cmd("cd $name && git pull 2>&1");
+    do_cmd("cd $name && git pull 2>&1") unless $opt->{clonely};
   } else {
     my $bare = $opt->{bare} ? '--bare' : '';
     do_cmd("git clone $bare $uri 2>&1");
