@@ -20,10 +20,10 @@ my $config  = Config::INI::Reader->read_file("$ENV{HOME}/.gitconfig");
 my $login   = $opt->{login} || $config->{github}{login};
 my $token   = $opt->{token} || $config->{github}{token};
 
-my $api_uri =
+my $json =
   get("http://github.com/api/v1/json/$login?login=$login&token=$token");
 
-my $data    = JSON::XS->new->decode($api_uri);
+my $data    = JSON::XS->new->decode($json);
 
 my @repositories = @{ $data->{user}{repositories} };
 
