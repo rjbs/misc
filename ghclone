@@ -23,7 +23,9 @@ my $token   = $opt->{token} || $config->{github}{token};
 my $json =
   get("http://github.com/api/v1/json/$login?login=$login&token=$token");
 
-my $data    = JSON::XS->new->decode($json);
+my $data = eval { JSON::XS->new->decode($json) };
+
+die "BAD JSON\n$@\n$json\n" unless $data;
 
 my @repositories = @{ $data->{user}{repositories} };
 
@@ -36,7 +38,8 @@ for my $repo (sort { $a->{name} cmp $b->{name} } @repositories) {
   my $uri  = sprintf 'git@github.com:%s/%s.git', $login, $name;
 
   if (-d $name) {
-    do_cmd("cd $name && git pull 2>&1") unless $opt->{clonely};
+    do_cmd("cd $name && git fetch origin && git merge origin/master 2>&1")
+      unless $opt->{clonely};
   } else {
     my $bare = $opt->{bare} ? '--bare' : '';
     do_cmd("git clone $bare $uri 2>&1");
