@@ -2,40 +2,56 @@
 use strict;
 use warnings;
 
+use autodie;
 use Config::INI::Reader;
 use Getopt::Long::Descriptive;
 use JSON::XS;
-use LWP::Simple qw(get);
+
+{
+  package Git::Cloner::Source::Github;
+  use LWP::Simple qw(get);
+
+  sub repo_uris {
+    my $config  = Config::INI::Reader->read_file("$ENV{HOME}/.gitconfig");
+    my $login   = $config->{github}{login} || die "no github login\n";
+    my $token   = $config->{github}{token} || die "no github token\n";
+
+    my $json =
+      get("http://github.com/api/v1/json/$login?login=$login&token=$token");
+
+    my $data = eval { JSON::XS->new->decode($json) };
+
+    die "BAD JSON\n$@\n$json\n" unless $data;
+
+    my @repos = @{ $data->{user}{repositories} };
+
+    my %repo_uri;
+    for my $repo (@repos) {
+      $repo_uri{ $repo->{name} } = sprintf 'git@github.com:%s/%s.git',
+        $login,
+        $repo;
+    }
+
+    return \%repo_uri;
+  }
+}
 
 my ($opt, $usage) = describe_options(
   '%c %o',
-  [ 'private|p!', 'include private repositories'     ],
-  [ 'base|b!',    'produce bare clones'              ],
-  [ 'login|l=s',  'login to use (instead of config)' ],
-  [ 'token|t=s',  'token to use (instead of config)' ],
+  # [ 'private|p!', 'include private repositories'     ],
+  [ 'bare|b!',    'produce bare clones'              ],
   [ 'clonely|c',  'only clone things that do not exist; skip others' ],
 );
 
-my $config  = Config::INI::Reader->read_file("$ENV{HOME}/.gitconfig");
-my $login   = $opt->{login} || $config->{github}{login};
-my $token   = $opt->{token} || $config->{github}{token};
-
-my $json =
-  get("http://github.com/api/v1/json/$login?login=$login&token=$token");
-
-my $data = eval { JSON::XS->new->decode($json) };
-
-die "BAD JSON\n$@\n$json\n" unless $data;
-
-my @repositories = @{ $data->{user}{repositories} };
+my $repos = Git::Cloner::Source::Github->repo_uris;
 
 my %existing_dir  = map { $_ => 1 } grep { $_ !~ m{\A\.} and -d $_ } <*>;
 
-for my $repo (sort { $a->{name} cmp $b->{name} } @repositories) {
-  next if $repo->{private} and not $opt->{private};
+for my $name (sort { $a cmp $b } keys %$repos) {
+  # next if $repo->{private} and not $opt->{private};
 
-  my $name = $repo->{name};
-  my $uri  = sprintf 'git@github.com:%s/%s.git', $login, $name;
+  my $name = $name;
+  my $uri  = $repos->{ $name };
 
   if (-d $name) {
     do_cmd("cd $name && git fetch origin && git merge origin/master 2>&1")
