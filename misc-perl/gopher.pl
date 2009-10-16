@@ -21,10 +21,12 @@ warn "waiting for incoming connections on port 70...\n";
 
 my $directory = { content => [
 	{ name => 'hello', desc => 'hello', content => 'Hello, 1993-era world!' },
-	{ name => 'wtf', desc => "I don't get it.", content => [
-		{ name => 'wtf', desc => 'What is this?', content => 'Gopher!' },
-		{ name => 'why', desc => 'Why would you do this?', content => 'Cuz!' },
-	]}
+	{
+    name => 'wtf',   desc => "I don't get it.", content => [
+      { name => 'wtf', desc => 'What is this?', content => 'Gopher!' },
+      { name => 'why', desc => 'Why would you do this?', content => 'Cuz!' },
+    ]
+	}
 ]};
 
 while (1) {
@@ -33,9 +35,6 @@ while (1) {
   	$connection->close;
   	next;
   } else {
-		#my ($port,$hisaddr) = sockaddr_in($remote_addr);
-		#warn "Connection from [",inet_ntoa($hisaddr),",$port]\n";
-
 		$connection->autoflush(1);
 		my $request = $connection->getline;
 
@@ -55,6 +54,7 @@ while (1) {
 
 sub get_item {
 	my ($index, $dir) = @_;
+	warn ">> $dir\n";
 	$dir ||= $directory;
 	my ($head, $tail) = split '/', $index, 2;
 	return $dir unless $head;
