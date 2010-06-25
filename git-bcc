@@ -1,0 +1,31 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $merge_target = $ARGV[0];
+die "usage: git bcc REMOTEBRANCH\n" unless $merge_target;
+
+my $current = `git show-ref --head HEAD -s`;
+chomp $current;
+
+my $start = `git merge-base HEAD $merge_target`;
+chomp $start;
+
+my @list = `git rev-list $start..$merge_target --reverse`;
+chomp @list;
+
+for my $commit (@list) {
+  printf "%s commits to cherry-pick...\n", +@list;
+  next unless system("git cherry-pick $commit");
+
+  warn "error cherry-picking $commit, resetting to $current\n";
+  `git reset $current`;
+  exit 1;
+}
+
+my $new = `git show-ref --head HEAD -s`;
+chomp $new;
+
+print "branch cherry-pick complete\n";
+print "old HEAD position: $current\n";
+print "new HEAD position: $new\n";
