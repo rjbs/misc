@@ -78,8 +78,7 @@ sub groups_from_file {
 }
 
 my %color = (
-  # groups_from_file("$ENV{HOME}/.vim/colors/manxome.vim"),
-  groups_from_file("/usr/share/vim/vim62/colors/elflord.vim"),
+  groups_from_file("$ENV{HOME}/.vim/colors/manxome.vim"),
 );
 
 $color{Normal} ||= {};
