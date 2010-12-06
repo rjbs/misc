@@ -35,6 +35,36 @@ local $RTF::Writer::Escape[ ord('-') ] = '-';
 # place. -- rjbs, 2007-09-05
 local $RTF::Writer::AUTO_NL = 0;
 
+$rtf->prolog(
+  fonts  => [ $opt->{font_face} ],
+  colors => [ all_colors() ],
+);
+
+my $hp_size = $opt->{font_size} * 2; # RTF uses half-points for font size
+
+# Set size, font, and background color.
+$rtf->print(
+  \"\\fs$hp_size\\f0",
+  color_controls_for('Normal')
+);
+
+my $tokens = $syn->marked;
+
+while (my $pair = shift @$tokens) {
+  my ($type, $text) = @$pair;
+
+  $rtf->print(
+    color_controls_for($type), " ",
+    $text,
+  );
+}
+
+$rtf->close;
+
+print $str;
+
+# SUBROUTINES
+
 sub color_to_rgb {
   my ($str) = @_;
 
@@ -64,7 +94,7 @@ sub groups_from_file {
     my %attr;
 
     if (my ($fg) = $line =~ /guifg=(\S+)/) {
-      $attr{fg} = color_to_rgb($fg);
+      $attr{fg} = color_to_rgb($1);
     }
 
     if (my ($bg) = $line =~ /guibg=(\S+)/) {
@@ -77,29 +107,30 @@ sub groups_from_file {
   return %color;
 }
 
-my %color = (
-  groups_from_file("$ENV{HOME}/.vim/colors/manxome.vim"),
-);
-
-$color{Normal} ||= {};
-$color{Normal}{bg} ||= [   0,   0,   0 ];
-$color{Normal}{fg} ||= [ 127, 127, 127 ];
-
 my %color_pos;
 my @colors;
+BEGIN {
+  my %color = (
+    groups_from_file("$ENV{HOME}/.vim/colors/manxome.vim"),
+  );
 
-for my $group (keys %color) {
-  for my $which (qw(fg bg)) {
-    next unless my $rgb = $color{ $group }{ $which };
+  $color{Normal} ||= {};
+  $color{Normal}{bg} ||= [   0,   0,   0 ];
+  $color{Normal}{fg} ||= [ 127, 127, 127 ];
 
-    my $pos = $color_pos{ join('-', @$rgb) };
+  for my $group (keys %color) {
+    for my $which (qw(fg bg)) {
+      next unless my $rgb = $color{ $group }{ $which };
 
-    unless (defined $pos) {
-      push @colors, $rgb;
-      $pos = $color_pos{ join('-', @$rgb) } = $#colors;
+      my $pos = $color_pos{ join('-', @$rgb) };
+
+      unless (defined $pos) {
+        push @colors, $rgb;
+        $pos = $color_pos{ join('-', @$rgb) } = $#colors;
+      }
+
+      $color_pos{ "$group:$which" } = $pos;
     }
-
-    $color_pos{ "$group:$which" } = $pos;
   }
 }
 
@@ -117,30 +148,4 @@ sub color_controls_for {
   return \$ctrl;
 }
 
-$rtf->prolog(
-  fonts  => [ $opt->{font_face} ],
-  colors => [ @colors ],
-);
-
-my $hp_size = $opt->{font_size} * 2; # RTF uses half-points for font size
-
-# Set size, font, and background color.
-$rtf->print(
-  \"\\fs$hp_size\\f0",
-  color_controls_for('Normal')
-);
-
-my $tokens = $syn->marked;
-
-while (my $pair = shift @$tokens) {
-  my ($type, $text) = @$pair;
-
-  $rtf->print(
-    color_controls_for($type),
-    $text,
-  );
-}
-
-$rtf->close;
-
-print $str;
+sub all_colors { @colors }
