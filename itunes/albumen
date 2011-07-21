@@ -13,26 +13,18 @@ my ($opt, $usage) = describe_options(
 
 my $itunes = Mac::Glue->new('iTunes');
 
-my $pl = $itunes->obj(
-  playlist => whose(name => equals => 'Regularer')
-)->get;
+my $pl = $itunes->obj(playlist => whose(name => equals => 'Regularer'))->get;
+my $albumen = $itunes->obj(playlist => whose(name => equals => 'Albumen'))->get;
 
-my $albumen = $itunes->obj(
-  playlist => whose(name => equals => 'Albumen')
-)->get;
-
-die "no albumen" unless $albumen;
+die "couldn't find target playlist" unless $albumen;
 
 {
   my $tracks = $itunes->obj(
-    'track' => gAll,
+    track     => gAll,
     playlist => $albumen->prop('index')->get,
   );
 
-  for my $t ( $tracks->get ){
-    # next unless $included_track{ $t->prop('database id')->get };
-    $t->delete;
-  }
+  $_->delete for $tracks->get;
 }
 
 print "getting tracks\n";
@@ -52,8 +44,7 @@ while (my $track = shift @tracks) {
 
   my $rec = $album{ $album, $artist } ||= [];
 
-  printf "storing record of $trackid ($album/$artist); %s remain\n",
-    scalar @tracks;
+  printf "storing record of $trackid ($album/$artist); %s left\n", 0 + @tracks;
 
   push @$rec, {
     id     => $trackid,
