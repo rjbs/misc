@@ -1,0 +1,57 @@
+#!/bin/env perl
+use 5.14.1;
+use File::Copy;
+use File::Find::Rule;
+use File::Path qw(make_path remove_tree);
+use Path::Class;
+use Term::ANSIColor;
+
+my $l_root = dir('/Users/rjbs/Desktop/RPG');
+my $r_root = dir('/Volumes/Kindle/documents/dnd');
+
+my @local  = map { file($_)->relative($l_root) }
+             File::Find::Rule->file->in($l_root);
+
+my @remote = map { file($_)->relative($r_root) }
+             File::Find::Rule->file->in($r_root);
+
+my @to_cp;
+
+for my $file (@local) {
+  next if -e $r_root->file($file);
+  next if $file->basename =~ /^\./; # skip dotfiles
+  next unless $file =~ /\.(?: pdf )$/x;
+  print colored("+ $file\n", 'green');
+  push @to_cp, $file;
+}
+
+my @to_rm;
+
+for my $file (@remote) {
+  next if -e $l_root->file($file);
+
+  if ($file->basename =~ /\.pdr$/) {
+    # Kindle metadata
+    next if -e $r_root->file($file)->stringify =~ s/pdr$/pdf/r;
+  }
+
+  print colored("- $file\n", 'red');
+  push @to_rm, $file;
+}
+
+print "...press enter to continue...\n";
+scalar <STDIN>;
+
+for my $file (@to_cp) {
+  my $target = $r_root->file( $file );
+  make_path( $target->dir, { }) unless -d $target->dir;
+  copy($l_root->file($file), $target->dir) or die "can't copy $file: $!";
+}
+
+for my $file (@to_rm) {
+  my $target = $r_root->file($file);
+  unlink $target or die "can't unlink $file: $!";
+  my @files = File::Find::Rule->file->in( $target->dir );
+  warn ">> @files\n";
+  remove_tree($target->dir, { }) unless @files;
+}
