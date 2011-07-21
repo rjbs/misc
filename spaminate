@@ -22,7 +22,6 @@ my $month = time2str("%Y.%m", time);
   mkpath($to_folder);
 
   for my $file (<$from_folder/*>) {
-    `sa-learn --spam --sync $file`;
     move $file => $to_folder;
     print "processed spam mail $file\n" if $ENV{VERBOSE};
   }
