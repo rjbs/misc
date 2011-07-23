@@ -1,4 +1,4 @@
-#!/bin/env perl
+#!/usr/bin/env perl
 use 5.14.1;
 use File::Copy;
 use File::Find::Rule;
@@ -52,6 +52,5 @@ for my $file (@to_rm) {
   my $target = $r_root->file($file);
   unlink $target or die "can't unlink $file: $!";
   my @files = File::Find::Rule->file->in( $target->dir );
-  warn ">> @files\n";
   remove_tree($target->dir, { }) unless @files;
 }
