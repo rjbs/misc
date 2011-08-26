@@ -1,11 +1,17 @@
-#!/usr/bin/perl -s-
+#!/usr/bin/env perl -s-
 use strict;
 use warnings;
 
+use autodie;
+
+use Email::Simple;
 use File::HomeDir;
 use File::Spec;
+use Try::Tiny;
 
-push @INC, File::Spec->catpath(File::HomeDir->my_home, 'bin', 'lib');
+push @INC, File::Spec->catdir(File::HomeDir->my_home, 'bin', 'lib');
+
+require PostRubric;
 
 our $p;
 
@@ -17,61 +23,45 @@ unless ($p) { # new entry
 	system("vi",'-S','~/.vim/blog.vim', $fn);
 }
 
-foreach my $file (glob("${queue}*")) {
+FILE: foreach my $file (glob("${queue}*")) {
 	unless ((stat $file)[7]) {
 		unlink $file or die "can't remove $file: $!";
 		print "removing empty $file\n";
 		next;
 	}
-	next if $file =~ /^\./;
-	exit unless -r $file;
+
+	next FILE if $file =~ /^\./;
+	next FILE if $file =~ /\.posted$/;
+	next FILE unless -r $file;
 
 	my $entry_text = do { open my $in, '<', $file; local $/; <$in>; };
-	exit unless $entry_text;
+	next FILE unless $entry_text;
 
-	# my @messages = split /\s*^\.\n\s*/ms, $entry_text;
-  my @messages = $entry_text;
 	my $errors;
 
-	POST: foreach my $message (@messages) {
-		use Email::Simple;
-		my $entry = Email::Simple->new($message);
+  my $entry = Email::Simple->new($entry_text);
 
-		my %document = map { $_ => scalar $entry->header($_) }
-                   qw(title subtitle tags uri);
-		($document{body} = $entry->body);
+  my %document = map { $_ => scalar $entry->header($_) }
+                 qw(title subtitle tags uri);
+  ($document{body} = $entry->body);
 
-    unless ($document{tags} =~ /\@markup:md/) {
-      $document{body} =~ s/(?<![\t\n])\n(?![\t\n])/ /smg;
-    }
+  unless ($document{tags} =~ /\@markup:md/) {
+    $document{body} =~ s/(?<![\t\n])\n(?![\t\n])/ /smg;
+  }
 
-    my %journal = (
-      rubric  => 'PostRubric',
-      useperl => 'UsePerl',
-    );
+  if ($entry->header('on-hold')) {
+    print "skipping message $file, on-hold header set\n";
 
-    if ($entry->header('on-hold')) {
-      print "skipping message $file, on-hold header set\n";
-      $errors++;
-      next POST;
-    }
+    next FILE;
+  }
 
-    my @post_to;
-    if (my $post_to = $entry->header("post-to")) {
-      @post_to = split /\s+/, $post_to;
-    } else {
-      @post_to = keys %journal;
-    }
-
-		eval {
-      for (@post_to) {
-        eval "require $journal{$_}" or die $@;
-        $journal{$_}->add_entry(\%document);
-      }
-		};
-    if ($@) { $errors++; warn $@; }
-	}
+  try {
+    PostRubric->add_entry(\%document);
+  } catch {
+    warn "ERROR POSTING: $_";
+    $errors++;
+  };
 
 	if ($errors) { print "can't post $file now\n"; }
-	else         { unlink $file;                   }
+	else         { rename $file => "$file.posted"; }
 }
