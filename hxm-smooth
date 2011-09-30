@@ -1,0 +1,51 @@
+#!/bin/env perl
+use strict;
+use warnings;
+use autodie;
+
+my $filename = shift(@ARGV) or die "usage: smooth MAPFILE\n";
+my $bak_name = "$filename.bak";
+
+die "$bak_name exists\n" if -e $bak_name;
+
+die "failure to move to backup: $!" unless rename $filename, $bak_name;
+
+open my $in_fh,  '<:encoding(utf-16)', $bak_name;
+open my $out_fh, '>:encoding(utf-16)', $filename;
+
+while (my $line = <$in_fh>) {
+  chomp $line;
+
+  if ($line =~ /^Line\s/) {
+    my @constant = split /\t/, $line;
+    my @points   = map {; [ split /,/ ] } splice @constant, 7;
+
+    if (@points > 1) {
+      # condense runs where the total distance is under X
+      my $max_run = 100;
+      my @keepers;
+      push @keepers, shift @points;
+
+      for my $point (@points) {
+        # We should *also* keep a point if it changes direction too much from
+        # last segment, but it doesn't matter to met yet because my lines are
+        # all smooth right now. -- rjbs, 2011-03-02
+        next if dist($keepers[-1], $point) < $max_run;
+        push @keepers, $point;
+      }
+
+      @points = @keepers;
+
+      $line = join "\t", @constant, map { join q{,}, @$_ } @points;
+    }
+  }
+
+  print {$out_fh} "$line\n";
+}
+
+sub dist {
+  my ($p1, $p2) = @_;
+
+  return sqrt( ($p1->[0] - $p2->[0]) ** 2
+             + ($p1->[1] - $p2->[1]) ** 2);
+}
