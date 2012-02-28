@@ -6,8 +6,9 @@ use File::Path qw(make_path remove_tree);
 use Path::Class;
 use Term::ANSIColor;
 
-my $l_root = dir('/Users/rjbs/Desktop/RPG');
-my $r_root = dir('/Volumes/Kindle/documents/dnd');
+my $l_root = dir('/Users/rjbs/Dropbox/books/RPG');
+# my $r_root = dir('/Volumes/Kindle/documents/dnd');
+my $r_root = dir('/Volumes/HP TOUCHPAD/books/rpg');
 
 my @local  = map { file($_)->relative($l_root) }
              File::Find::Rule->file->in($l_root);
@@ -50,7 +51,7 @@ for my $file (@to_cp) {
 
 for my $file (@to_rm) {
   my $target = $r_root->file($file);
-  unlink $target or die "can't unlink $file: $!";
+  unlink $target or die "can't unlink $target: $!";
   my @files = File::Find::Rule->file->in( $target->dir );
   remove_tree($target->dir, { }) unless @files;
 }
