@@ -1,7 +1,10 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 use strict;
 use warnings;
 use File::Find::Rule;
+use List::Util 'max';
+use Term::ANSIColor;
+use Time::Duration;
 
 my $ROOT = "$ENV{HOME}/Maildir";
 
@@ -12,16 +15,28 @@ my @dirs = File::Find::Rule->directory
 
 my $total = 0;
 for my $dir (sort @dirs) {
-  my $count = File::Find::Rule->file
+  next if $dir =~ /spam.\d{4}/;
+  my @files = File::Find::Rule->file
                               ->maxdepth(2)
                               ->exec(sub { $_[2] =~ m{/(?:new|cur)/} })
                               ->not(File::Find::Rule->name(qr/,\w*S\w*\z/))
                               ->in($dir);
-  next unless $count;
-  $total += $count;
-  $dir =~ s{\Q$ROOT\E}{/INBOX};
+
+  next unless @files;
+
+  my $latest = $^T - max map {; (stat)[9] } @files;
+
+  $total += @files;
+  $dir =~ s{\Q$ROOT\E/?}{/INBOX};
   $dir =~ tr|.|/|;
-  printf "%-30s : %u\n", $dir, $count;
+  printf "%-30s : %4u : %s%3s%s\n",
+    $dir,
+    0+@files,
+    color( $latest <  900 ? 'bold green'
+         : $latest < 3600 ? 'bold yellow'
+         :                  'reset'),
+    concise(duration($latest, 1)),
+    color('reset');
 }
 
-$total ? (printf "%30s : %u\n", 'total', $total) : (print "no new mail\n");
+$total ? (printf "%30s : %4u\n", 'total', $total) : (print "no new mail\n");
