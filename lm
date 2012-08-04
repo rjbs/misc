@@ -16,7 +16,8 @@ my @dirs = File::Find::Rule->directory
 my $read    = qr/,\w*S\w*\z/a;
 my $flagged = qr/,\w*F\w*\z/a;
 
-my $total = 0;
+my %total;
+
 for my $dir (sort @dirs) {
   next if $dir =~ /spam.\d{4}/;
   my @files = File::Find::Rule
@@ -34,9 +35,11 @@ for my $dir (sort @dirs) {
   my $unread  = grep {; $_ !~    $read } @files;
   my $flagged = grep {; $_ =~ $flagged } @files;
 
+  $total{unread}  += $unread;
+  $total{flagged} += $flagged;
+
   my ($latest, $oldest) = minmax map {; $^T - (stat)[9] } @files;
 
-  $total += @files;
   $dir =~ s{\Q$ROOT\E/?}{/INBOX};
   $dir =~ tr|.|/|;
   printf "%-30s : %4u : %4u : %s%4s%s : %s%4s%s\n",
@@ -57,4 +60,6 @@ for my $dir (sort @dirs) {
     color('reset');
 }
 
-$total ? (printf "%30s : %4u\n", 'total', $total) : (print "no new mail\n");
+(grep {$_} values %total)
+  ? (printf "%30s : %4u : %4u\n", 'total', $total{unread}, $total{flagged})
+  : (print "no new mail\n");
