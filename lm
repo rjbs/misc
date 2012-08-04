@@ -1,8 +1,8 @@
 #!/usr/bin/env perl
-use strict;
+use 5.16.0;
 use warnings;
 use File::Find::Rule;
-use List::Util 'max';
+use List::AllUtils 'minmax';
 use Term::ANSIColor;
 use Time::Duration;
 
@@ -13,29 +13,47 @@ my @dirs = File::Find::Rule->directory
                            ->exec(sub { -d "$_/new" })
                            ->in($ROOT);
 
+my $read    = qr/,\w*S\w*\z/a;
+my $flagged = qr/,\w*F\w*\z/a;
+
 my $total = 0;
 for my $dir (sort @dirs) {
   next if $dir =~ /spam.\d{4}/;
-  my @files = File::Find::Rule->file
-                              ->maxdepth(2)
-                              ->exec(sub { $_[2] =~ m{/(?:new|cur)/} })
-                              ->not(File::Find::Rule->name(qr/,\w*S\w*\z/))
-                              ->in($dir);
+  my @files = File::Find::Rule
+            ->file
+            ->maxdepth(2)
+            ->exec(sub { $_[2] =~ m{/(?:new|cur)/} })
+            ->or(
+              File::Find::Rule->not(File::Find::Rule->name($read)),
+              File::Find::Rule->name($flagged)
+            )
+            ->in($dir);
 
   next unless @files;
 
-  my $latest = $^T - max map {; (stat)[9] } @files;
+  my $unread  = grep {; $_ !~    $read } @files;
+  my $flagged = grep {; $_ =~ $flagged } @files;
+
+  my ($latest, $oldest) = minmax map {; $^T - (stat)[9] } @files;
 
   $total += @files;
   $dir =~ s{\Q$ROOT\E/?}{/INBOX};
   $dir =~ tr|.|/|;
-  printf "%-30s : %4u : %s%3s%s\n",
+  printf "%-30s : %4u : %4u : %s%4s%s : %s%4s%s\n",
     $dir,
-    0+@files,
+    $unread,
+    $flagged,
+
     color( $latest <  900 ? 'bold green'
          : $latest < 3600 ? 'bold yellow'
          :                  'reset'),
     concise(duration($latest, 1)),
+    color('reset'),
+
+    color( $oldest <  900 ? 'bold green'
+         : $oldest < 3600 ? 'bold yellow'
+         :                  'reset'),
+    concise(duration($oldest, 1)),
     color('reset');
 }
 
