@@ -1,5 +1,6 @@
-#!/usr/bin/env perl
+#!/Users/rjbs/perl5/perlbrew/perls/16.1/bin/perl
 use 5.16.0;
+use lib '/Users/rjbs/.perlbrew/libs/16.1@std/lib/perl5/';
 use warnings;
 use File::Find::Rule;
 use List::AllUtils 'minmax';
@@ -40,8 +41,9 @@ for my $dir (sort @dirs) {
 
   my ($latest, $oldest) = minmax map {; $^T - (stat)[9] } @files;
 
-  $dir =~ s{\Q$ROOT\E/?}{/INBOX};
+  $dir =~ s{\Q$ROOT\E(?:/(?:\.)?)?}{/INBOX/};
   $dir =~ tr|.|/|;
+  $dir = '/INBOX' if $dir eq '/INBOX/INBOX' or $dir eq '/INBOX/';
   printf "%-30s : %4u : %4u : %s%4s%s : %s%4s%s\n",
     $dir,
     $unread,
