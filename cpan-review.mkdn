@@ -3,26 +3,17 @@
 
     DIST                                    | LAST REVIEW
     App-Smarkmail                           | -
-    App-Whiff                               | -
-    B-Lint                                  | -
-    Bryar-Config-YAML                       | -
-    Bryar-DataSource-Multiplex              | -
-    Bundle-Email                            | -
-    CGI-Application-Server                  | -
     CGI-Form-Table                          | -
     CPAN-Faker                              | -
     CPAN-Mini                               | -
     CPAN-Uploader                           | -
     Catalyst-View-Text-Template             | -
     Class-Accessor-Class                    | -
-    Class-DBI-MSSQL                         | -
-    Class-DBI-Relationship-HasVariant       | -
     Color-Palette                           | -
     Color-Scheme                            | -
     Config-INI                              | -
     Config-MVP                              | -
     Config-MVP-Reader-INI                   | -
-    Config-Singleton                        | -
     DBIx-Locker                             | -
     DNS-Oterica                             | -
     Data-Bucketeer                          | -
@@ -47,8 +38,6 @@
     Dist-Zilla-Plugin-PodPurler             | -
     Dist-Zilla-Plugin-PodWeaver             | -
     Dist-Zilla-Plugin-TaskWeaver            | -
-    Dist-Zilla-PluginBundle-RJBS            | -
-    E-Mail-Acme                             | -
     Email-ARF                               | -
     Email-Abstract                          | -
     Email-Address                           | -
@@ -92,7 +81,6 @@
     Exception-Reporter                      | -
     Exception-Reporter-Summarizer-Catalyst  | -
     fewer                                   | -
-    File-CheckTree                          | -
     File-LinkTree-Builder                   | -
     Games-Board                             | -
     Games-Bowling-Scorecard                 | -
@@ -212,34 +200,26 @@
     Sub-Import                              | -
     Sub-Install                             | -
     Sub-MicroSig                            | -
-    Sub-Pipeline                            | -
     Task-BeLike-RJBS                        | -
-    Task-Deprecations5_12                   | -
-    Task-Email-PEP-All                      | -
-    Task-Email-PEP-NoStore                  | -
     Test-BinaryData                         | -
     Test-Deep                               | -
     Test-Fatal                              | -
     Test-MinimumVersion                     | -
-    Test-Reporter-HTTPGateway               | -
     Test-Routine                            | -
-    Text-Soundex                            | -
     Throwable                               | -
     Throwable-X                             | -
     Time-Duration-Object                    | -
-    Time-Piece-MSSQL                        | -
     Tree-File                               | -
     Try-Tiny                                | -
     URI-cpan                                | -
-    Version-Requirements                    | -
     WWW-AdventCalendar                      | -
-    ZMachine                                | -
     App-Cmd                                 | 2013-06-19
     Data-Section                            | 2013-06-19
 
 # Maintenance
 
     DIST                                    | LAST REVIEW
+    App-Whiff                               | 2013-06-18
     Acme-Lingua-EN-Inflect-Modern           | 2013-06-19
     Acme-ProgressBar                        | 2013-06-19
     Amce-CNA                                | 2013-06-19
@@ -251,3 +231,28 @@
     App-Addex-Plugin-Nobody                 | 2013-06-19
     App-Cmd-Plugin-Prompt                   | 2013-06-19
     App-Cronjob                             | 2013-06-19
+    Config-Singleton                        | 2013-06-20
+    E-Mail-Acme                             | 2013-06-20
+    Dist-Zilla-PluginBundle-RJBS            | 2013-06-20
+    ZMachine                                | 2013-06-20
+
+# Deep Freeze
+
+    DIST                                    | LAST REVIEW
+    B-Lint                                  | 2013-06-20
+    Bryar-Config-YAML                       | 2013-06-20
+    Bryar-DataSource-Multiplex              | 2013-06-20
+    Bundle-Email                            | 2013-06-20
+    CGI-Application-Server                  | 2013-06-20
+    Class-DBI-MSSQL                         | 2013-06-20
+    Class-DBI-Relationship-HasVariant       | 2013-06-20
+    File-CheckTree                          | 2013-06-20
+    Sub-Pipeline                            | 2013-06-20
+    Task-Deprecations5_12                   | 2013-06-20
+    Task-Email-PEP-All                      | 2013-06-20
+    Task-Email-PEP-NoStore                  | 2013-06-20
+    Test-Reporter-HTTPGateway               | 2013-06-20
+    Text-Soundex                            | 2013-06-20
+    Time-Piece-MSSQL                        | 2013-06-20
+    Version-Requirements                    | 2013-06-20
+
