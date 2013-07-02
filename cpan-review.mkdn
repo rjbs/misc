@@ -2,20 +2,7 @@
 # Main Sequence
 
     DIST                                    | LAST REVIEW
-    App-Smarkmail                           | -
-    CGI-Form-Table                          | -
-    CPAN-Faker                              | -
-    CPAN-Mini                               | -
-    CPAN-Uploader                           | -
-    Catalyst-View-Text-Template             | -
-    Class-Accessor-Class                    | -
-    Color-Palette                           | -
-    Color-Scheme                            | -
-    Config-INI                              | -
-    Config-MVP                              | -
-    Config-MVP-Reader-INI                   | -
     DBIx-Locker                             | -
-    DNS-Oterica                             | -
     Data-Bucketeer                          | -
     Data-GUID                               | -
     Data-GUID-URLSafe                       | -
@@ -215,6 +202,9 @@
     WWW-AdventCalendar                      | -
     App-Cmd                                 | 2013-06-19
     Data-Section                            | 2013-06-19
+    CPAN-Mini                               | 2013-07-01
+    CPAN-Uploader                           | 2013-07-01
+    Config-INI                              | 2013-07-01
 
 # Maintenance
 
@@ -235,6 +225,14 @@
     E-Mail-Acme                             | 2013-06-20
     Dist-Zilla-PluginBundle-RJBS            | 2013-06-20
     ZMachine                                | 2013-06-20
+    App-Smarkmail                           | 2013-07-01
+    CPAN-Faker                              | 2013-07-01
+    Catalyst-View-Text-Template             | 2013-07-01
+    Color-Palette                           | 2013-07-01
+    Color-Scheme                            | 2013-07-01
+    Config-MVP                              | 2013-07-01
+    Config-MVP-Reader-INI                   | 2013-07-01
+    DNS-Oterica                             | 2013-07-01
 
 # Deep Freeze
 
@@ -244,6 +242,8 @@
     Bryar-DataSource-Multiplex              | 2013-06-20
     Bundle-Email                            | 2013-06-20
     CGI-Application-Server                  | 2013-06-20
+    CGI-Form-Table                          | 2013-07-01
+    Class-Accessor-Class                    | 2013-07-01
     Class-DBI-MSSQL                         | 2013-06-20
     Class-DBI-Relationship-HasVariant       | 2013-06-20
     File-CheckTree                          | 2013-06-20
