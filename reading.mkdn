@@ -1,8 +1,9 @@
 
 # RJBS's Reading Queue
 
-| **Book**                            |   | Category  | Status | Update |
-|-------------------------------------|---|-----------|--------|--------|
+| **Book**                            |   | Category  | Status | Update     |
+|-------------------------------------|---|-----------|--------|------------|
+ Moon Moth and Other Stories, The     | D | Fiction   | Begun  | 2013
  Starting Forth                       | P | Technical | Begun  | ?
  Model-Based Development              | P | Technical | Queued | -
  Schaum's Probability and Statistics  | P | Technical | Begun  | ?
