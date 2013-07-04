@@ -205,6 +205,7 @@
     CPAN-Mini                               | 2013-07-01
     CPAN-Uploader                           | 2013-07-01
     Config-INI                              | 2013-07-01
+    HTML-FromText                           | 2013-07-03
 
 # Maintenance
 
