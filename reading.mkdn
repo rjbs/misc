@@ -1,4 +1,32 @@
 
+# RJBS's Reading Queue
+
 | **Book**                            | Category  | Status | Last Update |
 |-------------------------------------|-----------|--------|-------------|
  Starting Forth                       | Technical | Begun  | ?
+ Model-Based Development              | Technical | Queued | -
+ Schaum's Probability and Statistics  | Technical | Begun  | ?
+ 10 PRINT CHR$(205.5+RND(1)); GOTO 10 | Non-Fict  | Queued | -
+ Let Over Lambda                      | Technical | Queued | -
+ Smalltalk: Best Practice Patterns    | Technical | Begun  | ?
+ Cartoon Guide to Statistics, The     | Technical | Begun  | ?
+ Creative Reading                     | Writing   | Queued | -
+ Virtual Muse                         | Writing   | Queued | -
+ Exercises in Style                   | Writing   | Queued | -
+ Programming Pearls                   | Technical | Begun  | -
+ Team Geek                            | Non-Fict  | Queued | -
+ Medical Detectives, The              | Non-Fict  | Queued | -
+ Man Whose Teeth Were All Exactly …   | Fiction   | Queued | -
+ In Milton Lumky Territory            | Fiction   | Queued | -
+ Greek Realities                      | Non-Fict  | Queued | -
+ Roman Realities                      | Non-Fict  | Queued | -
+ Loved One, The                       | Fiction   | Queued | -
+ Sonnets, The (Ted Berrigan)          | Poetry    | Begun  | -
+ Skin Shift                           | Poetry    | Begun  | -
+ Perfect Vacuum, A                    | Fiction?  | Begun  | -
+ Marx for Beginners                   | Non-Fict  | Begun  | -
+ 13 Clocks, The                       | Fiction   | Queued | -
+ Trouble with Computers, The          | Technical | Queued | -
+ Twisty Little Passages               | Non-Fict  | Begun  | -
+ Collected Short Stories v.2, Maugham | Fiction   | Begun  | -
+
