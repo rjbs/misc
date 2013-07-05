@@ -1,4 +1,7 @@
 
+This file is explain [in my
+journal](http://rjbs.manxome.org/rubric/entry/1996).
+
 # Main Sequence
 
     DIST                                    | LAST REVIEW
