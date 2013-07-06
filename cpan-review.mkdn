@@ -5,8 +5,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 # Main Sequence
 
     DIST                                    | LAST REVIEW
-    DBIx-Locker                             | -
-    Data-Bucketeer                          | -
     Data-GUID                               | -
     Data-GUID-URLSafe                       | -
     Data-Hive                               | -
@@ -237,6 +235,8 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Config-MVP                              | 2013-07-01
     Config-MVP-Reader-INI                   | 2013-07-01
     DNS-Oterica                             | 2013-07-01
+    DBIx-Locker                             | 2013-07-05
+    Data-Bucketeer                          | 2013-07-05
 
 # Deep Freeze
 
