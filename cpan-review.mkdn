@@ -5,21 +5,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 # Main Sequence
 
     DIST                                    | LAST REVIEW
-    Data-GUID                               | -
-    Data-GUID-URLSafe                       | -
-    Data-Hive                               | -
-    Data-InputMonster                       | -
-    Data-InputMonster-Util-Catalyst         | -
-    Data-Message                            | -
-    Data-OptList                            | -
-    Data-Rx                                 | -
-    Data-Rx-Type-MooseTC                    | -
-    Data-Rx-Type-PCRE                       | -
-    Data-Rx-TypeBundle-Perl                 | -
-    Data-TagHive                            | -
     Data-UUID                               | -
-    Date-Span                               | -
-    delicious-backup                        | -
     Dist-Zilla                              | -
     Dist-Zilla-Plugin-CheckPrereqsIndexed   | -
     Dist-Zilla-Plugin-Git-Describe          | -
@@ -212,6 +198,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 
     DIST                                    | LAST REVIEW
     App-Whiff                               | 2013-06-18
+    Date-Span                               | 2013-06-18
     Acme-Lingua-EN-Inflect-Modern           | 2013-06-19
     Acme-ProgressBar                        | 2013-06-19
     Amce-CNA                                | 2013-06-19
@@ -237,6 +224,17 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     DNS-Oterica                             | 2013-07-01
     DBIx-Locker                             | 2013-07-05
     Data-Bucketeer                          | 2013-07-05
+    Data-GUID                               | 2013-07-05
+    Data-GUID-URLSafe                       | 2013-07-05
+    Data-Hive                               | 2013-07-05
+    Data-InputMonster                       | 2013-07-05
+    Data-InputMonster-Util-Catalyst         | 2013-07-05
+    Data-OptList                            | 2013-07-05
+    Data-Rx                                 | 2013-07-05
+    Data-Rx-Type-MooseTC                    | 2013-07-05
+    Data-Rx-Type-PCRE                       | 2013-07-05
+    Data-Rx-TypeBundle-Perl                 | 2013-07-05
+    Data-TagHive                            | 2013-07-05
 
 # Deep Freeze
 
@@ -250,6 +248,8 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Class-Accessor-Class                    | 2013-07-01
     Class-DBI-MSSQL                         | 2013-06-20
     Class-DBI-Relationship-HasVariant       | 2013-06-20
+    Data-Message                            | 2013-07-05
+    delicious-backup                        | 2013-07-05
     File-CheckTree                          | 2013-06-20
     Sub-Pipeline                            | 2013-06-20
     Task-Deprecations5_12                   | 2013-06-20
