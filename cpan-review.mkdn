@@ -1,5 +1,5 @@
 
-This file is explain [in my
+This file is explained [in my
 journal](http://rjbs.manxome.org/rubric/entry/1996).
 
 # Main Sequence
@@ -7,9 +7,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     DIST                                    | LAST REVIEW
     Data-UUID                               | -
     Dist-Zilla                              | -
-    Dist-Zilla-Plugin-CheckPrereqsIndexed   | -
-    Dist-Zilla-Plugin-Git-Describe          | -
-    Dist-Zilla-Plugin-PodPurler             | -
     Dist-Zilla-Plugin-PodWeaver             | -
     Dist-Zilla-Plugin-TaskWeaver            | -
     Email-ARF                               | -
@@ -193,6 +190,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     CPAN-Uploader                           | 2013-07-01
     Config-INI                              | 2013-07-01
     HTML-FromText                           | 2013-07-03
+    Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2013-07-06
 
 # Maintenance
 
@@ -235,6 +233,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Data-Rx-Type-PCRE                       | 2013-07-05
     Data-Rx-TypeBundle-Perl                 | 2013-07-05
     Data-TagHive                            | 2013-07-05
+    Dist-Zilla-Plugin-Git-Describe          | 2013-07-06
 
 # Deep Freeze
 
@@ -250,6 +249,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Class-DBI-Relationship-HasVariant       | 2013-06-20
     Data-Message                            | 2013-07-05
     delicious-backup                        | 2013-07-05
+    Dist-Zilla-Plugin-PodPurler             | 2013-07-06
     File-CheckTree                          | 2013-06-20
     Sub-Pipeline                            | 2013-06-20
     Task-Deprecations5_12                   | 2013-06-20
