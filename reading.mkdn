@@ -4,60 +4,60 @@
 | **Book**                            |   | Cat | Begun      | Finished   |
 |-------------------------------------|---|-----|------------|------------|
  Moon Moth and Other Stories, The     | D | Lit | 2013-05-30 |
- Rise and Fall of the Third Reich     | D | Non | 2012-??-?? |
+ Rise and Fall of the Third Reich     | D | Hum | 2012-??-?? |
  Starting Forth                       | P | Tec | 2012-??-?? |
 
-# RJBS's Reading Queue
+# RJBS's Bag of Books to Read
 
 | **Book**                            |   | Category   | Status | Update     |
 |-------------------------------------|---|------------|--------|------------|
  Model-Based Development              | P | Technical  | Queued | -
  Schaum's Probability and Statistics  | P | Technical  | Begun  | ?
- 10 PRINT CHR$(205.5+RND(1)); GOTO 10 | P | Non-Fict   | Queued | -
+ 10 PRINT CHR$(205.5+RND(1)); GOTO 10 | P | Humanities | Queued | -
  Let Over Lambda                      | P | Technical  | Queued | -
  Smalltalk: Best Practice Patterns    | P | Technical  | Begun  | ?
  Cartoon Guide to Statistics, The     | P | Technical  | Begun  | ?
- Creative Reading                     | P | Non-Fict   | Queued | -
- Virtual Muse                         | P | Non-Fict   | Queued | -
- Exercises in Style                   | P | Non-Fict   | Queued | -
+ Creative Reading                     | P | Humanities | Queued | -
+ Virtual Muse                         | P | Humanities | Queued | -
+ Exercises in Style                   | P | Humanities | Queued | -
  Programming Pearls                   | P | Technical  | Begun  | -
- Team Geek                            | P | Non-Fict   | Queued | -
- Medical Detectives, The              | P | Non-Fict   | Queued | -
+ Team Geek                            | P | Humanities | Queued | -
+ Medical Detectives, The              | P | Humanities | Queued | -
  Man Whose Teeth Were All Exactly …   | P | Literature | Queued | -
  In Milton Lumky Territory            | P | Literature | Queued | -
- Greek Realities                      | P | Non-Fict   | Queued | -
- Roman Realities                      | P | Non-Fict   | Queued | -
+ Greek Realities                      | P | Humanities | Queued | -
+ Roman Realities                      | P | Humanities | Queued | -
  Loved One, The                       | P | Literature | Queued | -
  Sonnets, The (Ted Berrigan)          | P | Poetry     | Begun  | -
  Skin Shift                           | P | Poetry     | Begun  | -
  Perfect Vacuum, A                    | P | Literature | Begun  | -
- Marx for Beginners                   | P | Non-Fict   | Begun  | -
+ Marx for Beginners                   | P | Humanities | Begun  | -
  13 Clocks, The                       | P | Literature | Queued | -
  Trouble with Computers, The          | P | Technical  | Queued | -
- Twisty Little Passages               | P | Non-Fict   | Begun  | -
+ Twisty Little Passages               | P | Humanities | Begun  | -
  Collected Short Stories v.2, Maugham | P | Literature | Begun  | -
  1Q84                                 | D | Literature | Queued | -
  Abberations: Horror Stories          | D | Literature | Begun  | -
  Beggars in Spain                     | D | Literature | Begun  | -
  Clockwork Angels (thanks, Schwern ☹) | D | Literature | Begun  | -
- Coders at Work                       | D | Non-Fict   | Queued | -
- The Crazy Ape                        | D | Non-Fict   | Queued | -
- Dreaming in Code                     | D | Non-Fict   | Queued | -
- Epic of Gilgamesh, The               | D | Non-Fict   | Queued | -
- Imitation of Christ, The             | D | Non-Fict   | Begun  | -
+ Coders at Work                       | D | Humanities | Queued | -
+ The Crazy Ape                        | D | Humanities | Queued | -
+ Dreaming in Code                     | D | Humanities | Queued | -
+ Epic of Gilgamesh, The               | D | Humanities | Queued | -
+ Imitation of Christ, The             | D | Humanities | Begun  | -
  Main Street                          | D | Literature | Queued | -
  It Couldn't Happen Here              | D | Literature | Queued | -
- Meditations (Marcus Aurelius)        | D | Non-Fict   | Queued | -
+ Meditations (Marcus Aurelius)        | D | Humanities | Queued | -
  New Death and others, The            | D | Literature | Queued | -
  Player Piano                         | D | Literature | Queued | -
- Playing at the World                 | D | Non-Fict   | Begun  | 2013
- Under the Loving Care of the Father… | D | Non-Fict   | Begun  | 2007?
- Theory of Fun for Game Design        | D | Non-Fict   | Begun  | 2012
+ Playing at the World                 | D | Humanities | Begun  | 2013
+ Under the Loving Care of the Father… | D | Humanities | Begun  | 2007?
+ Theory of Fun for Game Design        | D | Humanities | Begun  | 2012
  DTrace - Dynamic Tracing             | D | Technical  | Begun  | 2013
  Introducing Erlang                   | D | Technical  | Begun  | 2013
 
 ## Categories:
 
-* Literature  - prose, plays, poetry
-* Non-Fiction - books about the humanities
-* Technical   - books about programming or the sciences
+* Literature - prose, plays, poetry
+* Humanities - books about the humanities
+* Technical  - books about programming or the sciences
