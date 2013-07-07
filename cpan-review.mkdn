@@ -5,7 +5,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 # Main Sequence
 
     DIST                                    | LAST REVIEW
-    Data-UUID                               | -
     Dist-Zilla                              | -
     Dist-Zilla-Plugin-PodWeaver             | -
     Dist-Zilla-Plugin-TaskWeaver            | -
@@ -191,6 +190,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Config-INI                              | 2013-07-01
     HTML-FromText                           | 2013-07-03
     Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2013-07-06
+    Data-UUID                               | 2013-07-06
 
 # Maintenance
 
