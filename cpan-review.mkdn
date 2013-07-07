@@ -51,7 +51,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Exception-Reporter                      | -
     Exception-Reporter-Summarizer-Catalyst  | -
     fewer                                   | -
-    File-LinkTree-Builder                   | -
     Games-Board                             | -
     Games-Bowling-Scorecard                 | -
     Games-Crossword-Puzzle                  | -
@@ -75,7 +74,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     JSON-CPAN-Meta                          | -
     Kwiki-IRCMode                           | -
     List-MapList                            | -
-    Log-Dispatch-Array                      | -
     Log-Dispatch-TextTable                  | -
     Log-Dispatchouli                        | -
     MIME-BodyMunger                         | -
@@ -114,19 +112,15 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     MooseX-SetOnce                          | -
     MooseX-Storage-Format-JSONpm            | -
     MooseX-Types-Perl                       | -
-    Net-DNS-GuessTZ                         | -
     Net-Delicious                           | -
     Net-Finger-Server                       | -
     Number-Nary                             | -
     Number-Tolerant                         | -
-    Object-Annotate                         | -
     Object-Capsule                          | -
-    Package-Generator                       | -
     Parse-GutenbergRoget                    | -
     Parse-IRCLog                            | -
     Path-Resolver                           | -
     Perl-Critic-Lax                         | -
-    Perl-Critic-Tics                        | -
     Perl-PrereqScanner                      | -
     Pod-CYOA                                | -
     Pod-Coverage-TrustPod                   | -
@@ -153,7 +147,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Role-Subsystem                          | -
     Router-Dumb                             | -
     Rubric                                  | -
-    Rubric-Entry-Formatter-KwikiFormatish   | -
     Rubric-Entry-Formatter-Markdown         | -
     Software-License                        | -
     Sort-ByExample                          | -
@@ -161,7 +154,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     String-Flogger                          | -
     String-Formatter                        | -
     String-RewritePrefix                    | -
-    String-TagString                        | -
     String-Truncate                         | -
     Sub-Exporter                            | -
     Sub-Exporter-ForMethods                 | -
@@ -234,6 +226,12 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Data-Rx-TypeBundle-Perl                 | 2013-07-05
     Data-TagHive                            | 2013-07-05
     Dist-Zilla-Plugin-Git-Describe          | 2013-07-06
+    String-TagString                        | 2013-07-06
+    Package-Generator                       | 2013-07-07
+    Log-Dispatch-Array                      | 2013-07-07
+    Net-DNS-GuessTZ                         | 2013-07-07
+    File-LinkTree-Builder                   | 2013-07-07
+    Perl-Critic-Tics                        | 2013-07-07
 
 # Deep Freeze
 
@@ -251,6 +249,8 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     delicious-backup                        | 2013-07-05
     Dist-Zilla-Plugin-PodPurler             | 2013-07-06
     File-CheckTree                          | 2013-06-20
+    Object-Annotate                         | 2013-07-07
+    Rubric-Entry-Formatter-KwikiFormatish   | 2013-07-07
     Sub-Pipeline                            | 2013-06-20
     Task-Deprecations5_12                   | 2013-06-20
     Task-Email-PEP-All                      | 2013-06-20
