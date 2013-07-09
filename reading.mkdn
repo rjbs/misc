@@ -3,9 +3,9 @@
 
 | **Book**                            |   | Cat | Begun      | Finished   |
 |-------------------------------------|---|-----|------------|------------|
- Moon Moth and Other Stories, The     | D | Lit | 2013-05-30 |
  Rise and Fall of the Third Reich     | D | Hum | 2012-??-?? |
  Starting Forth                       | P | Tec | 2012-??-?? |
+ Moon Moth and Other Stories, The     | D | Lit | 2013-05-30 | 2013-07-09
 
 # RJBS's Bag of Books to Read
 
