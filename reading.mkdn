@@ -5,6 +5,7 @@
 |-------------------------------------|---|-----|------------|------------|
  Rise and Fall of the Third Reich     | D | Hum | 2012-??-?? |
  Starting Forth                       | P | Tec | 2012-??-?? |
+ Player Piano                         | D | Lit | 2013-07-10 |
  Moon Moth and Other Stories, The     | D | Lit | 2013-05-30 | 2013-07-09
 
 # RJBS's Bag of Books to Read
@@ -49,7 +50,6 @@
  It Couldn't Happen Here              | D | Literature | Queued | -
  Meditations (Marcus Aurelius)        | D | Humanities | Queued | -
  New Death and others, The            | D | Literature | Queued | -
- Player Piano                         | D | Literature | Queued | -
  Playing at the World                 | D | Humanities | Begun  | 2013
  Under the Loving Care of the Father… | D | Humanities | Begun  | 2007?
  Theory of Fun for Game Design        | D | Humanities | Begun  | 2012
