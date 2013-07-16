@@ -55,6 +55,14 @@
  Theory of Fun for Game Design        | D | Humanities | Begun  | 2012
  DTrace - Dynamic Tracing             | D | Technical  | Begun  | 2013
  Introducing Erlang                   | D | Technical  | Begun  | 2013
+ Star Trek: TNG: Vendetta             | D | Literature | Queued | -
+ Apocalypse Z                         | D | Literature | Queued | -
+ The Atrocity Archives                | D | Literature | Queued | -
+ Mile 81                              | D | Literature | Queued | -
+ How to Succeed in Evil               | D | Literature | Queued | -
+ Selection Event                      | D | Literature | Queued | -
+ The Future According to Me           | D | Humanities | Queued | -
+ The Book Bind                        | D | Humanities | Queued | -
 
 ## Categories:
 
