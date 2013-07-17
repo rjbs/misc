@@ -63,6 +63,8 @@
  Selection Event                      | D | Literature | Queued | -
  The Future According to Me           | D | Humanities | Queued | -
  The Book Bind                        | D | Humanities | Queued | -
+ Arrowsmith                           | D | Literature | Queued | -
+ The Hurricane (Hugh Howey)           | D | Literature | Queued | -
 
 ## Categories:
 
