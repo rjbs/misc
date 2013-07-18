@@ -5,7 +5,8 @@
 |-------------------------------------|---|-----|------------|------------|
  Rise and Fall of the Third Reich     | D | Hum | 2012-??-?? |
  Starting Forth                       | P | Tec | 2012-??-?? |
- Player Piano                         | D | Lit | 2013-07-10 |
+ Mile 81                              | D | Lit | 2013-07-17 |
+ Player Piano                         | D | Lit | 2013-07-10 | 2013-07-17
  Moon Moth and Other Stories, The     | D | Lit | 2013-05-30 | 2013-07-09
 
 # RJBS's Bag of Books to Read
@@ -58,7 +59,6 @@
  Star Trek: TNG: Vendetta             | D | Literature | Queued | -
  Apocalypse Z                         | D | Literature | Queued | -
  The Atrocity Archives                | D | Literature | Queued | -
- Mile 81                              | D | Literature | Queued | -
  How to Succeed in Evil               | D | Literature | Queued | -
  Selection Event                      | D | Literature | Queued | -
  The Future According to Me           | D | Humanities | Queued | -
