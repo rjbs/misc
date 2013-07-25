@@ -5,8 +5,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 # Main Sequence
 
     DIST                                    | LAST REVIEW
-    Dist-Zilla                              | -
-    Dist-Zilla-Plugin-PodWeaver             | -
     Dist-Zilla-Plugin-TaskWeaver            | -
     Email-ARF                               | -
     Email-Abstract                          | -
@@ -183,6 +181,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     HTML-FromText                           | 2013-07-03
     Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2013-07-06
     Data-UUID                               | 2013-07-06
+    Dist-Zilla                              | 2013-07-25
 
 # Maintenance
 
@@ -232,6 +231,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Net-DNS-GuessTZ                         | 2013-07-07
     File-LinkTree-Builder                   | 2013-07-07
     Perl-Critic-Tics                        | 2013-07-07
+    Dist-Zilla-Plugin-PodWeaver             | 2013-07-25
 
 # Deep Freeze
 
