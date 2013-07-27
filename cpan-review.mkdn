@@ -5,7 +5,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 # Main Sequence
 
     DIST                                    | LAST REVIEW
-    Email-ARF                               | -
     Email-Abstract                          | -
     Email-Address                           | -
     Email-Date                              | -
@@ -131,6 +130,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Pod-Eventual                            | -
     Pod-Weaver                              | -
     Postfix-Parse-Mailq                     | -
+    pytap                                   | -
     Querylet                                | -
     Querylet-CGI                            | -
     Querylet-Output-Excel-OLE               | -
@@ -232,6 +232,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
     Perl-Critic-Tics                        | 2013-07-07
     Dist-Zilla-Plugin-PodWeaver             | 2013-07-25
     Dist-Zilla-Plugin-TaskWeaver            | 2013-07-25
+    Email-ARF                               | 2013-07-25
 
 # Deep Freeze
 
