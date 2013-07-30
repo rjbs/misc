@@ -6,11 +6,9 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 
 | DIST                                    | LAST REVIEW
 | --------------------------------------- | -------------
-| Email-Abstract                          | -
 | Email-Address                           | -
 | Email-Date                              | -
 | Email-Date-Format                       | -
-| Email-Delete                            | -
 | Email-Filter                            | -
 | Email-Folder                            | -
 | Email-Folder-IMAP                       | -
@@ -235,6 +233,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Dist-Zilla-Plugin-PodWeaver             | 2013-07-25
 | Dist-Zilla-Plugin-TaskWeaver            | 2013-07-25
 | Email-ARF                               | 2013-07-25
+| Email-Abstract                          | 2013-07-30
 
 # Deep Freeze
 
@@ -250,6 +249,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Class-DBI-MSSQL                         | 2013-06-20
 | Class-DBI-Relationship-HasVariant       | 2013-06-20
 | Data-Message                            | 2013-07-05
+| Email-Delete                            | 2013-07-30
 | delicious-backup                        | 2013-07-05
 | Dist-Zilla-Plugin-PodPurler             | 2013-07-06
 | File-CheckTree                          | 2013-06-20
