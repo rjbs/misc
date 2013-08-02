@@ -6,7 +6,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 
 | DIST                                    | LAST REVIEW
 | --------------------------------------- | -------------
-| Email-Address                           | -
 | Email-Date                              | -
 | Email-Date-Format                       | -
 | Email-Filter                            | -
@@ -180,6 +179,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2013-07-06
 | Data-UUID                               | 2013-07-06
 | Dist-Zilla                              | 2013-07-25
+| Email-Address                           | 2013-08-02
 
 # Maintenance
 
