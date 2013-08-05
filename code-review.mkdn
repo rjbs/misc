@@ -6,12 +6,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 
 | DIST                                    | LAST REVIEW
 | --------------------------------------- | -------------
-| Email-Folder                            | -
-| Email-Folder-IMAP                       | -
-| Email-Folder-IMAPS                      | -
-| Email-Folder-POP3                       | -
-| Email-FolderType                        | -
-| Email-FolderType-Net                    | -
 | Email-LocalDelivery                     | -
 | Email-MIME                              | -
 | Email-MIME-Attachment-Stripper          | -
@@ -233,6 +227,12 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Email-ARF                               | 2013-07-25
 | Email-Abstract                          | 2013-07-30
 | Email-Filter                            | 2013-08-02
+| Email-Folder                            | 2013-08-05
+| Email-Folder-IMAP                       | 2013-08-05
+| Email-Folder-IMAPS                      | 2013-08-05
+| Email-Folder-POP3                       | 2013-08-05
+| Email-FolderType                        | 2013-08-05
+| Email-FolderType-Net                    | 2013-08-05
 
 # Deep Freeze
 
