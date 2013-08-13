@@ -7,7 +7,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | DIST                                    | LAST REVIEW
 | --------------------------------------- | -------------
 | Email-MIME-Attachment-Stripper          | -
-| Email-MessageID                         | -
 | Email-Pipemailer                        | -
 | Email-Reply                             | -
 | Email-Send                              | -
@@ -163,6 +162,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Email-Date-Format                       | 2013-08-02
 | Email-MIME                              | 2013-08-08
 | Email-MIME-Kit                          | 2013-08-12
+| Email-MessageID                         | 2013-08-13
 
 # Maintenance
 
