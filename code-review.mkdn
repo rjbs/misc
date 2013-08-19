@@ -7,8 +7,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | DIST                                    | LAST REVIEW
 | --------------------------------------- | -------------
 | Email-MIME-Attachment-Stripper          | -
-| Email-Send                              | -
-| Email-Send-IO                           | -
 | Email-Sender                            | -
 | Email-Sender-Transport-SQLite           | -
 | Email-Simple                            | -
@@ -250,6 +248,8 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Email-Date                              | 2013-08-02
 | Email-MIME-Kit-Assembler-TextifyHTML    | 2013-08-12
 | Email-Reply                             | 2013-08-16
+| Email-Send                              | 2013-08-18
+| Email-Send-IO                           | 2013-08-18
 | delicious-backup                        | 2013-07-05
 | Dist-Zilla-Plugin-PodPurler             | 2013-07-06
 | File-CheckTree                          | 2013-06-20
