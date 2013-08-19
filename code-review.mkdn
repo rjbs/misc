@@ -11,7 +11,6 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Email-Sender-Transport-SQLite           | -
 | Email-Simple                            | -
 | Email-Simple-FromHandle                 | -
-| Email-Store                             | -
 | Email-Stuffer                           | -
 | Email-Valid                             | -
 | Exception-Reporter                      | -
