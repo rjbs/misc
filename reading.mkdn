@@ -5,7 +5,9 @@
 |-------------------------------------|---|-----|------------|------------|
  Rise and Fall of the Third Reich     | D | Hum | 2012-??-?? |
  Starting Forth                       | P | Tec | 2012-??-?? |
- Mile 81                              | D | Lit | 2013-07-17 |
+ It Can't Happen Here                 | D | Lit | 2013-??-?? | -
+ Dust                                 | D | Lit | 2013-08-17 | 2013-08-20
+ Mile 81                              | D | Lit | 2013-07-17 | 2013-07-20
  Player Piano                         | D | Lit | 2013-07-10 | 2013-07-17
  Moon Moth and Other Stories, The     | D | Lit | 2013-05-30 | 2013-07-09
 
@@ -48,7 +50,6 @@
  Epic of Gilgamesh, The               | D | Humanities | Queued | -
  Imitation of Christ, The             | D | Humanities | Begun  | -
  Main Street                          | D | Literature | Queued | -
- It Couldn't Happen Here              | D | Literature | Queued | -
  Meditations (Marcus Aurelius)        | D | Humanities | Queued | -
  New Death and others, The            | D | Literature | Queued | -
  Playing at the World                 | D | Humanities | Begun  | 2013
