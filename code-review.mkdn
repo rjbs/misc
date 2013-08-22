@@ -8,13 +8,9 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | --------------------------------------- | -------------
 | Email-MIME-Attachment-Stripper          | -
 | Email-Sender                            | -
-| Email-Sender-Transport-SQLite           | -
 | Email-Simple                            | -
 | Email-Simple-FromHandle                 | -
-| Email-Stuffer                           | -
 | Email-Valid                             | -
-| Exception-Reporter                      | -
-| Exception-Reporter-Summarizer-Catalyst  | -
 | fewer                                   | -
 | Games-Board                             | -
 | Games-Bowling-Scorecard                 | -
@@ -228,6 +224,10 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Email-Simple-Test-TraceHeaders          | 2013-08-13
 | Email-Stuff                             | 2013-08-16
 | Email-Thread                            | 2013-08-16
+| Email-Sender-Transport-SQLite           | 2013-08-22
+| Email-Stuffer                           | 2013-08-22
+| Exception-Reporter                      | 2013-08-22
+| Exception-Reporter-Summarizer-Catalyst  | 2013-08-22
 
 # Deep Freeze
 
