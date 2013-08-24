@@ -9,14 +9,9 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Email-MIME-Attachment-Stripper          | -
 | Email-Sender                            | -
 | Email-Simple                            | -
-| Email-Simple-FromHandle                 | -
 | Email-Valid                             | -
-| fewer                                   | -
-| Games-Board                             | -
-| Games-Bowling-Scorecard                 | -
 | Games-Crossword-Puzzle                  | -
 | Games-Dice                              | -
-| Games-Goban                             | -
 | Games-Nintendo-Mario                    | -
 | Getopt-Long-Descriptive                 | -
 | Git-Fingerd                             | -
@@ -228,6 +223,8 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Email-Stuffer                           | 2013-08-22
 | Exception-Reporter                      | 2013-08-22
 | Exception-Reporter-Summarizer-Catalyst  | 2013-08-22
+| Games-Bowling-Scorecard                 | 2013-08-24
+| Email-Simple-FromHandle                 | 2013-08-24
 
 # Deep Freeze
 
@@ -251,7 +248,10 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Email-Send-IO                           | 2013-08-18
 | delicious-backup                        | 2013-07-05
 | Dist-Zilla-Plugin-PodPurler             | 2013-07-06
+| fewer                                   | 2013-08-24
 | File-CheckTree                          | 2013-06-20
+| Games-Board                             | 2013-08-24
+| Games-Goban                             | 2013-08-24
 | Object-Annotate                         | 2013-07-07
 | Rubric-Entry-Formatter-KwikiFormatish   | 2013-07-07
 | Sub-Pipeline                            | 2013-06-20
