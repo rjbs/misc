@@ -62,10 +62,11 @@ sub notes_for {
     push @notes, "no repository on file";
   } elsif ($repo !~ /github.com/) {
     push @notes, "not using GitHub for repo";
+  } elsif ($repo =~ /\Q$name/i && $repo !~ /\Q$name/) {
+    push @notes, "GitHub repo is not capitalized correctly";
   }
 
   # get bug counts
-  # check that github repo name is capitalized like the dist
   # check that $dist->{metadata}{generated_by} is /Dist::Zilla/
 
   return @notes;
