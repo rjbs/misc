@@ -1,0 +1,367 @@
+Email-MIME-Attachment-Stripper: ~
+Email-Sender: ~
+Email-Simple: ~
+Email-Valid: ~
+Games-Crossword-Puzzle: ~
+Games-Dice: ~
+Games-Nintendo-Mario: ~
+Getopt-Long-Descriptive: ~
+Git-Fingerd: ~
+Git-Megapull: ~
+Global-Context: ~
+HTML-Form-ForceValue: ~
+HTML-MasonX-Free: ~
+HTML-Widget-Factory: ~
+HTML-Widget-Plugin-Calendar: ~
+HTML-Widget-Plugin-Combo: ~
+HTML-Widget-Plugin-JS: ~
+HTML-Widget-Plugin-Struct: ~
+HTTP-Throwable: ~
+IO-TieCombine: ~
+IPC-Run3: ~
+JSON-CPAN-Meta: ~
+Kwiki-IRCMode: ~
+List-MapList: ~
+Log-Dispatch-TextTable: ~
+Log-Dispatchouli: ~
+MIME-BodyMunger: ~
+MIME-Lite: ~
+MRO-Magic: ~
+Macro-Micro: ~
+Mail-Audit: ~
+Mail-Audit-DKIM: ~
+Mail-Audit-List: ~
+Mail-Audit-PGP: ~
+Mail-Audit-Razor: ~
+Mail-Convert-Mbox-ToEml: ~
+Mail-LocalDelivery: ~
+Mail-Postfix-Attr: ~
+Mail-SpamAssassin-SimpleClient: ~
+MasonX-Resolver-WidgetFactory: ~
+Math-Calculator: ~
+Math-TotalBuilder: ~
+Math-VarRate: ~
+Metabase-Web: ~
+Mixin-ExtraFields: ~
+Mixin-ExtraFields-Driver-DBIC: ~
+Mixin-ExtraFields-Hive: ~
+Mixin-ExtraFields-Param: ~
+Mixin-Historian: ~
+Mixin-Linewise: ~
+Module-Faker: ~
+Module-Install-AuthorTests: ~
+Module-Install-ExtraTests: ~
+Module-Starter-Plugin-SimpleStore: ~
+Module-Starter-Plugin-TT2: ~
+Moose-Autobox: ~
+MooseX-ClassCompositor: ~
+MooseX-ComposedBehavior: ~
+MooseX-OneArgNew: ~
+MooseX-SetOnce: ~
+MooseX-Storage-Format-JSONpm: ~
+MooseX-Types-Perl: ~
+Net-Delicious: ~
+Net-Finger-Server: ~
+Number-Nary: ~
+Number-Tolerant: ~
+Object-Capsule: ~
+Parse-GutenbergRoget: ~
+Parse-IRCLog: ~
+Path-Resolver: ~
+Perl-Critic-Lax: ~
+Perl-PrereqScanner: ~
+Pod-CYOA: ~
+Pod-Coverage-TrustPod: ~
+Pod-Elemental: ~
+Pod-Elemental-PerlMunger: ~
+Pod-Elemental-Transfomer-PPIHTML: ~
+Pod-Elemental-Transfomer-VimHTML: ~
+Pod-Elemental-Transformer-List: ~
+Pod-Elemental-Transformer-SynHi: ~
+Pod-Elemental-Transformer-WikiDoc: ~
+Pod-Eventual: ~
+Pod-Weaver: ~
+Postfix-Parse-Mailq: ~
+pytap:
+  home: GitHub
+Querylet: ~
+Querylet-CGI: ~
+Querylet-Output-Excel-OLE: ~
+Querylet-Output-Excel-XLS: ~
+Querylet-Output-Text: ~
+Religion-Bible-Reference: ~
+Return-Value: ~
+Role-HasMessage: ~
+Role-HasPayload: ~
+Role-Identifiable: ~
+Role-Subsystem: ~
+Router-Dumb: ~
+Rubric: ~
+Rubric-Entry-Formatter-Markdown: ~
+Software-License: ~
+Sort-ByExample: ~
+String-Errf: ~
+String-Flogger: ~
+String-Formatter: ~
+String-RewritePrefix: ~
+String-Truncate: ~
+Sub-Exporter: ~
+Sub-Exporter-ForMethods: ~
+Sub-Exporter-GlobExporter: ~
+Sub-Exporter-Lexical: ~
+Sub-Import: ~
+Sub-Install: ~
+Sub-MicroSig: ~
+Task-BeLike-RJBS: ~
+Test-BinaryData: ~
+Test-Deep: ~
+Test-Fatal: ~
+Test-MinimumVersion: ~
+Test-Routine: ~
+Throwable: ~
+Throwable-X: ~
+Time-Duration-Object: ~
+Tree-File: ~
+Try-Tiny: ~
+URI-cpan: ~
+WWW-AdventCalendar: ~
+App-Cmd:
+  last-review: 2013-06-19
+Data-Section:
+  last-review: 2013-06-19
+CPAN-Mini:
+  last-review: 2013-07-01
+CPAN-Uploader:
+  last-review: 2013-07-01
+Config-INI:
+  last-review: 2013-07-01
+HTML-FromText:
+  last-review: 2013-07-03
+Dist-Zilla-Plugin-CheckPrereqsIndexed:
+  last-review: 2013-07-06
+Data-UUID:
+  last-review: 2013-07-06
+Dist-Zilla:
+  last-review: 2013-07-25
+Email-Address:
+  last-review: 2013-08-02
+Email-Date-Format:
+  last-review: 2013-08-02
+Email-MIME:
+  last-review: 2013-08-08
+Email-MIME-Kit:
+  last-review: 2013-08-12
+Email-MessageID:
+  last-review: 2013-08-13
+App-Whiff:
+  last-review: 2013-06-18
+Date-Span:
+  last-review: 2013-06-18
+Acme-Lingua-EN-Inflect-Modern:
+  last-review: 2013-06-19
+Acme-ProgressBar:
+  last-review: 2013-06-19
+Amce-CNA:
+  last-review: 2013-06-19
+App-Addex:
+  last-review: 2013-06-19
+App-Addex-AddressBook-Abook:
+  last-review: 2013-06-19
+App-Addex-AddressBook-Apple:
+  last-review: 2013-06-19
+App-Addex-AddressBook-AppleScript:
+  last-review: 2013-06-19
+App-Addex-Plugin-Hiveminder:
+  last-review: 2013-06-19
+App-Addex-Plugin-Nobody:
+  last-review: 2013-06-19
+App-Cmd-Plugin-Prompt:
+  last-review: 2013-06-19
+App-Cronjob:
+  last-review: 2013-06-19
+Config-Singleton:
+  last-review: 2013-06-20
+E-Mail-Acme:
+  last-review: 2013-06-20
+Dist-Zilla-PluginBundle-RJBS:
+  last-review: 2013-06-20
+ZMachine:
+  last-review: 2013-06-20
+App-Smarkmail:
+  last-review: 2013-07-01
+CPAN-Faker:
+  last-review: 2013-07-01
+Catalyst-View-Text-Template:
+  last-review: 2013-07-01
+Color-Palette:
+  last-review: 2013-07-01
+Color-Scheme:
+  last-review: 2013-07-01
+Config-MVP:
+  last-review: 2013-07-01
+Config-MVP-Reader-INI:
+  last-review: 2013-07-01
+DNS-Oterica:
+  last-review: 2013-07-01
+DBIx-Locker:
+  last-review: 2013-07-05
+Data-Bucketeer:
+  last-review: 2013-07-05
+Data-GUID:
+  last-review: 2013-07-05
+Data-GUID-URLSafe:
+  last-review: 2013-07-05
+Data-Hive:
+  last-review: 2013-07-05
+Data-InputMonster:
+  last-review: 2013-07-05
+Data-InputMonster-Util-Catalyst:
+  last-review: 2013-07-05
+Data-OptList:
+  last-review: 2013-07-05
+Data-Rx:
+  last-review: 2013-07-05
+Data-Rx-Type-MooseTC:
+  last-review: 2013-07-05
+Data-Rx-Type-PCRE:
+  last-review: 2013-07-05
+Data-Rx-TypeBundle-Perl:
+  last-review: 2013-07-05
+Data-TagHive:
+  last-review: 2013-07-05
+Dist-Zilla-Plugin-Git-Describe:
+  last-review: 2013-07-06
+String-TagString:
+  last-review: 2013-07-06
+Package-Generator:
+  last-review: 2013-07-07
+Log-Dispatch-Array:
+  last-review: 2013-07-07
+Net-DNS-GuessTZ:
+  last-review: 2013-07-07
+File-LinkTree-Builder:
+  last-review: 2013-07-07
+Perl-Critic-Tics:
+  last-review: 2013-07-07
+Dist-Zilla-Plugin-PodWeaver:
+  last-review: 2013-07-25
+Dist-Zilla-Plugin-TaskWeaver:
+  last-review: 2013-07-25
+Email-ARF:
+  last-review: 2013-07-25
+Email-Abstract:
+  last-review: 2013-07-30
+Email-Filter:
+  last-review: 2013-08-02
+Email-Folder:
+  last-review: 2013-08-05
+Email-Folder-IMAP:
+  last-review: 2013-08-05
+Email-Folder-IMAPS:
+  last-review: 2013-08-05
+Email-Folder-POP3:
+  last-review: 2013-08-05
+Email-FolderType:
+  last-review: 2013-08-05
+Email-FolderType-Net:
+  last-review: 2013-08-05
+Email-LocalDelivery:
+  last-review: 2013-08-08
+Email-MIME-ContentType:
+  last-review: 2013-08-10
+Email-MIME-Encodings:
+  last-review: 2013-08-12
+Email-MIME-Kit-Assembler-Markdown:
+  last-review: 2013-08-12
+Email-MIME-Kit-KitReader-SWAK:
+  last-review: 2013-08-12
+Email-MIME-Kit-Renderer-TT:
+  last-review: 2013-08-12
+Email-MIME-Kit-Renderer-Text-Template:
+  last-review: 2013-08-12
+Email-MIME-Kit-Validator-Rx:
+  last-review: 2013-08-12
+Email-Pipemailer:
+  last-review: 2013-08-13
+Email-Simple-Test-TraceHeaders:
+  last-review: 2013-08-13
+Email-Stuff:
+  last-review: 2013-08-16
+Email-Thread:
+  last-review: 2013-08-16
+Email-Sender-Transport-SQLite:
+  last-review: 2013-08-22
+Email-Stuffer:
+  last-review: 2013-08-22
+Exception-Reporter:
+  last-review: 2013-08-22
+Exception-Reporter-Summarizer-Catalyst:
+  last-review: 2013-08-22
+Games-Bowling-Scorecard:
+  last-review: 2013-08-24
+Email-Simple-FromHandle:
+  last-review: 2013-08-24
+B-Lint:
+  last-review: 2013-06-20
+Bryar-Config-YAML:
+  last-review: 2013-06-20
+Bryar-DataSource-Multiplex:
+  last-review: 2013-06-20
+Bundle-Email:
+  last-review: 2013-06-20
+CGI-Application-Server:
+  last-review: 2013-06-20
+CGI-Form-Table:
+  last-review: 2013-07-01
+Class-Accessor-Class:
+  last-review: 2013-07-01
+Class-DBI-MSSQL:
+  last-review: 2013-06-20
+Class-DBI-Relationship-HasVariant:
+  last-review: 2013-06-20
+Data-Message:
+  last-review: 2013-07-05
+Email-Delete:
+  last-review: 2013-07-30
+Email-Date:
+  last-review: 2013-08-02
+Email-MIME-Kit-Assembler-TextifyHTML:
+  last-review: 2013-08-12
+Email-Reply:
+  last-review: 2013-08-16
+Email-Send:
+  last-review: 2013-08-18
+Email-Send-IO:
+  last-review: 2013-08-18
+delicious-backup:
+  last-review: 2013-07-05
+Dist-Zilla-Plugin-PodPurler:
+  last-review: 2013-07-06
+fewer:
+  last-review: 2013-08-24
+File-CheckTree:
+  last-review: 2013-06-20
+Games-Board:
+  last-review: 2013-08-24
+Games-Goban:
+  last-review: 2013-08-24
+Object-Annotate:
+  last-review: 2013-07-07
+Rubric-Entry-Formatter-KwikiFormatish:
+  last-review: 2013-07-07
+Sub-Pipeline:
+  last-review: 2013-06-20
+Task-Deprecations5_12:
+  last-review: 2013-06-20
+Task-Email-PEP-All:
+  last-review: 2013-06-20
+Task-Email-PEP-NoStore:
+  last-review: 2013-06-20
+Test-Reporter-HTTPGateway:
+  last-review: 2013-06-20
+Text-Soundex:
+  last-review: 2013-06-20
+Time-Piece-MSSQL:
+  last-review: 2013-06-20
+Version-Requirements:
+  last-review: 2013-06-20
