@@ -1,0 +1,68 @@
+#!perl
+use 5.18.0;
+use warnings;
+use MetaCPAN::API;
+use Parse::CPAN::Packages::Fast;
+use YAML::XS ();
+
+my $mcpan = MetaCPAN::API->new;
+
+my $saved = YAML::XS::LoadFile('code-review.yaml');
+
+my $p = Parse::CPAN::Packages::Fast->new(
+  "$ENV{HOME}/Dropbox/minicpan/modules/02packages.details.txt.gz"
+);
+
+my @projects = grep {; ! $saved->{review} // '' eq 'never' } keys %$saved;
+
+my $dist = {};
+
+DIST: for my $d (
+  sort { fc $a->dist cmp fc $b->dist } $p->latest_distributions
+) {
+  next unless $d->cpanid eq 'RJBS';
+  next if $d->dist eq 'perl';
+
+  $dist->{ $d->dist } = $d;
+}
+
+for my $name (
+  sort {
+    ($saved->{$a}{'last-review'} // '0') cmp ($saved->{$b}{'last-review'} // 0)
+    ||
+    fc $a cmp fc $b
+  } @projects
+) {
+  my @notes = notes_for($name);
+  say "=== $name ==========";
+  printf "    %s\n", $_ for @notes;
+}
+
+sub notes_for {
+  my ($name) = @_;
+
+  my $home = $saved->{$name}{home} // 'CPAN';
+
+  if ($home ne 'CPAN') {
+    return ("not hosted at CPAN, but at $home");
+  }
+
+  my $distmeta = eval { $mcpan->release( distribution => $name ) };
+  return ("couldn't find repo on metacpan") unless $distmeta;
+
+  my @notes;
+
+  my $tracker = $distmeta->{resources}{bugtracker};
+  if (! $tracker->{web} or $tracker->{web} =~ /rt.cpan/) {
+    push @notes, "still using rt.cpan.org";
+  }
+
+  my $repo = $distmeta->{resources}{repository}{url};
+  if (! $repo) {
+    push @notes, "no repository on file";
+  } elsif ($repo !~ /github.com/) {
+    push @notes, "not using GitHub for repo";
+  }
+
+  return @notes;
+}
