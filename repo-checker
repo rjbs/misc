@@ -47,22 +47,26 @@ sub notes_for {
     return ("not hosted at CPAN, but at $home");
   }
 
-  my $distmeta = eval { $mcpan->release( distribution => $name ) };
-  return ("couldn't find repo on metacpan") unless $distmeta;
+  my $release = eval { $mcpan->release( distribution => $name ) };
+  return ("couldn't find dist on metacpan") unless $release;
 
   my @notes;
 
-  my $tracker = $distmeta->{resources}{bugtracker};
+  my $tracker = $release->{resources}{bugtracker};
   if (! $tracker->{web} or $tracker->{web} =~ /rt.cpan/) {
     push @notes, "still using rt.cpan.org";
   }
 
-  my $repo = $distmeta->{resources}{repository}{url};
+  my $repo = $release->{resources}{repository}{url};
   if (! $repo) {
     push @notes, "no repository on file";
   } elsif ($repo !~ /github.com/) {
     push @notes, "not using GitHub for repo";
   }
+
+  # get bug counts
+  # check that github repo name is capitalized like the dist
+  # check that $dist->{metadata}{generated_by} is /Dist::Zilla/
 
   return @notes;
 }
