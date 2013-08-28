@@ -122,6 +122,12 @@ sub notes_for {
     push @notes, "$ct GitHub issues";
   }
 
+  my $rt_bugs = rt_data->{$name};
+  for (qw(open stalled)) {
+    push @notes, "rt.cpan.org tickets $_: $rt_bugs->{$_}"
+      if $rt_bugs->{$_};
+  }
+
   # get bug counts
   # check that $dist->{metadata}{generated_by} is /Dist::Zilla/
 
