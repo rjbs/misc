@@ -105,12 +105,11 @@ sub rt_data {
   state %rt_data;
   unless (%rt_data) {
     my $res = HTTP::Tiny->new->get(
-      'https://rt.cpan.org/Public/bugs-per-dist.data-json'
+      'https://rt.cpan.org/Public/bugs-per-dist.json'
     );
     die "Can't get RT bug count JSON" unless $res->{success};
-    my ($json) = split /\n/, $res->{content};
-    my $dists = JSON->new->decode($json);
-    for my $dist (@$dists) {
+    my $dists = JSON->new->decode($res->{content});
+    for my $dist (values %$dists) {
       my $name = $dist->{dist};
       $rt_data{ $name } = {
         open    => 0,
