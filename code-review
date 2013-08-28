@@ -79,6 +79,7 @@ for my $name (@projects) {
   my @notes = notes_for($name);
   say "=== $name ==========";
   printf "    %s\n", $_ for @notes;
+  print  "    Everything is okay!  Who's have expected THAT?!\n" unless @notes;
 
   print "...hit enter...";
   scalar <STDIN>;
