@@ -116,17 +116,10 @@ sub rt_data {
         stalled => 0,
       };
 
-      $rt_data{ $name }{open} += delete $dist->{counts}{$_}
-        for qw(active patched new open);
+      $rt_data{ $name }{open} = $dist->{counts}{active}
+                              - $dist->{counts}{stalled};
 
-      $rt_data{ $name }{active} += delete $dist->{counts}{$_}
-        for qw(stalled);
-
-      delete $dist->{counts}{$_} for qw(inactive resolved deleted rejected);
-
-      if (my @keys = keys %{ $dist->{counts} }) {
-        die "unknown statuses for tickets in $name: @keys\n";
-      }
+      $rt_data{ $name }{stalled} = $dist->{counts}{stalled};
     }
   }
 
