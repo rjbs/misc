@@ -28,7 +28,8 @@ my $p = Parse::CPAN::Packages::Fast->new(
 );
 
 my %is_tracked
-  = map {; $_ => scalar(! $saved->{review} // '' eq 'never') } keys %$saved;
+  = map {; $_ => scalar(($saved->{$_}{review} // '') ne 'never') }
+    keys %$saved;
 
 my $dist = {};
 
@@ -46,7 +47,7 @@ my @projects = sort {
   ($saved->{$a}{'last-review'} // '0') cmp ($saved->{$b}{'last-review'} // 0)
   ||
   fc $a cmp fc $b
-} keys %is_tracked;
+} grep { $is_tracked{$_} } keys %is_tracked;
 
 if (my $project = $opt->project) {
   die "project $project is not tracked\n" unless $is_tracked{ $project };
