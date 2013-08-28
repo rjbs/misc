@@ -105,29 +105,21 @@ sub rt_data {
   state %rt_data;
   unless (%rt_data) {
     my $res = HTTP::Tiny->new->get(
-      'https://rt.cpan.org/Public/bugs-per-dist.data-json'
+      'https://rt.cpan.org/Public/bugs-per-dist.json'
     );
     die "Can't get RT bug count JSON" unless $res->{success};
-    my ($json) = split /\n/, $res->{content};
-    my $dists = JSON->new->decode($json);
-    for my $dist (@$dists) {
+    my $dists = JSON->new->decode($res->{content});
+    for my $dist (values %$dists) {
       my $name = $dist->{dist};
       $rt_data{ $name } = {
         open    => 0,
         stalled => 0,
       };
 
-      $rt_data{ $name }{open} += delete $dist->{counts}{$_}
-        for qw(active patched new open);
+      $rt_data{ $name }{open} = $dist->{counts}{active}
+                              - $dist->{counts}{stalled};
 
-      $rt_data{ $name }{active} += delete $dist->{counts}{$_}
-        for qw(stalled);
-
-      delete $dist->{counts}{$_} for qw(inactive resolved deleted rejected);
-
-      if (my @keys = keys %{ $dist->{counts} }) {
-        die "unknown statuses for tickets in $name: @keys\n";
-      }
+      $rt_data{ $name }{stalled} = $dist->{counts}{stalled};
     }
   }
 
