@@ -174,5 +174,23 @@ sub notes_for {
     push @notes, "dist not built with Dist::Zilla";
   }
 
+  {
+    my $res = HTTP::Tiny->new->get(
+      "http://cpants.cpanauthors.org/dist/$name.json",
+    );
+
+    if ($res->{success}) {
+      my $data = JSON->new->decode($res->{content});
+      for my $result (@{ $data->{kwalitee}[0] }) {
+        next if $result->{value};
+        next if $result->{is_experimental};
+        next if $result->{is_extra};
+        push @notes, "kwalitee test failed: $result->{name}";
+      }
+    } else {
+      push @notes, "could not get CPANTS results";
+    }
+  }
+
   return @notes;
 }
