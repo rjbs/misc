@@ -105,6 +105,23 @@ sub notes_for {
     push @notes, "GitHub repo is not capitalized correctly";
   }
 
+  GH: {
+    my $max = 100;
+    my $reponame = $lc ? lc $name : $name;
+    my $res = HTTP::Tiny->new->get(
+      "https://api.github.com/repos/rjbs/$reponame/issues?per_page=$max"
+    );
+    unless ($res->{success}) {
+      push @notes, "Could not get issues list from GitHub";
+      last GH;
+    }
+
+    my $issues = JSON->new->decode($res->{content});
+    last GH unless my $ct = @$issues;
+    $ct = "$ct+" if $ct == $max;
+    push @notes, "$ct GitHub issues";
+  }
+
   # get bug counts
   # check that $dist->{metadata}{generated_by} is /Dist::Zilla/
 
