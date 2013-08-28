@@ -94,12 +94,14 @@ sub notes_for {
     push @notes, "still using rt.cpan.org";
   }
 
+  my $lc;
   my $repo = $release->{resources}{repository}{url};
   if (! $repo) {
     push @notes, "no repository on file";
   } elsif ($repo !~ /github.com/) {
     push @notes, "not using GitHub for repo";
   } elsif ($repo =~ /\Q$name/i && $repo !~ /\Q$name/) {
+    $lc = 1;
     push @notes, "GitHub repo is not capitalized correctly";
   }
 
