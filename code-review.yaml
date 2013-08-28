@@ -204,7 +204,8 @@ Games-Board:
   last-review: 2013-08-24
 Games-Bowling-Scorecard:
   last-review: 2013-08-24
-Games-Crossword-Puzzle: {}
+Games-Crossword-Puzzle:
+  last-review: 2013-08-28
 Games-Dice: {}
 Games-Goban:
   last-review: 2013-08-24
