@@ -178,12 +178,12 @@ sub notes_for {
     my $issues = JSON->new->decode($res->{content});
     last GH unless my $ct = @$issues;
     $ct = "$ct+" if $ct == $max;
-    push @notes, "$ct GitHub issues";
+    push @notes, "GitHub issue count: $ct";
   }
 
   my $rt_bugs = rt_data->{$name};
   for (qw(open stalled)) {
-    push @notes, "rt.cpan.org tickets $_: $rt_bugs->{$_}"
+    push @notes, "rt.cpan.org $_ ticket count: $rt_bugs->{$_}"
       if $rt_bugs->{$_};
   }
 
