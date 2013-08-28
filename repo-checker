@@ -1,10 +1,17 @@
 #!perl
 use 5.18.0;
 use warnings;
+
+use Getopt::Long::Descriptive;
 use HTTP::Tiny;
 use MetaCPAN::API;
 use Parse::CPAN::Packages::Fast;
 use YAML::XS ();
+
+my ($opt, $usage) = describe_options(
+  '%c %o',
+  [ 'rebuild' => "rebuild the YAML file that holds state" ],
+);
 
 my $mcpan = MetaCPAN::API->new;
 
@@ -14,7 +21,8 @@ my $p = Parse::CPAN::Packages::Fast->new(
   "$ENV{HOME}/Dropbox/minicpan/modules/02packages.details.txt.gz"
 );
 
-my @projects = grep {; ! $saved->{review} // '' eq 'never' } keys %$saved;
+my %is_tracked
+  = map {; $_ => scalar(! $saved->{review} // '' eq 'never') } keys %$saved;
 
 my $dist = {};
 
@@ -25,15 +33,30 @@ DIST: for my $d (
   next if $d->dist eq 'perl';
 
   $dist->{ $d->dist } = $d;
+  $is_tracked{ $d->dist } = 1 unless exists $is_tracked{ $d->dist };
 }
 
-for my $name (
-  sort {
-    ($saved->{$a}{'last-review'} // '0') cmp ($saved->{$b}{'last-review'} // 0)
-    ||
-    fc $a cmp fc $b
-  } @projects
-) {
+my @projects = sort {
+  ($saved->{$a}{'last-review'} // '0') cmp ($saved->{$b}{'last-review'} // 0)
+  ||
+  fc $a cmp fc $b
+} keys %is_tracked;
+
+if ($opt->rebuild) {
+  my %dump = map {; $_ => {
+    ($saved->{$_}{home} ? (home => $saved->{$_}{home}) : ()),
+    ($saved->{$_}{review} ? (review => $saved->{$_}{review}) : ()),
+    ($saved->{$_}{'last-review'}
+    ? ('last-review' => $saved->{$_}{'last-review'})
+    : ()),
+  } } @projects;
+
+  YAML::XS::DumpFile('code-review.yaml', \%dump);
+  exit;
+}
+
+REVIEW:
+for my $name (@projects) {
   my @notes = notes_for($name);
   say "=== $name ==========";
   printf "    %s\n", $_ for @notes;
