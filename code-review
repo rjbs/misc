@@ -71,7 +71,22 @@ if ($opt->project or $opt->rebuild) {
              || ($opt->project ? ("did review of " . $opt->project)
                                : "rebuilt code-review state file");
 
-  system(qw(git add code-review.yaml)) and die "git-add failed\n";
+  open my $mkdn, '>', 'code-review.mkdn' or die "can't open mkdn: $!";
+
+  print {$mkdn} <<END_HEADER;
+This file is explained [in my
+journal](http://rjbs.manxome.org/rubric/entry/1996).
+
+| DIST                                    | LAST REVIEW
+| --------------------------------------- | -------------
+END_HEADER
+
+  printf {$mkdn} "| %-40s| %s\n", $_, $saved->{$_}{'last-review'} // '-'
+    for @projects;
+
+  close $mkdn or die "error closing mkdn: $!";
+
+  system(qw(git add), <code-review.*>) and die "git-add failed\n";
   system(qw(git commit -m), $message)  and die "git-commit failed\n";
   exit;
 }
