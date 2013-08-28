@@ -2,6 +2,7 @@
 use 5.18.0;
 use warnings;
 
+use DateTime;
 use Getopt::Long::Descriptive;
 use HTTP::Tiny;
 use MetaCPAN::API;
@@ -10,8 +11,13 @@ use YAML::XS ();
 
 my ($opt, $usage) = describe_options(
   '%c %o',
-  [ 'rebuild' => "rebuild the YAML file that holds state" ],
+  [ 'rebuild'     => "rebuild the YAML file that holds state" ],
+  [ 'project|p=s' => "project to mark reviewed"               ],
+  [ 'message|m=s' => "commit message"                         ],
 );
+
+die "--message without --rebuild or --project is nonsensical"
+  if $opt->message and not ($opt->rebuild or $opt->project);
 
 my $mcpan = MetaCPAN::API->new;
 
@@ -42,7 +48,13 @@ my @projects = sort {
   fc $a cmp fc $b
 } keys %is_tracked;
 
-if ($opt->rebuild) {
+if (my $project = $opt->project) {
+  die "project $project is not tracked\n" unless $is_tracked{ $project };
+  $saved->{$project}{'last-review'}
+    = DateTime->now->format_cldr('yyyy-MM-dd');
+}
+
+if ($opt->project or $opt->rebuild) {
   my %dump = map {; $_ => {
     ($saved->{$_}{home} ? (home => $saved->{$_}{home}) : ()),
     ($saved->{$_}{review} ? (review => $saved->{$_}{review}) : ()),
@@ -52,10 +64,17 @@ if ($opt->rebuild) {
   } } @projects;
 
   YAML::XS::DumpFile('code-review.yaml', \%dump);
+
+  system(qw(git add code-review.yaml)) and die "git-add failed\n";
+  my $message = $opt->message
+             || ($opt->project ? ("did review of " . $opt->project)
+                               : "rebuilt code-review state file");
+
+  system(qw(git add code-review.yaml)) and die "git-add failed\n";
+  system(qw(git commit -m), $message)  and die "git-commit failed\n";
   exit;
 }
 
-REVIEW:
 for my $name (@projects) {
   my @notes = notes_for($name);
   say "=== $name ==========";
