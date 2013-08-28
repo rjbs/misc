@@ -36,6 +36,9 @@ for my $name (
   my @notes = notes_for($name);
   say "=== $name ==========";
   printf "    %s\n", $_ for @notes;
+
+  print "...hit enter...";
+  scalar <STDIN>;
 }
 
 sub notes_for {
