@@ -128,7 +128,7 @@ sub notes_for {
       if $rt_bugs->{$_};
   }
 
-  unless (($result->{metadata}{generated_by} // '') =~ /Dist::Zilla/) {
+  unless (($release->{metadata}{generated_by} // '') =~ /Dist::Zilla/) {
     push @notes, "dist not built with Dist::Zilla";
   }
 
