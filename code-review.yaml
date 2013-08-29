@@ -300,6 +300,8 @@ Pod-Elemental-Transformer-WikiDoc: {}
 Pod-Eventual: {}
 Pod-Weaver: {}
 Postfix-Parse-Mailq: {}
+PyTAP:
+  home: GitHub
 Querylet: {}
 Querylet-CGI: {}
 Querylet-Output-Excel-OLE: {}
@@ -368,5 +370,3 @@ delicious-backup:
   last-review: 2013-07-05
 fewer:
   last-review: 2013-08-24
-pytap:
-  home: GitHub
