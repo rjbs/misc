@@ -148,8 +148,7 @@ sub rt_data {
       'https://rt.cpan.org/Public/bugs-per-dist.json'
     );
     die "Can't get RT bug count JSON" unless $res->{success};
-    my ($json) = split /\n/, $res->{content};
-    my $bug_count = JSON->new->decode($json);
+    my $bug_count = JSON->new->decode($res->{content});
     for my $name (@projects) {
       next unless $bug_count->{$name};
       $rt_data{ $name } = {
