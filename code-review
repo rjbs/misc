@@ -229,21 +229,18 @@ sub gh_notes {
 
   my @notes;
 
-  GH: {
-    my $max = 100;
-    my $res = HTTP::Tiny->new->get(
-      "https://api.github.com/repos/rjbs/$gh_repo_name/issues?per_page=$max"
-    );
-    unless ($res->{success}) {
-      push @notes, "Could not get issues list from GitHub";
-      last GH;
-    }
-
-    my $issues = JSON->new->decode($res->{content});
-    last GH unless my $ct = @$issues;
-    $ct = "$ct+" if $ct == $max;
-    push @notes, "GitHub issue count: $ct";
+  my $res = HTTP::Tiny->new->get(
+    "https://api.github.com/repos/rjbs/$gh_repo_name"
+  );
+  unless ($res->{success}) {
+    push @notes, "Could not get issues list from GitHub";
+    last GH;
   }
+
+  my $repo = JSON->new->decode($res->{content});
+
+  push @notes, "GitHub issue count: $repo->{open_issues_count}"
+    if $repo->{open_issues_count};
 
   return @notes;
 }
