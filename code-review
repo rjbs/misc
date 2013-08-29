@@ -103,6 +103,20 @@ for my $name (@projects) {
   scalar <STDIN>;
 }
 
+sub notes_for {
+  my ($name) = @_;
+
+  my $home = $saved->{$name}{home} // 'CPAN';
+
+  if ($home eq 'CPAN') {
+    return cpan_notes($name);
+  } elsif ($home eq 'GitHub') {
+    return gh_notes($name);
+  }
+
+  return ("not hosted at CPAN, but at $home");
+}
+
 sub rt_data {
   state %rt_data;
   unless (%rt_data) {
@@ -137,14 +151,8 @@ sub rt_data {
   return \%rt_data;
 }
 
-sub notes_for {
+sub cpan_notes {
   my ($name) = @_;
-
-  my $home = $saved->{$name}{home} // 'CPAN';
-
-  if ($home ne 'CPAN') {
-    return ("not hosted at CPAN, but at $home");
-  }
 
   my $release = eval { $mcpan->release( distribution => $name ) };
   return ("couldn't find dist on metacpan") unless $release;
@@ -156,33 +164,19 @@ sub notes_for {
     push @notes, "still using rt.cpan.org";
   }
 
-  my $lc;
+  my $gh_repo_name = $name;
+
   my $repo = $release->{resources}{repository}{url};
   if (! $repo) {
     push @notes, "no repository on file";
   } elsif ($repo !~ /github.com/) {
     push @notes, "not using GitHub for repo";
   } elsif ($repo =~ /\Q$name/i && $repo !~ /\Q$name/) {
-    $lc = 1;
+    $gh_repo_name = lc $name;
     push @notes, "GitHub repo is not capitalized correctly";
   }
 
-  GH: {
-    my $max = 100;
-    my $reponame = $lc ? lc $name : $name;
-    my $res = HTTP::Tiny->new->get(
-      "https://api.github.com/repos/rjbs/$reponame/issues?per_page=$max"
-    );
-    unless ($res->{success}) {
-      push @notes, "Could not get issues list from GitHub";
-      last GH;
-    }
-
-    my $issues = JSON->new->decode($res->{content});
-    last GH unless my $ct = @$issues;
-    $ct = "$ct+" if $ct == $max;
-    push @notes, "GitHub issue count: $ct";
-  }
+  push @notes, gh_notes($gh_repo_name);
 
   my $rt_bugs = rt_data->{$name};
   for (qw(open stalled)) {
@@ -210,6 +204,30 @@ sub notes_for {
     } else {
       push @notes, "could not get CPANTS results";
     }
+  }
+
+  return @notes;
+}
+
+sub gh_notes {
+  my ($gh_repo_name) = @_;
+
+  my @notes;
+
+  GH: {
+    my $max = 100;
+    my $res = HTTP::Tiny->new->get(
+      "https://api.github.com/repos/rjbs/$gh_repo_name/issues?per_page=$max"
+    );
+    unless ($res->{success}) {
+      push @notes, "Could not get issues list from GitHub";
+      last GH;
+    }
+
+    my $issues = JSON->new->decode($res->{content});
+    last GH unless my $ct = @$issues;
+    $ct = "$ct+" if $ct == $max;
+    push @notes, "GitHub issue count: $ct";
   }
 
   return @notes;
