@@ -49,7 +49,12 @@ my @projects = sort {
   fc $a cmp fc $b
 } grep { $is_tracked{$_} } keys %is_tracked;
 
-@projects = @ARGV if @ARGV;
+if (@ARGV) {
+  my @missing = grep {; ! ($is_tracked{$_} or $saved->{$_}) } @ARGV;
+  die "these projects that you asked about are unknown: @missing\n"
+    if @missing;
+  @projects = @ARGV;
+}
 
 if (my $project = $opt->project) {
   die "project $project is not tracked\n" unless $is_tracked{ $project };
