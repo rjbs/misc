@@ -49,6 +49,8 @@ my @projects = sort {
   fc $a cmp fc $b
 } grep { $is_tracked{$_} } keys %is_tracked;
 
+@projects = @ARGV if @ARGV;
+
 if (my $project = $opt->project) {
   die "project $project is not tracked\n" unless $is_tracked{ $project };
   $saved->{$project}{'last-review'}
