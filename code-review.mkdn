@@ -6,6 +6,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Email-MIME-Attachment-Stripper          | -
 | Email-Sender                            | -
 | Email-Simple                            | -
+| Email-Store                             | -
 | Email-Valid                             | -
 | Games-Dice                              | -
 | Games-Nintendo-Mario                    | -
@@ -88,7 +89,7 @@ journal](http://rjbs.manxome.org/rubric/entry/1996).
 | Pod-Eventual                            | -
 | Pod-Weaver                              | -
 | Postfix-Parse-Mailq                     | -
-| pytap                                   | -
+| PyTAP                                   | -
 | Querylet                                | -
 | Querylet-CGI                            | -
 | Querylet-Output-Excel-OLE               | -
