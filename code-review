@@ -4,8 +4,8 @@ use warnings;
 
 use DateTime;
 use Getopt::Long::Descriptive;
-use HTTP::Tiny;
 use List::AllUtils qw(uniq);
+use LWP::UserAgent;
 use MetaCPAN::API;
 use Parse::CPAN::Packages::Fast;
 use YAML::XS ();
@@ -33,6 +33,8 @@ my %is_tracked
     keys %$saved;
 
 my $dist = {};
+
+my $ua = LWP::UserAgent->new(keep_alive => 5);
 
 DIST: for my $d (
   sort { fc $a->dist cmp fc $b->dist } $p->latest_distributions
@@ -146,11 +148,11 @@ sub notes_for {
 sub rt_data {
   state %rt_data;
   unless (%rt_data) {
-    my $res = HTTP::Tiny->new->get(
+    my $res = $ua->get(
       'https://rt.cpan.org/Public/bugs-per-dist.json'
     );
-    die "Can't get RT bug count JSON" unless $res->{success};
-    my $bug_count = JSON->new->decode($res->{content});
+    die "Can't get RT bug count JSON" unless $res->is_success;
+    my $bug_count = JSON->new->decode($res->decoded_content);
     for my $name (@projects) {
       next unless $bug_count->{$name};
       $rt_data{ $name } = {
@@ -206,12 +208,12 @@ sub cpan_notes {
   }
 
   {
-    my $res = HTTP::Tiny->new->get(
+    my $res = $ua->get(
       "http://cpants.cpanauthors.org/dist/$name.json",
     );
 
-    if ($res->{success}) {
-      my $data = JSON->new->decode($res->{content});
+    if ($res->is_success) {
+      my $data = JSON->new->decode($res->decoded_content);
       for my $result (@{ $data->{kwalitee}[0] }) {
         next if $result->{value};
         next if $result->{is_experimental};
@@ -231,15 +233,13 @@ sub gh_notes {
 
   my @notes;
 
-  my $res = HTTP::Tiny->new->get(
-    "https://api.github.com/repos/rjbs/$gh_repo_name"
-  );
+  my $res = $ua->get("https://api.github.com/repos/rjbs/$gh_repo_name");
 
-  unless ($res->{success}) {
+  unless ($res->is_success) {
     return ("Could not get repository data for rjbs/$gh_repo_name from GitHub");
   }
 
-  my $repo = JSON->new->decode($res->{content});
+  my $repo = JSON->new->decode($res->decoded_content);
 
   push @notes, "GitHub issue count: $repo->{open_issues_count}"
     if $repo->{open_issues_count};
