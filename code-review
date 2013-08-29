@@ -117,6 +117,7 @@ END_HEADER
   exit;
 }
 
+my $did;
 for my $name (@projects) {
   my @notes = notes_for($name);
   say "=== $name ==========";
@@ -124,7 +125,8 @@ for my $name (@projects) {
   print  "    Everything is okay!  Who's have expected THAT?!\n" unless @notes;
 
   print "...hit enter...";
-  scalar <STDIN>;
+  scalar <STDIN> unless $ENV{MAX};
+  last if $ENV{MAX} && ++$did >= $ENV{MAX};
 }
 
 sub notes_for {
