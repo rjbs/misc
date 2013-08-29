@@ -5,6 +5,7 @@ use warnings;
 use DateTime;
 use Getopt::Long::Descriptive;
 use HTTP::Tiny;
+use List::AllUtils qw(uniq);
 use MetaCPAN::API;
 use Parse::CPAN::Packages::Fast;
 use YAML::XS ();
@@ -69,7 +70,7 @@ if ($opt->project or $opt->rebuild) {
     ($saved->{$_}{'last-review'}
     ? ('last-review' => $saved->{$_}{'last-review'})
     : ()),
-  } } @projects;
+  } } uniq(@projects, keys %$saved);
 
   YAML::XS::DumpFile('code-review.yaml', \%dump);
 
