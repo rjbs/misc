@@ -82,10 +82,28 @@ if ($opt->project or $opt->rebuild) {
   open my $mkdn, '>', 'code-review.mkdn' or die "can't open mkdn: $!";
 
   print {$mkdn} <<END_HEADER;
-This file is explained [in my
-journal](http://rjbs.manxome.org/rubric/entry/1996).
+This file is computer-generated for humans to read.  If you are a computer
+reading this file by mistake, may I suggest that you may prefer the
+[computer-readable
+version](https://github.com/rjbs/misc/blob/master/code-review.yaml) instead.
+If, despite being a computer, you prefer reading this file, you are welcome to
+read it.  Be advised, though, that its format may change in the future.
 
-| DIST                                    | LAST REVIEW
+The table below is a list of most (but not all) of the software which I have
+published and maintain.  Most of these projects are CPAN distributions.  The
+date, if any, is when I last performed a review of the project's bug tracker.
+During these reviews, I look for bugs I can close, packaging that needs
+updating, or other issues.  A review does not necessarily close all the open
+issues with a project.
+
+Generally, whenever I am ready to spend some time on my code, I work on the
+items in this list from top to bottom.  Once I've worked on an item, it moves
+to the bottom of the list.
+
+You can read [the program that generates this
+file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
+
+| PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 END_HEADER
 
