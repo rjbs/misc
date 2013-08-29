@@ -232,9 +232,9 @@ sub gh_notes {
   my $res = HTTP::Tiny->new->get(
     "https://api.github.com/repos/rjbs/$gh_repo_name"
   );
+
   unless ($res->{success}) {
-    push @notes, "Could not get issues list from GitHub";
-    last GH;
+    return ("Could not get repository data for rjbs/$gh_repo_name from GitHub");
   }
 
   my $repo = JSON->new->decode($res->{content});
