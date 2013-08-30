@@ -12,9 +12,14 @@ use YAML::XS ();
 
 my ($opt, $usage) = describe_options(
   '%c %o',
-  [ 'rebuild'     => "rebuild the YAML file that holds state" ],
-  [ 'project|p=s' => "project to mark reviewed"               ],
-  [ 'message|m=s' => "commit message"                         ],
+  [ 'rebuild'      => "rebuild the YAML file that holds state" ],
+  [ 'project|p=s'  => "project to mark reviewed"               ],
+  [ 'message|m=s'  => "commit message"                         ],
+  [ 'pauseid=s'    => "your PAUSE id",  { default => uc $ENV{USER} } ],
+  [ 'githubid=s'   => "your GitHub id", { default =>    $ENV{USER} } ],
+  [ 'local-cpan=s' => "where's your local cpan?", { default =>
+      "$ENV{HOME}/Dropbox/minicpan/modules/02packages.details.txt.gz" },
+  ]
 );
 
 die "--message without --rebuild or --project is nonsensical"
@@ -39,7 +44,7 @@ my $ua = LWP::UserAgent->new(keep_alive => 5);
 DIST: for my $d (
   sort { fc $a->dist cmp fc $b->dist } $p->latest_distributions
 ) {
-  next unless $d->cpanid eq 'RJBS';
+  next unless $d->cpanid eq $opt->pauseid;
   next if $d->dist eq 'perl';
 
   $dist->{ $d->dist } = $d;
@@ -233,10 +238,11 @@ sub gh_notes {
 
   my @notes;
 
-  my $res = $ua->get("https://api.github.com/repos/rjbs/$gh_repo_name");
+  my $gh_user = $opt->githubid;
+  my $res = $ua->get("https://api.github.com/repos/$gh_user/$gh_repo_name");
 
   unless ($res->is_success) {
-    return ("Could not get repository data for rjbs/$gh_repo_name from GitHub");
+    return ("Couldn't get repo data for $gh_user/$gh_repo_name from GitHub");
   }
 
   my $repo = JSON->new->decode($res->decoded_content);
