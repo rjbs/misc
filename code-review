@@ -29,9 +29,7 @@ my $mcpan = MetaCPAN::API->new;
 
 my $saved = YAML::XS::LoadFile('code-review.yaml');
 
-my $p = Parse::CPAN::Packages::Fast->new(
-  "$ENV{HOME}/Dropbox/minicpan/modules/02packages.details.txt.gz"
-);
+my $p = Parse::CPAN::Packages::Fast->new($opt->local_cpan);
 
 my %is_tracked
   = map {; $_ => scalar(($saved->{$_}{review} // '') ne 'never') }
