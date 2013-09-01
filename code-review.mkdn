@@ -21,7 +21,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| Email-MIME-Attachment-Stripper          | -
+| Email-MIME-Attachment-Stripper          | 2013-09-01
 | Email-Sender                            | -
 | Email-Simple                            | -
 | Email-Valid                             | -
