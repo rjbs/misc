@@ -214,7 +214,8 @@ Games-Goban:
   last-review: 2013-08-24
 Games-Nintendo-Mario: {}
 Getopt-Long-Descriptive: {}
-Git-Fingerd: {}
+Git-Fingerd:
+  last-review: 2013-09-01
 Git-Megapull: {}
 Global-Context: {}
 HTML-Form-ForceValue: {}
