@@ -177,7 +177,8 @@ Email-Send:
   last-review: 2013-08-18
 Email-Send-IO:
   last-review: 2013-08-18
-Email-Sender: {}
+Email-Sender:
+  last-review: 2013-09-01
 Email-Sender-Transport-SQLite:
   last-review: 2013-08-22
 Email-Simple: {}
