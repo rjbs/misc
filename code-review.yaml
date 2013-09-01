@@ -217,7 +217,8 @@ Getopt-Long-Descriptive: {}
 Git-Fingerd:
   last-review: 2013-09-01
 Git-Megapull: {}
-Global-Context: {}
+Global-Context:
+  last-review: 2013-09-01
 HTML-Form-ForceValue: {}
 HTML-FromText:
   last-review: 2013-07-03
