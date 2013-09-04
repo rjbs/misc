@@ -181,7 +181,8 @@ Email-Sender:
   last-review: 2013-09-01
 Email-Sender-Transport-SQLite:
   last-review: 2013-08-22
-Email-Simple: {}
+Email-Simple:
+  last-review: 2013-09-04
 Email-Simple-FromHandle:
   last-review: 2013-08-24
 Email-Simple-Test-TraceHeaders:
