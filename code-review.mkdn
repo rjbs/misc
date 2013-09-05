@@ -21,8 +21,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| Email-Valid                             | 2013-09-05
-| Games-Nintendo-Mario                    | -
+| Games-Nintendo-Mario                    | 2013-09-05
 | Getopt-Long-Descriptive                 | -
 | Git-Megapull                            | -
 | HTML-Form-ForceValue                    | -
@@ -270,3 +269,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Global-Context                          | 2013-09-01
 | HTML-MasonX-Free                        | 2013-09-01
 | Email-Simple                            | 2013-09-04
+| Email-Valid                             | 2013-09-05
