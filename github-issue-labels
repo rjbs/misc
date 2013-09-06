@@ -1,0 +1,66 @@
+#!perl
+use Pithub;
+use Data::Dumper;
+
+my $pithub = Pithub->new(
+  user  => $ENV{USER},
+  token => $ENV{PITHUB_TOKEN},
+  auto_pagination => 1,
+);
+
+my %want = (
+  Test => 'ff8833',
+  # Docs => '21882b'
+  Docs => 'cc00cc'
+);
+
+my $repos = $pithub->repos->list(
+  type => 'owner',
+);
+
+my %will_do = map {; $_ => 1 } @ARGV;
+
+while ( my $row = $repos->next ) {
+  next unless $row->{owner}{login} eq $pithub->user;
+  next if $row->{fork};
+  next unless $row->{open_issues_count};
+  printf "%s\n", $row->{name};
+  next unless $will_do{ $row->{name} };
+
+  my $label_list = $pithub->issues->labels->list(
+    repo     => $row->{name},
+  )->content;
+
+  my %has = map {; $_->{name} => $_->{color} } @$label_list;
+
+  LABEL: for my $key (sort keys %want) {
+    if (my $existing = delete $has{$key}) {
+      next LABEL if lc $existing eq lc $want{$key};
+
+      $pithub->issues->labels->update(
+        repo  => $row->{name},
+        label => $key,
+        data  => {
+          name  => $key,
+          color => $want{$key},
+        },
+      );
+    } else {
+      warn "creating $key on $row->{name}...\n";
+      my $result = $pithub->issues->labels->create(
+        repo     => $row->{name},
+        data     => {
+          color => $want{$key},
+          name  => $key,
+        },
+      );
+    }
+  }
+
+  if (keys %has) {
+    warn "Unexpected labels on $row->{name}: "
+       . join(q{, }, map {; "[$_]" } sort keys %has)
+       . "\n";
+  }
+}
+
