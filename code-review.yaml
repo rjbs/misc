@@ -230,7 +230,8 @@ HTML-FromText:
   last-review: 2013-07-03
 HTML-MasonX-Free:
   last-review: 2013-09-01
-HTML-Widget-Factory: {}
+HTML-Widget-Factory:
+  last-review: 2013-09-11
 HTML-Widget-Plugin-Calendar: {}
 HTML-Widget-Plugin-Combo: {}
 HTML-Widget-Plugin-JS: {}
