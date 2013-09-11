@@ -224,7 +224,8 @@ Git-Fingerd:
 Git-Megapull: {}
 Global-Context:
   last-review: 2013-09-01
-HTML-Form-ForceValue: {}
+HTML-Form-ForceValue:
+  last-review: 2013-09-11
 HTML-FromText:
   last-review: 2013-07-03
 HTML-MasonX-Free:
