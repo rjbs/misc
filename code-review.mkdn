@@ -22,8 +22,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Git-Megapull                            | -
-| HTML-Widget-Plugin-JS                   | 2013-09-14
-| HTML-Widget-Plugin-Struct               | -
+| HTML-Widget-Plugin-Struct               | 2013-09-14
 | HTTP-Throwable                          | -
 | IO-TieCombine                           | -
 | IPC-Run3                                | -
@@ -270,3 +269,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | HTML-Widget-Factory                     | 2013-09-11
 | HTML-Widget-Plugin-Calendar             | 2013-09-11
 | HTML-Widget-Plugin-Combo                | 2013-09-14
+| HTML-Widget-Plugin-JS                   | 2013-09-14

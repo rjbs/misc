@@ -238,7 +238,8 @@ HTML-Widget-Plugin-Combo:
   last-review: 2013-09-14
 HTML-Widget-Plugin-JS:
   last-review: 2013-09-14
-HTML-Widget-Plugin-Struct: {}
+HTML-Widget-Plugin-Struct:
+  last-review: 2013-09-14
 HTTP-Throwable: {}
 IO-TieCombine: {}
 IPC-Run3: {}
