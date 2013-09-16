@@ -363,7 +363,8 @@ Task-Email-PEP-NoStore:
   last-review: 2013-06-20
 Test-BinaryData: {}
 Test-Deep: {}
-Test-Fatal: {}
+Test-Fatal:
+  last-review: 2013-09-16
 Test-MinimumVersion: {}
 Test-Reporter-HTTPGateway:
   last-review: 2013-06-20

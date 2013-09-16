@@ -122,7 +122,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Task-BeLike-RJBS                        | -
 | Test-BinaryData                         | -
 | Test-Deep                               | -
-| Test-Fatal                              | -
+| Test-Fatal                              | 2013-09-16
 | Test-MinimumVersion                     | -
 | Test-Routine                            | -
 | Throwable                               | -
