@@ -240,7 +240,8 @@ HTML-Widget-Plugin-JS:
   last-review: 2013-09-14
 HTML-Widget-Plugin-Struct:
   last-review: 2013-09-14
-HTTP-Throwable: {}
+HTTP-Throwable:
+  last-review: 2013-09-20
 IO-TieCombine: {}
 IPC-Run3: {}
 JSON-CPAN-Meta: {}
