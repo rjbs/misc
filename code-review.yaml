@@ -247,7 +247,8 @@ IO-TieCombine:
 IPC-Run3: {}
 JSON-CPAN-Meta:
   review: never
-Kwiki-IRCMode: {}
+Kwiki-IRCMode:
+  review: never
 List-MapList: {}
 Log-Dispatch-Array:
   last-review: 2013-07-07
