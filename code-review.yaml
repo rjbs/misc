@@ -249,7 +249,8 @@ JSON-CPAN-Meta:
   review: never
 Kwiki-IRCMode:
   review: never
-List-MapList: {}
+List-MapList:
+  last-review: 2013-09-21
 Log-Dispatch-Array:
   last-review: 2013-07-07
 Log-Dispatch-TextTable: {}
