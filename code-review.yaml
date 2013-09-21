@@ -242,7 +242,8 @@ HTML-Widget-Plugin-Struct:
   last-review: 2013-09-14
 HTTP-Throwable:
   last-review: 2013-09-20
-IO-TieCombine: {}
+IO-TieCombine:
+  last-review: 2013-09-21
 IPC-Run3: {}
 JSON-CPAN-Meta: {}
 Kwiki-IRCMode: {}
