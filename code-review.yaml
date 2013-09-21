@@ -245,7 +245,8 @@ HTTP-Throwable:
 IO-TieCombine:
   last-review: 2013-09-21
 IPC-Run3: {}
-JSON-CPAN-Meta: {}
+JSON-CPAN-Meta:
+  review: never
 Kwiki-IRCMode: {}
 List-MapList: {}
 Log-Dispatch-Array:
