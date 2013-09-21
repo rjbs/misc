@@ -23,9 +23,8 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | --------------------------------------- | -------------
 | Git-Megapull                            | -
 | IPC-Run3                                | -
-| Log-Dispatch-TextTable                  | 2013-09-21
 | Log-Dispatchouli                        | -
-| Macro-Micro                             | -
+| Macro-Micro                             | 2013-09-21
 | Mail-Audit                              | -
 | Mail-Audit-DKIM                         | -
 | Mail-Audit-List                         | -
@@ -268,3 +267,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | HTTP-Throwable                          | 2013-09-20
 | IO-TieCombine                           | 2013-09-21
 | List-MapList                            | 2013-09-21
+| Log-Dispatch-TextTable                  | 2013-09-21
