@@ -253,7 +253,8 @@ List-MapList:
   last-review: 2013-09-21
 Log-Dispatch-Array:
   last-review: 2013-07-07
-Log-Dispatch-TextTable: {}
+Log-Dispatch-TextTable:
+  last-review: 2013-09-21
 Log-Dispatchouli: {}
 MIME-BodyMunger: {}
 MIME-Lite: {}
