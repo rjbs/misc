@@ -256,7 +256,8 @@ Log-Dispatch-Array:
   last-review: 2013-07-07
 Log-Dispatch-TextTable:
   last-review: 2013-09-21
-Log-Dispatchouli: {}
+Log-Dispatchouli:
+  last-review: 2013-09-26
 MIME-BodyMunger: {}
 MIME-Lite: {}
 MRO-Magic: {}
