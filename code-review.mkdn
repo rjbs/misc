@@ -28,9 +28,8 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Mail-Convert-Mbox-ToEml                 | -
 | Mail-SpamAssassin-SimpleClient          | -
 | MasonX-Resolver-WidgetFactory           | -
-| Math-Calculator                         | 2013-09-29
 | Math-TotalBuilder                       | -
-| Math-VarRate                            | -
+| Math-VarRate                            | 2013-09-29
 | Metabase                                | -
 | Metabase-Web                            | -
 | MIME-BodyMunger                         | -
@@ -268,3 +267,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Mail-Audit-DKIM                         | 2013-09-29
 | Mail-LocalDelivery                      | 2013-09-29
 | Mail-Postfix-Attr                       | 2013-09-29
+| Math-Calculator                         | 2013-09-29

@@ -280,7 +280,8 @@ MasonX-Resolver-WidgetFactory: {}
 Math-Calculator:
   last-review: 2013-09-29
 Math-TotalBuilder: {}
-Math-VarRate: {}
+Math-VarRate:
+  last-review: 2013-09-29
 Metabase: {}
 Metabase-Web: {}
 Mixin-ExtraFields: {}
