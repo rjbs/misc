@@ -22,8 +22,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Git-Megapull                            | -
-| Mail-Audit                              | 2013-09-29
-| Mail-Audit-DKIM                         | -
+| Mail-Audit-DKIM                         | 2013-09-29
 | Mail-Audit-List                         | -
 | Mail-Audit-PGP                          | -
 | Mail-Audit-Razor                        | -
@@ -268,3 +267,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | IPC-Run3                                | 2013-09-26
 | Log-Dispatchouli                        | 2013-09-26
 | Config-Singleton                        | 2013-09-29
+| Mail-Audit                              | 2013-09-29

@@ -265,7 +265,8 @@ Macro-Micro:
   last-review: 2013-09-21
 Mail-Audit:
   last-review: 2013-09-29
-Mail-Audit-DKIM: {}
+Mail-Audit-DKIM:
+  last-review: 2013-09-29
 Mail-Audit-List: {}
 Mail-Audit-PGP: {}
 Mail-Audit-Razor: {}
