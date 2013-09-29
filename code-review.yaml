@@ -258,7 +258,8 @@ Log-Dispatch-TextTable:
   last-review: 2013-09-21
 Log-Dispatchouli:
   last-review: 2013-09-26
-MIME-BodyMunger: {}
+MIME-BodyMunger:
+  last-review: 2013-09-29
 MIME-Lite: {}
 MRO-Magic: {}
 Macro-Micro:
