@@ -273,7 +273,8 @@ Mail-Audit-Razor: {}
 Mail-Convert-Mbox-ToEml: {}
 Mail-LocalDelivery:
   last-review: 2013-09-29
-Mail-Postfix-Attr: {}
+Mail-Postfix-Attr:
+  last-review: 2013-09-29
 Mail-SpamAssassin-SimpleClient: {}
 MasonX-Resolver-WidgetFactory: {}
 Math-Calculator: {}
