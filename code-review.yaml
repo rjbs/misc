@@ -285,7 +285,8 @@ Math-VarRate:
   last-review: 2013-09-29
 Metabase: {}
 Metabase-Web: {}
-Mixin-ExtraFields: {}
+Mixin-ExtraFields:
+  last-review: 2013-09-29
 Mixin-ExtraFields-Driver-DBIC: {}
 Mixin-ExtraFields-Hive: {}
 Mixin-ExtraFields-Param: {}
