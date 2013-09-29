@@ -22,7 +22,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Git-Megapull                            | -
-| Mail-Audit                              | -
+| Mail-Audit                              | 2013-09-29
 | Mail-Audit-DKIM                         | -
 | Mail-Audit-List                         | -
 | Mail-Audit-PGP                          | -
@@ -145,7 +145,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | CGI-Application-Server                  | 2013-06-20
 | Class-DBI-MSSQL                         | 2013-06-20
 | Class-DBI-Relationship-HasVariant       | 2013-06-20
-| Config-Singleton                        | 2013-09-29
 | Dist-Zilla-PluginBundle-RJBS            | 2013-06-20
 | E-Mail-Acme                             | 2013-06-20
 | File-CheckTree                          | 2013-06-20
@@ -268,3 +267,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Macro-Micro                             | 2013-09-21
 | IPC-Run3                                | 2013-09-26
 | Log-Dispatchouli                        | 2013-09-26
+| Config-Singleton                        | 2013-09-29
