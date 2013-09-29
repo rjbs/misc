@@ -245,6 +245,9 @@ sub gh_notes {
 
   my $repo = JSON->new->decode($res->decoded_content);
 
+  push @notes, "GitHub issues are not enabled"
+    if ! $repo->{has_issues};
+
   push @notes, "GitHub issue count: $repo->{open_issues_count}"
     if $repo->{open_issues_count};
 
