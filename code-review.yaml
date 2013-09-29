@@ -277,7 +277,8 @@ Mail-Postfix-Attr:
   last-review: 2013-09-29
 Mail-SpamAssassin-SimpleClient: {}
 MasonX-Resolver-WidgetFactory: {}
-Math-Calculator: {}
+Math-Calculator:
+  last-review: 2013-09-29
 Math-TotalBuilder: {}
 Math-VarRate: {}
 Metabase: {}
