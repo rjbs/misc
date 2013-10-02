@@ -151,11 +151,19 @@ sub notes_for {
 sub rt_data {
   state %rt_data;
   unless (%rt_data) {
-    my $res = $ua->get(
-      'https://rt.cpan.org/Public/bugs-per-dist.json'
-    );
-    die "Can't get RT bug count JSON" unless $res->is_success;
-    my $bug_count = JSON->new->decode($res->decoded_content);
+    my $content = `curl https://rt.cpan.org/Public/bugs-per-dist.json -k`;
+    die "curl failed" if $?;
+    my $bug_count = JSON->new->decode($content);
+
+    # my $res = $ua->get(
+    #   'https://rt.cpan.org/Public/bugs-per-dist.json'
+    # );
+    # unless ($res->is_success) {
+    #   use Data::Dumper;
+    #   warn Dumper($res);
+    #   die "Can't get RT bug count JSON";
+    # }
+    # my $bug_count = JSON->new->decode($res->decoded_content);
     for my $name (@projects) {
       next unless $bug_count->{$name};
       $rt_data{ $name } = {
