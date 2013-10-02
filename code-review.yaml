@@ -286,7 +286,8 @@ MasonX-Resolver-WidgetFactory:
   last-review: 2013-10-02
 Math-Calculator:
   last-review: 2013-09-29
-Math-TotalBuilder: {}
+Math-TotalBuilder:
+  last-review: 2013-10-02
 Math-VarRate:
   last-review: 2013-09-29
 Metabase: {}
