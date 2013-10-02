@@ -270,7 +270,8 @@ Mail-Audit-DKIM:
   last-review: 2013-09-29
 Mail-Audit-List:
   last-review: 2013-10-02
-Mail-Audit-PGP: {}
+Mail-Audit-PGP:
+  last-review: 2013-10-02
 Mail-Audit-Razor: {}
 Mail-Convert-Mbox-ToEml: {}
 Mail-LocalDelivery:
