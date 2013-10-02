@@ -298,7 +298,8 @@ Mixin-ExtraFields-Driver-DBIC:
   last-review: 2013-10-02
 Mixin-ExtraFields-Hive:
   last-review: 2013-10-02
-Mixin-ExtraFields-Param: {}
+Mixin-ExtraFields-Param:
+  last-review: 2013-10-02
 Mixin-Historian: {}
 Mixin-Linewise: {}
 Module-Faker: {}
