@@ -25,8 +25,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Metabase                                | -
 | Metabase-Web                            | -
 | MIME-Lite                               | -
-| Mixin-ExtraFields-Driver-DBIC           | 2013-10-02
-| Mixin-ExtraFields-Hive                  | -
+| Mixin-ExtraFields-Hive                  | 2013-10-02
 | Mixin-ExtraFields-Param                 | -
 | Mixin-Historian                         | -
 | Mixin-Linewise                          | -
@@ -266,3 +265,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Mail-SpamAssassin-SimpleClient          | 2013-10-02
 | MasonX-Resolver-WidgetFactory           | 2013-10-02
 | Math-TotalBuilder                       | 2013-10-02
+| Mixin-ExtraFields-Driver-DBIC           | 2013-10-02

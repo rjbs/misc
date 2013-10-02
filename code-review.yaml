@@ -296,7 +296,8 @@ Mixin-ExtraFields:
   last-review: 2013-09-29
 Mixin-ExtraFields-Driver-DBIC:
   last-review: 2013-10-02
-Mixin-ExtraFields-Hive: {}
+Mixin-ExtraFields-Hive:
+  last-review: 2013-10-02
 Mixin-ExtraFields-Param: {}
 Mixin-Historian: {}
 Mixin-Linewise: {}
