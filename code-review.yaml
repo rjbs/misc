@@ -272,8 +272,10 @@ Mail-Audit-List:
   last-review: 2013-10-02
 Mail-Audit-PGP:
   last-review: 2013-10-02
-Mail-Audit-Razor: {}
-Mail-Convert-Mbox-ToEml: {}
+Mail-Audit-Razor:
+  review: never
+Mail-Convert-Mbox-ToEml:
+  review: never
 Mail-LocalDelivery:
   last-review: 2013-09-29
 Mail-Postfix-Attr:
