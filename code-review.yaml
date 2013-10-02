@@ -280,7 +280,8 @@ Mail-LocalDelivery:
   last-review: 2013-09-29
 Mail-Postfix-Attr:
   last-review: 2013-09-29
-Mail-SpamAssassin-SimpleClient: {}
+Mail-SpamAssassin-SimpleClient:
+  last-review: 2013-10-02
 MasonX-Resolver-WidgetFactory: {}
 Math-Calculator:
   last-review: 2013-09-29
