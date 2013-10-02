@@ -294,7 +294,8 @@ Metabase: {}
 Metabase-Web: {}
 Mixin-ExtraFields:
   last-review: 2013-09-29
-Mixin-ExtraFields-Driver-DBIC: {}
+Mixin-ExtraFields-Driver-DBIC:
+  last-review: 2013-10-02
 Mixin-ExtraFields-Hive: {}
 Mixin-ExtraFields-Param: {}
 Mixin-Historian: {}
