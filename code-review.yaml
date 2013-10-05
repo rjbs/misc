@@ -313,7 +313,8 @@ MooseX-ClassCompositor:
   last-review: 2013-10-05
 MooseX-ComposedBehavior:
   last-review: 2013-10-05
-MooseX-OneArgNew: {}
+MooseX-OneArgNew:
+  last-review: 2013-10-05
 MooseX-SetOnce: {}
 MooseX-Storage-Format-JSONpm: {}
 MooseX-Types-Perl: {}
