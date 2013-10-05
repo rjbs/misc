@@ -319,7 +319,8 @@ MooseX-SetOnce:
   last-review: 2013-10-05
 MooseX-Storage-Format-JSONpm:
   last-review: 2013-10-05
-MooseX-Types-Perl: {}
+MooseX-Types-Perl:
+  last-review: 2013-10-05
 Net-Continental: {}
 Net-DNS-GuessTZ:
   last-review: 2013-07-07

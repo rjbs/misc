@@ -32,8 +32,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Module-Starter-Plugin-SimpleStore       | -
 | Module-Starter-Plugin-TT2               | -
 | Moose-Autobox                           | -
-| MooseX-Storage-Format-JSONpm            | 2013-10-05
-| MooseX-Types-Perl                       | -
+| MooseX-Types-Perl                       | 2013-10-05
 | MRO-Magic                               | -
 | Net-Continental                         | -
 | Net-Delicious                           | -
@@ -266,3 +265,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | MooseX-ComposedBehavior                 | 2013-10-05
 | MooseX-OneArgNew                        | 2013-10-05
 | MooseX-SetOnce                          | 2013-10-05
+| MooseX-Storage-Format-JSONpm            | 2013-10-05
