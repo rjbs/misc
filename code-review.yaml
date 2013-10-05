@@ -315,7 +315,8 @@ MooseX-ComposedBehavior:
   last-review: 2013-10-05
 MooseX-OneArgNew:
   last-review: 2013-10-05
-MooseX-SetOnce: {}
+MooseX-SetOnce:
+  last-review: 2013-10-05
 MooseX-Storage-Format-JSONpm: {}
 MooseX-Types-Perl: {}
 Net-Continental: {}
