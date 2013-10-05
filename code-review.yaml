@@ -309,7 +309,8 @@ Module-Install-ExtraTests: {}
 Module-Starter-Plugin-SimpleStore: {}
 Module-Starter-Plugin-TT2: {}
 Moose-Autobox: {}
-MooseX-ClassCompositor: {}
+MooseX-ClassCompositor:
+  last-review: 2013-10-05
 MooseX-ComposedBehavior: {}
 MooseX-OneArgNew: {}
 MooseX-SetOnce: {}
