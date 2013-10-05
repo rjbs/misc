@@ -32,8 +32,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Module-Starter-Plugin-SimpleStore       | -
 | Module-Starter-Plugin-TT2               | -
 | Moose-Autobox                           | -
-| MooseX-ClassCompositor                  | 2013-10-05
-| MooseX-ComposedBehavior                 | -
+| MooseX-ComposedBehavior                 | 2013-10-05
 | MooseX-OneArgNew                        | -
 | MooseX-SetOnce                          | -
 | MooseX-Storage-Format-JSONpm            | -
@@ -266,3 +265,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Mixin-ExtraFields-Hive                  | 2013-10-02
 | Mixin-ExtraFields-Param                 | 2013-10-02
 | Mixin-Historian                         | 2013-10-05
+| MooseX-ClassCompositor                  | 2013-10-05

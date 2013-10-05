@@ -311,7 +311,8 @@ Module-Starter-Plugin-TT2: {}
 Moose-Autobox: {}
 MooseX-ClassCompositor:
   last-review: 2013-10-05
-MooseX-ComposedBehavior: {}
+MooseX-ComposedBehavior:
+  last-review: 2013-10-05
 MooseX-OneArgNew: {}
 MooseX-SetOnce: {}
 MooseX-Storage-Format-JSONpm: {}
