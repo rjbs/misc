@@ -300,7 +300,8 @@ Mixin-ExtraFields-Hive:
   last-review: 2013-10-02
 Mixin-ExtraFields-Param:
   last-review: 2013-10-02
-Mixin-Historian: {}
+Mixin-Historian:
+  last-review: 2013-10-05
 Mixin-Linewise: {}
 Module-Faker: {}
 Module-Install-AuthorTests: {}

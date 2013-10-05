@@ -25,8 +25,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Metabase                                | -
 | Metabase-Web                            | -
 | MIME-Lite                               | -
-| Mixin-ExtraFields-Param                 | 2013-10-02
-| Mixin-Historian                         | -
+| Mixin-Historian                         | 2013-10-05
 | Mixin-Linewise                          | -
 | Module-Faker                            | -
 | Module-Install-AuthorTests              | -
@@ -266,3 +265,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Math-TotalBuilder                       | 2013-10-02
 | Mixin-ExtraFields-Driver-DBIC           | 2013-10-02
 | Mixin-ExtraFields-Hive                  | 2013-10-02
+| Mixin-ExtraFields-Param                 | 2013-10-02
