@@ -290,8 +290,10 @@ Math-TotalBuilder:
   last-review: 2013-10-02
 Math-VarRate:
   last-review: 2013-09-29
-Metabase: {}
-Metabase-Web: {}
+Metabase:
+  review: never
+Metabase-Web:
+  review: never
 Mixin-ExtraFields:
   last-review: 2013-09-29
 Mixin-ExtraFields-Driver-DBIC:
