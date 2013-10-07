@@ -261,7 +261,8 @@ Log-Dispatchouli:
 MIME-BodyMunger:
   last-review: 2013-09-29
 MIME-Lite: {}
-MRO-Magic: {}
+MRO-Magic:
+  last-review: 2013-10-07
 Macro-Micro:
   last-review: 2013-09-21
 Mail-Audit:
