@@ -331,7 +331,8 @@ Net-DNS-GuessTZ:
 Net-Delicious: {}
 Net-Finger-Server:
   last-review: 2013-10-07
-Number-Nary: {}
+Number-Nary:
+  last-review: 2013-10-07
 Number-Tolerant: {}
 Object-Annotate:
   last-review: 2013-07-07

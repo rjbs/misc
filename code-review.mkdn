@@ -31,8 +31,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Module-Starter-Plugin-TT2               | -
 | Moose-Autobox                           | -
 | Net-Delicious                           | -
-| Net-Finger-Server                       | 2013-10-07
-| Number-Nary                             | -
+| Number-Nary                             | 2013-10-07
 | Number-Tolerant                         | -
 | Object-Capsule                          | -
 | Parse-GutenbergRoget                    | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | MooseX-Types-Perl                       | 2013-10-05
 | MRO-Magic                               | 2013-10-07
 | Net-Continental                         | 2013-10-07
+| Net-Finger-Server                       | 2013-10-07
