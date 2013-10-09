@@ -337,7 +337,8 @@ Number-Tolerant:
   last-review: 2013-10-07
 Object-Annotate:
   last-review: 2013-07-07
-Object-Capsule: {}
+Object-Capsule:
+  last-review: 2013-10-09
 Package-Generator:
   last-review: 2013-07-07
 Parse-GutenbergRoget: {}
