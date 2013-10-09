@@ -35,8 +35,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Parse-IRCLog                            | -
 | Perl-PrereqScanner                      | -
 | Pod-Coverage-TrustPod                   | -
-| Pod-CYOA                                | 2013-10-09
-| Pod-Elemental                           | -
+| Pod-Elemental                           | 2013-10-09
 | Pod-Elemental-PerlMunger                | -
 | Pod-Elemental-Transfomer-PPIHTML        | -
 | Pod-Elemental-Transfomer-VimHTML        | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Object-Capsule                          | 2013-10-09
 | Path-Resolver                           | 2013-10-09
 | Perl-Critic-Lax                         | 2013-10-09
+| Pod-CYOA                                | 2013-10-09

@@ -353,7 +353,8 @@ Perl-PrereqScanner: {}
 Pod-CYOA:
   last-review: 2013-10-09
 Pod-Coverage-TrustPod: {}
-Pod-Elemental: {}
+Pod-Elemental:
+  last-review: 2013-10-09
 Pod-Elemental-PerlMunger: {}
 Pod-Elemental-Transfomer-PPIHTML: {}
 Pod-Elemental-Transfomer-VimHTML: {}
