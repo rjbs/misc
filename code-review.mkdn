@@ -33,10 +33,9 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Net-Delicious                           | -
 | Parse-GutenbergRoget                    | -
 | Parse-IRCLog                            | -
-| Perl-Critic-Lax                         | 2013-10-09
 | Perl-PrereqScanner                      | -
 | Pod-Coverage-TrustPod                   | -
-| Pod-CYOA                                | -
+| Pod-CYOA                                | 2013-10-09
 | Pod-Elemental                           | -
 | Pod-Elemental-PerlMunger                | -
 | Pod-Elemental-Transfomer-PPIHTML        | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Number-Tolerant                         | 2013-10-07
 | Object-Capsule                          | 2013-10-09
 | Path-Resolver                           | 2013-10-09
+| Perl-Critic-Lax                         | 2013-10-09

@@ -350,7 +350,8 @@ Perl-Critic-Lax:
 Perl-Critic-Tics:
   last-review: 2013-07-07
 Perl-PrereqScanner: {}
-Pod-CYOA: {}
+Pod-CYOA:
+  last-review: 2013-10-09
 Pod-Coverage-TrustPod: {}
 Pod-Elemental: {}
 Pod-Elemental-PerlMunger: {}
