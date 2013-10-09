@@ -355,7 +355,8 @@ Pod-CYOA:
 Pod-Coverage-TrustPod: {}
 Pod-Elemental:
   last-review: 2013-10-09
-Pod-Elemental-PerlMunger: {}
+Pod-Elemental-PerlMunger:
+  last-review: 2013-10-09
 Pod-Elemental-Transfomer-PPIHTML: {}
 Pod-Elemental-Transfomer-VimHTML: {}
 Pod-Elemental-Transformer-List: {}
