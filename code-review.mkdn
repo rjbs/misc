@@ -31,10 +31,9 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Module-Starter-Plugin-TT2               | -
 | Moose-Autobox                           | -
 | Net-Delicious                           | -
-| Object-Capsule                          | 2013-10-09
 | Parse-GutenbergRoget                    | -
 | Parse-IRCLog                            | -
-| Path-Resolver                           | -
+| Path-Resolver                           | 2013-10-09
 | Perl-Critic-Lax                         | -
 | Perl-PrereqScanner                      | -
 | Pod-Coverage-TrustPod                   | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Net-Finger-Server                       | 2013-10-07
 | Number-Nary                             | 2013-10-07
 | Number-Tolerant                         | 2013-10-07
+| Object-Capsule                          | 2013-10-09

@@ -343,7 +343,8 @@ Package-Generator:
   last-review: 2013-07-07
 Parse-GutenbergRoget: {}
 Parse-IRCLog: {}
-Path-Resolver: {}
+Path-Resolver:
+  last-review: 2013-10-09
 Perl-Critic-Lax: {}
 Perl-Critic-Tics:
   last-review: 2013-07-07
