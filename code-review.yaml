@@ -366,7 +366,8 @@ Pod-Elemental-Transformer-SynHi:
   last-review: 2013-10-13
 Pod-Elemental-Transformer-VimHTML:
   last-review: 2013-10-12
-Pod-Elemental-Transformer-WikiDoc: {}
+Pod-Elemental-Transformer-WikiDoc:
+  last-review: 2013-10-13
 Pod-Eventual: {}
 Pod-Weaver: {}
 Postfix-Parse-Mailq: {}

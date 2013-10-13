@@ -38,8 +38,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Pod-Elemental-Transfomer-PPIHTML        | -
 | Pod-Elemental-Transfomer-VimHTML        | -
 | Pod-Elemental-Transformer-List          | -
-| Pod-Elemental-Transformer-SynHi         | 2013-10-13
-| Pod-Elemental-Transformer-WikiDoc       | -
+| Pod-Elemental-Transformer-WikiDoc       | 2013-10-13
 | Pod-Eventual                            | -
 | Pod-Weaver                              | -
 | Postfix-Parse-Mailq                     | -
@@ -266,3 +265,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Pod-Elemental-PerlMunger                | 2013-10-09
 | Pod-Elemental-Transformer-PPIHTML       | 2013-10-12
 | Pod-Elemental-Transformer-VimHTML       | 2013-10-12
+| Pod-Elemental-Transformer-SynHi         | 2013-10-13
