@@ -357,8 +357,10 @@ Pod-Elemental:
   last-review: 2013-10-09
 Pod-Elemental-PerlMunger:
   last-review: 2013-10-09
-Pod-Elemental-Transfomer-PPIHTML: {}
-Pod-Elemental-Transfomer-VimHTML: {}
+Pod-Elemental-Transformer-PPIHTML:
+  last-review: 2013-10-12
+Pod-Elemental-Transformer-VimHTML:
+  last-review: 2013-10-12
 Pod-Elemental-Transformer-List: {}
 Pod-Elemental-Transformer-SynHi: {}
 Pod-Elemental-Transformer-WikiDoc: {}
