@@ -421,7 +421,8 @@ Sub-Exporter-GlobExporter:
 Sub-Exporter-Lexical: {}
 Sub-Import:
   last-review: 2013-10-16
-Sub-Install: {}
+Sub-Install:
+  last-review: 2013-10-16
 Sub-MicroSig: {}
 Sub-Pipeline:
   last-review: 2013-06-20
