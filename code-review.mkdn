@@ -30,15 +30,13 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Module-Starter-Plugin-SimpleStore       | -
 | Module-Starter-Plugin-TT2               | -
 | Moose-Autobox                           | -
-| Net-Delicious                           | -
-| Parse-GutenbergRoget                    | -
+| Parse-GutenbergRoget                    | 2013-10-16
 | Parse-IRCLog                            | -
 | Perl-PrereqScanner                      | -
 | Pod-Coverage-TrustPod                   | -
 | Pod-Elemental-Transfomer-PPIHTML        | -
 | Pod-Elemental-Transfomer-VimHTML        | -
 | Pod-Elemental-Transformer-List          | -
-| Pod-Eventual                            | 2013-10-13
 | Pod-Weaver                              | -
 | Postfix-Parse-Mailq                     | -
 | PyTAP                                   | -
@@ -75,6 +73,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Test-Deep                               | -
 | Test-MinimumVersion                     | -
 | Test-Routine                            | -
+| Test-Simple                             | -
 | Throwable                               | -
 | Throwable-X                             | -
 | Time-Duration-Object                    | -
@@ -266,3 +265,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Pod-Elemental-Transformer-VimHTML       | 2013-10-12
 | Pod-Elemental-Transformer-SynHi         | 2013-10-13
 | Pod-Elemental-Transformer-WikiDoc       | 2013-10-13
+| Pod-Eventual                            | 2013-10-13

@@ -342,7 +342,8 @@ Object-Capsule:
   last-review: 2013-10-09
 Package-Generator:
   last-review: 2013-07-07
-Parse-GutenbergRoget: {}
+Parse-GutenbergRoget:
+  last-review: 2013-10-16
 Parse-IRCLog: {}
 Path-Resolver:
   last-review: 2013-10-09
@@ -424,6 +425,7 @@ Test-MinimumVersion: {}
 Test-Reporter-HTTPGateway:
   last-review: 2013-06-20
 Test-Routine: {}
+Test-Simple: {}
 Text-Soundex:
   last-review: 2013-06-20
 Throwable: {}
