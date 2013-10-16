@@ -328,7 +328,8 @@ Net-Continental:
   last-review: 2013-10-07
 Net-DNS-GuessTZ:
   last-review: 2013-07-07
-Net-Delicious: {}
+Net-Delicious:
+  review: never
 Net-Finger-Server:
   last-review: 2013-10-07
 Number-Nary:
