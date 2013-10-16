@@ -387,7 +387,8 @@ Return-Value:
   last-review: 2013-10-16
 Role-HasMessage:
   last-review: 2013-10-16
-Role-HasPayload: {}
+Role-HasPayload:
+  last-review: 2013-10-16
 Role-Identifiable: {}
 Role-Subsystem: {}
 Router-Dumb: {}
