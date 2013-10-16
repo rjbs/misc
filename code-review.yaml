@@ -405,7 +405,8 @@ Software-License: {}
 Sort-ByExample:
   last-review: 2013-10-16
 String-Errf: {}
-String-Flogger: {}
+String-Flogger:
+  last-review: 2013-10-16
 String-Formatter: {}
 String-RewritePrefix: {}
 String-TagString:

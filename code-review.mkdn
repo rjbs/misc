@@ -41,9 +41,8 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Querylet-Output-Text                    | -
 | Religion-Bible-Reference                | -
 | Software-License                        | -
-| Sort-ByExample                          | 2013-10-16
 | String-Errf                             | -
-| String-Flogger                          | -
+| String-Flogger                          | 2013-10-16
 | String-Formatter                        | -
 | String-RewritePrefix                    | -
 | String-Truncate                         | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Router-Dumb                             | 2013-10-16
 | Rubric                                  | 2013-10-16
 | Rubric-Entry-Formatter-Markdown         | 2013-10-16
+| Sort-ByExample                          | 2013-10-16
