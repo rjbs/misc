@@ -419,7 +419,8 @@ Sub-Exporter-ForMethods: {}
 Sub-Exporter-GlobExporter:
   last-review: 2013-10-16
 Sub-Exporter-Lexical: {}
-Sub-Import: {}
+Sub-Import:
+  last-review: 2013-10-16
 Sub-Install: {}
 Sub-MicroSig: {}
 Sub-Pipeline:
