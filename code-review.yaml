@@ -393,7 +393,8 @@ Role-Identifiable:
   last-review: 2013-10-16
 Role-Subsystem:
   last-review: 2013-10-16
-Router-Dumb: {}
+Router-Dumb:
+  last-review: 2013-10-16
 Rubric: {}
 Rubric-Entry-Formatter-KwikiFormatish:
   last-review: 2013-07-07
