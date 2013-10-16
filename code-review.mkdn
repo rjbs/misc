@@ -42,9 +42,8 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Religion-Bible-Reference                | -
 | Software-License                        | -
 | String-Errf                             | -
-| String-Flogger                          | 2013-10-16
 | String-Formatter                        | -
-| String-RewritePrefix                    | -
+| String-RewritePrefix                    | 2013-10-16
 | String-Truncate                         | -
 | Sub-Exporter                            | -
 | Sub-Exporter-ForMethods                 | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Rubric                                  | 2013-10-16
 | Rubric-Entry-Formatter-Markdown         | 2013-10-16
 | Sort-ByExample                          | 2013-10-16
+| String-Flogger                          | 2013-10-16

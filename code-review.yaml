@@ -408,7 +408,8 @@ String-Errf: {}
 String-Flogger:
   last-review: 2013-10-16
 String-Formatter: {}
-String-RewritePrefix: {}
+String-RewritePrefix:
+  last-review: 2013-10-16
 String-TagString:
   last-review: 2013-07-06
 String-Truncate: {}
