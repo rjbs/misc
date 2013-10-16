@@ -416,7 +416,8 @@ String-Truncate:
   last-review: 2013-10-16
 Sub-Exporter: {}
 Sub-Exporter-ForMethods: {}
-Sub-Exporter-GlobExporter: {}
+Sub-Exporter-GlobExporter:
+  last-review: 2013-10-16
 Sub-Exporter-Lexical: {}
 Sub-Import: {}
 Sub-Install: {}
