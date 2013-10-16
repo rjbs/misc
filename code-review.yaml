@@ -399,7 +399,8 @@ Rubric:
   last-review: 2013-10-16
 Rubric-Entry-Formatter-KwikiFormatish:
   last-review: 2013-07-07
-Rubric-Entry-Formatter-Markdown: {}
+Rubric-Entry-Formatter-Markdown:
+  last-review: 2013-10-16
 Software-License: {}
 Sort-ByExample: {}
 String-Errf: {}
