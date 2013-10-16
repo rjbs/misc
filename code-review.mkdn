@@ -43,8 +43,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Software-License                        | -
 | String-Errf                             | -
 | String-Formatter                        | -
-| String-RewritePrefix                    | 2013-10-16
-| String-Truncate                         | -
+| String-Truncate                         | 2013-10-16
 | Sub-Exporter                            | -
 | Sub-Exporter-ForMethods                 | -
 | Sub-Exporter-GlobExporter               | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Rubric-Entry-Formatter-Markdown         | 2013-10-16
 | Sort-ByExample                          | 2013-10-16
 | String-Flogger                          | 2013-10-16
+| String-RewritePrefix                    | 2013-10-16

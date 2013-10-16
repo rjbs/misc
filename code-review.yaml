@@ -412,7 +412,8 @@ String-RewritePrefix:
   last-review: 2013-10-16
 String-TagString:
   last-review: 2013-07-06
-String-Truncate: {}
+String-Truncate:
+  last-review: 2013-10-16
 Sub-Exporter: {}
 Sub-Exporter-ForMethods: {}
 Sub-Exporter-GlobExporter: {}
