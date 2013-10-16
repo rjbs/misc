@@ -30,8 +30,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Module-Starter-Plugin-SimpleStore       | -
 | Module-Starter-Plugin-TT2               | -
 | Moose-Autobox                           | -
-| Parse-GutenbergRoget                    | 2013-10-16
-| Parse-IRCLog                            | -
+| Parse-IRCLog                            | 2013-10-16
 | Perl-PrereqScanner                      | -
 | Pod-Coverage-TrustPod                   | -
 | Pod-Elemental-Transfomer-PPIHTML        | -
@@ -266,3 +265,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Pod-Elemental-Transformer-SynHi         | 2013-10-13
 | Pod-Elemental-Transformer-WikiDoc       | 2013-10-13
 | Pod-Eventual                            | 2013-10-13
+| Parse-GutenbergRoget                    | 2013-10-16
