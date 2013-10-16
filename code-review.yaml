@@ -395,7 +395,8 @@ Role-Subsystem:
   last-review: 2013-10-16
 Router-Dumb:
   last-review: 2013-10-16
-Rubric: {}
+Rubric:
+  last-review: 2013-10-16
 Rubric-Entry-Formatter-KwikiFormatish:
   last-review: 2013-07-07
 Rubric-Entry-Formatter-Markdown: {}

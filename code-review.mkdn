@@ -40,8 +40,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Querylet-Output-Excel-XLS               | -
 | Querylet-Output-Text                    | -
 | Religion-Bible-Reference                | -
-| Router-Dumb                             | 2013-10-16
-| Rubric                                  | -
+| Rubric                                  | 2013-10-16
 | Rubric-Entry-Formatter-Markdown         | -
 | Software-License                        | -
 | Sort-ByExample                          | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Role-HasPayload                         | 2013-10-16
 | Role-Identifiable                       | 2013-10-16
 | Role-Subsystem                          | 2013-10-16
+| Router-Dumb                             | 2013-10-16
