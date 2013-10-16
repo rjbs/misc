@@ -385,7 +385,8 @@ Querylet-Output-Text: {}
 Religion-Bible-Reference: {}
 Return-Value:
   last-review: 2013-10-16
-Role-HasMessage: {}
+Role-HasMessage:
+  last-review: 2013-10-16
 Role-HasPayload: {}
 Role-Identifiable: {}
 Role-Subsystem: {}
