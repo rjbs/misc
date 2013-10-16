@@ -402,7 +402,8 @@ Rubric-Entry-Formatter-KwikiFormatish:
 Rubric-Entry-Formatter-Markdown:
   last-review: 2013-10-16
 Software-License: {}
-Sort-ByExample: {}
+Sort-ByExample:
+  last-review: 2013-10-16
 String-Errf: {}
 String-Flogger: {}
 String-Formatter: {}
