@@ -42,13 +42,12 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | String-Errf                             | -
 | String-Formatter                        | -
 | Sub-Exporter-Lexical                    | -
-| Test-BinaryData                         | 2013-10-18
 | Test-Deep                               | -
 | Test-MinimumVersion                     | -
 | Test-Routine                            | -
 | Test-Simple                             | -
 | Throwable                               | -
-| Throwable-X                             | -
+| Throwable-X                             | 2013-10-18
 | Time-Duration-Object                    | -
 | Time-Piece                              | -
 | Tree-File                               | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Sub-Exporter-ForMethods                 | 2013-10-18
 | Sub-MicroSig                            | 2013-10-18
 | Task-BeLike-RJBS                        | 2013-10-18
+| Test-BinaryData                         | 2013-10-18

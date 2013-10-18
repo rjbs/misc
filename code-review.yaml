@@ -452,7 +452,8 @@ Test-Simple: {}
 Text-Soundex:
   last-review: 2013-06-20
 Throwable: {}
-Throwable-X: {}
+Throwable-X:
+  last-review: 2013-10-18
 Time-Duration-Object: {}
 Time-Piece: {}
 Time-Piece-MSSQL:
