@@ -41,8 +41,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Software-License                        | -
 | String-Errf                             | -
 | String-Formatter                        | -
-| Sub-Exporter                            | 2013-10-18
-| Sub-Exporter-ForMethods                 | -
+| Sub-Exporter-ForMethods                 | 2013-10-18
 | Sub-Exporter-Lexical                    | -
 | Sub-MicroSig                            | -
 | Task-BeLike-RJBS                        | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Sub-Install                             | 2013-10-16
 | PyTAP                                   | 2013-10-18
 | Religion-Bible-Reference                | 2013-10-18
+| Sub-Exporter                            | 2013-10-18
