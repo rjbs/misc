@@ -38,11 +38,10 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Querylet-Output-Excel-OLE               | -
 | Querylet-Output-Excel-XLS               | -
 | Querylet-Output-Text                    | -
-| Religion-Bible-Reference                | 2013-10-18
 | Software-License                        | -
 | String-Errf                             | -
 | String-Formatter                        | -
-| Sub-Exporter                            | -
+| Sub-Exporter                            | 2013-10-18
 | Sub-Exporter-ForMethods                 | -
 | Sub-Exporter-Lexical                    | -
 | Sub-MicroSig                            | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Sub-Import                              | 2013-10-16
 | Sub-Install                             | 2013-10-16
 | PyTAP                                   | 2013-10-18
+| Religion-Bible-Reference                | 2013-10-18
