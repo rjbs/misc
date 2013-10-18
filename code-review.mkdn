@@ -42,8 +42,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | String-Errf                             | -
 | String-Formatter                        | -
 | Sub-Exporter-Lexical                    | -
-| Sub-MicroSig                            | 2013-10-18
-| Task-BeLike-RJBS                        | -
+| Task-BeLike-RJBS                        | 2013-10-18
 | Test-BinaryData                         | -
 | Test-Deep                               | -
 | Test-MinimumVersion                     | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Religion-Bible-Reference                | 2013-10-18
 | Sub-Exporter                            | 2013-10-18
 | Sub-Exporter-ForMethods                 | 2013-10-18
+| Sub-MicroSig                            | 2013-10-18
