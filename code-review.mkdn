@@ -33,7 +33,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Perl-PrereqScanner                      | -
 | Pod-Coverage-TrustPod                   | -
 | Pod-Weaver                              | -
-| PyTAP                                   | -
+| PyTAP                                   | 2013-10-18
 | Querylet                                | -
 | Querylet-CGI                            | -
 | Querylet-Output-Excel-OLE               | -
@@ -46,7 +46,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Sub-Exporter                            | -
 | Sub-Exporter-ForMethods                 | -
 | Sub-Exporter-Lexical                    | -
-| Sub-Install                             | 2013-10-16
 | Sub-MicroSig                            | -
 | Task-BeLike-RJBS                        | -
 | Test-BinaryData                         | -
@@ -264,3 +263,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | String-Truncate                         | 2013-10-16
 | Sub-Exporter-GlobExporter               | 2013-10-16
 | Sub-Import                              | 2013-10-16
+| Sub-Install                             | 2013-10-16
