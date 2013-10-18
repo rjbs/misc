@@ -383,7 +383,8 @@ Querylet-CGI: {}
 Querylet-Output-Excel-OLE: {}
 Querylet-Output-Excel-XLS: {}
 Querylet-Output-Text: {}
-Religion-Bible-Reference: {}
+Religion-Bible-Reference:
+  last-review: 2013-10-18
 Return-Value:
   last-review: 2013-10-16
 Role-HasMessage:
