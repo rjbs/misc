@@ -461,7 +461,8 @@ Time-Piece: {}
 Time-Piece-MSSQL:
   last-review: 2013-06-20
 Tree-File: {}
-Try-Tiny: {}
+Try-Tiny:
+  review: never
 URI-cpan: {}
 Version-Requirements:
   last-review: 2013-06-20
