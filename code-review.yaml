@@ -467,7 +467,8 @@ URI-cpan:
   last-review: 2013-10-22
 Version-Requirements:
   last-review: 2013-06-20
-WWW-AdventCalendar: {}
+WWW-AdventCalendar:
+  last-review: 2013-10-22
 ZMachine:
   last-review: 2013-06-20
 delicious-backup:
