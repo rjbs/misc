@@ -451,7 +451,8 @@ Test-Routine: {}
 Test-Simple: {}
 Text-Soundex:
   last-review: 2013-06-20
-Throwable: {}
+Throwable:
+  last-review: 2013-10-22
 Throwable-X:
   last-review: 2013-10-18
 Time-Duration-Object:
