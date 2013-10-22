@@ -463,7 +463,8 @@ Time-Piece-MSSQL:
 Tree-File: {}
 Try-Tiny:
   review: never
-URI-cpan: {}
+URI-cpan:
+  last-review: 2013-10-22
 Version-Requirements:
   last-review: 2013-06-20
 WWW-AdventCalendar: {}
