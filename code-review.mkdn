@@ -48,8 +48,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Test-Simple                             | -
 | Time-Piece                              | -
 | Tree-File                               | -
-| App-Whiff                               | 2013-10-22
-| Date-Span                               | 2013-06-18
+| Date-Span                               | 2013-10-22
 | Acme-Lingua-EN-Inflect-Modern           | 2013-06-19
 | Acme-ProgressBar                        | 2013-06-19
 | Amce-CNA                                | 2013-06-19
@@ -260,6 +259,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Test-BinaryData                         | 2013-10-18
 | Throwable-X                             | 2013-10-18
 | Time-Duration-Object                    | 2013-10-18
+| App-Whiff                               | 2013-10-22
 | Throwable                               | 2013-10-22
 | URI-cpan                                | 2013-10-22
 | WWW-AdventCalendar                      | 2013-10-22
