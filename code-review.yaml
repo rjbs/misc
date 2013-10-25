@@ -306,7 +306,8 @@ Mixin-ExtraFields-Param:
 Mixin-Historian:
   last-review: 2013-10-05
 Mixin-Linewise: {}
-Module-Faker: {}
+Module-Faker:
+  last-review: 2013-10-25
 Module-Install-AuthorTests: {}
 Module-Install-ExtraTests: {}
 Module-Starter-Plugin-SimpleStore: {}
