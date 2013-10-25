@@ -24,11 +24,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Git-Megapull                            | -
 | MIME-Lite                               | -
 | Mixin-Linewise                          | -
-| Module-Faker                            | 2013-10-25
-| Module-Install-AuthorTests              | -
-| Module-Install-ExtraTests               | -
-| Module-Starter-Plugin-SimpleStore       | -
-| Module-Starter-Plugin-TT2               | -
 | Moose-Autobox                           | -
 | Perl-PrereqScanner                      | -
 | Pod-Coverage-TrustPod                   | -
@@ -49,7 +44,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Time-Piece                              | -
 | Tree-File                               | -
 | Acme-Lingua-EN-Inflect-Modern           | 2013-06-19
-| Acme-ProgressBar                        | 2013-06-19
+| Acme-ProgressBar                        | 2013-10-25
 | Amce-CNA                                | 2013-06-19
 | App-Addex                               | 2013-06-19
 | App-Addex-AddressBook-Abook             | 2013-06-19
@@ -263,3 +258,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Throwable                               | 2013-10-22
 | URI-cpan                                | 2013-10-22
 | WWW-AdventCalendar                      | 2013-10-22
+| Module-Faker                            | 2013-10-25

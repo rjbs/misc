@@ -2,7 +2,7 @@
 Acme-Lingua-EN-Inflect-Modern:
   last-review: 2013-06-19
 Acme-ProgressBar:
-  last-review: 2013-06-19
+  last-review: 2013-10-25
 Amce-CNA:
   last-review: 2013-06-19
 App-Addex:
@@ -308,10 +308,14 @@ Mixin-Historian:
 Mixin-Linewise: {}
 Module-Faker:
   last-review: 2013-10-25
-Module-Install-AuthorTests: {}
-Module-Install-ExtraTests: {}
-Module-Starter-Plugin-SimpleStore: {}
-Module-Starter-Plugin-TT2: {}
+Module-Install-AuthorTests:
+  review: never
+Module-Install-ExtraTests:
+  review: never
+Module-Starter-Plugin-SimpleStore:
+  review: never
+Module-Starter-Plugin-TT2:
+  review: never
 Moose-Autobox: {}
 MooseX-ClassCompositor:
   last-review: 2013-10-05
