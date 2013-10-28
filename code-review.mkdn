@@ -24,7 +24,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Git-Megapull                            | -
 | MIME-Lite                               | -
 | Mixin-Linewise                          | -
-| Moose-Autobox                           | 2013-10-28
 | Perl-PrereqScanner                      | -
 | Pod-Coverage-TrustPod                   | -
 | Pod-Weaver                              | -
@@ -43,7 +42,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Test-Simple                             | -
 | Time-Piece                              | -
 | Tree-File                               | -
-| Acme-Lingua-EN-Inflect-Modern           | 2013-06-19
+| Acme-Lingua-EN-Inflect-Modern           | 2013-10-28
 | Amce-CNA                                | 2013-06-19
 | App-Addex-AddressBook-Abook             | 2013-06-19
 | App-Addex-AddressBook-Apple             | 2013-06-19
@@ -259,3 +258,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Acme-ProgressBar                        | 2013-10-25
 | App-Addex                               | 2013-10-25
 | Module-Faker                            | 2013-10-25
+| Moose-Autobox                           | 2013-10-28
