@@ -316,7 +316,8 @@ Module-Starter-Plugin-SimpleStore:
   review: never
 Module-Starter-Plugin-TT2:
   review: never
-Moose-Autobox: {}
+Moose-Autobox:
+  last-review: 2013-10-28
 MooseX-ClassCompositor:
   last-review: 2013-10-05
 MooseX-ComposedBehavior:
