@@ -221,7 +221,8 @@ Getopt-Long-Descriptive:
   last-review: 2013-09-05
 Git-Fingerd:
   last-review: 2013-09-01
-Git-Megapull: {}
+Git-Megapull:
+  last-review: 2013-10-31
 Global-Context:
   last-review: 2013-09-01
 HTML-Form-ForceValue:
