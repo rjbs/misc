@@ -384,7 +384,8 @@ Postfix-Parse-Mailq:
 PyTAP:
   home: GitHub
   last-review: 2013-10-18
-Querylet: {}
+Querylet:
+  last-review: 2013-10-31
 Querylet-CGI: {}
 Querylet-Output-Excel-OLE: {}
 Querylet-Output-Excel-XLS: {}
