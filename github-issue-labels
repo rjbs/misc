@@ -9,9 +9,11 @@ my $pithub = Pithub->new(
 );
 
 my %want = (
-  Test => 'ff8833',
-  # Docs => '21882b'
-  Docs => 'cc00cc'
+  Critical => 'ff0000',
+  Docs     => 'cc00cc',
+  Rejected => '000000',
+  Test     => 'ff8833',
+  Wishlist => 'ffff00',
 );
 
 my $repos = $pithub->repos->list(
