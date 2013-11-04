@@ -21,9 +21,8 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| MIME-Lite                               | 2013-11-04
 | Mixin-Linewise                          | -
-| Perl-PrereqScanner                      | -
+| Perl-PrereqScanner                      | 2013-11-04
 | Pod-Coverage-TrustPod                   | -
 | Pod-Weaver                              | -
 | Querylet-CGI                            | -
@@ -259,3 +258,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Moose-Autobox                           | 2013-10-28
 | Git-Megapull                            | 2013-10-31
 | Querylet                                | 2013-10-31
+| MIME-Lite                               | 2013-11-04
