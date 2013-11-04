@@ -261,7 +261,8 @@ Log-Dispatchouli:
   last-review: 2013-09-26
 MIME-BodyMunger:
   last-review: 2013-09-29
-MIME-Lite: {}
+MIME-Lite:
+  last-review: 2013-11-04
 MRO-Magic:
   last-review: 2013-10-07
 Macro-Micro:

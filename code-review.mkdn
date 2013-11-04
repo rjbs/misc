@@ -21,8 +21,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| Git-Megapull                            | 2013-10-31
-| MIME-Lite                               | -
+| MIME-Lite                               | 2013-11-04
 | Mixin-Linewise                          | -
 | Perl-PrereqScanner                      | -
 | Pod-Coverage-TrustPod                   | -
@@ -258,4 +257,5 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Module-Faker                            | 2013-10-25
 | Acme-Lingua-EN-Inflect-Modern           | 2013-10-28
 | Moose-Autobox                           | 2013-10-28
+| Git-Megapull                            | 2013-10-31
 | Querylet                                | 2013-10-31
