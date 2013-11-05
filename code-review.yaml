@@ -364,7 +364,8 @@ Perl-PrereqScanner:
   last-review: 2013-11-04
 Pod-CYOA:
   last-review: 2013-10-09
-Pod-Coverage-TrustPod: {}
+Pod-Coverage-TrustPod:
+  last-review: 2013-11-05
 Pod-Elemental:
   last-review: 2013-10-09
 Pod-Elemental-PerlMunger:
@@ -451,6 +452,7 @@ Task-Email-PEP-NoStore:
   last-review: 2013-06-20
 Test-BinaryData:
   last-review: 2013-10-18
+Test-Class: {}
 Test-Deep: {}
 Test-Fatal:
   last-review: 2013-09-16
