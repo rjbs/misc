@@ -382,7 +382,8 @@ Pod-Elemental-Transformer-WikiDoc:
   last-review: 2013-10-13
 Pod-Eventual:
   last-review: 2013-10-13
-Pod-Weaver: {}
+Pod-Weaver:
+  last-review: 2013-11-06
 Postfix-Parse-Mailq:
   last-review: 2013-10-16
 PyTAP:
