@@ -14,6 +14,7 @@ my %want = (
   Rejected => '000000',
   Test     => 'ff8833',
   Wishlist => 'ffff00',
+  # ??     => '009800', # nice color
 );
 
 my $repos = $pithub->repos->list(
