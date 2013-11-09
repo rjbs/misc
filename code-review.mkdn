@@ -22,14 +22,13 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Mixin-Linewise                          | -
-| Pod-Weaver                              | 2013-11-06
 | Querylet-CGI                            | -
 | Querylet-Output-Excel-OLE               | -
 | Querylet-Output-Excel-XLS               | -
 | Querylet-Output-Text                    | -
 | Software-License                        | -
 | String-Errf                             | -
-| String-Formatter                        | -
+| String-Formatter                        | 2013-11-09
 | Sub-Exporter-Lexical                    | -
 | Test-Class                              | -
 | Test-Deep                               | -
@@ -260,3 +259,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | MIME-Lite                               | 2013-11-04
 | Perl-PrereqScanner                      | 2013-11-04
 | Pod-Coverage-TrustPod                   | 2013-11-05
+| Pod-Weaver                              | 2013-11-06

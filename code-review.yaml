@@ -421,7 +421,8 @@ Sort-ByExample:
 String-Errf: {}
 String-Flogger:
   last-review: 2013-10-16
-String-Formatter: {}
+String-Formatter:
+  last-review: 2013-11-09
 String-RewritePrefix:
   last-review: 2013-10-16
 String-TagString:
