@@ -474,7 +474,8 @@ Time-Duration-Object:
 Time-Piece: {}
 Time-Piece-MSSQL:
   last-review: 2013-06-20
-Tree-File: {}
+Tree-File:
+  review: never
 Try-Tiny:
   review: never
 URI-cpan:
