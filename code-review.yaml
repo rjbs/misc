@@ -395,7 +395,8 @@ Querylet-CGI:
   last-review: 2013-11-15
 Querylet-Output-Excel-OLE:
   last-review: 2013-11-15
-Querylet-Output-Excel-XLS: {}
+Querylet-Output-Excel-XLS:
+  last-review: 2013-11-15
 Querylet-Output-Text: {}
 Religion-Bible-Reference:
   last-review: 2013-10-18
