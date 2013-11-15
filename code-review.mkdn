@@ -22,8 +22,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Mixin-Linewise                          | -
-| Querylet-Output-Excel-XLS               | 2013-11-15
-| Querylet-Output-Text                    | -
+| Querylet-Output-Text                    | 2013-11-15
 | Software-License                        | -
 | String-Errf                             | -
 | Sub-Exporter-Lexical                    | -
@@ -260,3 +259,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | String-Formatter                        | 2013-11-09
 | Querylet-CGI                            | 2013-11-15
 | Querylet-Output-Excel-OLE               | 2013-11-15
+| Querylet-Output-Excel-XLS               | 2013-11-15

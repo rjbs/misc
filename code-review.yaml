@@ -397,7 +397,8 @@ Querylet-Output-Excel-OLE:
   last-review: 2013-11-15
 Querylet-Output-Excel-XLS:
   last-review: 2013-11-15
-Querylet-Output-Text: {}
+Querylet-Output-Text:
+  last-review: 2013-11-15
 Religion-Bible-Reference:
   last-review: 2013-10-18
 Return-Value:
