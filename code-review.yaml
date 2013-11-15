@@ -391,7 +391,8 @@ PyTAP:
   last-review: 2013-10-18
 Querylet:
   last-review: 2013-10-31
-Querylet-CGI: {}
+Querylet-CGI:
+  last-review: 2013-11-15
 Querylet-Output-Excel-OLE: {}
 Querylet-Output-Excel-XLS: {}
 Querylet-Output-Text: {}
@@ -484,6 +485,7 @@ Version-Requirements:
   last-review: 2013-06-20
 WWW-AdventCalendar:
   last-review: 2013-10-22
+WebService-RTMAgent: {}
 ZMachine:
   last-review: 2013-06-20
 delicious-backup:
