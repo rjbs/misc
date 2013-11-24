@@ -441,7 +441,8 @@ Sub-Exporter-ForMethods:
   last-review: 2013-10-18
 Sub-Exporter-GlobExporter:
   last-review: 2013-10-16
-Sub-Exporter-Lexical: {}
+Sub-Exporter-Lexical:
+  last-review: 2013-11-24
 Sub-Import:
   last-review: 2013-10-16
 Sub-Install:
