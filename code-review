@@ -113,7 +113,10 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 END_HEADER
 
   printf {$mkdn} "| %-40s| %s\n", $_, $saved->{$_}{'last-review'} // '-'
-    for @projects;
+    for sort {
+      ($saved->{$a}{'last-review'} // '0') cmp ($saved->{$b}{'last-review'} // 0)
+      ||
+      fc $a cmp fc $b } @projects;
 
   close $mkdn or die "error closing mkdn: $!";
 
