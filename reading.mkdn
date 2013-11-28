@@ -5,7 +5,8 @@
 |-------------------------------------|---|-----|------------|------------|
  Rise and Fall of the Third Reich     | D | Hum | 2012-??-?? |
  Starting Forth                       | P | Tec | 2012-??-?? |
- Apocalypse Z                         | D | Lit | 2013-10-15 |
+ Evil Machines                        | D | Lit | 2013-11-19 | 2013-11-26
+ Apocalypse Z                         | D | Lit | 2013-10-15 | 2013-11-17
  Abberations: Horror Stories          | D | Lit | 2013-??-?? | 2013-10-15
  The Lifecycle of Software Objects    | D | Lit | 2013-09-17 | 2013-09-21
  It Can't Happen Here                 | D | Lit | 2013-??-?? | 2013-09-15
