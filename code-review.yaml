@@ -461,7 +461,8 @@ Task-Email-PEP-NoStore:
   last-review: 2013-06-20
 Test-BinaryData:
   last-review: 2013-10-18
-Test-Class: {}
+Test-Class:
+  last-review: 2013-11-30
 Test-Deep: {}
 Test-Fatal:
   last-review: 2013-09-16
