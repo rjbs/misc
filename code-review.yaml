@@ -497,7 +497,8 @@ Version-Requirements:
   last-review: 2013-06-20
 WWW-AdventCalendar:
   last-review: 2013-10-22
-WebService-RTMAgent: {}
+WebService-RTMAgent:
+  last-review: 2013-12-07
 ZMachine:
   last-review: 2013-06-20
 delicious-backup:

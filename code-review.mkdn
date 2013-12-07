@@ -22,7 +22,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Mixin-Linewise                          | -
-| WebService-RTMAgent                     | -
 | App-Cmd                                 | 2013-06-19
 | App-Cmd-Plugin-Prompt                   | 2013-06-19
 | App-Cronjob                             | 2013-06-19
@@ -260,3 +259,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Test-Routine                            | 2013-12-04
 | Time-Piece                              | 2013-12-04
 | Test-Simple                             | 2013-12-07
+| WebService-RTMAgent                     | 2013-12-07
