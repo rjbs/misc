@@ -5,6 +5,7 @@
 |-------------------------------------|---|-----|------------|------------|
  Rise and Fall of the Third Reich     | D | Hum | 2012-??-?? |
  Starting Forth                       | P | Tec | 2012-??-?? |
+ New Death and others, The            | D | Lit | 2013-12-09 |
  Evil Machines                        | D | Lit | 2013-11-19 | 2013-11-26
  Apocalypse Z                         | D | Lit | 2013-10-15 | 2013-11-17
  Abberations: Horror Stories          | D | Lit | 2013-??-?? | 2013-10-15
@@ -54,7 +55,6 @@
  Imitation of Christ, The             | D | Humanities | Begun  | -
  Main Street                          | D | Literature | Queued | -
  Meditations (Marcus Aurelius)        | D | Humanities | Queued | -
- New Death and others, The            | D | Literature | Queued | -
  Playing at the World                 | D | Humanities | Begun  | 2013
  Under the Loving Care of the Father… | D | Humanities | Begun  | 2007?
  Theory of Fun for Game Design        | D | Humanities | Begun  | 2012
