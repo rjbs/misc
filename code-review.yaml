@@ -28,6 +28,7 @@ App-Smarkmail:
 App-Whiff:
   last-review: 2013-10-22
 B-Lint:
+  review: never
   last-review: 2013-06-20
 Bryar-Config-YAML:
   last-review: 2013-06-20
