@@ -507,6 +507,7 @@ Try-Tiny:
 URI-cpan:
   last-review: 2013-10-22
 Version-Requirements:
+  review: never
   last-review: 2013-06-20
 WWW-AdventCalendar:
   last-review: 2013-10-22
