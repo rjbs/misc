@@ -129,12 +129,14 @@ my $did;
 for my $name (@projects) {
   my @notes = notes_for($name);
   say "=== $name ==========";
-  printf "    %s\n", $_ for @notes;
-  print  "    Everything is okay!  Who'd have expected THAT?!\n" unless @notes;
-
-  print "...hit enter...";
-  scalar <STDIN> unless $ENV{MAX};
-  last if $ENV{MAX} && ++$did >= $ENV{MAX};
+  if (@notes) {
+    printf "    %s\n", $_ for @notes;
+    print "...hit enter...";
+    scalar <STDIN> unless $ENV{MAX};
+    last if $ENV{MAX} && ++$did >= $ENV{MAX};
+  } else {
+    print  "    Everything is okay!  Who'd have expected THAT?!\n";
+  }
 }
 
 sub notes_for {
