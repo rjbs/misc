@@ -37,6 +37,7 @@ Bryar-DataSource-Multiplex:
   review: never
   last-review: 2013-06-20
 Bundle-Email:
+  review: never
   last-review: 2013-06-20
 CGI-Application-Server:
   last-review: 2013-06-20
