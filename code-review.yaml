@@ -209,6 +209,7 @@ Exception-Reporter:
 Exception-Reporter-Summarizer-Catalyst:
   last-review: 2013-08-22
 File-CheckTree:
+  review: never
   last-review: 2013-06-20
 File-LinkTree-Builder:
   last-review: 2013-07-07
