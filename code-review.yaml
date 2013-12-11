@@ -40,6 +40,7 @@ Bundle-Email:
   last-review: 2013-06-20
   review: never
 CGI-Application-Server:
+  review: never
   last-review: 2013-12-11
 CGI-Form-Table:
   last-review: 2013-07-01
@@ -54,8 +55,10 @@ Catalyst-View-Text-Template:
 Class-Accessor-Class:
   last-review: 2013-07-01
 Class-DBI-MSSQL:
+  review: never
   last-review: 2013-06-20
 Class-DBI-Relationship-HasVariant:
+  review: never
   last-review: 2013-06-20
 Color-Palette:
   last-review: 2013-07-01
