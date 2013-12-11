@@ -465,8 +465,10 @@ Task-Deprecations5_12:
   review: never
   last-review: 2013-06-20
 Task-Email-PEP-All:
+  review: never
   last-review: 2013-06-20
 Task-Email-PEP-NoStore:
+  review: never
   last-review: 2013-06-20
 Test-BinaryData:
   last-review: 2013-10-18
