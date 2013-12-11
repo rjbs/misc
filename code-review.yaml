@@ -40,8 +40,8 @@ Bundle-Email:
   last-review: 2013-06-20
   review: never
 CGI-Application-Server:
-  review: never
   last-review: 2013-12-11
+  review: never
 CGI-Form-Table:
   last-review: 2013-07-01
 CPAN-Faker:
@@ -55,11 +55,11 @@ Catalyst-View-Text-Template:
 Class-Accessor-Class:
   last-review: 2013-07-01
 Class-DBI-MSSQL:
-  review: never
   last-review: 2013-06-20
+  review: never
 Class-DBI-Relationship-HasVariant:
-  review: never
   last-review: 2013-06-20
+  review: never
 Color-Palette:
   last-review: 2013-07-01
 Color-Scheme:
@@ -123,7 +123,7 @@ Dist-Zilla-Plugin-TaskWeaver:
 Dist-Zilla-PluginBundle-RJBS:
   last-review: 2013-11-24
 E-Mail-Acme:
-  last-review: 2013-06-20
+  last-review: 2013-12-11
 Email-ARF:
   last-review: 2013-07-25
 Email-Abstract:

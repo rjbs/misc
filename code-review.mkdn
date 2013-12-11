@@ -23,9 +23,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | --------------------------------------- | -------------
 | Mixin-Linewise                          | -
 | Data-Section                            | 2013-06-19
-| Class-DBI-MSSQL                         | 2013-06-20
-| Class-DBI-Relationship-HasVariant       | 2013-06-20
-| E-Mail-Acme                             | 2013-06-20
 | File-CheckTree                          | 2013-06-20
 | Sub-Pipeline                            | 2013-06-20
 | Task-Deprecations5_12                   | 2013-06-20
@@ -255,4 +252,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | App-Cronjob                             | 2013-12-07
 | Test-Simple                             | 2013-12-07
 | WebService-RTMAgent                     | 2013-12-07
-| CGI-Application-Server                  | 2013-12-11
+| E-Mail-Acme                             | 2013-12-11
