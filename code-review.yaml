@@ -51,7 +51,7 @@ CPAN-Mini:
 CPAN-Uploader:
   last-review: 2013-07-01
 Catalyst-View-Text-Template:
-  last-review: 2013-07-01
+  last-review: 2013-12-13
 Class-Accessor-Class:
   last-review: 2013-07-01
 Class-DBI-MSSQL:
@@ -462,14 +462,14 @@ Sub-Pipeline:
 Task-BeLike-RJBS:
   last-review: 2013-10-18
 Task-Deprecations5_12:
-  review: never
   last-review: 2013-06-20
+  review: never
 Task-Email-PEP-All:
-  review: never
   last-review: 2013-06-20
+  review: never
 Task-Email-PEP-NoStore:
-  review: never
   last-review: 2013-06-20
+  review: never
 Test-BinaryData:
   last-review: 2013-10-18
 Test-Class:
@@ -481,15 +481,15 @@ Test-Fatal:
 Test-MinimumVersion:
   last-review: 2013-11-30
 Test-Reporter-HTTPGateway:
-  review: never
   last-review: 2013-06-20
+  review: never
 Test-Routine:
   last-review: 2013-12-04
 Test-Simple:
   last-review: 2013-12-07
 Text-Soundex:
-  review: never
   last-review: 2013-06-20
+  review: never
 Throwable:
   last-review: 2013-10-22
 Throwable-X:
@@ -507,8 +507,8 @@ Try-Tiny:
 URI-cpan:
   last-review: 2013-10-22
 Version-Requirements:
-  review: never
   last-review: 2013-06-20
+  review: never
 WWW-AdventCalendar:
   last-review: 2013-10-22
 WebService-RTMAgent:
