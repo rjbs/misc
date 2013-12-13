@@ -44,6 +44,7 @@ CGI-Application-Server:
   review: never
 CGI-Form-Table:
   last-review: 2013-07-01
+  review: never
 CPAN-Faker:
   last-review: 2013-07-01
 CPAN-Mini:
@@ -53,7 +54,7 @@ CPAN-Uploader:
 Catalyst-View-Text-Template:
   last-review: 2013-12-13
 Class-Accessor-Class:
-  last-review: 2013-07-01
+  last-review: 2013-12-13
 Class-DBI-MSSQL:
   last-review: 2013-06-20
   review: never
