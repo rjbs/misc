@@ -22,7 +22,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Mixin-Linewise                          | -
-| App-Smarkmail                           | 2013-07-01
 | Color-Scheme                            | 2013-07-01
 | Config-INI                              | 2013-07-01
 | Config-MVP                              | 2013-07-01
@@ -242,6 +241,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Catalyst-View-Text-Template             | 2013-12-13
 | Class-Accessor-Class                    | 2013-12-13
 | Color-Palette                           | 2013-12-13
+| App-Smarkmail                           | 2013-12-17
 | Data-Section                            | 2013-12-17
 | Time-Piece-MSSQL                        | 2013-12-17
 | ZMachine                                | 2013-12-17
