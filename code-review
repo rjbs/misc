@@ -68,7 +68,34 @@ if (my $project = $opt->project) {
     = DateTime->now->format_cldr('yyyy-MM-dd');
 }
 
-if ($opt->project or $opt->rebuild) {
+if ($opt->project) {
+  do_review($opt->project, $opt->message);
+  exit;
+} elsif ($opt->rebuild) {
+  do_review(undef, $opt->message);
+  exit;
+}
+
+my $did;
+for my $name (@projects) {
+  my @notes = notes_for($name);
+  say "=== $name ==========";
+  if (@notes) {
+    printf "    %s\n", $_ for @notes;
+    print "...hit enter...";
+    scalar <STDIN> unless $ENV{MAX};
+    last if $ENV{MAX} && ++$did >= $ENV{MAX};
+  } else {
+    print  "    Everything is okay!  Who'd have expected THAT?!\n";
+    $saved->{$name}{'last-review'}
+      = DateTime->now->format_cldr('yyyy-MM-dd');
+    do_review($name, "reviewed $name, no problems");
+  }
+}
+
+sub do_review {
+  my ($project, $message) = @_;
+
   my %dump = map {; $_ => {
     ($saved->{$_}{home} ? (home => $saved->{$_}{home}) : ()),
     ($saved->{$_}{review} ? (review => $saved->{$_}{review}) : ()),
@@ -80,9 +107,9 @@ if ($opt->project or $opt->rebuild) {
   YAML::XS::DumpFile('code-review.yaml', \%dump);
 
   system(qw(git add code-review.yaml)) and die "git-add failed\n";
-  my $message = $opt->message
-             || ($opt->project ? ("did review of " . $opt->project)
-                               : "rebuilt code-review state file");
+  my $msg = $message
+          || ($project ? "did review of $project"
+                       : "rebuilt code-review state file");
 
   open my $mkdn, '>', 'code-review.mkdn' or die "can't open mkdn: $!";
 
@@ -121,22 +148,7 @@ END_HEADER
   close $mkdn or die "error closing mkdn: $!";
 
   system(qw(git add), <code-review.*>) and die "git-add failed\n";
-  system(qw(git commit -m), $message)  and die "git-commit failed\n";
-  exit;
-}
-
-my $did;
-for my $name (@projects) {
-  my @notes = notes_for($name);
-  say "=== $name ==========";
-  if (@notes) {
-    printf "    %s\n", $_ for @notes;
-    print "...hit enter...";
-    scalar <STDIN> unless $ENV{MAX};
-    last if $ENV{MAX} && ++$did >= $ENV{MAX};
-  } else {
-    print  "    Everything is okay!  Who'd have expected THAT?!\n";
-  }
+  system(qw(git commit -m), $msg)  and die "git-commit failed\n";
 }
 
 sub notes_for {
