@@ -27,7 +27,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | CPAN-Mini                               | 2013-07-01
 | CPAN-Uploader                           | 2013-07-01
 | HTML-FromText                           | 2013-07-03
-| Data-InputMonster-Util-Catalyst         | 2013-07-05
 | Data-Message                            | 2013-07-05
 | Data-OptList                            | 2013-07-05
 | Data-Rx                                 | 2013-07-05
@@ -241,6 +240,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Data-GUID-URLSafe                       | 2013-12-17
 | Data-Hive                               | 2013-12-17
 | Data-InputMonster                       | 2013-12-17
+| Data-InputMonster-Util-Catalyst         | 2013-12-17
 | Data-Section                            | 2013-12-17
 | DNS-Oterica                             | 2013-12-17
 | Time-Piece-MSSQL                        | 2013-12-17
