@@ -27,7 +27,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | CPAN-Mini                               | 2013-07-01
 | CPAN-Uploader                           | 2013-07-01
 | HTML-FromText                           | 2013-07-03
-| Data-Bucketeer                          | 2013-07-05
 | Data-GUID                               | 2013-07-05
 | Data-GUID-URLSafe                       | 2013-07-05
 | Data-Hive                               | 2013-07-05
@@ -241,6 +240,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Color-Scheme                            | 2013-12-17
 | Config-MVP-Reader-INI                   | 2013-12-17
 | CPAN-Faker                              | 2013-12-17
+| Data-Bucketeer                          | 2013-12-17
 | Data-Section                            | 2013-12-17
 | DNS-Oterica                             | 2013-12-17
 | Time-Piece-MSSQL                        | 2013-12-17
