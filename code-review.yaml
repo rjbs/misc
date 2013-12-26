@@ -519,6 +519,7 @@ WebService-RTMAgent:
 ZMachine:
   last-review: 2013-12-17
 delicious-backup:
+  review: never
   last-review: 2013-07-05
 fewer:
   last-review: 2013-08-24
