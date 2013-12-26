@@ -24,7 +24,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Config-INI                              | 2013-07-01
 | Config-MVP                              | 2013-07-01
 | Data-UUID                               | 2013-07-06
-| Log-Dispatch-Array                      | 2013-07-07
 | Net-DNS-GuessTZ                         | 2013-07-07
 | Object-Annotate                         | 2013-07-07
 | Package-Generator                       | 2013-07-07
@@ -242,4 +241,5 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Dist-Zilla-Plugin-Git-Describe          | 2013-12-26
 | Dist-Zilla-Plugin-PodPurler             | 2013-12-26
 | File-LinkTree-Builder                   | 2013-12-26
+| Log-Dispatch-Array                      | 2013-12-26
 | String-TagString                        | 2013-12-26
