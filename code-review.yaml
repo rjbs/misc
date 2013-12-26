@@ -74,7 +74,7 @@ Config-MVP-Reader-INI:
 Config-Singleton:
   last-review: 2013-09-29
 DBIx-Locker:
-  last-review: 2013-07-05
+  last-review: 2013-12-26
 DNS-Oterica:
   last-review: 2013-12-17
 Data-Bucketeer:
