@@ -112,7 +112,7 @@ Date-Span:
 Dist-Zilla:
   last-review: 2013-07-25
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
-  last-review: 2013-07-06
+  last-review: 2013-12-26
 Dist-Zilla-Plugin-Git-Describe:
   last-review: 2013-07-06
 Dist-Zilla-Plugin-PodPurler:
@@ -519,7 +519,7 @@ WebService-RTMAgent:
 ZMachine:
   last-review: 2013-12-17
 delicious-backup:
-  review: never
   last-review: 2013-07-05
+  review: never
 fewer:
   last-review: 2013-08-24
