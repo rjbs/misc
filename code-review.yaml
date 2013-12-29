@@ -370,7 +370,7 @@ Path-Resolver:
 Perl-Critic-Lax:
   last-review: 2013-10-09
 Perl-Critic-Tics:
-  last-review: 2013-07-07
+  last-review: 2013-12-29
 Perl-PrereqScanner:
   last-review: 2013-11-04
 Pod-CYOA:
