@@ -118,7 +118,7 @@ Dist-Zilla-Plugin-Git-Describe:
 Dist-Zilla-Plugin-PodPurler:
   last-review: 2013-12-26
 Dist-Zilla-Plugin-PodWeaver:
-  last-review: 2013-07-25
+  last-review: 2013-12-31
 Dist-Zilla-Plugin-TaskWeaver:
   last-review: 2013-12-29
 Dist-Zilla-PluginBundle-RJBS:
