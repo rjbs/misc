@@ -11,6 +11,8 @@ use Parse::CPAN::Packages::Fast;
 use Term::ReadKey ();
 use YAML::XS ();
 
+$|++;
+
 my ($opt, $usage) = describe_options(
   '%c %o',
   [ 'rebuild'      => "rebuild the YAML file that holds state" ],
@@ -79,17 +81,22 @@ if ($opt->project) {
 
 my $did;
 for my $name (@projects) {
-  my @notes = notes_for($name);
   say "=== $name ==========";
+  print "...";
+  my @notes = notes_for($name);
+  print "\r   \r";
   if (@notes) {
     printf "    %s\n", $_ for @notes;
 
-    print "    [N]ext project, [R]eview done\n";
+    print "    [N]ext project, [R]eviewed this, [Q]uit\n";
     Term::ReadKey::ReadMode('cbreak');
     my $action = '';
     $action = lc Term::ReadKey::ReadKey(0) until $action eq 'n'
-                                              or $action eq 'r';
+                                              or $action eq 'r'
+                                              or $action eq 'q';
     Term::ReadKey::ReadMode('normal');
+
+    exit if $action eq 'q';
 
     if ($action eq 'r') {
       $saved->{$name}{'last-review'} = DateTime->now->format_cldr('yyyy-MM-dd');
