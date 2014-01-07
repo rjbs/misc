@@ -8,6 +8,7 @@ use List::AllUtils qw(uniq);
 use LWP::UserAgent;
 use MetaCPAN::API;
 use Parse::CPAN::Packages::Fast;
+use Term::ReadKey ();
 use YAML::XS ();
 
 my ($opt, $usage) = describe_options(
@@ -82,13 +83,23 @@ for my $name (@projects) {
   say "=== $name ==========";
   if (@notes) {
     printf "    %s\n", $_ for @notes;
-    print "...hit enter...";
-    scalar <STDIN> unless $ENV{MAX};
+
+    print "    [N]ext project, [R]eview done\n";
+    Term::ReadKey::ReadMode('cbreak');
+    my $action = '';
+    $action = lc Term::ReadKey::ReadKey(0) until $action eq 'n'
+                                              or $action eq 'r';
+    Term::ReadKey::ReadMode('normal');
+
+    if ($action eq 'r') {
+      $saved->{$name}{'last-review'} = DateTime->now->format_cldr('yyyy-MM-dd');
+      do_review($name)
+    }
+
     last if $ENV{MAX} && ++$did >= $ENV{MAX};
   } else {
     print  "    Everything is okay!  Who'd have expected THAT?!\n";
-    $saved->{$name}{'last-review'}
-      = DateTime->now->format_cldr('yyyy-MM-dd');
+    $saved->{$name}{'last-review'} = DateTime->now->format_cldr('yyyy-MM-dd');
     do_review($name, "reviewed $name, no problems");
   }
 }
