@@ -21,7 +21,7 @@ my ($opt, $usage) = describe_options(
   [ 'pauseid=s'    => "your PAUSE id",  { default => uc $ENV{USER} } ],
   [ 'githubid=s'   => "your GitHub id", { default =>    $ENV{USER} } ],
   [ 'local-cpan=s' => "where's your local cpan?", { default =>
-      "$ENV{HOME}/Dropbox/minicpan/modules/02packages.details.txt.gz" },
+      "$ENV{HOME}/Sync/minicpan/modules/02packages.details.txt.gz" },
   ]
 );
 
