@@ -29,7 +29,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-MIME                              | 2013-08-08
 | Email-MIME-ContentType                  | 2013-08-10
 | Email-MIME-Kit                          | 2013-08-12
-| Email-MIME-Kit-Assembler-Markdown       | 2013-08-12
 | Email-MIME-Kit-Assembler-TextifyHTML    | 2013-08-12
 | Email-MIME-Kit-KitReader-SWAK           | 2013-08-12
 | Email-MIME-Kit-Renderer-Text-Template   | 2013-08-12
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-Folder                            | 2014-01-07
 | Email-LocalDelivery                     | 2014-01-14
 | Email-MIME-Encodings                    | 2014-01-14
+| Email-MIME-Kit-Assembler-Markdown       | 2014-01-14
