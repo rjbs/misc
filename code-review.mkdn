@@ -30,7 +30,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-MIME-ContentType                  | 2013-08-10
 | Email-MIME-Kit                          | 2013-08-12
 | Email-MIME-Kit-KitReader-SWAK           | 2013-08-12
-| Email-Pipemailer                        | 2013-08-13
 | Email-Simple-Test-TraceHeaders          | 2013-08-13
 | Email-Reply                             | 2013-08-16
 | Email-Stuff                             | 2013-08-16
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-MIME-Kit-Renderer-Text-Template   | 2014-01-14
 | Email-MIME-Kit-Renderer-TT              | 2014-01-14
 | Email-MIME-Kit-Validator-Rx             | 2014-01-14
+| Email-Pipemailer                        | 2014-01-14
