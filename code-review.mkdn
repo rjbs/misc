@@ -29,7 +29,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-MIME                              | 2013-08-08
 | Email-MIME-ContentType                  | 2013-08-10
 | Email-MIME-Kit                          | 2013-08-12
-| Email-MIME-Kit-KitReader-SWAK           | 2013-08-12
 | Email-Stuff                             | 2013-08-16
 | Email-Thread                            | 2013-08-16
 | Email-Send                              | 2013-08-18
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-Pipemailer                        | 2014-01-14
 | Email-Reply                             | 2014-01-14
 | Email-Simple-Test-TraceHeaders          | 2014-01-14
+| Email-MIME-Kit-KitReader-SWAK           | 2014-01-18
