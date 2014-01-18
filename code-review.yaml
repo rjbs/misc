@@ -188,7 +188,7 @@ Email-Send-IO:
 Email-Sender:
   last-review: 2013-09-01
 Email-Sender-Transport-SQLite:
-  last-review: 2013-08-22
+  last-review: 2014-01-18
 Email-Simple:
   last-review: 2013-09-04
 Email-Simple-FromHandle:
