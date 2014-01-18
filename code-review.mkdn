@@ -33,7 +33,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-Stuffer                           | 2013-08-22
 | Email-MIME-Attachment-Stripper          | 2013-09-01
 | Email-Sender                            | 2013-09-01
-| Games-Dice                              | 2013-09-01
 | Git-Fingerd                             | 2013-09-01
 | Global-Context                          | 2013-09-01
 | HTML-MasonX-Free                        | 2013-09-01
@@ -243,4 +242,5 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Games-Board                             | 2014-01-18
 | Games-Bowling-Scorecard                 | 2014-01-18
 | Games-Crossword-Puzzle                  | 2014-01-18
+| Games-Dice                              | 2014-01-18
 | Games-Goban                             | 2014-01-18
