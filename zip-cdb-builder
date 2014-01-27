@@ -1,0 +1,27 @@
+#!perl
+use strict;
+use warnings;
+use CDB_File;
+use Text::CSV_XS;
+
+# for use with http://www.unitedstateszipcodes.org/zip-code-database/
+
+my $csv = Text::CSV_XS->new ({ binary => 1, auto_diag => 1 });
+open my $fh, "<:encoding(utf8)", "free-zipcode-database.csv"
+  or die "can't read zipcode db: $!";
+
+my $cdb = CDB_File->new('zipcode.cdb', "t.$$")
+  or die "can't create tied zipcode.cdb: $!";
+
+scalar <$fh>; #discard headers
+while (my $row = $csv->getline($fh)) {
+  my $zip   = $row->[1];
+  my $city  = $row->[3];
+  my $state = $row->[4];
+  print "$zip -> $city, $state\n";
+
+  $cdb->insert($zip, "$city\x1E$state");
+}
+
+$cdb->finish;
+
