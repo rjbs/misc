@@ -23,7 +23,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | --------------------------------------- | -------------
 | Config-INI                              | 2013-07-01
 | Dist-Zilla                              | 2013-07-25
-| Email-MIME                              | 2013-08-08
 | Email-MIME-ContentType                  | 2013-08-10
 | Email-MIME-Kit                          | 2013-08-12
 | Email-Stuff                             | 2013-08-16
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Config-MVP                              | 2014-01-29
 | Data-UUID                               | 2014-01-29
 | Email-Address                           | 2014-01-29
+| Email-MIME                              | 2014-01-29
