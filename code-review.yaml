@@ -53,6 +53,8 @@ CPAN-Uploader:
   last-review: 2013-12-23
 Catalyst-View-Text-Template:
   last-review: 2013-12-13
+Chess-960:
+  last-review: 2014-02-02
 Class-Accessor-Class:
   last-review: 2013-12-13
 Class-DBI-MSSQL:
@@ -254,7 +256,7 @@ HTML-Widget-Plugin-Struct:
 HTTP-Throwable:
   last-review: 2014-01-22
 IO-TieCombine:
-  last-review: 2013-09-21
+  last-review: 2014-02-02
 IPC-Run3:
   last-review: 2013-09-26
 JSON-CPAN-Meta:
@@ -342,7 +344,7 @@ MooseX-SetOnce:
 MooseX-Storage-Format-JSONpm:
   last-review: 2014-01-22
 MooseX-Types-Perl:
-  last-review: 2013-10-05
+  last-review: 2014-02-02
 Net-Continental:
   last-review: 2014-01-22
 Net-DNS-GuessTZ:
@@ -354,11 +356,11 @@ Net-Finger-Server:
 Number-Nary:
   last-review: 2014-01-22
 Number-Tolerant:
-  last-review: 2013-10-07
+  last-review: 2014-02-02
 Object-Annotate:
   last-review: 2013-12-29
 Object-Capsule:
-  last-review: 2013-10-09
+  last-review: 2014-02-02
 Package-Generator:
   last-review: 2013-12-29
 Parse-GutenbergRoget:
@@ -366,31 +368,31 @@ Parse-GutenbergRoget:
 Parse-IRCLog:
   last-review: 2013-10-16
 Path-Resolver:
-  last-review: 2013-10-09
+  last-review: 2014-02-02
 Perl-Critic-Lax:
-  last-review: 2013-10-09
+  last-review: 2014-02-02
 Perl-Critic-Tics:
   last-review: 2013-12-29
 Perl-PrereqScanner:
   last-review: 2013-11-04
 Pod-CYOA:
-  last-review: 2013-10-09
+  last-review: 2014-02-02
 Pod-Coverage-TrustPod:
   last-review: 2013-11-05
 Pod-Elemental:
-  last-review: 2013-10-09
+  last-review: 2014-02-02
 Pod-Elemental-PerlMunger:
-  last-review: 2013-10-09
+  last-review: 2014-02-02
 Pod-Elemental-Transformer-List:
-  last-review: 2013-10-16
+  last-review: 2014-02-02
 Pod-Elemental-Transformer-PPIHTML:
-  last-review: 2013-10-12
+  last-review: 2014-02-02
 Pod-Elemental-Transformer-SynHi:
-  last-review: 2013-10-13
+  last-review: 2014-02-02
 Pod-Elemental-Transformer-VimHTML:
-  last-review: 2013-10-12
+  last-review: 2014-02-02
 Pod-Elemental-Transformer-WikiDoc:
-  last-review: 2013-10-13
+  last-review: 2014-02-02
 Pod-Eventual:
   last-review: 2013-10-13
 Pod-Weaver:
@@ -415,17 +417,17 @@ Querylet-Output-Text:
 Religion-Bible-Reference:
   last-review: 2013-10-18
 Return-Value:
-  last-review: 2013-10-16
+  last-review: 2014-02-02
 Role-HasMessage:
-  last-review: 2013-10-16
+  last-review: 2014-02-02
 Role-HasPayload:
-  last-review: 2013-10-16
+  last-review: 2014-02-02
 Role-Identifiable:
   last-review: 2013-10-16
 Role-Subsystem:
-  last-review: 2013-10-16
+  last-review: 2014-02-02
 Router-Dumb:
-  last-review: 2013-10-16
+  last-review: 2014-02-02
 Rubric:
   last-review: 2013-10-16
 Rubric-Entry-Formatter-KwikiFormatish:
