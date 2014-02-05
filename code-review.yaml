@@ -1,12 +1,12 @@
 ---
 Acme-Lingua-EN-Inflect-Modern:
-  last-review: 2013-10-28
+  last-review: 2014-02-05
 Acme-ProgressBar:
-  last-review: 2013-10-25
+  last-review: 2014-02-05
 Amce-CNA:
-  last-review: 2013-11-09
+  last-review: 2014-02-05
 App-Addex:
-  last-review: 2013-10-25
+  last-review: 2014-02-05
 App-Addex-AddressBook-Abook:
   last-review: 2013-11-20
 App-Addex-AddressBook-Apple:
@@ -26,7 +26,7 @@ App-Cronjob:
 App-Smarkmail:
   last-review: 2013-12-17
 App-Whiff:
-  last-review: 2013-10-22
+  last-review: 2014-02-05
 B-Lint:
   last-review: 2013-06-20
   review: never
@@ -110,7 +110,7 @@ Data-TagHive:
 Data-UUID:
   last-review: 2014-01-29
 Date-Span:
-  last-review: 2013-10-22
+  last-review: 2014-02-05
 Dist-Zilla:
   last-review: 2013-07-25
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
@@ -259,6 +259,8 @@ IO-TieCombine:
   last-review: 2014-02-02
 IPC-Run3:
   last-review: 2013-09-26
+Image-MetaData-JPEG:
+  last-review: 2014-02-05
 JSON-CPAN-Meta:
   review: never
 Kwiki-IRCMode:
@@ -322,7 +324,7 @@ Mixin-Historian:
 Mixin-Linewise:
   last-review: 2013-12-20
 Module-Faker:
-  last-review: 2013-10-25
+  last-review: 2014-02-05
 Module-Install-AuthorTests:
   review: never
 Module-Install-ExtraTests:
@@ -378,7 +380,7 @@ Perl-PrereqScanner:
 Pod-CYOA:
   last-review: 2014-02-02
 Pod-Coverage-TrustPod:
-  last-review: 2013-11-05
+  last-review: 2014-02-05
 Pod-Elemental:
   last-review: 2014-02-02
 Pod-Elemental-PerlMunger:
@@ -407,15 +409,15 @@ PyTAP:
 Querylet:
   last-review: 2013-10-31
 Querylet-CGI:
-  last-review: 2013-11-15
+  last-review: 2014-02-05
 Querylet-Output-Excel-OLE:
-  last-review: 2013-11-15
+  last-review: 2014-02-05
 Querylet-Output-Excel-XLS:
-  last-review: 2013-11-15
+  last-review: 2014-02-05
 Querylet-Output-Text:
-  last-review: 2013-11-15
+  last-review: 2014-02-05
 Religion-Bible-Reference:
-  last-review: 2013-10-18
+  last-review: 2014-02-05
 Return-Value:
   last-review: 2014-02-02
 Role-HasMessage:
@@ -433,41 +435,41 @@ Rubric:
 Rubric-Entry-Formatter-KwikiFormatish:
   last-review: 2013-12-29
 Rubric-Entry-Formatter-Markdown:
-  last-review: 2013-10-16
+  last-review: 2014-02-05
 Software-License:
   last-review: 2013-11-17
 Sort-ByExample:
-  last-review: 2013-10-16
+  last-review: 2014-02-05
 String-Errf:
   last-review: 2013-11-24
 String-Flogger:
-  last-review: 2013-10-16
+  last-review: 2014-02-05
 String-Formatter:
   last-review: 2013-11-09
 String-RewritePrefix:
-  last-review: 2013-10-16
+  last-review: 2014-02-05
 String-TagString:
   last-review: 2013-12-26
 String-Truncate:
-  last-review: 2013-10-16
+  last-review: 2014-02-05
 Sub-Exporter:
   last-review: 2013-10-18
 Sub-Exporter-ForMethods:
-  last-review: 2013-10-18
+  last-review: 2014-02-05
 Sub-Exporter-GlobExporter:
-  last-review: 2013-10-16
+  last-review: 2014-02-05
 Sub-Exporter-Lexical:
   last-review: 2013-11-24
 Sub-Import:
-  last-review: 2013-10-16
+  last-review: 2014-02-05
 Sub-Install:
-  last-review: 2013-10-16
+  last-review: 2014-02-05
 Sub-MicroSig:
-  last-review: 2013-10-18
+  last-review: 2014-02-05
 Sub-Pipeline:
   last-review: 2013-12-11
 Task-BeLike-RJBS:
-  last-review: 2013-10-18
+  last-review: 2014-02-05
 Task-Deprecations5_12:
   last-review: 2013-06-20
   review: never
@@ -478,7 +480,7 @@ Task-Email-PEP-NoStore:
   last-review: 2013-06-20
   review: never
 Test-BinaryData:
-  last-review: 2013-10-18
+  last-review: 2014-02-05
 Test-Class:
   last-review: 2013-11-30
 Test-Deep:
@@ -500,9 +502,9 @@ Text-Soundex:
 Throwable:
   last-review: 2013-10-22
 Throwable-X:
-  last-review: 2013-10-18
+  last-review: 2014-02-05
 Time-Duration-Object:
-  last-review: 2013-10-18
+  last-review: 2014-02-05
 Time-Piece:
   last-review: 2013-12-04
 Time-Piece-MSSQL:
@@ -512,7 +514,7 @@ Tree-File:
 Try-Tiny:
   review: never
 URI-cpan:
-  last-review: 2013-10-22
+  last-review: 2014-02-05
 Version-Requirements:
   last-review: 2013-06-20
   review: never
