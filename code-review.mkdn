@@ -21,7 +21,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| Config-INI                              | 2013-07-01
 | Dist-Zilla                              | 2013-07-25
 | Email-MIME-Kit                          | 2013-08-12
 | Email-Stuff                             | 2013-08-16
@@ -246,3 +245,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Throwable-X                             | 2014-02-05
 | Time-Duration-Object                    | 2014-02-05
 | URI-cpan                                | 2014-02-05
+| Config-INI                              | 2014-02-08
