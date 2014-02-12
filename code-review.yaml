@@ -234,6 +234,7 @@ Git-Fingerd:
   last-review: 2014-01-18
 Git-Megapull:
   last-review: 2013-10-31
+  review: never
 Global-Context:
   last-review: 2014-01-18
 HTML-Form-ForceValue:
@@ -335,6 +336,7 @@ Module-Starter-Plugin-TT2:
   review: never
 Moose-Autobox:
   last-review: 2013-10-28
+  review: never
 MooseX-ClassCompositor:
   last-review: 2014-01-22
 MooseX-ComposedBehavior:
