@@ -26,7 +26,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-Stuffer                           | 2013-08-22
 | Email-MIME-Attachment-Stripper          | 2013-09-01
 | Email-Sender                            | 2013-09-01
-| Email-Simple                            | 2013-09-04
 | Email-Valid                             | 2013-09-05
 | Getopt-Long-Descriptive                 | 2013-09-05
 | HTML-Widget-Factory                     | 2013-09-11
@@ -42,8 +41,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Sub-Exporter                            | 2013-10-18
 | Throwable                               | 2013-10-22
 | WWW-AdventCalendar                      | 2013-10-22
-| Moose-Autobox                           | 2013-10-28
-| Git-Megapull                            | 2013-10-31
 | Querylet                                | 2013-10-31
 | MIME-Lite                               | 2013-11-04
 | Perl-PrereqScanner                      | 2013-11-04
@@ -246,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | URI-cpan                                | 2014-02-05
 | Config-INI                              | 2014-02-08
 | Dist-Zilla                              | 2014-02-08
+| Email-Simple                            | 2014-02-15
