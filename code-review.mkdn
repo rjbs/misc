@@ -40,7 +40,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PyTAP                                   | 2013-10-18
 | Sub-Exporter                            | 2013-10-18
 | Throwable                               | 2013-10-22
-| WWW-AdventCalendar                      | 2013-10-22
 | Querylet                                | 2013-10-31
 | MIME-Lite                               | 2013-11-04
 | Perl-PrereqScanner                      | 2013-11-04
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Config-INI                              | 2014-02-08
 | Dist-Zilla                              | 2014-02-08
 | Email-Simple                            | 2014-02-15
+| WWW-AdventCalendar                      | 2014-02-15
