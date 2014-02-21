@@ -8,15 +8,15 @@ Amce-CNA:
 App-Addex:
   last-review: 2014-02-05
 App-Addex-AddressBook-Abook:
-  last-review: 2013-11-20
+  last-review: 2014-02-21
 App-Addex-AddressBook-Apple:
-  last-review: 2013-11-20
+  last-review: 2014-02-21
 App-Addex-AddressBook-AppleScript:
-  last-review: 2013-11-20
+  last-review: 2014-02-21
 App-Addex-Plugin-Hiveminder:
-  last-review: 2013-11-20
+  last-review: 2014-02-21
 App-Addex-Plugin-Nobody:
-  last-review: 2013-11-20
+  last-review: 2014-02-21
 App-Cmd:
   last-review: 2013-12-07
 App-Cmd-Plugin-Prompt:
@@ -124,7 +124,7 @@ Dist-Zilla-Plugin-PodWeaver:
 Dist-Zilla-Plugin-TaskWeaver:
   last-review: 2013-12-29
 Dist-Zilla-PluginBundle-RJBS:
-  last-review: 2013-11-24
+  last-review: 2014-02-21
 E-Mail-Acme:
   last-review: 2013-12-11
 Email-ARF:
@@ -368,7 +368,7 @@ Object-Capsule:
 Package-Generator:
   last-review: 2013-12-29
 Parse-GutenbergRoget:
-  last-review: 2013-10-16
+  last-review: 2014-02-21
 Parse-IRCLog:
   last-review: 2013-10-16
 Path-Resolver:
@@ -398,7 +398,7 @@ Pod-Elemental-Transformer-VimHTML:
 Pod-Elemental-Transformer-WikiDoc:
   last-review: 2014-02-02
 Pod-Eventual:
-  last-review: 2013-10-13
+  last-review: 2014-02-21
 Pod-Weaver:
   last-review: 2013-11-06
 Postfix-Parse-Mailq:
@@ -439,7 +439,7 @@ Rubric-Entry-Formatter-KwikiFormatish:
 Rubric-Entry-Formatter-Markdown:
   last-review: 2014-02-05
 Software-License:
-  last-review: 2013-11-17
+  last-review: 2014-02-21
 Sort-ByExample:
   last-review: 2014-02-05
 String-Errf:
@@ -461,7 +461,7 @@ Sub-Exporter-ForMethods:
 Sub-Exporter-GlobExporter:
   last-review: 2014-02-05
 Sub-Exporter-Lexical:
-  last-review: 2013-11-24
+  last-review: 2014-02-21
 Sub-Import:
   last-review: 2014-02-05
 Sub-Install:
