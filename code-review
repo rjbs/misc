@@ -40,7 +40,10 @@ my %is_tracked
 
 my $dist = {};
 
-my $ua = LWP::UserAgent->new(keep_alive => 5);
+my $ua    = LWP::UserAgent->new(keep_alive => 5);
+
+my $gh_ua = LWP::UserAgent->new(keep_alive => 5);
+   $gh_ua->default_header('Authorization' => "token $ENV{GITHUB_OAUTH_TOKEN}");
 
 DIST: for my $d (
   sort { fc $a->dist cmp fc $b->dist } $p->latest_distributions
@@ -272,7 +275,7 @@ sub gh_notes {
   my @notes;
 
   my $gh_user = $opt->githubid;
-  my $res = $ua->get("https://api.github.com/repos/$gh_user/$gh_repo_name");
+  my $res = $gh_ua->get("https://api.github.com/repos/$gh_user/$gh_repo_name");
 
   unless ($res->is_success) {
     return ("Couldn't get repo data for $gh_user/$gh_repo_name from GitHub");
