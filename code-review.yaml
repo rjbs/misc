@@ -370,7 +370,7 @@ Package-Generator:
 Parse-GutenbergRoget:
   last-review: 2014-02-21
 Parse-IRCLog:
-  last-review: 2013-10-16
+  last-review: 2014-03-20
 Path-Resolver:
   last-review: 2014-02-02
 Perl-Critic-Lax:
