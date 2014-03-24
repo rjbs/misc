@@ -44,15 +44,9 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | App-Cmd                                 | 2013-12-07
 | Test-Simple                             | 2013-12-07
 | E-Mail-Acme                             | 2013-12-11
-| Catalyst-View-Text-Template             | 2013-12-13
 | Data-Section                            | 2013-12-17
 | CPAN-Uploader                           | 2013-12-23
 | Data-Rx                                 | 2013-12-23
-| Data-Rx-Type-MooseTC                    | 2013-12-23
-| Data-Rx-Type-PCRE                       | 2013-12-23
-| Data-Rx-TypeBundle-Perl                 | 2013-12-23
-| DBIx-Locker                             | 2013-12-26
-| Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2013-12-26
 | Dist-Zilla-Plugin-Git-Describe          | 2013-12-26
 | Dist-Zilla-Plugin-PodPurler             | 2013-12-26
 | File-LinkTree-Builder                   | 2013-12-26
@@ -244,3 +238,9 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Throwable                               | 2014-03-09
 | Parse-IRCLog                            | 2014-03-20
 | Rubric                                  | 2014-03-20
+| Catalyst-View-Text-Template             | 2014-03-24
+| Data-Rx-Type-MooseTC                    | 2014-03-24
+| Data-Rx-Type-PCRE                       | 2014-03-24
+| Data-Rx-TypeBundle-Perl                 | 2014-03-24
+| DBIx-Locker                             | 2014-03-24
+| Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2014-03-24

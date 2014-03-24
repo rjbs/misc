@@ -52,7 +52,7 @@ CPAN-Mini:
 CPAN-Uploader:
   last-review: 2013-12-23
 Catalyst-View-Text-Template:
-  last-review: 2013-12-13
+  last-review: 2014-03-24
 Chess-960:
   last-review: 2014-02-02
 Class-Accessor-Class:
@@ -76,7 +76,7 @@ Config-MVP-Reader-INI:
 Config-Singleton:
   last-review: 2014-01-22
 DBIx-Locker:
-  last-review: 2013-12-26
+  last-review: 2014-03-24
 DNS-Oterica:
   last-review: 2014-02-25
 Data-Bucketeer:
@@ -98,11 +98,11 @@ Data-OptList:
 Data-Rx:
   last-review: 2013-12-23
 Data-Rx-Type-MooseTC:
-  last-review: 2013-12-23
+  last-review: 2014-03-24
 Data-Rx-Type-PCRE:
-  last-review: 2013-12-23
+  last-review: 2014-03-24
 Data-Rx-TypeBundle-Perl:
-  last-review: 2013-12-23
+  last-review: 2014-03-24
 Data-Section:
   last-review: 2013-12-17
 Data-TagHive:
@@ -114,7 +114,7 @@ Date-Span:
 Dist-Zilla:
   last-review: 2014-02-08
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
-  last-review: 2013-12-26
+  last-review: 2014-03-24
 Dist-Zilla-Plugin-Git-Describe:
   last-review: 2013-12-26
 Dist-Zilla-Plugin-PodPurler:
