@@ -22,7 +22,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Email-MIME-Kit                          | 2013-08-12
-| IPC-Run3                                | 2013-09-26
 | Log-Dispatchouli                        | 2013-09-26
 | Mail-Audit                              | 2013-09-29
 | Role-Identifiable                       | 2013-10-16
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-Valid                             | 2014-03-27
 | HTML-Widget-Factory                     | 2014-03-27
 | Email-MIME-Attachment-Stripper          | 2014-03-29
+| IPC-Run3                                | 2014-03-29
