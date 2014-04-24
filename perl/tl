@@ -1,4 +1,14 @@
 #!/usr/local/bin/perl
+# This code works for rjbs.  It might not work for you.  You are hereby
+# empowered to do anything you want with this code, including fixing its bugs
+# and redistributing it with your own license and API and whatever you want.
+# It'd be nice if you mentioned rjbs in your fork, but if you don't want to,
+# that's just fine.
+#
+# The only thing you can't do is act like there's some guarantee that this code
+# will actually work or even refrain from blowing stuff up.  You're on your
+# own. -- rjbs, 2014-04-23
+
 use 5.010;
 use strict;
 use warnings;
