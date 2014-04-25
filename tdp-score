@@ -1,0 +1,54 @@
+#!/home/rjbs/perl5/perlbrew/perls/16.0/bin/perl
+use 5.16.0;
+use warnings;
+
+use DateTime;
+use DBI;
+use Getopt::Long::Descriptive;
+use JSON ();
+use LWP::UserAgent;
+use LWP::Simple qw(get);
+use Ywar::Config;
+
+my $MAX = 21;
+
+my $res = LWP::UserAgent->new->get(
+  "http://tdp.me/v1/goals/?range=$MAX,1",
+  'Content-type' => 'application/json',
+  'X-Access-Token' => $ENV{TDP_TOKEN},
+);
+
+die "GOAL GET FAIL: " . $res->as_string unless $res->is_success;
+
+my $json = $res->decoded_content;
+my $data = JSON->new->decode($json);
+
+my $today = DateTime->today->format_cldr('yyyy-MM-dd');
+
+my %score = map {; $_ => 0 } qw(yesterday today);
+
+use constant {
+  TODAY      => -2,
+  YESTERDAY  => -3,
+  VORGESTERN => -4,
+};
+
+for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
+  my $y = $goal->{trend}[ VORGESTERN ]{streak} // 0;
+  my $t = $goal->{trend}[ YESTERDAY  ]{streak} // 0;
+
+  warn "TODAY IS NOT TODAY!!" unless $goal->{trend}[TODAY]{today};
+  print "$goal->{name}\n  $y -> $t\n";
+
+  if ($t - $y > 1) {
+    use Data::Dumper;
+    warn "Score went up more than one in a day??";
+    warn Dumper($goal);
+  }
+
+  $score{yesterday} += $y;
+  $score{today    } += $t;
+}
+
+say "Yesterday: $score{yesterday}";
+say "Today    : $score{today}";
