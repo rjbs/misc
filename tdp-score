@@ -8,7 +8,6 @@ use Getopt::Long::Descriptive;
 use JSON ();
 use LWP::UserAgent;
 use LWP::Simple qw(get);
-use Ywar::Config;
 
 my $MAX = 21;
 
