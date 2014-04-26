@@ -26,6 +26,8 @@ my $data = JSON->new->decode($res->decoded_content);
 
 my $total;
 
+my @results;
+
 for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
   my $status_res = $ua->get(
     "https://tdp.me/v1/goals/$goal->{id}/streak_data",
@@ -56,8 +58,13 @@ for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
     $score = - ($days * ($days + 1)) / 2;
   }
 
-  printf "%35s: %d\n", $name, $score;
   $total += $score;
+
+  push @results, { name => $name, score => $score };
+}
+
+for my $result (sort { $b->{score} <=> $a->{score} } @results) {
+  printf "%35s: %d\n", $result->{name}, $result->{score};
 }
 
 print "TOTAL: $total\n";
