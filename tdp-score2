@@ -1,0 +1,63 @@
+#!/home/rjbs/perl5/perlbrew/perls/16.0/bin/perl
+use 5.16.0;
+use warnings;
+
+use DateTime;
+use DateTime::Format::Strptime;
+use DBI;
+use Getopt::Long::Descriptive;
+use JSON ();
+use LWP::UserAgent;
+use LWP::Simple qw(get);
+
+my $dtfs  = DateTime::Format::Strptime->new(pattern => '%F');
+my $today = DateTime->today;
+
+my $ua  = LWP::UserAgent->new;
+my $res = $ua->get(
+  "https://tdp.me/v1/goals/",
+  'Content-type' => 'application/json',
+  'X-Access-Token' => $ENV{TDP_TOKEN},
+);
+
+die "GOAL GET FAIL: " . $res->as_string unless $res->is_success;
+
+my $data = JSON->new->decode($res->decoded_content);
+
+my $total;
+
+for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
+  my $status_res = $ua->get(
+    "https://tdp.me/v1/goals/$goal->{id}/streak_data",
+    'Content-type' => 'application/json',
+    'X-Access-Token' => $ENV{TDP_TOKEN},
+  );
+
+  warn("GOAL $goal->{goal_id} STATUS FAIL: " . $status_res->as_string), next
+    unless $res->is_success;
+
+  my $status = JSON->new->decode($status_res->decoded_content);
+
+  my $name = $goal->{name};
+
+  my $quantity  = $status->{quantity};
+  my $mulligans = $status->{mulligans};
+
+  my $start = $dtfs->parse_datetime( $status->{started_on} );
+  my $last  = $dtfs->parse_datetime( $status->{last_done}  );
+
+  my $score;
+  if ($status->{ongoing}) {
+    $score = $today->delta_days($start)->delta_days - $mulligans + $quantity;
+  } else {
+    # -n points for the nth day left undone.  -1 for the first, -2 for the
+    # second (meaning -3 total) and so on -- rjbs, 2014-04-25
+    my $days = $today->delta_days($last )->delta_days;
+    $score = - ($days * ($days + 1)) / 2;
+  }
+
+  printf "%35s: %d\n", $name, $score;
+  $total += $score;
+}
+
+print "TOTAL: $total\n";
