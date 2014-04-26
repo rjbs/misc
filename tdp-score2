@@ -10,8 +10,11 @@ use JSON ();
 use LWP::UserAgent;
 use LWP::Simple qw(get);
 
-my $dtfs  = DateTime::Format::Strptime->new(pattern => '%F');
-my $today = DateTime->today;
+my $dtfs  = DateTime::Format::Strptime->new(
+  pattern => '%F',
+  time_zone => 'America/New_York'
+);
+my $today = DateTime->today(time_zone => 'America/New_York');
 
 my $ua  = LWP::UserAgent->new;
 my $res = $ua->get(
@@ -48,13 +51,16 @@ for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
   my $start = $dtfs->parse_datetime( $status->{started_on} );
   my $last  = $dtfs->parse_datetime( $status->{last_done}  );
 
+  my $length = $today->delta_days($start)->delta_days;
+  my $ago    = $today->delta_days($last )->delta_days;
+
   my $score;
-  if ($status->{ongoing}) {
-    $score = $today->delta_days($start)->delta_days - $mulligans + $quantity;
+  if ($status->{ongoing} or $ago == 1) {
+    $score = $length - $mulligans + $quantity;
   } else {
     # -n points for the nth day left undone.  -1 for the first, -2 for the
     # second (meaning -3 total) and so on -- rjbs, 2014-04-25
-    my $days = $today->delta_days($last )->delta_days;
+    my $days = $ago;
     $score = - ($days * ($days + 1)) / 2;
   }
 
