@@ -9,6 +9,7 @@ use Getopt::Long::Descriptive;
 use JSON ();
 use LWP::UserAgent;
 use LWP::Simple qw(get);
+use Term::ANSIColor;
 
 my $dtfs  = DateTime::Format::Strptime->new(
   pattern => '%F',
@@ -50,27 +51,40 @@ for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
 
   my $start = $dtfs->parse_datetime( $status->{started_on} );
   my $last  = $dtfs->parse_datetime( $status->{last_done}  );
+  my $ends  = $dtfs->parse_datetime( $status->{ends_on}    );
+
+  my $safe  = $last > $ends ? $last : $ends;
 
   my $length = $today->delta_days($start)->delta_days;
-  my $ago    = $today->delta_days($last )->delta_days;
+  my $until  = $today->delta_days($safe )->delta_days;
+     $until *= -1 if $safe > $today;
+
+  # warn "$name -- (TODAY: $today) / (ENDS: $ends) / (LAST: $last) / (SAFE: $safe) / (UNTIL: $until)\n";
 
   my $score;
-  if ($status->{ongoing} or $ago == 1) {
+  if ($until >= -1) {
     $score = $length - $mulligans + $quantity;
   } else {
     # -n points for the nth day left undone.  -1 for the first, -2 for the
     # second (meaning -3 total) and so on -- rjbs, 2014-04-25
-    my $days = $ago;
+    my $days = abs($until);
     $score = - ($days * ($days + 1)) / 2;
   }
 
   $total += $score;
 
-  push @results, { name => $name, score => $score };
+  push @results, {
+    name   => $name,
+    score  => $score,
+    until  => $until,
+    danger => $until == 1
+  };
 }
 
 for my $result (sort { $b->{score} <=> $a->{score} } @results) {
-  printf "%35s: %d\n", $result->{name}, $result->{score};
+  print color 'bold red' if $result->{danger};
+  printf "%35s (%4d): %d\n", $result->{name}, $result->{until}, $result->{score};
+  print color 'reset';
 }
 
 print "TOTAL: $total\n";
