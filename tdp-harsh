@@ -62,7 +62,7 @@ for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
   # warn "$name -- (TODAY: $today) / (ENDS: $ends) / (LAST: $last) / (SAFE: $safe) / (UNTIL: $until)\n";
 
   my $score;
-  if ($until >= -1) {
+  if ($until <= 1) {
     $score = $length - $mulligans + $quantity;
   } else {
     # -n points for the nth day left undone.  -1 for the first, -2 for the
