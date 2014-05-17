@@ -102,7 +102,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Throwable-X                             | 2014-02-05
 | Time-Duration-Object                    | 2014-02-05
 | URI-cpan                                | 2014-02-05
-| Dist-Zilla                              | 2014-02-08
 | Email-Simple                            | 2014-02-15
 | WWW-AdventCalendar                      | 2014-02-15
 | App-Addex-AddressBook-Abook             | 2014-02-21
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Postfix-Parse-Mailq                     | 2014-04-05
 | Test-Fatal                              | 2014-04-05
 | Config-INI                              | 2014-04-06
+| Dist-Zilla                              | 2014-05-17
