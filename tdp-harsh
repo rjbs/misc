@@ -59,7 +59,10 @@ for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
   my $until  = $today->delta_days($safe )->delta_days;
      $until *= -1 if $safe > $today;
 
-  # warn "$name -- (TODAY: $today) / (ENDS: $ends) / (LAST: $last) / (SAFE: $safe) / (UNTIL: $until)\n";
+  if (0 and $name =~ /smoke/ || $name =~ /soda/) {
+    warn "$goal->{id}: $name -- (TODAY: $today) / (ENDS: $ends) / (LAST: $last) / (SAFE: $safe) / (UNTIL: $until)\n";
+    warn $status_res->decoded_content, "\n";
+  }
 
   my $score;
   if ($until <= 1) {
