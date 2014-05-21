@@ -234,6 +234,8 @@ sub cpan_notes {
   } elsif ($repo =~ /\Q$name/i && $repo !~ /\Q$name/) {
     $gh_repo_name = lc $name;
     push @notes, "GitHub repo is not capitalized correctly";
+  } elsif ($repo =~ m{github\.com/rjbs/(.+?)(?:\.git)}) {
+    $gh_repo_name = $1;
   }
 
   push @notes, gh_notes($gh_repo_name);
