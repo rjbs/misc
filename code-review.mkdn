@@ -196,7 +196,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | HTML-Form-ForceValue                    | 2014-04-02
 | HTML-MasonX-Free                        | 2014-04-02
 | HTML-Widget-Plugin-Combo                | 2014-04-02
-| HTML-Widget-Plugin-JS                   | 2014-04-02
 | HTTP-Throwable                          | 2014-04-02
 | List-MapList                            | 2014-04-02
 | Log-Dispatch-Array                      | 2014-04-02
@@ -243,4 +242,5 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Data-Rx                                 | 2014-05-21
 | Email-MIME-Kit                          | 2014-06-06
 | HTML-Widget-Plugin-Calendar             | 2014-06-08
+| HTML-Widget-Plugin-JS                   | 2014-06-08
 | HTML-Widget-Plugin-Struct               | 2014-06-08
