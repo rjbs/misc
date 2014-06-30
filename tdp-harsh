@@ -1,6 +1,7 @@
-#!/home/rjbs/perl5/perlbrew/perls/16.0/bin/perl
-use 5.16.0;
+#!/home/rjbs/perl5/perlbrew/perls/20.0/bin/perl
+use 5.20.0;
 use warnings;
+use experimental 'signatures';
 
 use DateTime;
 use DateTime::Format::Strptime;
@@ -31,6 +32,8 @@ my $data = JSON->new->decode($res->decoded_content);
 my $total;
 
 my @results;
+
+sub triangle ($n) { $n * ($n + 1) / 2 }
 
 for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
   my $status_res = $ua->get(
@@ -71,7 +74,7 @@ for my $goal (grep { $_->{active} } @{ $data->{goals} }) {
     # -n points for the nth day left undone.  -1 for the first, -2 for the
     # second (meaning -3 total) and so on -- rjbs, 2014-04-25
     my $days = abs($until);
-    $score = - ($days * ($days + 1)) / 2;
+    $score = - triangle($days);
   }
 
   $total += $score;
