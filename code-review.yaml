@@ -485,6 +485,7 @@ Test-BinaryData:
   last-review: 2014-02-05
 Test-Class:
   last-review: 2013-11-30
+  review: never
 Test-Deep:
   last-review: 2013-11-30
 Test-Fatal:
