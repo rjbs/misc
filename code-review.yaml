@@ -283,7 +283,7 @@ MRO-Magic:
 Macro-Micro:
   last-review: 2014-04-02
 Mail-Audit:
-  last-review: 2013-09-29
+  last-review: 2014-06-30
 Mail-Audit-DKIM:
   last-review: 2014-04-02
 Mail-Audit-List:
@@ -400,16 +400,16 @@ Pod-Elemental-Transformer-WikiDoc:
 Pod-Eventual:
   last-review: 2014-02-21
 Pod-Weaver:
-  last-review: 2013-11-06
+  last-review: 2014-06-30
 Postfix-Parse-Mailq:
   last-review: 2014-04-05
 Process-Status:
   last-review: 2014-04-02
 PyTAP:
   home: GitHub
-  last-review: 2013-10-18
+  last-review: 2014-06-30
 Querylet:
-  last-review: 2013-10-31
+  last-review: 2014-06-30
 Querylet-CGI:
   last-review: 2014-02-05
 Querylet-Output-Excel-OLE:
@@ -427,7 +427,7 @@ Role-HasMessage:
 Role-HasPayload:
   last-review: 2014-02-02
 Role-Identifiable:
-  last-review: 2013-10-16
+  last-review: 2014-06-30
 Role-Subsystem:
   last-review: 2014-02-02
 Router-Dumb:
@@ -455,7 +455,7 @@ String-TagString:
 String-Truncate:
   last-review: 2014-02-05
 Sub-Exporter:
-  last-review: 2013-10-18
+  last-review: 2014-06-30
 Sub-Exporter-ForMethods:
   last-review: 2014-02-05
 Sub-Exporter-GlobExporter:
