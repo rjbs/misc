@@ -70,11 +70,11 @@ Color-Scheme:
 Config-INI:
   last-review: 2014-04-06
 Config-MVP:
-  last-review: 2014-01-29
+  last-review: 2014-07-02
 Config-MVP-Reader-INI:
   last-review: 2014-02-25
 Config-Singleton:
-  last-review: 2014-01-22
+  last-review: 2014-07-02
 DBIx-Locker:
   last-review: 2014-03-24
 DNS-Oterica:
@@ -116,7 +116,7 @@ Dist-Zilla:
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
   last-review: 2014-03-24
 Dist-Zilla-Plugin-Git-Describe:
-  last-review: 2013-12-26
+  last-review: 2014-07-02
 Dist-Zilla-Plugin-PodPurler:
   last-review: 2014-04-02
 Dist-Zilla-Plugin-PodWeaver:
@@ -140,7 +140,7 @@ Email-Date-Format:
 Email-Delete:
   last-review: 2014-04-02
 Email-Filter:
-  last-review: 2013-12-31
+  last-review: 2014-07-02
 Email-Folder:
   last-review: 2014-01-07
 Email-Folder-IMAP:
@@ -344,13 +344,13 @@ MooseX-ComposedBehavior:
 MooseX-OneArgNew:
   last-review: 2014-04-02
 MooseX-SetOnce:
-  last-review: 2014-01-22
+  last-review: 2014-07-02
 MooseX-Storage-Format-JSONpm:
   last-review: 2014-04-05
 MooseX-Types-Perl:
   last-review: 2014-02-02
 Net-Continental:
-  last-review: 2014-01-22
+  last-review: 2014-07-02
 Net-DNS-GuessTZ:
   last-review: 2014-04-02
 Net-Delicious:
@@ -376,9 +376,9 @@ Path-Resolver:
 Perl-Critic-Lax:
   last-review: 2014-02-02
 Perl-Critic-Tics:
-  last-review: 2013-12-29
+  last-review: 2014-07-02
 Perl-PrereqScanner:
-  last-review: 2013-11-04
+  last-review: 2014-07-02
 Pod-CYOA:
   last-review: 2014-02-02
 Pod-Coverage-TrustPod:
