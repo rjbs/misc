@@ -1,12 +1,12 @@
 ---
 Acme-Lingua-EN-Inflect-Modern:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Acme-ProgressBar:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Amce-CNA:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 App-Addex:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 App-Addex-AddressBook-Abook:
   last-review: 2014-02-21
 App-Addex-AddressBook-Apple:
@@ -26,7 +26,7 @@ App-Cronjob:
 App-Smarkmail:
   last-review: 2014-02-25
 App-Whiff:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 B-Lint:
   last-review: 2013-06-20
   review: never
@@ -54,7 +54,7 @@ CPAN-Uploader:
 Catalyst-View-Text-Template:
   last-review: 2014-03-24
 Chess-960:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Class-Accessor-Class:
   last-review: 2014-02-25
 Class-DBI-MSSQL:
@@ -110,7 +110,7 @@ Data-TagHive:
 Data-UUID:
   last-review: 2014-01-29
 Date-Span:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Dist-Zilla:
   last-review: 2014-05-17
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
@@ -126,7 +126,7 @@ Dist-Zilla-Plugin-TaskWeaver:
 Dist-Zilla-PluginBundle-RJBS:
   last-review: 2014-02-21
 E-Mail-Acme:
-  last-review: 2013-12-11
+  last-review: 2014-07-11
 Email-ARF:
   last-review: 2014-04-02
 Email-Abstract:
@@ -142,7 +142,7 @@ Email-Delete:
 Email-Filter:
   last-review: 2014-07-02
 Email-Folder:
-  last-review: 2014-01-07
+  last-review: 2014-07-11
 Email-Folder-IMAP:
   last-review: 2014-04-02
 Email-Folder-IMAPS:
@@ -184,7 +184,7 @@ Email-Pipemailer:
 Email-Reply:
   last-review: 2014-04-02
 Email-Send:
-  last-review: 2014-01-18
+  last-review: 2014-07-11
 Email-Send-IO:
   last-review: 2014-04-02
 Email-Sender:
@@ -257,11 +257,11 @@ HTML-Widget-Plugin-Struct:
 HTTP-Throwable:
   last-review: 2014-04-02
 IO-TieCombine:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 IPC-Run3:
   last-review: 2014-03-29
 Image-MetaData-JPEG:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 JSON-CPAN-Meta:
   review: never
 Kwiki-IRCMode:
@@ -325,7 +325,7 @@ Mixin-Historian:
 Mixin-Linewise:
   last-review: 2014-02-25
 Module-Faker:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Module-Install-AuthorTests:
   review: never
 Module-Install-ExtraTests:
@@ -348,7 +348,7 @@ MooseX-SetOnce:
 MooseX-Storage-Format-JSONpm:
   last-review: 2014-04-05
 MooseX-Types-Perl:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Net-Continental:
   last-review: 2014-07-02
 Net-DNS-GuessTZ:
@@ -364,7 +364,7 @@ Number-Tolerant:
 Object-Annotate:
   last-review: 2014-04-02
 Object-Capsule:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Package-Generator:
   last-review: 2014-04-02
 Parse-GutenbergRoget:
@@ -372,31 +372,31 @@ Parse-GutenbergRoget:
 Parse-IRCLog:
   last-review: 2014-03-20
 Path-Resolver:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Perl-Critic-Lax:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Perl-Critic-Tics:
   last-review: 2014-07-02
 Perl-PrereqScanner:
   last-review: 2014-07-02
 Pod-CYOA:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Pod-Coverage-TrustPod:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Pod-Elemental:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Pod-Elemental-PerlMunger:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Pod-Elemental-Transformer-List:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Pod-Elemental-Transformer-PPIHTML:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Pod-Elemental-Transformer-SynHi:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Pod-Elemental-Transformer-VimHTML:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Pod-Elemental-Transformer-WikiDoc:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Pod-Eventual:
   last-review: 2014-02-21
 Pod-Weaver:
@@ -411,37 +411,37 @@ PyTAP:
 Querylet:
   last-review: 2014-06-30
 Querylet-CGI:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Querylet-Output-Excel-OLE:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Querylet-Output-Excel-XLS:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Querylet-Output-Text:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Religion-Bible-Reference:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Return-Value:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Role-HasMessage:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Role-HasPayload:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Role-Identifiable:
   last-review: 2014-06-30
 Role-Subsystem:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Router-Dumb:
-  last-review: 2014-02-02
+  last-review: 2014-07-11
 Rubric:
   last-review: 2014-03-20
 Rubric-Entry-Formatter-KwikiFormatish:
   last-review: 2014-04-02
 Rubric-Entry-Formatter-Markdown:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Software-License:
   last-review: 2014-02-21
 Sort-ByExample:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 String-Errf:
   last-review: 2013-11-24
 String-Flogger:
@@ -449,29 +449,29 @@ String-Flogger:
 String-Formatter:
   last-review: 2013-11-09
 String-RewritePrefix:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 String-TagString:
   last-review: 2014-04-02
 String-Truncate:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Sub-Exporter:
   last-review: 2014-06-30
 Sub-Exporter-ForMethods:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Sub-Exporter-GlobExporter:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Sub-Exporter-Lexical:
   last-review: 2014-02-21
 Sub-Import:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Sub-Install:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Sub-MicroSig:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Sub-Pipeline:
   last-review: 2014-02-25
 Task-BeLike-RJBS:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Task-Deprecations5_12:
   last-review: 2013-06-20
   review: never
@@ -482,7 +482,7 @@ Task-Email-PEP-NoStore:
   last-review: 2013-06-20
   review: never
 Test-BinaryData:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Test-Class:
   last-review: 2013-11-30
   review: never
@@ -505,9 +505,9 @@ Text-Soundex:
 Throwable:
   last-review: 2014-03-09
 Throwable-X:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Time-Duration-Object:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Time-Piece:
   last-review: 2013-12-04
 Time-Piece-MSSQL:
@@ -517,7 +517,7 @@ Tree-File:
 Try-Tiny:
   review: never
 URI-cpan:
-  last-review: 2014-02-05
+  last-review: 2014-07-11
 Version-Requirements:
   last-review: 2013-06-20
   review: never
