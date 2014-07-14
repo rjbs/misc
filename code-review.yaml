@@ -8,23 +8,23 @@ Amce-CNA:
 App-Addex:
   last-review: 2014-07-11
 App-Addex-AddressBook-Abook:
-  last-review: 2014-02-21
+  last-review: 2014-07-14
 App-Addex-AddressBook-Apple:
-  last-review: 2014-02-21
+  last-review: 2014-07-14
 App-Addex-AddressBook-AppleScript:
-  last-review: 2014-02-21
+  last-review: 2014-07-14
 App-Addex-Plugin-Hiveminder:
-  last-review: 2014-02-21
+  last-review: 2014-07-14
 App-Addex-Plugin-Nobody:
-  last-review: 2014-02-21
+  last-review: 2014-07-14
 App-Cmd:
   last-review: 2014-04-02
 App-Cmd-Plugin-Prompt:
-  last-review: 2014-02-25
+  last-review: 2014-07-14
 App-Cronjob:
-  last-review: 2014-02-25
+  last-review: 2014-07-14
 App-Smarkmail:
-  last-review: 2014-02-25
+  last-review: 2014-07-14
 App-Whiff:
   last-review: 2014-07-11
 B-Lint:
@@ -56,7 +56,7 @@ Catalyst-View-Text-Template:
 Chess-960:
   last-review: 2014-07-11
 Class-Accessor-Class:
-  last-review: 2014-02-25
+  last-review: 2014-07-14
 Class-DBI-MSSQL:
   last-review: 2013-06-20
   review: never
@@ -64,9 +64,9 @@ Class-DBI-Relationship-HasVariant:
   last-review: 2013-06-20
   review: never
 Color-Palette:
-  last-review: 2014-02-25
+  last-review: 2014-07-14
 Color-Scheme:
-  last-review: 2014-02-25
+  last-review: 2014-07-14
 Config-INI:
   last-review: 2014-04-06
 Config-MVP:
@@ -124,7 +124,7 @@ Dist-Zilla-Plugin-PodWeaver:
 Dist-Zilla-Plugin-TaskWeaver:
   last-review: 2014-04-02
 Dist-Zilla-PluginBundle-RJBS:
-  last-review: 2014-02-21
+  last-review: 2014-07-14
 E-Mail-Acme:
   last-review: 2014-07-11
 Email-ARF:
@@ -154,7 +154,7 @@ Email-FolderType:
 Email-FolderType-Net:
   last-review: 2014-04-02
 Email-LocalDelivery:
-  last-review: 2014-01-14
+  last-review: 2014-07-14
 Email-MIME:
   last-review: 2014-01-29
 Email-MIME-Attachment-Stripper:
@@ -192,7 +192,7 @@ Email-Sender:
 Email-Sender-Transport-SQLite:
   last-review: 2014-04-02
 Email-Simple:
-  last-review: 2014-02-15
+  last-review: 2014-07-14
 Email-Simple-FromHandle:
   last-review: 2014-04-02
 Email-Simple-Test-TraceHeaders:
@@ -461,7 +461,7 @@ Sub-Exporter-ForMethods:
 Sub-Exporter-GlobExporter:
   last-review: 2014-07-11
 Sub-Exporter-Lexical:
-  last-review: 2014-02-21
+  last-review: 2014-07-14
 Sub-Import:
   last-review: 2014-07-11
 Sub-Install:
@@ -522,7 +522,7 @@ Version-Requirements:
   last-review: 2013-06-20
   review: never
 WWW-AdventCalendar:
-  last-review: 2014-02-15
+  last-review: 2014-07-14
 WebService-RTMAgent:
   last-review: 2014-02-25
 ZMachine:
