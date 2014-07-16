@@ -46,7 +46,7 @@ CGI-Form-Table:
   last-review: 2013-07-01
   review: never
 CPAN-Faker:
-  last-review: 2014-02-25
+  last-review: 2014-07-17
 CPAN-Mini:
   last-review: 2014-02-25
 CPAN-Uploader:
@@ -72,7 +72,7 @@ Config-INI:
 Config-MVP:
   last-review: 2014-07-02
 Config-MVP-Reader-INI:
-  last-review: 2014-02-25
+  last-review: 2014-07-17
 Config-Singleton:
   last-review: 2014-07-02
 DBIx-Locker:
@@ -132,7 +132,7 @@ Email-ARF:
 Email-Abstract:
   last-review: 2014-04-05
 Email-Address:
-  last-review: 2014-01-29
+  last-review: 2014-07-17
 Email-Date:
   last-review: 2014-04-02
 Email-Date-Format:
@@ -273,7 +273,7 @@ Log-Dispatch-Array:
 Log-Dispatch-TextTable:
   last-review: 2014-04-02
 Log-Dispatchouli:
-  last-review: 2013-09-26
+  last-review: 2014-07-16
 MIME-BodyMunger:
   last-review: 2014-04-02
 MIME-Lite:
@@ -368,7 +368,7 @@ Object-Capsule:
 Package-Generator:
   last-review: 2014-04-02
 Parse-GutenbergRoget:
-  last-review: 2014-02-21
+  last-review: 2014-07-17
 Parse-IRCLog:
   last-review: 2014-03-20
 Path-Resolver:
