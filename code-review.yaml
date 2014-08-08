@@ -48,7 +48,7 @@ CGI-Form-Table:
 CPAN-Faker:
   last-review: 2014-07-17
 CPAN-Mini:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 CPAN-Uploader:
   last-review: 2014-04-05
 Catalyst-View-Text-Template:
@@ -78,23 +78,23 @@ Config-Singleton:
 DBIx-Locker:
   last-review: 2014-03-24
 DNS-Oterica:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-Bucketeer:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-GUID:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-GUID-URLSafe:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-Hive:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-InputMonster:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-InputMonster-Util-Catalyst:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-Message:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-OptList:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-Rx:
   last-review: 2014-05-21
 Data-Rx-Type-MooseTC:
@@ -106,7 +106,7 @@ Data-Rx-TypeBundle-Perl:
 Data-Section:
   last-review: 2014-04-05
 Data-TagHive:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Data-UUID:
   last-review: 2014-01-29
 Date-Span:
@@ -160,7 +160,7 @@ Email-MIME:
 Email-MIME-Attachment-Stripper:
   last-review: 2014-03-29
 Email-MIME-ContentType:
-  last-review: 2014-01-29
+  last-review: 2014-08-08
 Email-MIME-Encodings:
   last-review: 2014-04-02
 Email-MIME-Kit:
@@ -323,7 +323,7 @@ Mixin-ExtraFields-Param:
 Mixin-Historian:
   last-review: 2014-04-02
 Mixin-Linewise:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Module-Faker:
   last-review: 2014-07-11
 Module-Install-AuthorTests:
@@ -398,7 +398,7 @@ Pod-Elemental-Transformer-VimHTML:
 Pod-Elemental-Transformer-WikiDoc:
   last-review: 2014-07-11
 Pod-Eventual:
-  last-review: 2014-02-21
+  last-review: 2014-08-08
 Pod-Weaver:
   last-review: 2014-06-30
 Postfix-Parse-Mailq:
@@ -443,11 +443,11 @@ Software-License:
 Sort-ByExample:
   last-review: 2014-07-11
 String-Errf:
-  last-review: 2013-11-24
+  last-review: 2014-08-08
 String-Flogger:
-  last-review: 2014-02-05
+  last-review: 2014-08-08
 String-Formatter:
-  last-review: 2013-11-09
+  last-review: 2014-08-08
 String-RewritePrefix:
   last-review: 2014-07-11
 String-TagString:
@@ -469,7 +469,7 @@ Sub-Install:
 Sub-MicroSig:
   last-review: 2014-07-11
 Sub-Pipeline:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Task-BeLike-RJBS:
   last-review: 2014-07-11
 Task-Deprecations5_12:
@@ -491,12 +491,12 @@ Test-Deep:
 Test-Fatal:
   last-review: 2014-04-05
 Test-MinimumVersion:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Test-Reporter-HTTPGateway:
   last-review: 2013-06-20
   review: never
 Test-Routine:
-  last-review: 2013-12-04
+  last-review: 2014-08-08
 Test-Simple:
   last-review: 2014-04-02
 Text-Soundex:
@@ -511,7 +511,7 @@ Time-Duration-Object:
 Time-Piece:
   last-review: 2014-07-29
 Time-Piece-MSSQL:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 Tree-File:
   review: never
 Try-Tiny:
@@ -524,9 +524,9 @@ Version-Requirements:
 WWW-AdventCalendar:
   last-review: 2014-07-14
 WebService-RTMAgent:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 ZMachine:
-  last-review: 2014-02-25
+  last-review: 2014-08-08
 delicious-backup:
   last-review: 2013-07-05
   review: never
