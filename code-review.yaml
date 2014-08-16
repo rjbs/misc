@@ -76,7 +76,7 @@ Config-MVP-Reader-INI:
 Config-Singleton:
   last-review: 2014-07-02
 DBIx-Locker:
-  last-review: 2014-03-24
+  last-review: 2014-08-16
 DNS-Oterica:
   last-review: 2014-08-08
 Data-Bucketeer:
@@ -98,11 +98,11 @@ Data-OptList:
 Data-Rx:
   last-review: 2014-05-21
 Data-Rx-Type-MooseTC:
-  last-review: 2014-03-24
+  last-review: 2014-08-16
 Data-Rx-Type-PCRE:
-  last-review: 2014-03-24
+  last-review: 2014-08-16
 Data-Rx-TypeBundle-Perl:
-  last-review: 2014-03-24
+  last-review: 2014-08-16
 Data-Section:
   last-review: 2014-04-05
 Data-TagHive:
@@ -114,27 +114,27 @@ Date-Span:
 Dist-Zilla:
   last-review: 2014-05-17
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
-  last-review: 2014-03-24
+  last-review: 2014-08-16
 Dist-Zilla-Plugin-Git-Describe:
   last-review: 2014-07-02
 Dist-Zilla-Plugin-PodPurler:
-  last-review: 2014-04-02
+  last-review: 2014-08-16
 Dist-Zilla-Plugin-PodWeaver:
-  last-review: 2014-04-02
+  last-review: 2014-08-16
 Dist-Zilla-Plugin-TaskWeaver:
-  last-review: 2014-04-02
+  last-review: 2014-08-16
 Dist-Zilla-PluginBundle-RJBS:
   last-review: 2014-07-14
 E-Mail-Acme:
   last-review: 2014-07-11
 Email-ARF:
-  last-review: 2014-04-02
+  last-review: 2014-08-16
 Email-Abstract:
   last-review: 2014-04-05
 Email-Address:
   last-review: 2014-07-17
 Email-Date:
-  last-review: 2014-04-02
+  last-review: 2014-08-16
 Email-Date-Format:
   last-review: 2014-04-02
 Email-Delete:
@@ -202,7 +202,7 @@ Email-Store:
 Email-Stuff:
   last-review: 2014-03-02
 Email-Stuffer:
-  last-review: 2014-02-28
+  last-review: 2014-08-16
 Email-Thread:
   last-review: 2014-04-02
 Email-Valid:
@@ -370,7 +370,7 @@ Package-Generator:
 Parse-GutenbergRoget:
   last-review: 2014-07-17
 Parse-IRCLog:
-  last-review: 2014-03-20
+  last-review: 2014-08-16
 Path-Resolver:
   last-review: 2014-07-11
 Perl-Critic-Lax:
