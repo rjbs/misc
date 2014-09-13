@@ -37,7 +37,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | IPC-Run3                                | 2014-03-29
 | App-Cmd                                 | 2014-04-02
 | HTTP-Throwable                          | 2014-04-02
-| Rubric-Entry-Formatter-KwikiFormatish   | 2014-04-02
 | String-TagString                        | 2014-04-02
 | Test-Simple                             | 2014-04-02
 | CPAN-Uploader                           | 2014-04-05
@@ -243,3 +242,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Object-Annotate                         | 2014-09-13
 | Package-Generator                       | 2014-09-13
 | Process-Status                          | 2014-09-13
+| Rubric-Entry-Formatter-KwikiFormatish   | 2014-09-13
