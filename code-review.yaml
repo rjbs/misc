@@ -289,7 +289,7 @@ Mail-Audit-DKIM:
 Mail-Audit-List:
   last-review: 2014-09-13
 Mail-Audit-PGP:
-  last-review: 2014-04-02
+  last-review: 2014-09-13
 Mail-Audit-Razor:
   review: never
 Mail-Convert-Mbox-ToEml:
