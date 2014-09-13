@@ -37,7 +37,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | IPC-Run3                                | 2014-03-29
 | App-Cmd                                 | 2014-04-02
 | HTTP-Throwable                          | 2014-04-02
-| Log-Dispatch-TextTable                  | 2014-04-02
 | Macro-Micro                             | 2014-04-02
 | Mail-Audit-DKIM                         | 2014-04-02
 | Mail-Audit-List                         | 2014-04-02
@@ -243,3 +242,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | HTML-Widget-Plugin-Combo                | 2014-09-13
 | List-MapList                            | 2014-09-13
 | Log-Dispatch-Array                      | 2014-09-13
+| Log-Dispatch-TextTable                  | 2014-09-13
