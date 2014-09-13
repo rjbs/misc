@@ -37,7 +37,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | IPC-Run3                                | 2014-03-29
 | App-Cmd                                 | 2014-04-02
 | HTTP-Throwable                          | 2014-04-02
-| MooseX-OneArgNew                        | 2014-04-02
 | Net-DNS-GuessTZ                         | 2014-04-02
 | Object-Annotate                         | 2014-04-02
 | Package-Generator                       | 2014-04-02
@@ -243,3 +242,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Mixin-Historian                         | 2014-09-13
 | MooseX-ClassCompositor                  | 2014-09-13
 | MooseX-ComposedBehavior                 | 2014-09-13
+| MooseX-OneArgNew                        | 2014-09-13
