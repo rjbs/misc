@@ -37,7 +37,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | IPC-Run3                                | 2014-03-29
 | App-Cmd                                 | 2014-04-02
 | HTTP-Throwable                          | 2014-04-02
-| Mixin-ExtraFields-Driver-DBIC           | 2014-04-02
 | Mixin-ExtraFields-Hive                  | 2014-04-02
 | Mixin-ExtraFields-Param                 | 2014-04-02
 | Mixin-Historian                         | 2014-04-02
@@ -243,3 +242,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Math-VarRate                            | 2014-09-13
 | MIME-BodyMunger                         | 2014-09-13
 | Mixin-ExtraFields                       | 2014-09-13
+| Mixin-ExtraFields-Driver-DBIC           | 2014-09-13

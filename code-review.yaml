@@ -315,7 +315,7 @@ Metabase-Web:
 Mixin-ExtraFields:
   last-review: 2014-09-13
 Mixin-ExtraFields-Driver-DBIC:
-  last-review: 2014-04-02
+  last-review: 2014-09-13
 Mixin-ExtraFields-Hive:
   last-review: 2014-04-02
 Mixin-ExtraFields-Param:
