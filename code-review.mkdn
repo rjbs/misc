@@ -37,7 +37,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | IPC-Run3                                | 2014-03-29
 | App-Cmd                                 | 2014-04-02
 | HTTP-Throwable                          | 2014-04-02
-| Math-TotalBuilder                       | 2014-04-02
 | Math-VarRate                            | 2014-04-02
 | MIME-BodyMunger                         | 2014-04-02
 | Mixin-ExtraFields                       | 2014-04-02
@@ -243,3 +242,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Mail-SpamAssassin-SimpleClient          | 2014-09-13
 | MasonX-Resolver-WidgetFactory           | 2014-09-13
 | Math-Calculator                         | 2014-09-13
+| Math-TotalBuilder                       | 2014-09-13
