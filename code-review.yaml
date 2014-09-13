@@ -194,7 +194,7 @@ Email-Sender-Transport-SQLite:
 Email-Simple:
   last-review: 2014-07-14
 Email-Simple-FromHandle:
-  last-review: 2014-04-02
+  last-review: 2014-09-13
 Email-Simple-Test-TraceHeaders:
   last-review: 2014-04-02
 Email-Store:
