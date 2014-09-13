@@ -352,7 +352,7 @@ MooseX-Types-Perl:
 Net-Continental:
   last-review: 2014-07-02
 Net-DNS-GuessTZ:
-  last-review: 2014-04-02
+  last-review: 2014-09-13
 Net-Delicious:
   review: never
 Net-Finger-Server:
