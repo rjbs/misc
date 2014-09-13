@@ -36,7 +36,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-MIME-Attachment-Stripper          | 2014-03-29
 | IPC-Run3                                | 2014-03-29
 | App-Cmd                                 | 2014-04-02
-| Games-Bowling-Scorecard                 | 2014-04-02
 | Games-Crossword-Puzzle                  | 2014-04-02
 | Games-Dice                              | 2014-04-02
 | Games-Goban                             | 2014-04-02
@@ -243,3 +242,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | fewer                                   | 2014-09-13
 | File-LinkTree-Builder                   | 2014-09-13
 | Games-Board                             | 2014-09-13
+| Games-Bowling-Scorecard                 | 2014-09-13
