@@ -499,6 +499,7 @@ Test-Routine:
   last-review: 2014-08-08
 Test-Simple:
   last-review: 2014-04-02
+  review: never
 Text-Soundex:
   last-review: 2013-06-20
   review: never
