@@ -1,32 +1,32 @@
 ---
 Acme-Lingua-EN-Inflect-Modern:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Acme-ProgressBar:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Amce-CNA:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 App-Addex:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 App-Addex-AddressBook-Abook:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 App-Addex-AddressBook-Apple:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 App-Addex-AddressBook-AppleScript:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 App-Addex-Plugin-Hiveminder:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 App-Addex-Plugin-Nobody:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 App-Cmd:
   last-review: 2014-09-26
 App-Cmd-Plugin-Prompt:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 App-Cronjob:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 App-Smarkmail:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 App-Whiff:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 B-Lint:
   last-review: 2013-06-20
   review: never
@@ -46,7 +46,7 @@ CGI-Form-Table:
   last-review: 2013-07-01
   review: never
 CPAN-Faker:
-  last-review: 2014-07-17
+  last-review: 2014-10-11
 CPAN-Mini:
   last-review: 2014-08-08
 CPAN-Uploader:
@@ -56,7 +56,7 @@ Catalyst-View-Text-Template:
 Chess-960:
   last-review: 2014-07-11
 Class-Accessor-Class:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 Class-DBI-MSSQL:
   last-review: 2013-06-20
   review: never
@@ -64,53 +64,53 @@ Class-DBI-Relationship-HasVariant:
   last-review: 2013-06-20
   review: never
 Color-Palette:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 Color-Scheme:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 Config-INI:
-  last-review: 2014-04-06
+  last-review: 2014-10-11
 Config-MVP:
   last-review: 2014-07-02
 Config-MVP-Reader-INI:
-  last-review: 2014-07-17
+  last-review: 2014-10-11
 Config-Singleton:
-  last-review: 2014-07-02
+  last-review: 2014-10-11
 DBIx-Locker:
-  last-review: 2014-08-16
+  last-review: 2014-10-11
 DNS-Oterica:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-Bucketeer:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-GUID:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-GUID-URLSafe:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-Hive:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-InputMonster:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-InputMonster-Util-Catalyst:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-Message:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-OptList:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-Rx:
   last-review: 2014-05-21
 Data-Rx-Type-MooseTC:
-  last-review: 2014-08-16
+  last-review: 2014-10-11
 Data-Rx-Type-PCRE:
-  last-review: 2014-08-16
+  last-review: 2014-10-11
 Data-Rx-TypeBundle-Perl:
-  last-review: 2014-08-16
+  last-review: 2014-10-11
 Data-Section:
   last-review: 2014-04-05
 Data-TagHive:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Data-UUID:
   last-review: 2014-01-29
 Date-Span:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Dist-Zilla:
   last-review: 2014-05-17
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
@@ -118,41 +118,41 @@ Dist-Zilla-Plugin-CheckPrereqsIndexed:
 Dist-Zilla-Plugin-Git-Describe:
   last-review: 2014-07-02
 Dist-Zilla-Plugin-PodPurler:
-  last-review: 2014-08-16
+  last-review: 2014-10-11
 Dist-Zilla-Plugin-PodWeaver:
   last-review: 2014-08-16
 Dist-Zilla-Plugin-TaskWeaver:
-  last-review: 2014-08-16
+  last-review: 2014-10-11
 Dist-Zilla-PluginBundle-RJBS:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 E-Mail-Acme:
   last-review: 2014-07-11
 Email-ARF:
-  last-review: 2014-08-16
+  last-review: 2014-10-11
 Email-Abstract:
   last-review: 2014-04-05
 Email-Address:
   last-review: 2014-07-17
 Email-Date:
-  last-review: 2014-08-16
+  last-review: 2014-10-11
 Email-Date-Format:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Delete:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Filter:
   last-review: 2014-07-02
 Email-Folder:
   last-review: 2014-09-16
 Email-Folder-IMAP:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Folder-IMAPS:
-  last-review: 2014-04-05
+  last-review: 2014-10-11
 Email-Folder-POP3:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-FolderType:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-FolderType-Net:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-LocalDelivery:
   last-review: 2014-07-14
 Email-MIME:
@@ -162,41 +162,41 @@ Email-MIME-Attachment-Stripper:
 Email-MIME-ContentType:
   last-review: 2014-08-08
 Email-MIME-Encodings:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-MIME-Kit:
   last-review: 2014-06-06
 Email-MIME-Kit-Assembler-Markdown:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-MIME-Kit-Assembler-TextifyHTML:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-MIME-Kit-KitReader-SWAK:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-MIME-Kit-Renderer-TT:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-MIME-Kit-Renderer-Text-Template:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-MIME-Kit-Validator-Rx:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-MessageID:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Pipemailer:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Reply:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Send:
   last-review: 2014-07-11
 Email-Send-IO:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Sender:
   last-review: 2014-09-13
 Email-Sender-Transport-SQLite:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Simple:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 Email-Simple-FromHandle:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Simple-Test-TraceHeaders:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Store:
   review: never
 Email-Stuff:
@@ -204,60 +204,60 @@ Email-Stuff:
 Email-Stuffer:
   last-review: 2014-08-16
 Email-Thread:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Email-Valid:
   last-review: 2014-03-27
 Exception-Reporter:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Exception-Reporter-Summarizer-Catalyst:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 File-CheckTree:
   last-review: 2013-06-20
   review: never
 File-LinkTree-Builder:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Games-Board:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Games-Bowling-Scorecard:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Games-Crossword-Puzzle:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Games-Dice:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Games-Goban:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Games-Nintendo-Mario:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Getopt-Long-Descriptive:
   last-review: 2014-03-06
 Git-Fingerd:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Git-Megapull:
   last-review: 2013-10-31
   review: never
 Global-Context:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 HTML-Form-ForceValue:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 HTML-FromText:
   last-review: 2013-07-03
   review: never
 HTML-MasonX-Free:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 HTML-Widget-Factory:
   last-review: 2014-03-27
 HTML-Widget-Plugin-Calendar:
-  last-review: 2014-06-08
+  last-review: 2014-10-11
 HTML-Widget-Plugin-Combo:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 HTML-Widget-Plugin-JS:
-  last-review: 2014-06-08
+  last-review: 2014-10-11
 HTML-Widget-Plugin-Struct:
-  last-review: 2014-06-08
+  last-review: 2014-10-11
 HTTP-Throwable:
   last-review: 2014-09-26
 IO-TieCombine:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 IPC-Run3:
   last-review: 2014-03-29
 Image-MetaData-JPEG:
@@ -267,65 +267,65 @@ JSON-CPAN-Meta:
 Kwiki-IRCMode:
   review: never
 List-MapList:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Log-Dispatch-Array:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Log-Dispatch-TextTable:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Log-Dispatchouli:
   last-review: 2014-07-16
 MIME-BodyMunger:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 MIME-Lite:
   last-review: 2013-11-04
 MRO-Magic:
-  last-review: 2014-04-05
+  last-review: 2014-10-11
 Macro-Micro:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mail-Audit:
   last-review: 2014-06-30
 Mail-Audit-DKIM:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mail-Audit-List:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mail-Audit-PGP:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mail-Audit-Razor:
   review: never
 Mail-Convert-Mbox-ToEml:
   review: never
 Mail-LocalDelivery:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mail-Postfix-Attr:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mail-SpamAssassin-SimpleClient:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 MasonX-Resolver-WidgetFactory:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Math-Calculator:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Math-TotalBuilder:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Math-VarRate:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Metabase:
   review: never
 Metabase-Web:
   review: never
 Mixin-ExtraFields:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mixin-ExtraFields-Driver-DBIC:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mixin-ExtraFields-Hive:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mixin-ExtraFields-Param:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mixin-Historian:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Mixin-Linewise:
   last-review: 2014-08-08
 Module-Faker:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Module-Install-AuthorTests:
   review: never
 Module-Install-ExtraTests:
@@ -338,140 +338,140 @@ Moose-Autobox:
   last-review: 2013-10-28
   review: never
 MooseX-ClassCompositor:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 MooseX-ComposedBehavior:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 MooseX-OneArgNew:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 MooseX-SetOnce:
-  last-review: 2014-07-02
+  last-review: 2014-10-11
 MooseX-Storage-Format-JSONpm:
-  last-review: 2014-04-05
+  last-review: 2014-10-11
 MooseX-Types-Perl:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Net-Continental:
-  last-review: 2014-07-02
+  last-review: 2014-10-11
 Net-DNS-GuessTZ:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Net-Delicious:
   review: never
 Net-Finger-Server:
-  last-review: 2014-04-05
+  last-review: 2014-10-11
 Number-Nary:
-  last-review: 2014-04-05
+  last-review: 2014-10-11
 Number-Tolerant:
   last-review: 2014-07-07
 Object-Annotate:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Object-Capsule:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Package-Generator:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Parse-GutenbergRoget:
   last-review: 2014-07-17
 Parse-IRCLog:
-  last-review: 2014-08-16
+  last-review: 2014-10-11
 Path-Resolver:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Perl-Critic-Lax:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Perl-Critic-Tics:
-  last-review: 2014-07-02
+  last-review: 2014-10-11
 Perl-PrereqScanner:
   last-review: 2014-07-02
 Pod-CYOA:
   last-review: 2014-07-11
 Pod-Coverage-TrustPod:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Pod-Elemental:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Pod-Elemental-PerlMunger:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Pod-Elemental-Transformer-List:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Pod-Elemental-Transformer-PPIHTML:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Pod-Elemental-Transformer-SynHi:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Pod-Elemental-Transformer-VimHTML:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Pod-Elemental-Transformer-WikiDoc:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Pod-Eventual:
   last-review: 2014-08-08
 Pod-Weaver:
   last-review: 2014-06-30
 Postfix-Parse-Mailq:
-  last-review: 2014-04-05
+  last-review: 2014-10-11
 Process-Status:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 PyTAP:
   home: GitHub
   last-review: 2014-06-30
 Querylet:
   last-review: 2014-06-30
 Querylet-CGI:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Querylet-Output-Excel-OLE:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Querylet-Output-Excel-XLS:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Querylet-Output-Text:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Religion-Bible-Reference:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Return-Value:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Role-HasMessage:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Role-HasPayload:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Role-Identifiable:
   last-review: 2014-06-30
 Role-Subsystem:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Router-Dumb:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Rubric:
   last-review: 2014-03-20
 Rubric-Entry-Formatter-KwikiFormatish:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 Rubric-Entry-Formatter-Markdown:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Software-License:
   last-review: 2014-02-21
 Sort-ByExample:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 String-Errf:
   last-review: 2014-08-08
 String-Flogger:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 String-Formatter:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 String-RewritePrefix:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 String-TagString:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
 String-Truncate:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Sub-Exporter:
   last-review: 2014-06-30
 Sub-Exporter-ForMethods:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Sub-Exporter-GlobExporter:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Sub-Exporter-Lexical:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 Sub-Import:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Sub-Install:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Sub-MicroSig:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Sub-Pipeline:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Task-BeLike-RJBS:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Task-Deprecations5_12:
   last-review: 2013-06-20
   review: never
@@ -482,16 +482,16 @@ Task-Email-PEP-NoStore:
   last-review: 2013-06-20
   review: never
 Test-BinaryData:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Test-Class:
   last-review: 2013-11-30
   review: never
 Test-Deep:
   last-review: 2013-11-30
 Test-Fatal:
-  last-review: 2014-04-05
+  last-review: 2014-10-11
 Test-MinimumVersion:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Test-Reporter-HTTPGateway:
   last-review: 2013-06-20
   review: never
@@ -506,30 +506,30 @@ Text-Soundex:
 Throwable:
   last-review: 2014-09-20
 Throwable-X:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Time-Duration-Object:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Time-Piece:
   last-review: 2014-07-29
 Time-Piece-MSSQL:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 Tree-File:
   review: never
 Try-Tiny:
   review: never
 URI-cpan:
-  last-review: 2014-07-11
+  last-review: 2014-10-11
 Version-Requirements:
   last-review: 2013-06-20
   review: never
 WWW-AdventCalendar:
-  last-review: 2014-07-14
+  last-review: 2014-10-11
 WebService-RTMAgent:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 ZMachine:
-  last-review: 2014-08-08
+  last-review: 2014-10-11
 delicious-backup:
   last-review: 2013-07-05
   review: never
 fewer:
-  last-review: 2014-09-13
+  last-review: 2014-10-11
