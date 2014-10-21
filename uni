@@ -16,11 +16,17 @@ shift @ARGV if $todo;
 
 die "only one swich allowed!\n" if grep /\A-/, @ARGV;
 
-$todo //= \&search_chars;
-
 @ARGV = map {; decode('UTF-8', $_) } @ARGV;
 
+$todo //= @ARGV == 1 && length $ARGV[0] == 1
+        ? \&one_char
+        : \&search_chars;
+
 $todo->(@ARGV);
+
+sub one_char {
+  print_chars(@_);
+}
 
 sub split_string {
   my (@args) = @_;
