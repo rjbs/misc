@@ -37,7 +37,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | CPAN-Uploader                           | 2014-04-05
 | Data-Section                            | 2014-04-05
 | Email-Abstract                          | 2014-04-05
-| Dist-Zilla                              | 2014-05-17
 | Data-Rx                                 | 2014-05-21
 | Email-MIME-Kit                          | 2014-06-06
 | Mail-Audit                              | 2014-06-30
@@ -242,3 +241,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | WebService-RTMAgent                     | 2014-10-11
 | WWW-AdventCalendar                      | 2014-10-11
 | ZMachine                                | 2014-10-11
+| Dist-Zilla                              | 2014-10-21
