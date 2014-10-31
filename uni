@@ -59,7 +59,15 @@ sub print_chars {
 
     my $chr  = ord($c);
     my $name = charnames::viacode($chr);
-    printf "%s- U+%05X - %s\n", $p, $chr, $name;
+    
+    my $utf8_rep = '';
+    {
+      use bytes;
+      my $format = "0x%02X " x length($c);
+      chop $format;
+      $utf8_rep = sprintf $format, map { ord($_) } split( '', $c );
+    }
+    printf "%s- U+%05X (%s) - %s\n", $p, $chr, $utf8_rep, $name;
   }
 }
 
