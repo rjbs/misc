@@ -109,7 +109,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Date-Span                               | 2014-10-11
 | DBIx-Locker                             | 2014-10-11
 | Dist-Zilla-Plugin-PodPurler             | 2014-10-11
-| Dist-Zilla-Plugin-TaskWeaver            | 2014-10-11
 | Dist-Zilla-PluginBundle-RJBS            | 2014-10-11
 | DNS-Oterica                             | 2014-10-11
 | Email-ARF                               | 2014-10-11
@@ -242,3 +241,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | WWW-AdventCalendar                      | 2014-10-11
 | ZMachine                                | 2014-10-11
 | Dist-Zilla                              | 2014-11-06
+| Dist-Zilla-Plugin-TaskWeaver            | 2014-11-10
