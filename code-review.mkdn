@@ -55,7 +55,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Image-MetaData-JPEG                     | 2014-07-11
 | Pod-CYOA                                | 2014-07-11
 | Email-LocalDelivery                     | 2014-07-14
-| Log-Dispatchouli                        | 2014-07-16
 | Email-Address                           | 2014-07-17
 | Parse-GutenbergRoget                    | 2014-07-17
 | Time-Piece                              | 2014-07-29
@@ -242,3 +241,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Dist-Zilla                              | 2014-11-06
 | Dist-Zilla-Plugin-TaskWeaver            | 2014-11-10
 | Pod-Weaver                              | 2014-11-12
+| Log-Dispatchouli                        | 2014-11-29
