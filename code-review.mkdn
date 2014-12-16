@@ -21,7 +21,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| Email-MIME                              | 2014-01-29
 | Software-License                        | 2014-02-21
 | Email-Stuff                             | 2014-03-02
 | Getopt-Long-Descriptive                 | 2014-03-06
@@ -241,3 +240,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Log-Dispatchouli                        | 2014-11-29
 | Test-Deep                               | 2014-12-12
 | Data-UUID                               | 2014-12-16
+| Email-MIME                              | 2014-12-16
