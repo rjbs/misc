@@ -23,7 +23,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | --------------------------------------- | -------------
 | Software-License                        | 2014-02-21
 | Email-Stuff                             | 2014-03-02
-| Getopt-Long-Descriptive                 | 2014-03-06
 | Rubric                                  | 2014-03-20
 | Catalyst-View-Text-Template             | 2014-03-24
 | Email-Valid                             | 2014-03-27
@@ -241,3 +240,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Test-Deep                               | 2014-12-12
 | Data-UUID                               | 2014-12-16
 | Email-MIME                              | 2014-12-16
+| Getopt-Long-Descriptive                 | 2014-12-22
