@@ -33,7 +33,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Data-Section                            | 2014-04-05
 | Email-Abstract                          | 2014-04-05
 | Data-Rx                                 | 2014-05-21
-| Email-MIME-Kit                          | 2014-06-06
 | Mail-Audit                              | 2014-06-30
 | PyTAP                                   | 2014-06-30
 | Querylet                                | 2014-06-30
@@ -241,3 +240,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Data-UUID                               | 2014-12-16
 | Email-MIME                              | 2014-12-16
 | Getopt-Long-Descriptive                 | 2014-12-22
+| Email-MIME-Kit                          | 2014-12-25
