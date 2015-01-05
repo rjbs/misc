@@ -112,7 +112,7 @@ Data-UUID:
 Date-Span:
   last-review: 2014-10-11
 Dist-Zilla:
-  last-review: 2014-11-06
+  last-review: 2015-01-05
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
   last-review: 2014-08-16
 Dist-Zilla-Plugin-Git-Describe:
