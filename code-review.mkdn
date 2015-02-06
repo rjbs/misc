@@ -25,7 +25,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Software-License                        | 2014-02-21
 | Email-Stuff                             | 2014-03-02
 | Catalyst-View-Text-Template             | 2014-03-24
-| Email-Valid                             | 2014-03-27
 | HTML-Widget-Factory                     | 2014-03-27
 | Email-MIME-Attachment-Stripper          | 2014-03-29
 | IPC-Run3                                | 2014-03-29
@@ -243,3 +242,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Pod-Weaver                              | 2014-12-31
 | Dist-Zilla                              | 2015-01-09
 | App-Uni                                 | 2015-02-06
+| Email-Valid                             | 2015-02-06
