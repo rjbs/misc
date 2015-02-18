@@ -4,9 +4,10 @@ use warnings;
 
 use DateTime;
 use Getopt::Long::Descriptive;
+use JSON;
 use List::AllUtils qw(uniq);
 use LWP::UserAgent;
-use MetaCPAN::API;
+use MetaCPAN::Client;
 use Parse::CPAN::Packages::Fast;
 use Term::ReadKey ();
 use YAML::XS ();
@@ -28,7 +29,7 @@ my ($opt, $usage) = describe_options(
 die "--message without --rebuild or --project is nonsensical"
   if $opt->message and not ($opt->rebuild or $opt->project);
 
-my $mcpan = MetaCPAN::API->new;
+my $mcpan = MetaCPAN::Client->new;
 
 my $saved = YAML::XS::LoadFile('code-review.yaml');
 
@@ -214,19 +215,19 @@ sub rt_data {
 sub cpan_notes {
   my ($name) = @_;
 
-  my $release = eval { $mcpan->release( distribution => $name ) };
+  my $release = eval { $mcpan->release( $name ) };
   return ("couldn't find dist on metacpan") unless $release;
 
   my @notes;
 
-  my $tracker = $release->{resources}{bugtracker};
+  my $tracker = $release->metadata->{resources}{bugtracker};
   if (! $tracker->{web} or $tracker->{web} =~ /rt.cpan/) {
     push @notes, "still using rt.cpan.org";
   }
 
   my $gh_repo_name = $name;
 
-  my $repo = $release->{resources}{repository}{url};
+  my $repo = $release->metadata->{resources}{repository}{url};
   if (! $repo) {
     push @notes, "no repository on file";
   } elsif ($repo !~ /github.com/) {
@@ -246,7 +247,7 @@ sub cpan_notes {
       if $rt_bugs->{$_};
   }
 
-  unless (($release->{metadata}{generated_by} // '') =~ /Dist::Zilla/) {
+  unless (($release->metadata->{generated_by} // '') =~ /Dist::Zilla/) {
     push @notes, "dist not built with Dist::Zilla";
   }
 

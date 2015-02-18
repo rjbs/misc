@@ -56,6 +56,7 @@ CPAN-Uploader:
 Cache-Cache: {}
 Catalyst-View-Text-Template:
   last-review: 2014-03-24
+  review: never
 Chess-960:
   last-review: 2014-07-11
 Class-Accessor-Class:
