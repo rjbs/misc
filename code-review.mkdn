@@ -30,7 +30,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PyTAP                                   | 2014-06-30
 | Perl-PrereqScanner                      | 2014-07-02
 | Number-Tolerant                         | 2014-07-07
-| Email-Send                              | 2014-07-11
 | Image-MetaData-JPEG                     | 2014-07-11
 | Pod-CYOA                                | 2014-07-11
 | Email-LocalDelivery                     | 2014-07-14
@@ -242,3 +241,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Chess-960                               | 2015-02-27
 | E-Mail-Acme                             | 2015-02-27
 | Email-Filter                            | 2015-02-27
+| Email-Send                              | 2015-02-27
