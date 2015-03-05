@@ -28,13 +28,8 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Data-Section                            | 2014-04-05
 | Mail-Audit                              | 2014-06-30
 | PyTAP                                   | 2014-06-30
-| Perl-PrereqScanner                      | 2014-07-02
 | Number-Tolerant                         | 2014-07-07
-| Image-MetaData-JPEG                     | 2014-07-11
-| Pod-CYOA                                | 2014-07-11
-| Email-LocalDelivery                     | 2014-07-14
 | Email-Address                           | 2014-07-17
-| Parse-GutenbergRoget                    | 2014-07-17
 | Time-Piece                              | 2014-07-29
 | CPAN-Mini                               | 2014-08-08
 | Email-MIME-ContentType                  | 2014-08-08
@@ -242,3 +237,8 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | E-Mail-Acme                             | 2015-02-27
 | Email-Filter                            | 2015-02-27
 | Email-Send                              | 2015-02-27
+| Email-LocalDelivery                     | 2015-03-05
+| Image-MetaData-JPEG                     | 2015-03-05
+| Parse-GutenbergRoget                    | 2015-03-05
+| Perl-PrereqScanner                      | 2015-03-05
+| Pod-CYOA                                | 2015-03-05

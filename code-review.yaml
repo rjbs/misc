@@ -158,7 +158,7 @@ Email-FolderType:
 Email-FolderType-Net:
   last-review: 2014-10-11
 Email-LocalDelivery:
-  last-review: 2014-07-14
+  last-review: 2015-03-05
 Email-MIME:
   last-review: 2014-12-16
 Email-MIME-Attachment-Stripper:
@@ -265,7 +265,7 @@ IO-TieCombine:
 IPC-Run3:
   last-review: 2014-03-29
 Image-MetaData-JPEG:
-  last-review: 2014-07-11
+  last-review: 2015-03-05
 JSON-CPAN-Meta:
   review: never
 Kwiki-IRCMode:
@@ -373,7 +373,7 @@ Object-Capsule:
 Package-Generator:
   last-review: 2014-10-11
 Parse-GutenbergRoget:
-  last-review: 2014-07-17
+  last-review: 2015-03-05
 Parse-IRCLog:
   last-review: 2014-10-11
 Path-Resolver:
@@ -383,9 +383,9 @@ Perl-Critic-Lax:
 Perl-Critic-Tics:
   last-review: 2014-10-11
 Perl-PrereqScanner:
-  last-review: 2014-07-02
+  last-review: 2015-03-05
 Pod-CYOA:
-  last-review: 2014-07-11
+  last-review: 2015-03-05
 Pod-Coverage-TrustPod:
   last-review: 2014-10-11
 Pod-Elemental:
