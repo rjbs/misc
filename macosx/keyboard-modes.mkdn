@@ -1,0 +1,28 @@
+# State Modes for U.S. International Keyboard
+
+1.  caron
+2.  line below
+3.  inverted breve
+4.  weird random mode? (I used this one for smileys)
+5.  circumflex above
+6.  tilde below
+7.  grave
+8.  cedilla
+9.  double acute
+10. hook below
+11. macron
+12. breve
+13. dot above
+14. comma below
+15. dot below
+16. double grave
+17. ring above
+18. diaeresis
+19. ogonek
+20. stoke
+21. circumflex below
+22. acute
+23. tilde above
+24. horn mode
+25. hook above mode
+
