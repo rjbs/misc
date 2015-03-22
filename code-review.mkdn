@@ -22,7 +22,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Software-License                        | 2014-02-21
-| Data-Section                            | 2014-04-05
 | Mail-Audit                              | 2014-06-30
 | PyTAP                                   | 2014-06-30
 | Number-Tolerant                         | 2014-07-07
@@ -240,4 +239,5 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Dist-Zilla-PluginBundle-RJBS            | 2015-03-08
 | DNS-Oterica                             | 2015-03-08
 | Cache-Cache                             | 2015-03-22
+| Data-Section                            | 2015-03-22
 | Email-MIME-Attachment-Stripper          | 2015-03-22
