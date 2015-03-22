@@ -265,6 +265,7 @@ IO-TieCombine:
   last-review: 2014-10-11
 IPC-Run3:
   last-review: 2014-03-29
+  review: never
 Image-MetaData-JPEG:
   last-review: 2015-03-05
 JSON-CPAN-Meta:
