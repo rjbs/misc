@@ -24,7 +24,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Software-License                        | 2014-02-21
 | Mail-Audit                              | 2014-06-30
 | PyTAP                                   | 2014-06-30
-| Number-Tolerant                         | 2014-07-07
 | Email-Address                           | 2014-07-17
 | Time-Piece                              | 2014-07-29
 | CPAN-Mini                               | 2014-08-08
@@ -241,3 +240,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Cache-Cache                             | 2015-03-22
 | Data-Section                            | 2015-03-22
 | Email-MIME-Attachment-Stripper          | 2015-03-22
+| Number-Tolerant                         | 2015-03-22
