@@ -27,7 +27,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Mail-Audit                              | 2014-06-30
 | PyTAP                                   | 2014-06-30
 | Email-Address                           | 2014-07-17
-| Time-Piece                              | 2014-07-29
 | CPAN-Mini                               | 2014-08-08
 | Email-MIME-ContentType                  | 2014-08-08
 | Mixin-Linewise                          | 2014-08-08
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-MIME-Attachment-Stripper          | 2015-03-22
 | Number-Tolerant                         | 2015-03-22
 | RTF-VimColor                            | 2015-04-07
+| Time-Piece                              | 2015-04-07
