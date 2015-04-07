@@ -55,6 +55,7 @@ CPAN-Uploader:
   last-review: 2015-02-09
 Cache-Cache:
   last-review: 2015-03-22
+Carp: {}
 Catalyst-View-Text-Template:
   last-review: 2014-03-24
   review: never
@@ -301,6 +302,7 @@ Mail-Audit-Razor:
   review: never
 Mail-Convert-Mbox-ToEml:
   review: never
+Mail-DeliveryStatus-BounceParser: {}
 Mail-LocalDelivery:
   last-review: 2014-10-11
 Mail-Postfix-Attr:
@@ -425,6 +427,8 @@ Querylet-Output-Excel-XLS:
   last-review: 2014-10-11
 Querylet-Output-Text:
   last-review: 2014-10-11
+RTF-VimColor:
+  last-review: 2015-04-07
 Religion-Bible-Reference:
   last-review: 2014-10-11
 Return-Value:
