@@ -28,7 +28,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PyTAP                                   | 2014-06-30
 | Email-Address                           | 2014-07-17
 | CPAN-Mini                               | 2014-08-08
-| Mixin-Linewise                          | 2014-08-08
 | Pod-Eventual                            | 2014-08-08
 | String-Errf                             | 2014-08-08
 | Test-Routine                            | 2014-08-08
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-MIME-ContentType                  | 2015-04-07
 | RTF-VimColor                            | 2015-04-07
 | Time-Piece                              | 2015-04-07
+| Mixin-Linewise                          | 2015-04-08
