@@ -1,0 +1,49 @@
+#!/usr/bin/perl
+# emtftpd
+use 5.18.0;
+use warnings;
+use IO::Socket::INET;
+
+my $sock = IO::Socket::INET->new(
+  Listen    => 1,
+  LocalAddr => 0,
+  LocalPort => 9000,
+  Proto     => 'tcp',
+);
+
+die "can't open socket: $!" unless $sock;
+
+my $target_dir = "/Users/rjbs/Desktop/receive";
+
+while (my $conn = $sock->accept) {
+  my $fn = <$conn>;
+  chomp $fn;
+  unless ($fn =~ /\A[-_0-9A-Za-z.]+\z/) {
+    warn "bad fn: $fn\n";
+    $conn->close;
+    next;
+  }
+
+  if (-e "target_dir/$fn") {
+    warn "clobbering $fn\n";
+  }
+
+  my $fh;
+  unless (open $fh, '>', "$target_dir/$fn") {
+    warn "can't write to $fn: $!";
+    $conn->close;
+    next;
+  }
+
+  print "receiving $fn\n";
+  my $data;
+  my $i = 1;
+  while ( $conn->read($data, 1024) ) {
+    print "writing block " . $i++ . "\n";
+    print {$fh} $data;
+  }
+
+  close $fh or warn "error closing fh to $fn: $!";
+
+  $conn->close;
+}

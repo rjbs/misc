@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+# emtftpd
+use 5.18.0;
+use warnings;
+use File::Spec;
+use IO::Socket::INET;
+
+die "no host" unless my $host = shift @ARGV;
+
+die "no filenames" unless @ARGV;
+
+for my $fn (@ARGV) {
+  unless (-e $fn) {
+    warn "I can't find file $fn\n";
+    next;
+  }
+
+  my (@parts) = File::Spec->splitpath($fn);
+
+  my $short = pop @parts;
+  $short =~ s/\s/-/g;
+  $short =~ tr/-_0-9A-Za-z./_/c;
+
+  my $conn = IO::Socket::INET->new(
+    PeerAddr => $host,
+    PeerPort => 9000,
+    Proto     => 'tcp',
+  ) or die "can't connect: $!";
+
+  open my $fh, '<', $fn or die "can't read $fn: $!";
+
+  print {$conn} "$short\n";
+  my $data;
+  my $bytes;
+  while ( $bytes = read $fh, $data, 1024) {
+    print {$conn} $data or die "fail to write: $!";
+  }
+
+  die "error reading $fh: $!" unless defined $bytes;
+
+  print "successfully sent $fn\n";
+
+  $conn->close;
+}
