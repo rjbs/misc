@@ -21,7 +21,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| Net-SMTP-SSL                            | -
 | Template-Mustache                       | -
 | Test-FITesque                           | -
 | Software-License                        | 2014-02-21
@@ -247,3 +246,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Mixin-Linewise                          | 2015-04-08
 | Config-INI-Reader-Ordered               | 2015-06-21
 | Mail-DeliveryStatus-BounceParser        | 2015-06-21
+| Net-SMTP-SSL                            | 2015-06-21
