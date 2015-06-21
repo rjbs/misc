@@ -76,6 +76,8 @@ Color-Scheme:
   last-review: 2015-03-08
 Config-INI:
   last-review: 2015-03-08
+Config-INI-Reader-Ordered:
+  last-review: 2015-06-21
 Config-MVP:
   last-review: 2015-02-18
 Config-MVP-Reader-INI:
@@ -367,6 +369,7 @@ Net-Delicious:
   review: never
 Net-Finger-Server:
   last-review: 2014-10-11
+Net-SMTP-SSL: {}
 Number-Nary:
   last-review: 2014-10-11
 Number-Tolerant:
@@ -493,6 +496,7 @@ Task-Email-PEP-All:
 Task-Email-PEP-NoStore:
   last-review: 2013-06-20
   review: never
+Template-Mustache: {}
 Test-BinaryData:
   last-review: 2014-10-11
 Test-Class:
@@ -500,6 +504,7 @@ Test-Class:
   review: never
 Test-Deep:
   last-review: 2014-12-12
+Test-FITesque: {}
 Test-Fatal:
   last-review: 2014-10-11
 Test-MinimumVersion:
@@ -540,6 +545,7 @@ WebService-RTMAgent:
   last-review: 2014-10-11
 ZMachine:
   last-review: 2014-10-11
+constant: {}
 delicious-backup:
   last-review: 2013-07-05
   review: never
