@@ -84,6 +84,8 @@ Config-MVP-Reader-INI:
   last-review: 2014-10-11
 Config-Singleton:
   last-review: 2015-03-08
+constant:
+  review: never
 DBIx-Locker:
   last-review: 2015-03-08
 DNS-Oterica:
@@ -545,7 +547,6 @@ WebService-RTMAgent:
   last-review: 2014-10-11
 ZMachine:
   last-review: 2014-10-11
-constant: {}
 delicious-backup:
   last-review: 2013-07-05
   review: never
