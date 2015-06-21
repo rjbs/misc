@@ -506,7 +506,8 @@ Test-Class:
   review: never
 Test-Deep:
   last-review: 2014-12-12
-Test-FITesque: {}
+Test-FITesque:
+  review: never
 Test-Fatal:
   last-review: 2014-10-11
 Test-MinimumVersion:
