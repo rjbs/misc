@@ -55,7 +55,8 @@ CPAN-Uploader:
   last-review: 2015-02-09
 Cache-Cache:
   last-review: 2015-03-22
-Carp: {}
+Carp:
+  review: never
 Catalyst-View-Text-Template:
   last-review: 2014-03-24
   review: never
