@@ -21,21 +21,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| Template-Mustache                       | -
-| Test-FITesque                           | -
-| Software-License                        | 2014-02-21
-| Mail-Audit                              | 2014-06-30
-| PyTAP                                   | 2014-06-30
-| Email-Address                           | 2014-07-17
-| CPAN-Mini                               | 2014-08-08
-| Pod-Eventual                            | 2014-08-08
-| String-Errf                             | 2014-08-08
 | Test-Routine                            | 2014-08-08
-| Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2014-08-16
-| Dist-Zilla-Plugin-PodWeaver             | 2014-08-16
-| Email-Stuffer                           | 2014-08-16
-| Email-Sender                            | 2014-09-13
-| Email-Folder                            | 2014-09-16
 | Throwable                               | 2014-09-20
 | HTTP-Throwable                          | 2014-09-26
 | Config-MVP-Reader-INI                   | 2014-10-11
@@ -247,3 +233,15 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Config-INI-Reader-Ordered               | 2015-06-21
 | Mail-DeliveryStatus-BounceParser        | 2015-06-21
 | Net-SMTP-SSL                            | 2015-06-21
+| CPAN-Mini                               | 2015-06-29
+| Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2015-06-29
+| Dist-Zilla-Plugin-PodWeaver             | 2015-06-29
+| Email-Address                           | 2015-06-29
+| Email-Folder                            | 2015-06-29
+| Email-Sender                            | 2015-06-29
+| Email-Stuffer                           | 2015-06-29
+| Pod-Eventual                            | 2015-06-29
+| PyTAP                                   | 2015-06-29
+| Software-License                        | 2015-06-29
+| String-Errf                             | 2015-06-29
+| Template-Mustache                       | 2015-06-29

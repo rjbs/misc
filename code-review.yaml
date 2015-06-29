@@ -50,7 +50,7 @@ CGI-Form-Table:
 CPAN-Faker:
   last-review: 2015-03-08
 CPAN-Mini:
-  last-review: 2014-08-08
+  last-review: 2015-06-29
 CPAN-Uploader:
   last-review: 2015-02-09
 Cache-Cache:
@@ -123,13 +123,13 @@ Date-Span:
 Dist-Zilla:
   last-review: 2015-01-09
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
-  last-review: 2014-08-16
+  last-review: 2015-06-29
 Dist-Zilla-Plugin-Git-Describe:
   last-review: 2014-12-27
 Dist-Zilla-Plugin-PodPurler:
   last-review: 2015-03-08
 Dist-Zilla-Plugin-PodWeaver:
-  last-review: 2014-08-16
+  last-review: 2015-06-29
 Dist-Zilla-Plugin-TaskWeaver:
   last-review: 2014-11-10
 Dist-Zilla-PluginBundle-RJBS:
@@ -141,7 +141,7 @@ Email-ARF:
 Email-Abstract:
   last-review: 2014-12-27
 Email-Address:
-  last-review: 2014-07-17
+  last-review: 2015-06-29
 Email-Date:
   last-review: 2014-10-11
 Email-Date-Format:
@@ -151,7 +151,7 @@ Email-Delete:
 Email-Filter:
   last-review: 2015-02-27
 Email-Folder:
-  last-review: 2014-09-16
+  last-review: 2015-06-29
 Email-Folder-IMAP:
   last-review: 2014-10-11
 Email-Folder-IMAPS:
@@ -197,7 +197,7 @@ Email-Send:
 Email-Send-IO:
   last-review: 2014-10-11
 Email-Sender:
-  last-review: 2014-09-13
+  last-review: 2015-06-29
 Email-Sender-Transport-SQLite:
   last-review: 2014-10-11
 Email-Simple:
@@ -211,7 +211,7 @@ Email-Store:
 Email-Stuff:
   last-review: 2015-02-20
 Email-Stuffer:
-  last-review: 2014-08-16
+  last-review: 2015-06-29
 Email-Thread:
   last-review: 2014-10-11
 Email-Valid:
@@ -295,6 +295,7 @@ Macro-Micro:
   last-review: 2014-10-11
 Mail-Audit:
   last-review: 2014-06-30
+  review: never
 Mail-Audit-DKIM:
   last-review: 2014-10-11
 Mail-Audit-List:
@@ -413,7 +414,7 @@ Pod-Elemental-Transformer-VimHTML:
 Pod-Elemental-Transformer-WikiDoc:
   last-review: 2014-10-11
 Pod-Eventual:
-  last-review: 2014-08-08
+  last-review: 2015-06-29
 Pod-Weaver:
   last-review: 2014-12-31
 Postfix-Parse-Mailq:
@@ -422,7 +423,7 @@ Process-Status:
   last-review: 2014-10-11
 PyTAP:
   home: GitHub
-  last-review: 2014-06-30
+  last-review: 2015-06-29
 Querylet:
   last-review: 2015-02-18
 Querylet-CGI:
@@ -456,11 +457,11 @@ Rubric-Entry-Formatter-KwikiFormatish:
 Rubric-Entry-Formatter-Markdown:
   last-review: 2014-10-11
 Software-License:
-  last-review: 2014-02-21
+  last-review: 2015-06-29
 Sort-ByExample:
   last-review: 2014-10-11
 String-Errf:
-  last-review: 2014-08-08
+  last-review: 2015-06-29
 String-Flogger:
   last-review: 2014-10-11
 String-Formatter:
@@ -498,7 +499,8 @@ Task-Email-PEP-All:
 Task-Email-PEP-NoStore:
   last-review: 2013-06-20
   review: never
-Template-Mustache: {}
+Template-Mustache:
+  last-review: 2015-06-29
 Test-BinaryData:
   last-review: 2014-10-11
 Test-Class:
