@@ -21,7 +21,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| HTTP-Throwable                          | 2014-09-26
 | Config-MVP-Reader-INI                   | 2014-10-11
 | Email-ARF                               | 2014-10-11
 | Email-Date                              | 2014-10-11
@@ -243,5 +242,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Software-License                        | 2015-06-29
 | String-Errf                             | 2015-06-29
 | Template-Mustache                       | 2015-06-29
+| HTTP-Throwable                          | 2015-07-01
 | Test-Routine                            | 2015-07-01
 | Throwable                               | 2015-07-01
