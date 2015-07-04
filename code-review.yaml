@@ -81,7 +81,7 @@ Config-INI-Reader-Ordered:
 Config-MVP:
   last-review: 2015-02-18
 Config-MVP-Reader-INI:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Config-Singleton:
   last-review: 2015-03-08
 DBIx-Locker:
@@ -137,31 +137,31 @@ Dist-Zilla-PluginBundle-RJBS:
 E-Mail-Acme:
   last-review: 2015-02-27
 Email-ARF:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Abstract:
   last-review: 2014-12-27
 Email-Address:
   last-review: 2015-06-29
 Email-Date:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Date-Format:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Delete:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Filter:
   last-review: 2015-02-27
 Email-Folder:
   last-review: 2015-06-29
 Email-Folder-IMAP:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Folder-IMAPS:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Folder-POP3:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-FolderType:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-FolderType-Net:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-LocalDelivery:
   last-review: 2015-03-05
 Email-MIME:
@@ -171,41 +171,41 @@ Email-MIME-Attachment-Stripper:
 Email-MIME-ContentType:
   last-review: 2015-04-07
 Email-MIME-Encodings:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-MIME-Kit:
   last-review: 2014-12-25
 Email-MIME-Kit-Assembler-Markdown:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-MIME-Kit-Assembler-TextifyHTML:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-MIME-Kit-KitReader-SWAK:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-MIME-Kit-Renderer-TT:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-MIME-Kit-Renderer-Text-Template:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-MIME-Kit-Validator-Rx:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-MessageID:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Pipemailer:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Reply:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Send:
   last-review: 2015-02-27
 Email-Send-IO:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Sender:
   last-review: 2015-06-29
 Email-Sender-Transport-SQLite:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Simple:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Simple-FromHandle:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Simple-Test-TraceHeaders:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Store:
   review: never
 Email-Stuff:
@@ -213,24 +213,24 @@ Email-Stuff:
 Email-Stuffer:
   last-review: 2015-06-29
 Email-Thread:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Email-Valid:
   last-review: 2015-02-06
 Exception-Reporter:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Exception-Reporter-Summarizer-Catalyst:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 File-CheckTree:
   last-review: 2013-06-20
   review: never
 File-LinkTree-Builder:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Games-Board:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Games-Bowling-Scorecard:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Games-Crossword-Puzzle:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
 Games-Dice:
   last-review: 2014-10-11
 Games-Goban:
@@ -556,4 +556,4 @@ delicious-backup:
   last-review: 2013-07-05
   review: never
 fewer:
-  last-review: 2014-10-11
+  last-review: 2015-07-04
