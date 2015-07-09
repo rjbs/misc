@@ -232,41 +232,41 @@ Games-Bowling-Scorecard:
 Games-Crossword-Puzzle:
   last-review: 2015-07-04
 Games-Dice:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Games-Goban:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Games-Nintendo-Mario:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Getopt-Long-Descriptive:
   last-review: 2014-12-22
 Git-Fingerd:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Git-Megapull:
   last-review: 2013-10-31
   review: never
 Global-Context:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 HTML-Form-ForceValue:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 HTML-FromText:
   last-review: 2013-07-03
   review: never
 HTML-MasonX-Free:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 HTML-Widget-Factory:
   last-review: 2015-02-18
 HTML-Widget-Plugin-Calendar:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 HTML-Widget-Plugin-Combo:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 HTML-Widget-Plugin-JS:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 HTML-Widget-Plugin-Struct:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 HTTP-Throwable:
   last-review: 2015-07-01
 IO-TieCombine:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 IPC-Run3:
   last-review: 2014-03-29
   review: never
@@ -277,31 +277,31 @@ JSON-CPAN-Meta:
 Kwiki-IRCMode:
   review: never
 List-MapList:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Log-Dispatch-Array:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Log-Dispatch-TextTable:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Log-Dispatchouli:
   last-review: 2014-11-29
 MIME-BodyMunger:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 MIME-Lite:
   last-review: 2013-11-04
   review: never
 MRO-Magic:
   last-review: 2014-10-11
 Macro-Micro:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mail-Audit:
   last-review: 2014-06-30
   review: never
 Mail-Audit-DKIM:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mail-Audit-List:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mail-Audit-PGP:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mail-Audit-Razor:
   review: never
 Mail-Convert-Mbox-ToEml:
@@ -309,37 +309,37 @@ Mail-Convert-Mbox-ToEml:
 Mail-DeliveryStatus-BounceParser:
   last-review: 2015-06-21
 Mail-LocalDelivery:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mail-Postfix-Attr:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mail-SpamAssassin-SimpleClient:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 MasonX-Resolver-WidgetFactory:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Math-Calculator:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Math-TotalBuilder:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Math-VarRate:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Metabase:
   review: never
 Metabase-Web:
   review: never
 Mixin-ExtraFields:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mixin-ExtraFields-Driver-DBIC:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mixin-ExtraFields-Hive:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mixin-ExtraFields-Param:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mixin-Historian:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Mixin-Linewise:
   last-review: 2015-04-08
 Module-Faker:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 Module-Install-AuthorTests:
   review: never
 Module-Install-ExtraTests:
@@ -352,9 +352,9 @@ Moose-Autobox:
   last-review: 2013-10-28
   review: never
 MooseX-ClassCompositor:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 MooseX-ComposedBehavior:
-  last-review: 2014-10-11
+  last-review: 2015-07-09
 MooseX-OneArgNew:
   last-review: 2014-10-11
 MooseX-SetOnce:
