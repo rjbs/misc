@@ -356,11 +356,11 @@ MooseX-ClassCompositor:
 MooseX-ComposedBehavior:
   last-review: 2015-07-09
 MooseX-OneArgNew:
-  last-review: 2014-10-11
+  last-review: 2015-07-15
 MooseX-SetOnce:
-  last-review: 2014-10-11
+  last-review: 2015-07-15
 MooseX-Storage-Format-JSONpm:
-  last-review: 2014-10-11
+  last-review: 2015-07-15
 MooseX-Types-Perl:
   last-review: 2014-10-11
 Net-Continental:
