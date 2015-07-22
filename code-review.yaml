@@ -509,9 +509,9 @@ Test-Deep:
 Test-FITesque:
   review: never
 Test-Fatal:
-  last-review: 2014-10-11
+  last-review: 2015-07-22
 Test-MinimumVersion:
-  last-review: 2014-10-11
+  last-review: 2015-07-22
 Test-Reporter-HTTPGateway:
   last-review: 2013-06-20
   review: never
@@ -526,28 +526,28 @@ Text-Soundex:
 Throwable:
   last-review: 2015-07-01
 Throwable-X:
-  last-review: 2014-10-11
+  last-review: 2015-07-22
 Time-Duration-Object:
-  last-review: 2014-10-11
+  last-review: 2015-07-22
 Time-Piece:
   last-review: 2015-04-07
 Time-Piece-MSSQL:
-  last-review: 2014-10-11
+  last-review: 2015-07-22
 Tree-File:
   review: never
 Try-Tiny:
   review: never
 URI-cpan:
-  last-review: 2014-10-11
+  last-review: 2015-07-22
 Version-Requirements:
   last-review: 2013-06-20
   review: never
 WWW-AdventCalendar:
-  last-review: 2014-10-11
+  last-review: 2015-07-22
 WebService-RTMAgent:
-  last-review: 2014-10-11
+  last-review: 2015-07-22
 ZMachine:
-  last-review: 2014-10-11
+  last-review: 2015-07-22
 constant:
   review: never
 delicious-backup:
