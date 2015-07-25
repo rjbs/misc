@@ -131,7 +131,7 @@ Dist-Zilla-Plugin-PodPurler:
 Dist-Zilla-Plugin-PodWeaver:
   last-review: 2015-06-29
 Dist-Zilla-Plugin-TaskWeaver:
-  last-review: 2014-11-10
+  last-review: 2015-07-25
 Dist-Zilla-PluginBundle-RJBS:
   last-review: 2015-03-08
 E-Mail-Acme:
@@ -173,7 +173,7 @@ Email-MIME-ContentType:
 Email-MIME-Encodings:
   last-review: 2015-07-04
 Email-MIME-Kit:
-  last-review: 2014-12-25
+  last-review: 2015-07-25
 Email-MIME-Kit-Assembler-Markdown:
   last-review: 2015-07-04
 Email-MIME-Kit-Assembler-TextifyHTML:
@@ -238,7 +238,7 @@ Games-Goban:
 Games-Nintendo-Mario:
   last-review: 2015-07-09
 Getopt-Long-Descriptive:
-  last-review: 2014-12-22
+  last-review: 2015-07-25
 Git-Fingerd:
   last-review: 2015-07-09
 Git-Megapull:
@@ -283,7 +283,7 @@ Log-Dispatch-Array:
 Log-Dispatch-TextTable:
   last-review: 2015-07-09
 Log-Dispatchouli:
-  last-review: 2014-11-29
+  last-review: 2015-07-25
 MIME-BodyMunger:
   last-review: 2015-07-09
 MIME-Lite:

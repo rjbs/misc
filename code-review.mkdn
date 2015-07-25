@@ -21,13 +21,9 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| Dist-Zilla-Plugin-TaskWeaver            | 2014-11-10
-| Log-Dispatchouli                        | 2014-11-29
 | Test-Deep                               | 2014-12-12
 | Data-UUID                               | 2014-12-16
 | Email-MIME                              | 2014-12-16
-| Getopt-Long-Descriptive                 | 2014-12-22
-| Email-MIME-Kit                          | 2014-12-25
 | Dist-Zilla-Plugin-Git-Describe          | 2014-12-27
 | Email-Abstract                          | 2014-12-27
 | Rubric                                  | 2014-12-27
@@ -244,3 +240,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | WebService-RTMAgent                     | 2015-07-22
 | WWW-AdventCalendar                      | 2015-07-22
 | ZMachine                                | 2015-07-22
+| Dist-Zilla-Plugin-TaskWeaver            | 2015-07-25
+| Email-MIME-Kit                          | 2015-07-25
+| Getopt-Long-Descriptive                 | 2015-07-25
+| Log-Dispatchouli                        | 2015-07-25
