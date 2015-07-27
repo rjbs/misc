@@ -9,12 +9,17 @@ my $pithub = Pithub->new(
 );
 
 my %want = (
-  Critical => 'ff0000',
-  Docs     => 'cc00cc',
-  Rejected => '000000',
-  Test     => 'ff8833',
-  Wishlist => 'ffff00',
-  # ??     => '009800', # nice color
+  'Abandoned?'      => '000000',
+  'Already Fixed?'  => 'ffffff',
+  'Critical'        => 'ff0000',
+  'Docs'            => 'cc00cc',
+  'Needs Champion'  => 'e11d21',
+  'Needs Rebase'    => 'ffb8d4',
+  'Needs Rework'    => '00c0c0',
+  'Release Soon'    => '009800',
+  'Should Be Fixed' => '736C0F',
+  'Test'            => 'ff8833',
+  'Wishlist'        => 'ffff00',
 );
 
 my $repos = $pithub->repos->list(
@@ -27,8 +32,8 @@ while ( my $row = $repos->next ) {
   next unless $row->{owner}{login} eq $pithub->user;
   next if $row->{fork};
   next unless $row->{open_issues_count};
-  printf "%s\n", $row->{name};
   next unless $will_do{ $row->{name} };
+  printf "%s\n", $row->{name};
 
   my $label_list = $pithub->issues->labels->list(
     repo     => $row->{name},
