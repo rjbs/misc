@@ -29,6 +29,8 @@ App-Uni:
   last-review: 2015-02-06
 App-Whiff:
   last-review: 2015-03-08
+Attribute-Handlers:
+  review: never
 B-Lint:
   last-review: 2013-06-20
   review: never
