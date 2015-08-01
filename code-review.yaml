@@ -119,7 +119,7 @@ Data-Section:
 Data-TagHive:
   last-review: 2015-03-08
 Data-UUID:
-  last-review: 2014-12-16
+  last-review: 2015-08-01
 Date-Span:
   last-review: 2015-03-08
 Dist-Zilla:
@@ -127,7 +127,7 @@ Dist-Zilla:
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
   last-review: 2015-06-29
 Dist-Zilla-Plugin-Git-Describe:
-  last-review: 2014-12-27
+  last-review: 2015-08-02
 Dist-Zilla-Plugin-PodPurler:
   last-review: 2015-03-08
 Dist-Zilla-Plugin-PodWeaver:
@@ -141,7 +141,7 @@ E-Mail-Acme:
 Email-ARF:
   last-review: 2015-07-04
 Email-Abstract:
-  last-review: 2014-12-27
+  last-review: 2015-08-02
 Email-Address:
   last-review: 2015-06-29
 Email-Date:
@@ -167,7 +167,7 @@ Email-FolderType-Net:
 Email-LocalDelivery:
   last-review: 2015-03-05
 Email-MIME:
-  last-review: 2014-12-16
+  last-review: 2015-08-02
 Email-MIME-Attachment-Stripper:
   last-review: 2015-03-22
 Email-MIME-ContentType:
@@ -416,7 +416,7 @@ Pod-Elemental-Transformer-VimHTML:
 Pod-Eventual:
   last-review: 2015-06-29
 Pod-Weaver:
-  last-review: 2014-12-31
+  last-review: 2015-08-02
 Postfix-Parse-Mailq:
   last-review: 2015-07-17
 Process-Status:
@@ -451,7 +451,7 @@ Role-Subsystem:
 Router-Dumb:
   last-review: 2015-07-17
 Rubric:
-  last-review: 2014-12-27
+  last-review: 2015-08-02
 Rubric-Entry-Formatter-KwikiFormatish:
   last-review: 2015-07-17
 Rubric-Entry-Formatter-Markdown:
