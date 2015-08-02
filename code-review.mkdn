@@ -51,7 +51,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | App-Addex-AddressBook-AppleScript       | 2015-03-08
 | App-Addex-Plugin-Hiveminder             | 2015-03-08
 | App-Addex-Plugin-Nobody                 | 2015-03-08
-| App-Cmd-Plugin-Prompt                   | 2015-03-08
 | App-Cronjob                             | 2015-03-08
 | App-Smarkmail                           | 2015-03-08
 | App-Whiff                               | 2015-03-08
@@ -239,6 +238,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Log-Dispatchouli                        | 2015-07-25
 | Test-Deep                               | 2015-07-28
 | Data-UUID                               | 2015-08-01
+| App-Cmd-Plugin-Prompt                   | 2015-08-02
 | Dist-Zilla-Plugin-Git-Describe          | 2015-08-02
 | Email-Abstract                          | 2015-08-02
 | Email-MIME                              | 2015-08-02
