@@ -3,13 +3,15 @@ use 5.18.0;
 use warnings;
 
 use DateTime;
+use DateTime::Format::Strptime;
 use Getopt::Long::Descriptive;
 use JSON;
-use List::AllUtils qw(uniq);
+use List::AllUtils qw(part uniq);
 use LWP::UserAgent;
 use MetaCPAN::Client;
 use Parse::CPAN::Packages::Fast;
 use Term::ReadKey ();
+use Time::Duration::Parse;
 use YAML::XS ();
 
 $|++;
@@ -56,11 +58,28 @@ DIST: for my $d (
   $is_tracked{ $d->dist } = 1 unless exists $is_tracked{ $d->dist };
 }
 
-my @projects = sort {
+my @projects = grep {; $is_tracked{$_} } keys %is_tracked;
+
+my $strp = DateTime::Format::Strptime->new(
+  pattern   => '%F',
+  locale    => 'en_US',
+  time_zone => 'local',
+);
+
+my ($undue, $due) = part {
+  return 0 unless my $rev = $saved->{$_}{'review-every'};
+  die "can't parse duration $rev\n" unless my $dur = parse_duration($rev);
+  return 1 if ! $saved->{$_}{'last-review'};
+  my $last_done = $strp->parse_datetime($saved->{$_}{'last-review'})->epoch;
+  return 1 if time - $last_done > $dur;
+  return 0;
+} @projects;
+
+@projects = (@{ $due // [] }, sort {
   ($saved->{$a}{'last-review'} // '0') cmp ($saved->{$b}{'last-review'} // 0)
   ||
   fc $a cmp fc $b
-} grep { $is_tracked{$_} } keys %is_tracked;
+} @$undue);
 
 if (@ARGV) {
   my @missing = grep {; ! ($is_tracked{$_} or $saved->{$_}) } @ARGV;
@@ -72,7 +91,7 @@ if (@ARGV) {
 if (my $project = $opt->project) {
   die "project $project is not tracked\n" unless $is_tracked{ $project };
   $saved->{$project}{'last-review'}
-    = DateTime->now->format_cldr('yyyy-MM-dd');
+    = DateTime->now(time_zone => 'local')->format_cldr('yyyy-MM-dd');
 }
 
 if ($opt->project) {
@@ -103,14 +122,16 @@ for my $name (@projects) {
     exit if $action eq 'q';
 
     if ($action eq 'r') {
-      $saved->{$name}{'last-review'} = DateTime->now->format_cldr('yyyy-MM-dd');
+      $saved->{$name}{'last-review'} = DateTime->now(time_zone => 'local')
+                                               ->format_cldr('yyyy-MM-dd');
       do_review($name)
     }
 
     last if $ENV{MAX} && ++$did >= $ENV{MAX};
   } else {
     print  "    Everything is okay!  Who'd have expected THAT?!\n";
-    $saved->{$name}{'last-review'} = DateTime->now->format_cldr('yyyy-MM-dd');
+    $saved->{$name}{'last-review'} = DateTime->now(time_zone => 'local')
+                                             ->format_cldr('yyyy-MM-dd');
     do_review($name, "reviewed $name, no problems");
   }
 }
@@ -119,10 +140,13 @@ sub do_review {
   my ($project, $message) = @_;
 
   my %dump = map {; $_ => {
-    ($saved->{$_}{home} ? (home => $saved->{$_}{home}) : ()),
+    ($saved->{$_}{home}   ? (home => $saved->{$_}{home})     : ()),
     ($saved->{$_}{review} ? (review => $saved->{$_}{review}) : ()),
     ($saved->{$_}{'last-review'}
     ? ('last-review' => $saved->{$_}{'last-review'})
+    : ()),
+    ($saved->{$_}{'review-every'}
+    ? ('review-every' => $saved->{$_}{'review-every'})
     : ()),
   } } uniq(@projects, keys %$saved);
 
