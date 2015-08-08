@@ -123,7 +123,7 @@ Data-UUID:
 Date-Span:
   last-review: 2015-03-08
 Dist-Zilla:
-  last-review: 2015-01-09
+  last-review: 2015-08-07
   review-every: 1w
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
   last-review: 2015-06-29
