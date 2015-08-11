@@ -54,7 +54,7 @@ CPAN-Faker:
 CPAN-Mini:
   last-review: 2015-06-29
 CPAN-Uploader:
-  last-review: 2015-02-09
+  last-review: 2015-08-10
 Cache-Cache:
   last-review: 2015-03-22
 Carp:
@@ -81,7 +81,7 @@ Config-INI:
 Config-INI-Reader-Ordered:
   last-review: 2015-06-21
 Config-MVP:
-  last-review: 2015-02-18
+  last-review: 2015-08-10
 Config-MVP-Reader-INI:
   last-review: 2015-07-04
 Config-Singleton:
@@ -257,7 +257,7 @@ HTML-FromText:
 HTML-MasonX-Free:
   last-review: 2015-07-09
 HTML-Widget-Factory:
-  last-review: 2015-02-18
+  last-review: 2015-08-10
 HTML-Widget-Plugin-Calendar:
   last-review: 2015-07-09
 HTML-Widget-Plugin-Combo:
@@ -426,7 +426,7 @@ PyTAP:
   home: GitHub
   last-review: 2015-06-29
 Querylet:
-  last-review: 2015-02-18
+  last-review: 2015-08-10
 Querylet-CGI:
   last-review: 2015-07-17
 Querylet-Output-Excel-OLE:
