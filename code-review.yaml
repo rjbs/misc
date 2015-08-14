@@ -1,34 +1,34 @@
 ---
 Acme-Lingua-EN-Inflect-Modern:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Acme-ProgressBar:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Amce-CNA:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 App-Addex:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 App-Addex-AddressBook-Abook:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 App-Addex-AddressBook-Apple:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 App-Addex-AddressBook-AppleScript:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 App-Addex-Plugin-Hiveminder:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 App-Addex-Plugin-Nobody:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 App-Cmd:
   last-review: 2015-02-24
 App-Cmd-Plugin-Prompt:
   last-review: 2015-08-02
 App-Cronjob:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 App-Smarkmail:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 App-Uni:
   last-review: 2015-08-07
 App-Whiff:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Attribute-Handlers:
   review: never
 B-Lint:
@@ -50,7 +50,7 @@ CGI-Form-Table:
   last-review: 2013-07-01
   review: never
 CPAN-Faker:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 CPAN-Mini:
   last-review: 2015-06-29
 CPAN-Uploader:
@@ -63,9 +63,9 @@ Catalyst-View-Text-Template:
   last-review: 2014-03-24
   review: never
 Chess-960:
-  last-review: 2015-02-27
+  last-review: 2015-08-13
 Class-Accessor-Class:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Class-DBI-MSSQL:
   last-review: 2013-06-20
   review: never
@@ -73,11 +73,11 @@ Class-DBI-Relationship-HasVariant:
   last-review: 2013-06-20
   review: never
 Color-Palette:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Color-Scheme:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Config-INI:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Config-INI-Reader-Ordered:
   last-review: 2015-06-21
 Config-MVP:
@@ -85,43 +85,43 @@ Config-MVP:
 Config-MVP-Reader-INI:
   last-review: 2015-07-04
 Config-Singleton:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 DBIx-Locker:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 DNS-Oterica:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-Bucketeer:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-GUID:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-GUID-URLSafe:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-Hive:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-InputMonster:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-InputMonster-Util-Catalyst:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-Message:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-OptList:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-Rx:
   last-review: 2015-02-18
 Data-Rx-Type-MooseTC:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-Rx-Type-PCRE:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-Rx-TypeBundle-Perl:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-Section:
   last-review: 2015-03-22
 Data-TagHive:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Data-UUID:
   last-review: 2015-08-01
 Date-Span:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Dist-Zilla:
   last-review: 2015-08-07
   review-every: 1w
@@ -130,7 +130,7 @@ Dist-Zilla-Plugin-CheckPrereqsIndexed:
 Dist-Zilla-Plugin-Git-Describe:
   last-review: 2015-08-02
 Dist-Zilla-Plugin-PodPurler:
-  last-review: 2015-03-08
+  last-review: 2015-08-13
 Dist-Zilla-Plugin-PodWeaver:
   last-review: 2015-06-29
 Dist-Zilla-Plugin-TaskWeaver:
@@ -138,7 +138,7 @@ Dist-Zilla-Plugin-TaskWeaver:
 Dist-Zilla-PluginBundle-RJBS:
   last-review: 2015-03-08
 E-Mail-Acme:
-  last-review: 2015-02-27
+  last-review: 2015-08-13
 Email-ARF:
   last-review: 2015-07-04
 Email-Abstract:
@@ -152,7 +152,7 @@ Email-Date-Format:
 Email-Delete:
   last-review: 2015-07-04
 Email-Filter:
-  last-review: 2015-02-27
+  last-review: 2015-08-13
 Email-Folder:
   last-review: 2015-06-29
 Email-Folder-IMAP:
@@ -166,7 +166,7 @@ Email-FolderType:
 Email-FolderType-Net:
   last-review: 2015-07-04
 Email-LocalDelivery:
-  last-review: 2015-03-05
+  last-review: 2015-08-13
 Email-MIME:
   last-review: 2015-08-02
 Email-MIME-Attachment-Stripper:
@@ -196,7 +196,7 @@ Email-Pipemailer:
 Email-Reply:
   last-review: 2015-07-04
 Email-Send:
-  last-review: 2015-02-27
+  last-review: 2015-08-13
 Email-Send-IO:
   last-review: 2015-07-04
 Email-Sender:
@@ -399,7 +399,7 @@ Perl-Critic-Tics:
 Perl-PrereqScanner:
   last-review: 2015-03-05
 Pod-CYOA:
-  last-review: 2015-03-05
+  last-review: 2015-08-13
 Pod-Coverage-TrustPod:
   last-review: 2015-07-17
 Pod-Elemental:
