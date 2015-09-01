@@ -199,7 +199,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Pod-Weaver                              | 2015-08-02
 | Rubric                                  | 2015-08-02
 | App-Uni                                 | 2015-08-07
-| Dist-Zilla                              | 2015-08-07
 | Config-MVP                              | 2015-08-10
 | CPAN-Uploader                           | 2015-08-10
 | HTML-Widget-Factory                     | 2015-08-10
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-LocalDelivery                     | 2015-08-13
 | Email-Send                              | 2015-08-13
 | Pod-CYOA                                | 2015-08-13
+| Dist-Zilla                              | 2015-08-31
