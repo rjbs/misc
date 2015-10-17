@@ -21,8 +21,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| if                                      | -
-| Email-Valid                             | 2015-02-06
 | Role-Identifiable                       | 2015-02-18
 | Sub-Exporter                            | 2015-02-18
 | Email-Stuff                             | 2015-02-20
@@ -245,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Data-Rx                                 | 2015-08-31
 | App-Cmd                                 | 2015-09-03
 | Dist-Zilla                              | 2015-10-13
+| Email-Valid                             | 2015-10-16
