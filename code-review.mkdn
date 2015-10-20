@@ -31,7 +31,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Mail-DeliveryStatus-BounceParser        | 2015-06-21
 | Net-SMTP-SSL                            | 2015-06-21
 | CPAN-Mini                               | 2015-06-29
-| Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2015-06-29
 | Dist-Zilla-Plugin-PodWeaver             | 2015-06-29
 | Email-Address                           | 2015-06-29
 | Email-Folder                            | 2015-06-29
@@ -237,6 +236,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-Valid                             | 2015-10-16
 | Config-INI-Reader-Ordered               | 2015-10-19
 | Data-Section                            | 2015-10-19
+| Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2015-10-19
 | Email-Stuff                             | 2015-10-19
 | Image-MetaData-JPEG                     | 2015-10-19
 | Mixin-Linewise                          | 2015-10-19
