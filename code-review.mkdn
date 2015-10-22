@@ -232,7 +232,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Pod-CYOA                                | 2015-08-13
 | Data-Rx                                 | 2015-08-31
 | App-Cmd                                 | 2015-09-03
-| Dist-Zilla                              | 2015-10-13
 | Email-Valid                             | 2015-10-16
 | Config-INI-Reader-Ordered               | 2015-10-19
 | Data-Section                            | 2015-10-19
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Perl-PrereqScanner                      | 2015-10-19
 | Role-Identifiable                       | 2015-10-19
 | RTF-VimColor                            | 2015-10-19
+| Dist-Zilla                              | 2015-10-22
