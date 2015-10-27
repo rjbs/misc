@@ -170,7 +170,7 @@ Email-LocalDelivery:
 Email-MIME:
   last-review: 2015-08-02
 Email-MIME-Attachment-Stripper:
-  last-review: 2015-03-22
+  last-review: 2015-10-26
 Email-MIME-ContentType:
   last-review: 2015-04-07
 Email-MIME-Encodings:
@@ -310,7 +310,7 @@ Mail-Audit-Razor:
 Mail-Convert-Mbox-ToEml:
   review: never
 Mail-DeliveryStatus-BounceParser:
-  last-review: 2015-06-21
+  last-review: 2015-10-26
 Mail-LocalDelivery:
   last-review: 2015-07-09
 Mail-Postfix-Attr:
@@ -375,7 +375,7 @@ Net-Delicious:
 Net-Finger-Server:
   last-review: 2015-07-17
 Net-SMTP-SSL:
-  last-review: 2015-06-21
+  last-review: 2015-10-26
 Number-Nary:
   last-review: 2015-07-17
 Number-Tolerant:
@@ -415,7 +415,7 @@ Pod-Elemental-Transformer-SynHi:
 Pod-Elemental-Transformer-VimHTML:
   last-review: 2015-07-17
 Pod-Eventual:
-  last-review: 2015-06-29
+  last-review: 2015-10-26
 Pod-Weaver:
   last-review: 2015-08-02
 Postfix-Parse-Mailq:
@@ -474,7 +474,7 @@ String-TagString:
 String-Truncate:
   last-review: 2015-07-17
 Sub-Exporter:
-  last-review: 2015-02-18
+  last-review: 2015-10-26
 Sub-Exporter-ForMethods:
   last-review: 2015-07-17
 Sub-Exporter-GlobExporter:
