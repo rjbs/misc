@@ -21,6 +21,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
+| Text-SlackEmoji                         | -
 | Dist-Zilla-PluginBundle-RJBS            | 2015-03-08
 | Cache-Cache                             | 2015-03-22
 | Number-Tolerant                         | 2015-03-22
@@ -238,9 +239,9 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Perl-PrereqScanner                      | 2015-10-19
 | Role-Identifiable                       | 2015-10-19
 | RTF-VimColor                            | 2015-10-19
-| Dist-Zilla                              | 2015-10-22
 | Email-MIME-Attachment-Stripper          | 2015-10-26
 | Mail-DeliveryStatus-BounceParser        | 2015-10-26
 | Net-SMTP-SSL                            | 2015-10-26
 | Pod-Eventual                            | 2015-10-26
 | Sub-Exporter                            | 2015-10-26
+| Dist-Zilla                              | 2015-10-29
