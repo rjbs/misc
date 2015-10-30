@@ -523,7 +523,8 @@ Test-Routine:
 Test-Simple:
   last-review: 2014-04-02
   review: never
-Text-SlackEmoji: {}
+Text-SlackEmoji:
+  last-review: 2015-10-29
 Text-Soundex:
   last-review: 2013-06-20
   review: never
