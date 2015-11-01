@@ -56,6 +56,7 @@ CPAN-Mini:
 CPAN-Uploader:
   last-review: 2015-08-10
 Cache-Cache:
+  review: never
   last-review: 2015-03-22
 Carp:
   review: never
