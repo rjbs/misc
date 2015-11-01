@@ -56,8 +56,8 @@ CPAN-Mini:
 CPAN-Uploader:
   last-review: 2015-08-10
 Cache-Cache:
-  review: never
   last-review: 2015-03-22
+  review: never
 Carp:
   review: never
 Catalyst-View-Text-Template:
@@ -380,7 +380,7 @@ Net-SMTP-SSL:
 Number-Nary:
   last-review: 2015-07-17
 Number-Tolerant:
-  last-review: 2015-03-22
+  last-review: 2015-11-01
 Object-Annotate:
   last-review: 2015-07-17
 Object-Capsule:
