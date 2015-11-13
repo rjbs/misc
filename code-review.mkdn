@@ -22,7 +22,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Email-MIME-ContentType                  | 2015-04-07
-| Email-Address                           | 2015-06-29
 | Email-Stuffer                           | 2015-06-29
 | PyTAP                                   | 2015-06-29
 | Software-License                        | 2015-06-29
@@ -244,3 +243,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-Sender                            | 2015-11-09
 | Time-Piece                              | 2015-11-09
 | CPAN-Mini                               | 2015-11-13
+| Email-Address                           | 2015-11-13
