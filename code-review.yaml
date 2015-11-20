@@ -391,6 +391,8 @@ Parse-GutenbergRoget:
   last-review: 2015-10-19
 Parse-IRCLog:
   last-review: 2015-07-17
+PathTools:
+  review: never
 Path-Resolver:
   last-review: 2015-07-17
 Perl-Critic-Lax:
