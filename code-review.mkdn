@@ -23,7 +23,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | --------------------------------------- | -------------
 | Email-Stuffer                           | 2015-06-29
 | PyTAP                                   | 2015-06-29
-| Software-License                        | 2015-06-29
 | String-Errf                             | 2015-06-29
 | Template-Mustache                       | 2015-06-29
 | HTTP-Throwable                          | 2015-07-01
@@ -244,4 +243,5 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | CPAN-Mini                               | 2015-11-13
 | Email-Address                           | 2015-11-13
 | Email-MIME-ContentType                  | 2015-11-16
+| Software-License                        | 2015-11-19
 | Time-HiRes                              | 2015-11-19
