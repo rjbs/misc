@@ -391,10 +391,10 @@ Parse-GutenbergRoget:
   last-review: 2015-10-19
 Parse-IRCLog:
   last-review: 2015-07-17
-PathTools:
-  review: never
 Path-Resolver:
   last-review: 2015-07-17
+PathTools:
+  review: never
 Perl-Critic-Lax:
   last-review: 2015-07-17
 Perl-Critic-Tics:
@@ -537,6 +537,8 @@ Throwable-X:
   last-review: 2015-07-22
 Time-Duration-Object:
   last-review: 2015-07-22
+Time-HiRes:
+  last-review: 2015-11-19
 Time-Piece:
   last-review: 2015-11-09
 Time-Piece-MSSQL:
