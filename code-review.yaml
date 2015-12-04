@@ -205,7 +205,7 @@ Email-Sender:
 Email-Sender-Transport-SQLite:
   last-review: 2015-11-29
 Email-Simple:
-  last-review: 2015-07-04
+  last-review: 2015-12-03
 Email-Simple-FromHandle:
   last-review: 2015-11-29
 Email-Simple-Test-TraceHeaders:
@@ -294,7 +294,7 @@ MIME-Lite:
   last-review: 2013-11-04
   review: never
 MRO-Magic:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Macro-Micro:
   last-review: 2015-11-29
 Mail-Audit:
@@ -364,136 +364,136 @@ MooseX-OneArgNew:
 MooseX-SetOnce:
   last-review: 2015-07-15
 MooseX-Storage-Format-JSONpm:
-  last-review: 2015-07-15
+  last-review: 2015-12-03
 MooseX-Types-Perl:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Net-Continental:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Net-DNS-GuessTZ:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Net-Delicious:
   review: never
 Net-Finger-Server:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Net-SMTP-SSL:
   last-review: 2015-10-26
 Number-Nary:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Number-Tolerant:
   last-review: 2015-11-01
 Object-Annotate:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Object-Capsule:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Package-Generator:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Parse-GutenbergRoget:
   last-review: 2015-10-19
 Parse-IRCLog:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Path-Resolver:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 PathTools:
   review: never
 Perl-Critic-Lax:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Perl-Critic-Tics:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Perl-PrereqScanner:
   last-review: 2015-10-19
 Pod-CYOA:
   last-review: 2015-08-13
 Pod-Coverage-TrustPod:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Pod-Elemental:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Pod-Elemental-PerlMunger:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Pod-Elemental-Transformer-List:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Pod-Elemental-Transformer-PPIHTML:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Pod-Elemental-Transformer-SynHi:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Pod-Elemental-Transformer-VimHTML:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Pod-Eventual:
   last-review: 2015-10-26
 Pod-Weaver:
   last-review: 2015-08-02
 Postfix-Parse-Mailq:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Process-Status:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 PyTAP:
   home: GitHub
   last-review: 2015-06-29
 Querylet:
   last-review: 2015-08-10
 Querylet-CGI:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Querylet-Output-Excel-OLE:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Querylet-Output-Excel-XLS:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Querylet-Output-Text:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 RTF-VimColor:
   last-review: 2015-10-19
 Religion-Bible-Reference:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Return-Value:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Role-HasMessage:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Role-HasPayload:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Role-Identifiable:
   last-review: 2015-10-19
 Role-Subsystem:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Router-Dumb:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Rubric:
   last-review: 2015-08-02
 Rubric-Entry-Formatter-KwikiFormatish:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Rubric-Entry-Formatter-Markdown:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Software-License:
   last-review: 2015-11-19
 Sort-ByExample:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 String-Errf:
   last-review: 2015-06-29
 String-Flogger:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 String-Formatter:
   last-review: 2015-07-17
 String-RewritePrefix:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 String-TagString:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 String-Truncate:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Sub-Exporter:
   last-review: 2015-10-26
 Sub-Exporter-ForMethods:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Sub-Exporter-GlobExporter:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Sub-Exporter-Lexical:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Sub-Import:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Sub-Install:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Sub-MicroSig:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Sub-Pipeline:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Task-BeLike-RJBS:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Task-Deprecations5_12:
   last-review: 2013-06-20
   review: never
@@ -506,7 +506,7 @@ Task-Email-PEP-NoStore:
 Template-Mustache:
   last-review: 2015-11-22
 Test-BinaryData:
-  last-review: 2015-07-17
+  last-review: 2015-12-03
 Test-Class:
   last-review: 2013-11-30
   review: never
