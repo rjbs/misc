@@ -20,7 +20,7 @@ App-Addex-Plugin-Nobody:
 App-Cmd:
   last-review: 2015-09-03
 App-Cmd-Plugin-Prompt:
-  last-review: 2015-08-02
+  last-review: 2015-12-06
 App-Cronjob:
   last-review: 2015-08-13
 App-Smarkmail:
@@ -135,7 +135,7 @@ Dist-Zilla-Plugin-PodPurler:
 Dist-Zilla-Plugin-PodWeaver:
   last-review: 2015-11-09
 Dist-Zilla-Plugin-TaskWeaver:
-  last-review: 2015-07-25
+  last-review: 2015-12-06
 Dist-Zilla-PluginBundle-RJBS:
   last-review: 2015-11-01
 E-Mail-Acme:
@@ -177,7 +177,7 @@ Email-MIME-ContentType:
 Email-MIME-Encodings:
   last-review: 2015-11-29
 Email-MIME-Kit:
-  last-review: 2015-07-25
+  last-review: 2015-12-06
 Email-MIME-Kit-Assembler-Markdown:
   last-review: 2015-11-29
 Email-MIME-Kit-Assembler-TextifyHTML:
@@ -517,7 +517,7 @@ Test-FITesque:
 Test-Fatal:
   last-review: 2015-07-22
 Test-MinimumVersion:
-  last-review: 2015-07-22
+  last-review: 2015-12-06
 Test-Reporter-HTTPGateway:
   last-review: 2013-06-20
   review: never
@@ -534,30 +534,30 @@ Text-Soundex:
 Throwable:
   last-review: 2015-11-22
 Throwable-X:
-  last-review: 2015-07-22
+  last-review: 2015-12-06
 Time-Duration-Object:
-  last-review: 2015-07-22
+  last-review: 2015-12-06
 Time-HiRes:
   last-review: 2015-11-19
 Time-Piece:
   last-review: 2015-11-09
 Time-Piece-MSSQL:
-  last-review: 2015-07-22
+  last-review: 2015-12-06
 Tree-File:
   review: never
 Try-Tiny:
   review: never
 URI-cpan:
-  last-review: 2015-07-22
+  last-review: 2015-12-06
 Version-Requirements:
   last-review: 2013-06-20
   review: never
 WWW-AdventCalendar:
   last-review: 2015-07-22
 WebService-RTMAgent:
-  last-review: 2015-07-22
+  last-review: 2015-12-06
 ZMachine:
-  last-review: 2015-07-22
+  last-review: 2015-12-06
 base: {}
 constant:
   review: never
