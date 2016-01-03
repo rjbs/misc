@@ -116,7 +116,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Software-License                        | 2015-11-19
 | Time-HiRes                              | 2015-11-19
 | Config-MVP-Reader-INI                   | 2015-11-22
-| HTTP-Throwable                          | 2015-11-22
 | Template-Mustache                       | 2015-11-22
 | Throwable                               | 2015-11-22
 | Dist-Zilla                              | 2015-11-26
@@ -246,3 +245,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | URI-cpan                                | 2015-12-06
 | WebService-RTMAgent                     | 2015-12-06
 | ZMachine                                | 2015-12-06
+| HTTP-Throwable                          | 2016-01-02
