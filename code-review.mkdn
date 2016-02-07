@@ -29,7 +29,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-ARF                               | 2015-07-04
 | MooseX-SetOnce                          | 2015-07-15
 | String-Formatter                        | 2015-07-17
-| Test-Fatal                              | 2015-07-22
 | WWW-AdventCalendar                      | 2015-07-22
 | Getopt-Long-Descriptive                 | 2015-07-25
 | Log-Dispatchouli                        | 2015-07-25
@@ -246,3 +245,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | WebService-RTMAgent                     | 2015-12-06
 | ZMachine                                | 2015-12-06
 | HTTP-Throwable                          | 2016-01-02
+| Test-Fatal                              | 2016-02-06
