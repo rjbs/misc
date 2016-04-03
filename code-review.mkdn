@@ -21,7 +21,10 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
+| autouse                                 | -
 | base                                    | -
+| circular-require                        | -
+| JSON-Typist                             | -
 | Email-Stuffer                           | 2015-06-29
 | PyTAP                                   | 2015-06-29
 | String-Errf                             | 2015-06-29
@@ -117,7 +120,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Config-MVP-Reader-INI                   | 2015-11-22
 | Template-Mustache                       | 2015-11-22
 | Throwable                               | 2015-11-22
-| Dist-Zilla                              | 2015-11-26
 | Email-Date                              | 2015-11-29
 | Email-Date-Format                       | 2015-11-29
 | Email-Delete                            | 2015-11-29
@@ -246,3 +248,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | ZMachine                                | 2015-12-06
 | HTTP-Throwable                          | 2016-01-02
 | Test-Fatal                              | 2016-02-06
+| Dist-Zilla                              | 2016-04-03
