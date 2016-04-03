@@ -559,8 +559,10 @@ WebService-RTMAgent:
   last-review: 2015-12-06
 ZMachine:
   last-review: 2015-12-06
-autouse: {}
-base: {}
+autouse:
+  review: never
+base:
+  review: never
 circular-require: {}
 constant:
   review: never
