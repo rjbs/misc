@@ -124,7 +124,7 @@ Data-UUID:
 Date-Span:
   last-review: 2015-08-13
 Dist-Zilla:
-  last-review: 2016-04-03
+  last-review: 2016-04-24
   review-every: 1w
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
   last-review: 2015-10-19
@@ -278,7 +278,8 @@ Image-MetaData-JPEG:
   last-review: 2015-10-19
 JSON-CPAN-Meta:
   review: never
-JSON-Typist: {}
+JSON-Typist:
+  last-review: 2016-04-24
 Kwiki-IRCMode:
   review: never
 List-MapList:

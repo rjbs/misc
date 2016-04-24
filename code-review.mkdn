@@ -21,10 +21,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| autouse                                 | -
-| base                                    | -
 | circular-require                        | -
-| JSON-Typist                             | -
 | Email-Stuffer                           | 2015-06-29
 | PyTAP                                   | 2015-06-29
 | String-Errf                             | 2015-06-29
@@ -248,4 +245,5 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | ZMachine                                | 2015-12-06
 | HTTP-Throwable                          | 2016-01-02
 | Test-Fatal                              | 2016-02-06
-| Dist-Zilla                              | 2016-04-03
+| Dist-Zilla                              | 2016-04-24
+| JSON-Typist                             | 2016-04-24
