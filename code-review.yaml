@@ -564,7 +564,8 @@ autouse:
   review: never
 base:
   review: never
-circular-require: {}
+circular-require:
+  review: never
 constant:
   review: never
 delicious-backup:
