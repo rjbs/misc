@@ -21,8 +21,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
-| circular-require                        | -
-| Email-Stuffer                           | 2015-06-29
 | PyTAP                                   | 2015-06-29
 | String-Errf                             | 2015-06-29
 | Test-Routine                            | 2015-07-01
@@ -247,3 +245,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Test-Fatal                              | 2016-02-06
 | Dist-Zilla                              | 2016-04-24
 | JSON-Typist                             | 2016-04-24
+| Email-Stuffer                           | 2016-04-30
