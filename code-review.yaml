@@ -276,7 +276,8 @@ IPC-Run3:
   review: never
 Image-MetaData-JPEG:
   last-review: 2015-10-19
-JMAP-Tester: {}
+JMAP-Tester:
+  last-review: 2016-07-04
 JSON-CPAN-Meta:
   review: never
 JSON-Typist:
