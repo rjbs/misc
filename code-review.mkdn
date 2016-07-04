@@ -21,6 +21,7 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
+| JMAP-Tester                             | -
 | String-Errf                             | 2015-06-29
 | Test-Routine                            | 2015-07-01
 | Email-ARF                               | 2015-07-04
@@ -244,5 +245,5 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Test-Fatal                              | 2016-02-06
 | JSON-Typist                             | 2016-04-24
 | Email-Stuffer                           | 2016-04-30
-| Dist-Zilla                              | 2016-05-14
 | PyTAP                                   | 2016-05-14
+| Dist-Zilla                              | 2016-07-04
