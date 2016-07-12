@@ -22,7 +22,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | Email-ARF                               | 2015-07-04
-| MooseX-SetOnce                          | 2015-07-15
 | String-Formatter                        | 2015-07-17
 | WWW-AdventCalendar                      | 2015-07-22
 | Getopt-Long-Descriptive                 | 2015-07-25
@@ -246,4 +245,5 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Dist-Zilla                              | 2016-07-04
 | JMAP-Tester                             | 2016-07-04
 | String-Errf                             | 2016-07-04
+| MooseX-SetOnce                          | 2016-07-11
 | Test-Routine                            | 2016-07-11

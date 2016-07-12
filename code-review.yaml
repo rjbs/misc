@@ -366,7 +366,7 @@ MooseX-ComposedBehavior:
 MooseX-OneArgNew:
   last-review: 2015-11-29
 MooseX-SetOnce:
-  last-review: 2015-07-15
+  last-review: 2016-07-11
 MooseX-Storage-Format-JSONpm:
   last-review: 2015-12-03
 MooseX-Types-Perl:
