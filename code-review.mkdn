@@ -27,7 +27,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Log-Dispatchouli                        | 2015-07-25
 | Test-Deep                               | 2015-07-28
 | Data-UUID                               | 2015-08-01
-| Dist-Zilla-Plugin-Git-Describe          | 2015-08-02
 | Email-Abstract                          | 2015-08-02
 | Email-MIME                              | 2015-08-02
 | Pod-Weaver                              | 2015-08-02
@@ -247,3 +246,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | MooseX-SetOnce                          | 2016-07-11
 | String-Formatter                        | 2016-07-11
 | Test-Routine                            | 2016-07-11
+| Dist-Zilla-Plugin-Git-Describe          | 2016-07-14
