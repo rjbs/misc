@@ -22,7 +22,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
 | WWW-AdventCalendar                      | 2015-07-22
-| Log-Dispatchouli                        | 2015-07-25
 | Data-UUID                               | 2015-08-01
 | Email-Abstract                          | 2015-08-02
 | Email-MIME                              | 2015-08-02
@@ -247,3 +246,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-ARF                               | 2016-07-16
 | Getopt-Long-Descriptive                 | 2016-07-16
 | Test-Deep                               | 2016-07-19
+| Log-Dispatchouli                        | 2016-07-30
