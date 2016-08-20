@@ -1,22 +1,22 @@
 ---
 Acme-Lingua-EN-Inflect-Modern:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Acme-ProgressBar:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Amce-CNA:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 App-Addex:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 App-Addex-AddressBook-Abook:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 App-Addex-AddressBook-Apple:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 App-Addex-AddressBook-AppleScript:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 App-Addex-Plugin-Hiveminder:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 App-Addex-Plugin-Nobody:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 App-Cmd:
   last-review: 2015-09-03
 App-Cmd-Plugin-Prompt:
@@ -24,11 +24,11 @@ App-Cmd-Plugin-Prompt:
 App-Cronjob:
   last-review: 2015-08-13
 App-Smarkmail:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 App-Uni:
-  last-review: 2015-08-07
+  last-review: 2016-08-19
 App-Whiff:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Attribute-Handlers:
   review: never
 B-Lint:
@@ -50,7 +50,7 @@ CGI-Form-Table:
   last-review: 2013-07-01
   review: never
 CPAN-Faker:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 CPAN-Mini:
   last-review: 2015-11-13
 CPAN-Uploader:
@@ -66,7 +66,7 @@ Catalyst-View-Text-Template:
 Chess-960:
   last-review: 2015-08-13
 Class-Accessor-Class:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Class-DBI-MSSQL:
   last-review: 2013-06-20
   review: never
@@ -74,55 +74,55 @@ Class-DBI-Relationship-HasVariant:
   last-review: 2013-06-20
   review: never
 Color-Palette:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Color-Scheme:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Config-INI:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Config-INI-Reader-Ordered:
-  last-review: 2015-10-19
+  last-review: 2016-08-19
 Config-MVP:
   last-review: 2015-08-10
 Config-MVP-Reader-INI:
   last-review: 2015-11-22
 Config-Singleton:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 DBIx-Locker:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 DNS-Oterica:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-Bucketeer:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-GUID:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-GUID-URLSafe:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-Hive:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-InputMonster:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-InputMonster-Util-Catalyst:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-Message:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-OptList:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-Rx:
   last-review: 2015-08-31
 Data-Rx-Type-MooseTC:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-Rx-Type-PCRE:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-Rx-TypeBundle-Perl:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-Section:
   last-review: 2015-10-19
 Data-TagHive:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Data-UUID:
   last-review: 2015-08-01
 Date-Span:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Dist-Zilla:
   last-review: 2016-08-06
   review-every: 1w
@@ -406,7 +406,7 @@ Perl-Critic-Tics:
 Perl-PrereqScanner:
   last-review: 2015-10-19
 Pod-CYOA:
-  last-review: 2015-08-13
+  last-review: 2016-08-19
 Pod-Coverage-TrustPod:
   last-review: 2015-12-03
 Pod-Elemental:
