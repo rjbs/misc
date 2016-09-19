@@ -24,7 +24,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | WWW-AdventCalendar                      | 2015-07-22
 | Data-UUID                               | 2015-08-01
 | Email-MIME                              | 2015-08-02
-| Pod-Weaver                              | 2015-08-02
 | Rubric                                  | 2015-08-02
 | Config-MVP                              | 2015-08-10
 | CPAN-Uploader                           | 2015-08-10
@@ -247,3 +246,4 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | DNS-Oterica                             | 2016-08-19
 | Pod-CYOA                                | 2016-08-19
 | Dist-Zilla                              | 2016-09-18
+| Pod-Weaver                              | 2016-09-18
