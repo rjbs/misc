@@ -131,7 +131,7 @@ Dist-Zilla-Plugin-CheckPrereqsIndexed:
 Dist-Zilla-Plugin-Git-Describe:
   last-review: 2016-07-14
 Dist-Zilla-Plugin-PodPurler:
-  last-review: 2015-08-13
+  last-review: 2016-09-19
 Dist-Zilla-Plugin-PodWeaver:
   last-review: 2015-11-09
 Dist-Zilla-Plugin-TaskWeaver:
