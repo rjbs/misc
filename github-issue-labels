@@ -13,6 +13,7 @@ my %want = (
   'Already Fixed?'  => 'ffffff',
   'Critical'        => 'ff0000',
   'Docs'            => 'cc00cc',
+  'Hacktoberfest'   => 'ff7619',
   'Needs Champion'  => 'e11d21',
   'Needs Rebase'    => 'ffb8d4',
   'Needs Rework'    => '00c0c0',
