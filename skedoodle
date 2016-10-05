@@ -1,0 +1,181 @@
+#!/usr/bin/env perl
+use 5.20.0;
+use warnings;
+
+package Skedoodle {
+  use Moose;
+  use Moose::Util::TypeConstraints qw(enum);
+  use List::AllUtils 'uniq';
+  use namespace::autoclean;
+  use experimental 'signatures';
+
+  has score_digit => (
+    is => 'ro',
+    isa => enum([ 3 .. 9 ]),
+    required => 1,
+  );
+
+  sub scores ($self, $n) {
+    my $s = $self->score_digit;
+
+    return 1 if index($n, $s) >= 0;
+    return if length $n == 1;
+
+    my ($t, $o) = split '', $n;
+
+    return 1 if $s == abs($t - $o);
+    return 1 if $s == $t * $o;
+    return 1 if $s == $t + $o;
+    return 1 if $o != 0 && $s == $t / $o;
+    return 1 if $t != 0 && $s == $o / $t;
+    return;
+  }
+
+  has played_numbers => (
+    isa      => 'HashRef',
+    reader   => '_pn',
+    init_arg => undef,
+    default  => sub {  return { map {; $_ => 0 } (1..30) } },
+    traits   => [ 'Hash' ],
+  );
+
+  sub played ($self, $x) { return $self->_pn->{$x} }
+
+  has scoreboard => (
+    is  => 'ro',
+    isa => 'HashRef',
+    init_arg => undef,
+    default  => sub {  { 0 => 0, 1 => 0}  },
+    traits   => [ 'Hash' ],
+    handles  => { player_scores => 'elements' },
+  );
+
+  sub play ($self, $who, $num) {
+    if ($self->played($num)) { warn "already played $num\n"; return }
+
+    my %can_play = map {; $_ => 1 } $self->legal_plays;
+    unless ($can_play{$num}) { warn "can't play $num\n"; return };
+
+    $self->_pn->{$num} = 1;
+
+    if ($self->scores($num)) {
+      print "player $who plays $num to score 1 point\n";
+      $self->scoreboard->{$who}++;
+    } else {
+      print "player $who plays $num\n";
+    }
+
+    $self->most_recent_play($num);
+    return 1;
+  }
+
+  has first_play => (
+    is   => 'ro',
+    isa  => 'Int',
+    lazy => 1,
+    init_arg => undef,
+    default  => sub ($self) {
+      my $x;
+      do {
+        $x = 1 + int rand 30;
+      } until ! $self->scores($x);
+
+      $self->play(0, $x);
+      return $x;
+    },
+  );
+
+  has most_recent_play => (
+    is   => 'rw',
+    isa  => 'Int',
+    init_arg => undef,
+  );
+
+  sub legal_plays ($self) {
+    my $n = $self->most_recent_play;
+
+    my %can_play = map {; $_ => 1 } grep { ! $self->played($_) } (1..30);
+
+    if (! defined $n or $n == 1) {
+      return sort { $a <=> $b } keys %can_play;
+    }
+
+    if (length $n == 1) {
+      return grep {; $can_play{$_} } ($n ** 2, sqrt $n, $n*2, $n/2);
+    }
+
+    my ($t, $o) = split '', $n;
+
+    return sort { $a <=> $b } uniq grep {; $can_play{$_} } (
+      $n*2,
+      $n/2,
+      sqrt($n),
+      abs($t - $o),
+      $t * $o,
+      $o != 0 ? ($t / $o) : (),
+      $t != 0 ? ($o / $t) : (),
+      $t + $o
+    );
+  }
+}
+
+my $n = $ARGV[0] // [ 3..9 ]->[ int rand 7 ];
+my $game = Skedoodle->new({
+  score_digit => $n,
+});
+
+printf "the scoring digit is %u\n", $n;
+$game->first_play;
+
+unless (my @plays = $game->legal_plays) {
+  warn "game is over after the first move!\n";
+  exit;
+}
+
+while (my @plays = $game->legal_plays) {
+  my $input = <STDIN>;
+  unless (defined $input) {
+    warn "STDIN dried up!";
+    last;
+  }
+
+  chomp $input;
+
+  unless (@plays) {
+    warn "game is over: no legal moves remain\n";
+    last;
+  }
+
+  if ($input eq '.') {
+    print "game over\n";
+    last;
+  }
+
+  if ($input eq '?') {
+    print join(q{ }, $game->legal_plays), "\n";
+    next;
+  }
+
+  next unless $game->play(1, $input);
+
+  if (my @next = $game->legal_plays) {
+    if (my @scores = grep {; $game->scores($_) } @next) {
+      @next = @scores;
+    }
+    my $play = $next[ int rand @next ];
+    $game->play(0, $play);
+  }
+}
+
+my %score = $game->player_scores;
+for my $player (sort keys %score) {
+  printf "%-4s: %u\n", $player, $score{$player};
+}
+
+if ($score{0} > $score{1}) {
+  print "YOU LOSE! 😢\n";
+} elsif ($score{0} < $score{1}) {
+  print "YOU WIN! 😍\n";
+} else {
+  print "YOU FINISHED! 😐\n";
+}
