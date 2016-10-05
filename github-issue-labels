@@ -32,7 +32,7 @@ my %will_do = map {; $_ => 1 } @ARGV;
 while ( my $row = $repos->next ) {
   next unless $row->{owner}{login} eq $pithub->user;
   next if $row->{fork};
-  next unless $row->{open_issues_count};
+  # next unless $row->{open_issues_count};
   next unless $will_do{ $row->{name} };
   printf "%s\n", $row->{name};
 
