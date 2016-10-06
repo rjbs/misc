@@ -242,8 +242,8 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | DBIx-Locker                             | 2016-08-19
 | DNS-Oterica                             | 2016-08-19
 | Pod-CYOA                                | 2016-08-19
-| Dist-Zilla                              | 2016-09-18
 | Pod-Weaver                              | 2016-09-18
 | CPAN-Uploader                           | 2016-09-19
 | Dist-Zilla-Plugin-PodPurler             | 2016-09-19
 | Email-Valid                             | 2016-09-22
+| Dist-Zilla                              | 2016-10-05
