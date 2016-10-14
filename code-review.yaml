@@ -167,9 +167,9 @@ Email-FolderType:
 Email-FolderType-Net:
   last-review: 2015-11-29
 Email-LocalDelivery:
-  last-review: 2015-08-13
+  last-review: 2016-10-13
 Email-MIME:
-  last-review: 2015-08-02
+  last-review: 2016-10-13
 Email-MIME-Attachment-Stripper:
   last-review: 2015-10-26
 Email-MIME-ContentType:
@@ -258,7 +258,7 @@ HTML-FromText:
 HTML-MasonX-Free:
   last-review: 2015-11-29
 HTML-Widget-Factory:
-  last-review: 2015-08-10
+  last-review: 2016-10-13
 HTML-Widget-Plugin-Calendar:
   last-review: 2015-11-29
 HTML-Widget-Plugin-Combo:
@@ -433,7 +433,7 @@ PyTAP:
   home: GitHub
   last-review: 2016-05-14
 Querylet:
-  last-review: 2015-08-10
+  last-review: 2016-10-13
 Querylet-CGI:
   last-review: 2015-12-03
 Querylet-Output-Excel-OLE:
@@ -459,7 +459,7 @@ Role-Subsystem:
 Router-Dumb:
   last-review: 2015-12-03
 Rubric:
-  last-review: 2015-08-02
+  last-review: 2016-10-13
 Rubric-Entry-Formatter-KwikiFormatish:
   last-review: 2015-12-03
 Rubric-Entry-Formatter-Markdown:
