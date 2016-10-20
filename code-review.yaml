@@ -542,8 +542,10 @@ Throwable-X:
 Time-Duration-Object:
   last-review: 2015-12-06
 Time-HiRes:
+  review: never
   last-review: 2015-11-19
 Time-Piece:
+  review: never
   last-review: 2015-11-09
 Time-Piece-MSSQL:
   last-review: 2015-12-06
