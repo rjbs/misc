@@ -32,15 +32,11 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Data-Section                            | 2015-10-19
 | Dist-Zilla-Plugin-CheckPrereqsIndexed   | 2015-10-19
 | Email-Stuff                             | 2015-10-19
-| Perl-PrereqScanner                      | 2015-10-19
 | Role-Identifiable                       | 2015-10-19
 | Email-MIME-Attachment-Stripper          | 2015-10-26
 | Mail-DeliveryStatus-BounceParser        | 2015-10-26
 | Sub-Exporter                            | 2015-10-26
-| Text-SlackEmoji                         | 2015-10-29
 | Dist-Zilla-PluginBundle-RJBS            | 2015-11-01
-| Number-Tolerant                         | 2015-11-01
-| Dist-Zilla-Plugin-PodWeaver             | 2015-11-09
 | Email-Folder                            | 2015-11-09
 | Email-Sender                            | 2015-11-09
 | Time-Piece                              | 2015-11-09
@@ -49,7 +45,6 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | Email-MIME-ContentType                  | 2015-11-16
 | Software-License                        | 2015-11-19
 | Time-HiRes                              | 2015-11-19
-| Config-MVP-Reader-INI                   | 2015-11-22
 | Template-Mustache                       | 2015-11-22
 | Throwable                               | 2015-11-22
 | Email-Date                              | 2015-11-29
@@ -247,3 +242,8 @@ file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
 | HTML-Widget-Factory                     | 2016-10-13
 | Querylet                                | 2016-10-13
 | Rubric                                  | 2016-10-13
+| Config-MVP-Reader-INI                   | 2016-10-19
+| Dist-Zilla-Plugin-PodWeaver             | 2016-10-19
+| Number-Tolerant                         | 2016-10-19
+| Perl-PrereqScanner                      | 2016-10-19
+| Text-SlackEmoji                         | 2016-10-19

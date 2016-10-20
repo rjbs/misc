@@ -84,7 +84,7 @@ Config-INI-Reader-Ordered:
 Config-MVP:
   last-review: 2015-08-10
 Config-MVP-Reader-INI:
-  last-review: 2015-11-22
+  last-review: 2016-10-19
 Config-Singleton:
   last-review: 2016-08-19
 DBIx-Locker:
@@ -133,7 +133,7 @@ Dist-Zilla-Plugin-Git-Describe:
 Dist-Zilla-Plugin-PodPurler:
   last-review: 2016-09-19
 Dist-Zilla-Plugin-PodWeaver:
-  last-review: 2015-11-09
+  last-review: 2016-10-19
 Dist-Zilla-Plugin-TaskWeaver:
   last-review: 2015-12-06
 Dist-Zilla-PluginBundle-RJBS:
@@ -384,7 +384,7 @@ Net-SMTP-SSL:
 Number-Nary:
   last-review: 2015-12-03
 Number-Tolerant:
-  last-review: 2015-11-01
+  last-review: 2016-10-19
 Object-Annotate:
   last-review: 2015-12-03
 Object-Capsule:
@@ -404,7 +404,7 @@ Perl-Critic-Lax:
 Perl-Critic-Tics:
   last-review: 2015-12-03
 Perl-PrereqScanner:
-  last-review: 2015-10-19
+  last-review: 2016-10-19
 Pod-CYOA:
   last-review: 2016-08-19
 Pod-Coverage-TrustPod:
@@ -531,7 +531,7 @@ Test-Simple:
   last-review: 2014-04-02
   review: never
 Text-SlackEmoji:
-  last-review: 2015-10-29
+  last-review: 2016-10-19
 Text-Soundex:
   last-review: 2013-06-20
   review: never
