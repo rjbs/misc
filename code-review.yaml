@@ -124,7 +124,7 @@ Data-UUID:
 Date-Span:
   last-review: 2016-08-19
 Dist-Zilla:
-  last-review: 2016-10-05
+  last-review: 2016-10-24
   review-every: 1w
 Dist-Zilla-Plugin-CheckPrereqsIndexed:
   last-review: 2015-10-19
@@ -364,7 +364,7 @@ MooseX-ClassCompositor:
 MooseX-ComposedBehavior:
   last-review: 2015-11-29
 MooseX-OneArgNew:
-  last-review: 2015-11-29
+  last-review: 2016-10-24
 MooseX-SetOnce:
   last-review: 2016-07-11
 MooseX-Storage-Format-JSONpm:
@@ -542,11 +542,11 @@ Throwable-X:
 Time-Duration-Object:
   last-review: 2015-12-06
 Time-HiRes:
-  review: never
   last-review: 2015-11-19
-Time-Piece:
   review: never
+Time-Piece:
   last-review: 2015-11-09
+  review: never
 Time-Piece-MSSQL:
   last-review: 2015-12-06
 Tree-File:
