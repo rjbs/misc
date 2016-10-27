@@ -104,6 +104,7 @@ Data-InputMonster:
 Data-InputMonster-Util-Catalyst:
   last-review: 2016-08-19
 Data-Message:
+  review: never
   last-review: 2016-08-19
 Data-OptList:
   last-review: 2016-08-19
@@ -120,6 +121,7 @@ Data-Section:
 Data-TagHive:
   last-review: 2016-08-19
 Data-UUID:
+  review: never
   last-review: 2015-08-01
 Date-Span:
   last-review: 2016-08-19
@@ -151,20 +153,27 @@ Email-Date:
 Email-Date-Format:
   last-review: 2015-11-29
 Email-Delete:
+  review: never
   last-review: 2015-11-29
 Email-Filter:
   last-review: 2016-10-09
 Email-Folder:
+  review: never
   last-review: 2015-11-09
 Email-Folder-IMAP:
+  review: never
   last-review: 2015-11-29
 Email-Folder-IMAPS:
+  review: never
   last-review: 2015-11-29
 Email-Folder-POP3:
+  review: never
   last-review: 2015-11-29
 Email-FolderType:
+  review: never
   last-review: 2015-11-29
 Email-FolderType-Net:
+  review: never
   last-review: 2015-11-29
 Email-LocalDelivery:
   last-review: 2016-10-13
@@ -195,10 +204,13 @@ Email-MessageID:
 Email-Pipemailer:
   last-review: 2015-11-29
 Email-Reply:
+  review: never
   last-review: 2015-11-29
 Email-Send:
+  review: never
   last-review: 2015-08-13
 Email-Send-IO:
+  review: never
   last-review: 2015-11-29
 Email-Sender:
   last-review: 2015-11-09
@@ -213,6 +225,7 @@ Email-Simple-Test-TraceHeaders:
 Email-Store:
   review: never
 Email-Stuff:
+  review: never
   last-review: 2015-10-19
 Email-Stuffer:
   last-review: 2016-04-30
@@ -276,6 +289,7 @@ IPC-Run3:
   review: never
 Image-MetaData-JPEG:
   last-review: 2016-10-09
+  review: never
 JMAP-Tester:
   last-review: 2016-07-04
 JSON-CPAN-Meta:
@@ -306,10 +320,13 @@ Mail-Audit:
   review: never
 Mail-Audit-DKIM:
   last-review: 2015-11-29
+  review: never
 Mail-Audit-List:
   last-review: 2015-11-29
+  review: never
 Mail-Audit-PGP:
   last-review: 2015-11-29
+  review: never
 Mail-Audit-Razor:
   review: never
 Mail-Convert-Mbox-ToEml:
@@ -381,6 +398,7 @@ Net-Finger-Server:
   last-review: 2015-12-03
 Net-SMTP-SSL:
   last-review: 2016-10-09
+  review: never
 Number-Nary:
   last-review: 2015-12-03
 Number-Tolerant:
@@ -509,6 +527,7 @@ Task-Email-PEP-NoStore:
   review: never
 Template-Mustache:
   last-review: 2015-11-22
+  review: never
 Test-BinaryData:
   last-review: 2015-12-03
 Test-Class:
