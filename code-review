@@ -157,13 +157,14 @@ sub do_review {
           || ($project ? "did review of $project"
                        : "rebuilt code-review state file");
 
+  my $gh_user = $opt->githubid;
   open my $mkdn, '>', 'code-review.mkdn' or die "can't open mkdn: $!";
 
   print {$mkdn} <<END_HEADER;
 This file is computer-generated for humans to read.  If you are a computer
 reading this file by mistake, may I suggest that you may prefer the
 [computer-readable
-version](https://github.com/rjbs/misc/blob/master/code-review.yaml) instead.
+version](https://github.com/$gh_user/misc/blob/master/code-review.yaml) instead.
 If, despite being a computer, you prefer reading this file, you are welcome to
 read it.  Be advised, though, that its format may change in the future.
 
@@ -179,7 +180,7 @@ items in this list from top to bottom.  Once I've worked on an item, it moves
 to the bottom of the list.
 
 You can read [the program that generates this
-file](https://github.com/rjbs/misc/blob/master/code-review) if you like.
+file](https://github.com/$gh_user/misc/blob/master/code-review) if you like.
 
 | PROJECT NAME                            | LAST REVIEW
 | --------------------------------------- | -------------
@@ -250,6 +251,7 @@ sub cpan_notes {
   }
 
   my $gh_repo_name = $name;
+  my $gh_user = $opt->githubid;
 
   my $repo = $release->metadata->{resources}{repository}{url};
   if (! $repo) {
@@ -259,7 +261,9 @@ sub cpan_notes {
   } elsif ($repo =~ /\Q$name/i && $repo !~ /\Q$name/) {
     $gh_repo_name = lc $name;
     push @notes, "GitHub repo is not capitalized correctly";
-  } elsif ($repo =~ m{github\.com/rjbs/(.+?)(?:\.git)}) {
+  } elsif ($repo =~ m{github\.com/\Q$gh_user\E/(.+?)(?:\.git)}) {
+    $gh_repo_name = $1;
+  } elsif ($repo =~ m{github\.com/(.+?)(?:\.git)}) {
     $gh_repo_name = $1;
   }
 
@@ -305,7 +309,10 @@ sub gh_notes {
   my $res = $gh_ua->get("https://api.github.com/repos/$gh_user/$gh_repo_name");
 
   unless ($res->is_success) {
-    return ("Couldn't get repo data for $gh_user/$gh_repo_name from GitHub");
+    $res = $gh_ua->get("https://api.github.com/repos/$gh_repo_name");
+    unless ($res->is_success) {
+      return ("Couldn't get repo data for $gh_user/$gh_repo_name from GitHub");
+    }
   }
 
   my $repo = JSON->new->decode($res->decoded_content);
