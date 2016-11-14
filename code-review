@@ -261,6 +261,8 @@ sub cpan_notes {
     push @notes, "GitHub repo is not capitalized correctly";
   } elsif ($repo =~ m{github\.com/rjbs/(.+?)(?:\.git)}) {
     $gh_repo_name = $1;
+  } elsif ($repo =~ m{github\.com/(.+?)(?:\.git)}) {
+    $gh_repo_name = $1;
   }
 
   push @notes, gh_notes($gh_repo_name);
@@ -305,7 +307,10 @@ sub gh_notes {
   my $res = $gh_ua->get("https://api.github.com/repos/$gh_user/$gh_repo_name");
 
   unless ($res->is_success) {
-    return ("Couldn't get repo data for $gh_user/$gh_repo_name from GitHub");
+    $res = $gh_ua->get("https://api.github.com/repos/$gh_repo_name");
+    unless ($res->is_success) {
+      return ("Couldn't get repo data for $gh_user/$gh_repo_name from GitHub");
+    }
   }
 
   my $repo = JSON->new->decode($res->decoded_content);
