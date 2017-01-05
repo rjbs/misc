@@ -23,13 +23,20 @@ my $type = $wonk eq 'bold'    ? 'MATHEMATICAL BOLD'
 
 # FULLWIDTH LATIN SMALL LETTER W
 
-$str =~ s<([a-z0-9])><
-  my $name = $1 ge 'a' && $1 le 'z' ? "$type SMALL \U$1"
-           : $1 ge 'A' && $1 le 'Z' ? "$type CAPITAL $1"
-           : $1 ge '0' && $1 le '9' ? "MATHEMATICAL BOLD DIGIT $digit{$1}"
-           : undef;
-  $name =~ s/ (.)$/ LETTER $1/ if $wonk eq 'fw';
-  $name ? charnames::string_vianame($name) // $1 : $1;
->gei;
+if ($wonk eq 'sc') {
+  $str =~ s<([a-z])><
+    my $name = $1 ge 'a' && $1 le 'z' ? "$type CAPITAL \U$1" : undef;
+    $name ? charnames::string_vianame($name) // $1 : $1;
+  >ge;
+} else {
+  $str =~ s<([a-z0-9])><
+    my $name = $1 ge 'a' && $1 le 'z' ? "$type SMALL \U$1"
+             : $1 ge 'A' && $1 le 'Z' ? "$type CAPITAL $1"
+             : $1 ge '0' && $1 le '9' ? "MATHEMATICAL BOLD DIGIT $digit{$1}"
+             : undef;
+    $name =~ s/ (.)$/ LETTER $1/ if $wonk eq 'fw';
+    $name ? charnames::string_vianame($name) // $1 : $1;
+  >gei;
+}
 
 say $str;
