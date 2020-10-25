@@ -21,6 +21,7 @@ my $type = $wonk eq 'bold'    ? 'MATHEMATICAL BOLD'
          : $wonk eq 'fw'      ? 'FULLWIDTH LATIN'
          : $wonk eq 'sub'     ? 'LATIN SUBSCRIPT'
          : $wonk eq 'sup'     ? 'LATIN SUPERSCRIPT'
+         : $wonk eq 'mono'    ? 'MATHEMATICAL MONOSPACE'
          : die "unknown type: $wonk";
 
 # FULLWIDTH LATIN SMALL LETTER W
