@@ -119,6 +119,45 @@
 
     shortcut('Cmd-Shift-K', krazyKolour);
 
+    const encloseDisclose = () => {
+      let editorViews = getViewsByClass(FM.classes.RichTextView);
+      if (editorViews.length != 1) {
+        console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
+        return null;
+      }
+
+      let editor = editorViews[0].editor;
+
+      editor.modifyBlocks((frag) => {
+        console.log(frag);
+        let didSummary = false;
+
+        const details = document.createElement("details");
+        details.style.border = "1px black solid";
+        details.style.padding = "0.5rem 1rem";
+
+        for (let outer of frag.childNodes) {
+          if (! didSummary) {
+            if (outer.nodeType == Node.TEXT_NODE ||
+                (outer.nodeType == Node.ELEMENT_NODE && outer.tagName == 'DIV')
+            ) {
+              const summary = document.createElement("summary");
+              for (let n of outer.childNodes) {
+                summary.appendChild(n.cloneNode(true));
+              }
+              outer = summary;
+            }
+            didSummary = true;
+          }
+          details.appendChild(outer.cloneNode(true));
+        }
+
+        return details;
+      });
+    };
+
+    shortcut('Cmd-Shift-Z', encloseDisclose);
+
     FM.classes.Mailbox.prototype.badgeProperty = function () {
       var role = this.get('role');
 
