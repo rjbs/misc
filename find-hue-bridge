@@ -1,0 +1,28 @@
+#!perl
+use v5.30.0;
+use warnings;
+use blib;
+
+use Net::UPnP::ControlPoint;
+
+my $obj = Net::UPnP::ControlPoint->new();
+
+my @dev_list = $obj->search(
+  st => 'upnp:rootdevice',
+  mx => 1,
+);
+
+my %saw_url;
+
+for my $devNum (0 .. $#dev_list) {
+  my $dev = $dev_list[$devNum];
+  next unless $dev->getfriendlyname =~ /Philips Hue/i;
+  my $device_type = $dev->getdevicetype();
+
+  my $url = $dev->getdescription(name => 'URLBase');
+  next unless $url;
+
+  $saw_url{$url} = 1;
+}
+
+say for sort keys %saw_url;
