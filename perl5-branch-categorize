@@ -1,0 +1,220 @@
+#!/usr/bin/env perl
+use v5.32.0;
+use warnings;
+use utf8;
+
+binmode *STDOUT, ':encoding(UTF-8)';
+binmode *STDERR, ':encoding(UTF-8)';
+
+use experimental qw(declared_refs refaliasing);
+
+use Cpanel::JSON::XS;
+use Encode qw(decode);
+use Fastmail::Client::Config;
+use Getopt::Long::Descriptive;:
+use HTML::Entities;
+use LWP::UserAgent;
+use String::Truncate qw(elide);
+
+my ($opt, $usage) = describe_options(
+  '%c %o',
+  [ 'send', 'do not just create a draft, actually send' ],
+);
+
+sub h { goto &HTML::Entities::encode_entities }
+
+my $fm_client = Fastmail::Client::Config->new->client('rjbs@manxome.org');
+
+my @mailboxes = $fm_client->request([[ 'Mailbox/get', {} ]])
+                          ->single_sentence('Mailbox/get')
+                          ->arguments->{list}->@*;
+
+my ($drafts_mailbox) = grep {; ($_->{role}//'') eq 'drafts' } @mailboxes;
+my ($sent_mailbox)   = grep {; ($_->{role}//'') eq 'sent' } @mailboxes;
+
+die "can't find drafts mailbox!\n" unless $drafts_mailbox;
+die "can't find sent mailbox!\n"   unless $sent_mailbox;
+
+my $JSON = Cpanel::JSON::XS->new->utf8->canonical;
+
+my @branch = `git branch -r | grep ' github'`;
+chomp @branch;
+s/^..// for @branch;
+$_ = decode('UTF-8', $_) for @branch;
+
+my @special = (
+  qr{^github/blead$},
+  qr{^github/maint-5\.},
+
+  qr{^github/smoke-me/},
+);
+
+my %is_merged = do {
+  my @merged = `git branch --remote --merged github/blead | grep ' github'`;
+  chomp @merged;
+  s/^..// for @merged;
+  map {; $_ => 1 } @merged;
+};
+
+# email => branch => date
+
+my %found;
+
+my $gh_ua = LWP::UserAgent->new(keep_alive => 5);
+   $gh_ua->default_header('Authorization' => "token $ENV{GITHUB_OAUTH_TOKEN}");
+
+for my $branch (@branch) {
+  next if grep { $branch =~ $_ } @special;
+  next if $is_merged{ $branch };
+
+  my ($sha, $who, $date) = split /\s/, scalar `git show --pretty='format:%H %cE %ci' $branch`;
+
+  my $res = $gh_ua->get(
+    "https://api.github.com/repos/Perl/perl5/commits/$sha/pulls",
+    Accept => 'application/vnd.github.groot-preview+json',
+  );
+
+  my $mrs = $JSON->decode($res->decoded_content(charset => undef));
+
+  my @keep = map {; +{ $_->%{ qw( number title state html_url ) } } } @$mrs;
+
+  if (@$mrs) {
+    warn $JSON->encode(\@keep);
+  } else {
+    warn "$branch - n/a";
+  }
+
+  push $found{ $who }->@*, [ $date, $branch, \@keep ];
+}
+
+my $text = q{};
+my $html = <<'END-HTML';
+<style>
+  table { border-collapse: collapse }
+  th    { text-align: left; padding-top: 1em }
+  td    { border: 1px solid black; padding: 0.25em 0.5em; vertical-align: top }
+  td a  { text-decoration: none }
+</style>
+END-HTML
+
+$html .= "<table>";
+
+for my $email (sort keys %found) {
+  $text .= "\n" if length $text;
+
+  $text .= "==[ $email ]==\n";
+
+  $html .= sprintf "<tr><th colspan='3'>%s</th></tr>", h($email);
+
+  for my $got (sort { $a->[0] cmp $b->[0] } $found{$email}->@*) {
+    my ($date, $branch, \@mrs) = @$got;
+
+    $text .= "  - $date - $branch\n";
+    $html .= "<tr>";
+
+    my @links;
+
+    for (@mrs) {
+      $text .= sprintf "%*s%s%s\n%*s%s\n",
+        (length($date) + 7), '', # leader plus indent past " - date -"
+        ($_->{state} eq 'open' ? '' : '[CLOSED] '),
+        $_->{title},
+        (length($date) + 7), '', # leader plus indent past " - date -"
+        $_->{html_url};
+
+      push @links, sprintf "<a href='%s'>%s</a> — %s%s%s</a>",
+        h($_->{html_url}),
+        h($_->{number}),
+        ($_->{state} eq 'open' ? '' : '<s>'),
+        h(elide($_->{title}, 50)),
+        ($_->{state} eq 'open' ? '' : '</s>');
+    }
+
+    my $no_remote = $branch =~ s{^github/}{}r;
+
+    $html .= sprintf "<td>%s</td><td><a href='%s'>%s</a>%s</td>",
+      h($date),
+      h("https://github.com/Perl/perl5/tree/$no_remote"),
+      h(elide($no_remote, 50)),
+      join q{<br />}, (@links ? '' : ()), @links;
+
+    $html .= "</tr>\n";
+  }
+}
+
+$html .= "</table>";
+
+my @prelude = split /\n\n/, <<'END';
+Porters,
+
+Before we hosted the repo at GitHub, everybody with a commit bit used
+perl5.git.perl.org for all kinds of branch sharing, and branches with names
+like "rjbs/perldelta".  When we moved to GitHub, lots of these branches stuck
+around.  I'd like to clean them up.
+
+Below you'll all the branches currently in the Perl/perl5.git repo, excluding
+blead, maint branches, and smoke-me branches.  They're organized by the
+committer of the head commit and by date.  Please have a look at these and see
+what you know you can clean up.
+
+I don't have a specific plan yet, but it's likely to be something like this:
+I'll delete every branch that has a closed pull request associated with it,
+plus every branch that's been untouched for a year, unless it has a pull
+request.
+END
+
+$html = join(qq{\n}, map {; sprintf "<p>%s</p>", h($_) } @prelude) . "\n$html";
+$text = join(qq{\n\n}, @prelude, $text);
+
+my $draft = {
+  from      => [
+    {
+      name  => 'Ricardo Signes',
+      email => 'perl.p5p@rjbs.manxome.org',
+    }
+  ],
+
+  to      => [
+    {
+      name  => 'Perl 5 Porters',
+      email => 'perl5-porters@perl.org',
+    },
+  ],
+
+  subject   => 'branches in Perl/perl5.git',
+  keywords  => {
+    '$draft' => \1,
+  },
+  mailboxIds => { $drafts_mailbox->{id} => \1 },
+
+  bodyValues  => {
+    textBody => { value => $text, charset => 'utf-8' },
+    htmlBody => { value => $html, charset => 'utf-8' },
+  },
+  htmlBody    => [ { partId => 'htmlBody', type => 'text/html' } ],
+  textBody    => [ { partId => 'textBody', type => 'text/plain' } ],
+};
+
+my $send = 1;
+my $res = $fm_client->request([
+  [ 'Email/set', { create => { draft => $draft } } ],
+  ($opt->send
+  ?
+    [ 'EmailSubmission/set', {
+        onSuccessUpdateEmail => {
+          '#sendIt' => {
+            "mailboxIds/$drafts_mailbox->{id}"  => undef,
+            "mailboxIds/$sent_mailbox->{id}"    => \1,
+            'keywords/$draft' => undef,
+          },
+        },
+        create => {
+          sendIt => { emailId => '#draft' }
+        }
+      }
+    ]
+  : ())
+]);
+
+use Data::Dumper;
+print Dumper($res->as_stripped_pairs);
