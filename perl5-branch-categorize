@@ -44,6 +44,7 @@ $_ = decode('UTF-8', $_) for @branch;
 
 my @special = (
   qr{^github/blead$},
+  qr{^github/maint-votes},
   qr{^github/maint-5\.},
 
   qr{^github/smoke-me/},
