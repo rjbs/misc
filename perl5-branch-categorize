@@ -169,7 +169,7 @@ for my $email (sort keys %found) {
     $text .= "  - $date - $branch\n";
     $html .= "<tr>";
 
-    my @links;
+    my @extra;
 
     for (@mrs) {
       $text .= sprintf "%*s%s%s\n%*s%s\n",
@@ -179,7 +179,7 @@ for my $email (sort keys %found) {
         (length($date) + 7), '', # leader plus indent past " - date -"
         $_->{html_url};
 
-      push @links, sprintf "<a href='%s'>%s</a> — %s%s%s</a>",
+      push @extra, sprintf "<a href='%s'>%s</a> — %s%s%s</a>",
         h($_->{html_url}),
         h($_->{number}),
         ($_->{state} eq 'open' ? '' : '<s>'),
@@ -191,6 +191,10 @@ for my $email (sort keys %found) {
       $text .= sprintf "%*sApparently merged as %s\n",
         (length($date) + 7), '', # leader plus indent past " - date -"
         $merged;
+
+      push @extra, sprintf "Apparently merged as <a href='%s'>%s</a>",
+        h('https://github.com/Perl/perl5/commit/%s'),
+        substr($merged, 0, 8);
     }
 
     my $no_remote = $branch =~ s{^github/}{}r;
@@ -199,7 +203,7 @@ for my $email (sort keys %found) {
       h($date),
       h("https://github.com/Perl/perl5/tree/$no_remote"),
       h(elide($no_remote, 50)),
-      join q{<br />}, (@links ? '' : ()), @links;
+      join q{<br />}, (@extra ? '' : ()), @extra;
 
     $html .= "</tr>\n";
   }
