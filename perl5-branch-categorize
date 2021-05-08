@@ -15,6 +15,7 @@ use Fastmail::Client::Config;
 use Getopt::Long::Descriptive;
 use HTML::Entities;
 use LWP::UserAgent;
+use Path::Tiny;
 use String::Truncate qw(elide);
 
 my ($opt, $usage) = describe_options(
@@ -22,9 +23,12 @@ my ($opt, $usage) = describe_options(
   [ 'send',  'do not just create a draft, actually send' ],
   [ 'print', 'do not even create a draft, just print the text' ],
   [ 'cgnu',  'attempt to find the same commit in blead by commit msg' ],
+  [ 'prelude=s', 'text file containing introductory text for email', { required => 1 } ],
 );
 
 die "you can't --send and --print\n" if $opt->send && $opt->print;
+
+my $prelude = path($opt->prelude)->slurp_utf8;
 
 my %commits_by_msg;
 if ($opt->cgnu) {
@@ -216,24 +220,7 @@ if ($opt->print) {
 
 $html .= "</table>";
 
-my @prelude = split /\n\n/, <<'END';
-Porters,
-
-Before we hosted the repo at GitHub, everybody with a commit bit used
-perl5.git.perl.org for all kinds of branch sharing, and branches with names
-like "rjbs/perldelta".  When we moved to GitHub, lots of these branches stuck
-around.  I'd like to clean them up.
-
-Below you'll all the branches currently in the Perl/perl5.git repo, excluding
-blead, maint branches, and smoke-me branches.  They're organized by the
-committer of the head commit and by date.  Please have a look at these and see
-what you know you can clean up.
-
-I don't have a specific plan yet, but it's likely to be something like this:
-I'll delete every branch that has a closed pull request associated with it,
-plus every branch that's been untouched for a year, unless it has a pull
-request.
-END
+my @prelude = split /\n\n/, $prelude;
 
 $html = join(qq{\n}, map {; sprintf "<p>%s</p>", h($_) } @prelude) . "\n$html";
 $text = join(qq{\n\n}, @prelude, $text);
