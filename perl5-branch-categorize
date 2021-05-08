@@ -9,23 +9,66 @@ binmode *STDERR, ':encoding(UTF-8)';
 use experimental qw(declared_refs refaliasing);
 
 use Cpanel::JSON::XS;
+use Digest::SHA1 qw(sha1_hex);
 use Encode qw(decode);
 use Fastmail::Client::Config;
-use Getopt::Long::Descriptive;:
+use Getopt::Long::Descriptive;
 use HTML::Entities;
 use LWP::UserAgent;
 use String::Truncate qw(elide);
 
 my ($opt, $usage) = describe_options(
   '%c %o',
-  [ 'send', 'do not just create a draft, actually send' ],
+  [ 'send',  'do not just create a draft, actually send' ],
+  [ 'print', 'do not even create a draft, just print the text' ],
+  [ 'cgnu',  'attempt to find the same commit in blead by commit msg' ],
 );
+
+die "you can't --send and --print\n" if $opt->send && $opt->print;
+
+my %commits_by_msg;
+if ($opt->cgnu) {
+  # 557b887a4219c4f375c8d0bd3219fb4da7bbc7ff is roughly first commit of 2005
+  my @lines = `git log 557b887a4219c4f375c8d0bd3219fb4da7bbc7ff..blead --pretty='format:%H%n%ai %ae%n%B%nCUT-CUT-CUT'`;
+  chomp @lines;
+
+  warn 0+@lines;
+
+  my $accum = q{};
+  my $sha;
+
+  LINE: while (@lines) {
+    my $line = shift @lines;
+
+    unless (defined $sha) {
+      $sha = $line;
+      next LINE;
+    }
+
+    if ($line eq 'CUT-CUT-CUT') {
+      my $target = $commits_by_msg{ sha1_hex($accum) } //= [];
+
+      push @$target, $sha;
+
+      if (@$target > 1) {
+        warn "Woah, repeated commit msg in @$target\n";
+      }
+
+      undef $sha;
+      $accum = q{};
+      next LINE;
+    }
+
+    $accum .= $line;
+  }
+}
 
 sub h { goto &HTML::Entities::encode_entities }
 
 my $fm_client = Fastmail::Client::Config->new->client('rjbs@manxome.org');
 
 my @mailboxes = $fm_client->request([[ 'Mailbox/get', {} ]])
+                          ->get
                           ->single_sentence('Mailbox/get')
                           ->arguments->{list}->@*;
 
@@ -64,9 +107,20 @@ my %found;
 my $gh_ua = LWP::UserAgent->new(keep_alive => 5);
    $gh_ua->default_header('Authorization' => "token $ENV{GITHUB_OAUTH_TOKEN}");
 
+my %present_as;
+
 for my $branch (@branch) {
   next if grep { $branch =~ $_ } @special;
   next if $is_merged{ $branch };
+
+  if ($opt->cgnu) {
+    my @lines = `git show --no-patch --pretty="format:%ai %ae%n%B" $branch`;
+    chomp @lines;
+    my $body = join q{}, @lines;
+    if (my $got = $commits_by_msg{ sha1_hex($body) }) {
+      $present_as{$branch} = $got;
+    }
+  }
 
   my ($sha, $who, $date) = split /\s/, scalar `git show --pretty='format:%H %cE %ci' $branch`;
 
@@ -80,9 +134,9 @@ for my $branch (@branch) {
   my @keep = map {; +{ $_->%{ qw( number title state html_url ) } } } @$mrs;
 
   if (@$mrs) {
-    warn $JSON->encode(\@keep);
+    warn "$branch - " . join(q{, }, map {; $_->{number} } @keep) . "\n";
   } else {
-    warn "$branch - n/a";
+    warn "$branch - n/a\n";
   }
 
   push $found{ $who }->@*, [ $date, $branch, \@keep ];
@@ -131,6 +185,12 @@ for my $email (sort keys %found) {
         ($_->{state} eq 'open' ? '' : '</s>');
     }
 
+    for my $merged (($present_as{$branch} // [])->@*) {
+      $text .= sprintf "%*sApparently merged as %s\n",
+        (length($date) + 7), '', # leader plus indent past " - date -"
+        $merged;
+    }
+
     my $no_remote = $branch =~ s{^github/}{}r;
 
     $html .= sprintf "<td>%s</td><td><a href='%s'>%s</a>%s</td>",
@@ -141,6 +201,11 @@ for my $email (sort keys %found) {
 
     $html .= "</tr>\n";
   }
+}
+
+if ($opt->print) {
+  print $text;
+  exit 0;
 }
 
 $html .= "</table>";
@@ -215,7 +280,7 @@ my $res = $fm_client->request([
       }
     ]
   : ())
-]);
+])->get;
 
 use Data::Dumper;
 print Dumper($res->as_stripped_pairs);
