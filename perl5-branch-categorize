@@ -129,6 +129,8 @@ for my $branch (@branch) {
     Accept => 'application/vnd.github.groot-preview+json',
   );
 
+  die $res->as_string unless $res->is_success;
+
   my $mrs = $JSON->decode($res->decoded_content(charset => undef));
 
   my @keep = map {; +{ $_->%{ qw( number title state html_url ) } } } @$mrs;
