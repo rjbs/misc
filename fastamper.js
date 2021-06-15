@@ -39,8 +39,8 @@
     );
 
     const mail = FM.router.getAppController('mail');
-    shortcut('Cmd-Shift-9', () => mail.sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', true)));
-    shortcut('Cmd-Shift-0', () => mail.sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', false)));
+    shortcut('<', () => mail.sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', true)));
+    shortcut('>', () => mail.sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', false)));
 
     shortcut('(', () => mail.set('mailboxFilter', ''));
     shortcut('|', () => mail.set('mailboxFilter', 'inbox'));
