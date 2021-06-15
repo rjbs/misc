@@ -42,9 +42,9 @@
     shortcut('<', () => mail.sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', true)));
     shortcut('>', () => mail.sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', false)));
 
-    shortcut('(', () => mail.set('mailboxFilter', ''));
-    shortcut('|', () => mail.set('mailboxFilter', 'inbox'));
-    shortcut(')', () => mail.set('mailboxFilter', 'unread'));
+    shortcut('1', () => mail.set('mailboxFilter', ''));
+    shortcut('2', () => mail.set('mailboxFilter', 'inbox'));
+    shortcut('3', () => mail.set('mailboxFilter', 'unread'));
 
     shortcut('Cmd-Shift-Z', () => FM.preferences.toggle('enableConversations'));
     shortcut('Cmd-Shift-D', () => FM.preferences.toggle('showSidebar'));
