@@ -1,6 +1,18 @@
 #!perl
+use v5.30.0;
+use warnings;
+
+use Getopt::Long::Descriptive;
+use JSON::MaybeXS;
+use Path::Tiny;
 use Pithub;
-use Data::Dumper;
+
+my ($opt, $usage) = describe_options(
+  '%c %o',
+  [ 'labels-file|f=s', 'from which to read labels', ],
+  [ 'really', 'actually make changes; otherwise, do a dry run' ],
+  [ 'delete', 'delete unexpected labels' ],
+);
 
 my $pithub = Pithub->new(
   user  => $ENV{USER},
@@ -8,36 +20,52 @@ my $pithub = Pithub->new(
   auto_pagination => 1,
 );
 
-my %want = (
-  'Abandoned?'      => '000000',
-  'Already Fixed?'  => 'ffffff',
-  'Critical'        => 'ff0000',
-  'Docs'            => 'cc00cc',
-  # 'Hacktoberfest'   => 'ff7619',
-  'Needs Champion'  => 'e11d21',
-  'Needs Rebase'    => 'ffb8d4',
-  'Needs Rework'    => '00c0c0',
-  'Release Soon'    => '009800',
-  'Should Be Fixed' => '736C0F',
-  'Test'            => 'ff8833',
-  'Wishlist'        => 'ffff00',
-);
+my %want;
+if ($opt->labels_file) {
+  my $file = path($opt->labels_file);
+  my $json = $file->slurp_utf8;
+  my $data = decode_json($json);
+  %want = %$data;
+} else {
+  %want = (
+    'Abandoned?'      => '000000',
+    'Already Fixed?'  => 'ffffff',
+    'Critical'        => 'ff0000',
+    'Docs'            => 'cc00cc',
+    # 'Hacktoberfest'   => 'ff7619',
+    'Needs Champion'  => 'e11d21',
+    'Needs Rebase'    => 'ffb8d4',
+    'Needs Rework'    => '00c0c0',
+    'Release Soon'    => '009800',
+    'Should Be Fixed' => '736C0F',
+    'Test'            => 'ff8833',
+    'Wishlist'        => 'ffff00',
+  );
+}
 
-my $repos = $pithub->repos->list(
-  type => 'owner',
-);
+REPO: for my $repo (@ARGV) {
+  my ($user, $repo) = split m{/}, $repo, 2;
+  die "bogus input" unless $user && $repo;
 
-my %will_do = map {; $_ => 1 } @ARGV;
+  my $row     = $pithub->repos->get(user => $user, repo => $repo)->first;
+  my $labels  = $pithub->issues->labels;
 
-while ( my $row = $repos->next ) {
-  next unless $row->{owner}{login} eq $pithub->user;
+  warn "<considering $row->{name}>\n";
+  # next unless $row->{owner}{login} eq $pithub->user;
+
   next if $row->{fork};
   # next unless $row->{open_issues_count};
-  next unless $will_do{ $row->{name} };
+
+  unless ($row->{has_issues}) {
+    print "[error] $row->{name} does not use Issues\n";
+    next REPO;
+  }
+
   printf "%s\n", $row->{name};
 
-  my $label_list = $pithub->issues->labels->list(
-    repo     => $row->{name},
+  my $label_list = $labels->list(
+    repo => $row->{name},
+    user => $user,
   )->content;
 
   my %has = map {; $_->{name} => $_->{color} } @$label_list;
@@ -46,7 +74,11 @@ while ( my $row = $repos->next ) {
     if (my $existing = delete $has{$key}) {
       next LABEL if lc $existing eq lc $want{$key};
 
-      $pithub->issues->labels->update(
+      print "Updating [$key] from $existing to $want{$key}\n";
+      next LABEL unless $opt->really;
+
+      $labels->update(
+        user  => $user,
         repo  => $row->{name},
         label => $key,
         data  => {
@@ -55,8 +87,11 @@ while ( my $row = $repos->next ) {
         },
       );
     } else {
-      warn "creating $key on $row->{name}...\n";
+      print "creating $key on $row->{name}...\n";
+      next LABEL unless $opt->really;
+
       my $result = $pithub->issues->labels->create(
+        user     => $user,
         repo     => $row->{name},
         data     => {
           color => $want{$key},
@@ -66,10 +101,19 @@ while ( my $row = $repos->next ) {
     }
   }
 
-  if (keys %has) {
-    warn "Unexpected labels on $row->{name}: "
-       . join(q{, }, map {; "[$_]" } sort keys %has)
-       . "\n";
+  for my $unexpected (sort keys %has) {
+    if ($opt->delete) {
+      print "deleting label $unexpected\n";
+      if ($opt->really) {
+        $labels->delete(
+          repo => $repo,
+          user => $user,
+          label => $unexpected,
+        );
+      }
+    } else {
+      print "unexpected label $unexpected\n";
+    }
   }
 }
 
