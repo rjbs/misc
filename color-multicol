@@ -1,0 +1,12 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use Term::ANSIColor;
+
+for (0 .. 31) {
+  my $base = 8 * $_;
+  printf "%s   %s   %s   %s   %s   %s   %s   %s\n",
+    map {;
+      colored(["ansi" . ($base + $_),], sprintf '%03i', $base + $_)
+    } (0 .. 7);
+}
