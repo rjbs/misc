@@ -1,8 +1,0 @@
-#!/bin/zsh
-
-for dir in *(/); do
-  (
-    chdir $dir;
-    find . -type f ! -name MANIFEST -exec md5sum '{}' ';' > MANIFEST
-  )
-done
