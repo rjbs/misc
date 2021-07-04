@@ -1,9 +1,0 @@
-#!/bin/sh
-
-HOST=$1
-
-if [ ! -d ~/mnt/$1 ]; then
-  mkdir ~/mnt/$1
-fi
-
-sshfs $1:$2 ~/mnt/$1 -oreconnect,ping_diskarb,volname=$1

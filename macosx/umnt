@@ -1,6 +1,0 @@
-#!/bin/sh
-
-HOST=$1
-
-umount ~/mnt/$1
-rmdir ~/mnt/$1
