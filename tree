@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use strict;
+
 =head1 NAME
 
 tree.pl - print a directory tree
