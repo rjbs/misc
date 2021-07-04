@@ -1,8 +1,0 @@
-wroget.schema is a schema dump for your reference.
-
-importer.pl is, unsurprisingly, the flatfile importer script. It
-should run with no problems once the "wroget" db is set up.
-
-wroget.xi is the CGI script. It should likewise need no
-modifications. I think. Maybe some of the path stuff in the embedded
-HTML. It (and importer) is old and shitty code.
