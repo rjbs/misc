@@ -1,13 +1,20 @@
+#!perl
 use 5.14.1;
 use charnames ':full';
+
 binmode(STDOUT, 'encoding(utf-8)');
+binmode(STDIN,  'encoding(utf-8)');
 
 my $i = 0;
 my %digit = map { $i++ => $_ }
   qw(ZERO ONE TWO THREE FOUR FIVE SIX SEVEN EIGHT NINE);
 
 my $wonk = $ARGV[0] || die "usage: wonk \$type 'string to bold-ify'\n";
-my $str  = $ARGV[1] || die "usage: wonk \$type 'string to bold-ify'\n";
+
+my @lines = $ARGV[1]
+          ? $ARGV[1]
+          : <STDIN>;
+#my $str  = $ARGV[1] || die "usage: wonk \$type 'string to bold-ify'\n";
 
 my $type = $wonk eq 'bold'    ? 'MATHEMATICAL BOLD'
          : $wonk eq 'script'  ? 'MATHEMATICAL BOLD SCRIPT'
@@ -26,29 +33,40 @@ my $type = $wonk eq 'bold'    ? 'MATHEMATICAL BOLD'
 
 # FULLWIDTH LATIN SMALL LETTER W
 
-if ($wonk eq 'sc') {
-  $str =~ s<([a-z])><
-    my $name = $1 ge 'a' && $1 le 'z' ? "$type CAPITAL \U$1" : undef;
-    $name ? charnames::string_vianame($name) // $1 : $1;
-  >ge;
-} elsif ($wonk eq 'sub' or $wonk eq 'sup') {
-  $str =~ s<([a-z0-9])><
-    my $name = $1 ge 'a' && $1 le 'z' ? "$type SMALL LETTER \U$1"
-             : $1 ge 'A' && $1 le 'Z' ? "$type CAPITAL LETTER $1"
-             : $1 ge '0' && $1 le '9' ? "MATHEMATICAL BOLD DIGIT $digit{$1}"
-             : undef;
-    $name =~ s/ (.)$/ LETTER $1/ if $wonk eq 'fw';
-    $name ? charnames::string_vianame($name) // $1 : $1;
-  >gei;
-} else {
-  $str =~ s<([a-z0-9])><
-    my $name = $1 ge 'a' && $1 le 'z' ? "$type SMALL \U$1"
-             : $1 ge 'A' && $1 le 'Z' ? "$type CAPITAL $1"
-             : $1 ge '0' && $1 le '9' ? "MATHEMATICAL BOLD DIGIT $digit{$1}"
-             : undef;
-    $name =~ s/ (.)$/ LETTER $1/ if $wonk eq 'fw';
-    $name ? charnames::string_vianame($name) // $1 : $1;
-  >gei;
-}
+for my $str (@lines) {
+  chomp $str;
 
-say $str;
+  if ($wonk eq 'sc') {
+    $str =~ s<([a-z])><
+      my $name = $1 ge 'a' && $1 le 'z' ? "$type CAPITAL \U$1" : undef;
+      $name ? charnames::string_vianame($name) // $1 : $1;
+    >ge;
+  } elsif ($wonk eq 'fw') {
+    $str =~ s<(.)><
+      my $name = charnames::viacode(ord $1);
+      $name eq 'SPACE'
+        ? '  '
+        : (charnames::string_vianame("FULLWIDTH $name") // $1);
+    >gei;
+  } elsif ($wonk eq 'sub' or $wonk eq 'sup') {
+    $str =~ s<([a-z0-9])><
+      my $name = $1 ge 'a' && $1 le 'z' ? "$type SMALL LETTER \U$1"
+               : $1 ge 'A' && $1 le 'Z' ? "$type CAPITAL LETTER $1"
+               : $1 ge '0' && $1 le '9' ? "MATHEMATICAL BOLD DIGIT $digit{$1}"
+               : undef;
+      $name =~ s/ (.)$/ LETTER $1/ if $wonk eq 'fw';
+      $name ? charnames::string_vianame($name) // $1 : $1;
+    >gei;
+  } else {
+    $str =~ s<([a-z0-9])><
+      my $name = $1 ge 'a' && $1 le 'z' ? "$type SMALL \U$1"
+               : $1 ge 'A' && $1 le 'Z' ? "$type CAPITAL $1"
+               : $1 ge '0' && $1 le '9' ? "MATHEMATICAL BOLD DIGIT $digit{$1}"
+               : undef;
+      $name =~ s/ (.)$/ LETTER $1/ if $wonk eq 'fw';
+      $name ? charnames::string_vianame($name) // $1 : $1;
+    >gei;
+  }
+
+  say $str;
+}
