@@ -30,10 +30,10 @@
     shortcut(
       'Cmd-Shift-L',
       () => {
-        if (FM.userPrefs.get('theme') === 'steel') {
-          FM.userPrefs.set('theme', 'dark');
+        if (FM.preferences.get('themeAppearance') === 'light') {
+          FM.preferences.set('themeAppearance', 'dark');
         } else {
-          FM.userPrefs.set('theme', 'steel');
+          FM.preferences.set('themeAppearance', 'light');
         }
       },
     );
