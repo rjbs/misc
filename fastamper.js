@@ -46,7 +46,7 @@
     shortcut('2', () => mail.set('mailboxFilter', 'inbox'));
     shortcut('3', () => mail.set('mailboxFilter', 'unread'));
 
-    shortcut('Cmd-Shift-Z', () => FM.preferences.toggle('enableConversations'));
+    shortcut('Cmd-Shift-2', () => FM.preferences.toggle('enableConversations'));
     shortcut('Cmd-Shift-D', () => FM.preferences.toggle('showSidebar'));
     shortcut('Cmd-Shift-G', () => mail.toggle('searchIsGlobal'));
     shortcut('Cmd-Shift-P', () => FM.preferences.toggle('showReadingPane'));
