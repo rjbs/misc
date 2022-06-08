@@ -97,17 +97,21 @@
 
       const range = editor.getSelection();
       if (range.collapsed) {
-        const quote = (range.startContainer instanceof Element)
-        ? range.startContainer.closest('blockquote')
-        : range.startContainer.parentElement.closest('blockquote');
+        const callout = (range.startContainer instanceof Element)
+          ? range.startContainer.closest('div[data-rjbscallout="1"]')
+          : range.startContainer.parentElement.closest('div[data-rjbscallout="1"]');
 
-        if (! quote) {
-          console.log("Not inside a blockquote.");
+        const quote = (range.startContainer instanceof Element)
+          ? range.startContainer.closest('blockquote')
+          : range.startContainer.parentElement.closest('blockquote');
+
+        if (! (callout || quote)) {
+          console.log("Not inside a callout or blockquote.");
           return null;
         }
 
         const munger = clippy.nextFor('block', range);
-        munger(quote);
+        munger(callout || quote);
         clippy.block.range = editor.getSelection();
       } else {
         const color = clippy.nextFor('text', range);
