@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  mouse less, keyboard more
 // @author       rjbs
-// @match        https://*.fastmail.com/mail/*
+// @match        https://*.fastmail.com/*
 // @grant        none
 // ==/UserScript==
 
