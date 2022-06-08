@@ -156,7 +156,45 @@
       });
     };
 
-    shortcut('Cmd-Shift-Z', encloseDisclose);
+    const makeCallout = () => {
+      let editorViews = getViewsByClass(FM.classes.RichTextView);
+      if (editorViews.length != 1) {
+        console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
+        return null;
+      }
+
+      let editor = editorViews[0].editor;
+
+      editor.modifyBlocks((frag) => {
+        console.log(frag);
+
+        const callout = document.createElement("div");
+        callout.className = 'callout';
+        callout.setAttribute('data-rjbscallout', 1);
+        callout.style.backgroundColor = "rgb(250, 241, 210)";
+        callout.style.padding = "1em";
+        callout.style.fontWeight = "bold";
+
+        // emoji CSS:     float:left;
+        //                font-size:150%;
+        //                margin-right:0.75em;
+        const emojiDiv = document.createElement("div");
+        emojiDiv.style.float    = 'left';
+        emojiDiv.style.fontSize = '150%';
+        emojiDiv.style.marginRight = '0.75em';
+
+        emojiDiv.appendChild( document.createTextNode("👷🏽‍♂️") );
+
+        callout.appendChild(emojiDiv);
+
+        callout.appendChild(frag);
+
+        return callout;
+      });
+    };
+
+    shortcut('Cmd-Shift-D', encloseDisclose);
+    shortcut('Cmd-Shift-Z', makeCallout);
 
     FM.classes.Mailbox.prototype.badgeProperty = function () {
       var role = this.get('role');
