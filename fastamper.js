@@ -19,7 +19,7 @@
     const css = FM.el(
       'style',
       { type: 'text/css' },
-      [ '.rjbs-MSV-Hidden-3 .v-MailboxSource-badge { background-color: #e3d8f0; color: #000 }' ],
+      [ '.rjbs-MSV-Hidden-3 .v-MailboxSource-badge { background-color: #e3d8f0; color: #000; padding: 0 0.35em; border-radius: 7px; }' ],
     );
     document.body.appendChild(css);
 
