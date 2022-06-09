@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fastmail Shortcuts
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      2022-06-09
 // @description  mouse less, keyboard more
 // @author       rjbs
 // @match        https://*.fastmail.com/*
@@ -51,6 +51,17 @@
     shortcut('Cmd-Shift-G', () => mail.toggle('searchIsGlobal'));
     shortcut('Cmd-Shift-P', () => FM.preferences.toggle('showReadingPane'));
 
+    const stylize = (bg, text, border) => {
+      return (e) => {
+        if (bg !== null)     e.style.backgroundColor = bg;
+        if (text   !== null) e.style.color           = text;
+        if (border !== null) {
+          e.style.border = '1px solid';
+          e.style.borderColor = border;
+        }
+      }
+    };
+
     const clippy = {
       text: {
         cycle: 0,
@@ -65,6 +76,23 @@
           (e) => { e.style.backgroundColor = '#f5fca7'; e.style.color = '#9c6500'; },
           (e) => { e.style.backgroundColor = '#c3e0c9'; e.style.color = '#275731'; },
           (e) => { e.style.backgroundColor = null; e.style.color = null; },
+        ],
+      },
+      callout: {
+        cycle: 0,
+        range: null,
+        opts : [
+          // Success
+          stylize('#F3F8F5', '#285A37', '#B9D8C2'),
+
+          // Critical: fbf2f4
+          stylize('#FBF2F4', '#78202E', '#EAB4BC'),
+
+          // Warning : fff8e6
+          stylize('#FFF8E6', '#997B22', '#FFECB4'),
+
+          // Informative: f2f7fb
+          stylize('#F2F7FB', '#1F5077', '#B2D1EA'),
         ],
       },
       nextFor: function (key, range) {
@@ -101,17 +129,24 @@
           ? range.startContainer.closest('div[data-rjbscallout="1"]')
           : range.startContainer.parentElement.closest('div[data-rjbscallout="1"]');
 
+        if (callout) {
+          const munger = clippy.nextFor('callout', range);
+          munger(callout);
+          clippy.callout.range = editor.getSelection();
+          return null;
+        }
+
         const quote = (range.startContainer instanceof Element)
           ? range.startContainer.closest('blockquote')
           : range.startContainer.parentElement.closest('blockquote');
 
-        if (! (callout || quote)) {
+        if (! callout) {
           console.log("Not inside a callout or blockquote.");
           return null;
         }
 
         const munger = clippy.nextFor('block', range);
-        munger(callout || quote);
+        munger(quote);
         clippy.block.range = editor.getSelection();
       } else {
         const color = clippy.nextFor('text', range);
@@ -175,9 +210,11 @@
         const callout = document.createElement("div");
         callout.className = 'callout';
         callout.setAttribute('data-rjbscallout', 1);
-        callout.style.backgroundColor = "rgb(250, 241, 210)";
+        callout.style.borderRadius = '4px';
         callout.style.padding = "1em";
         callout.style.fontWeight = "bold";
+
+        clippy.callout.opts.at(-1)(callout);
 
         // emoji CSS:     float:left;
         //                font-size:150%;
@@ -186,6 +223,7 @@
         emojiDiv.style.float    = 'left';
         emojiDiv.style.fontSize = '150%';
         emojiDiv.style.marginRight = '0.75em';
+        emojiDiv.style.marginTop = '-0.25em';
 
         emojiDiv.appendChild( document.createTextNode("👷🏽‍♂️") );
 
