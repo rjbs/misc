@@ -140,7 +140,7 @@
           ? range.startContainer.closest('blockquote')
           : range.startContainer.parentElement.closest('blockquote');
 
-        if (! callout) {
+        if (! quote) {
           console.log("Not inside a callout or blockquote.");
           return null;
         }
