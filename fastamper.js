@@ -235,8 +235,71 @@
       });
     };
 
+    const doIndent = () => {
+      let editorViews = getViewsByClass(FM.classes.RichTextView);
+      if (editorViews.length != 1) {
+        console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
+        return null;
+      }
+
+      let editor = editorViews[0].editor;
+
+      editor.modifyBlocks((frag) => {
+        let indentDiv = frag.querySelector('*').closest('div[data-indentwrapper="1"]');
+        let toReturn  = frag;
+
+        if (! indentDiv) {
+          console.log("creating a new data-indentwrapper");
+          indentDiv = document.createElement("div");
+          indentDiv.setAttribute('data-indentwrapper', 1);
+          indentDiv.style.marginLeft = '0px';
+          indentDiv.appendChild(frag);
+          toReturn = indentDiv;
+        }
+
+        let px = parseInt(indentDiv.style.marginLeft) || 0;
+        px += 40;
+        indentDiv.style.marginLeft = px + "px";
+
+        return toReturn;
+      });
+    };
+
+    const doOutdent = () => {
+      let editorViews = getViewsByClass(FM.classes.RichTextView);
+      if (editorViews.length != 1) {
+        console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
+        return null;
+      }
+
+      let editor = editorViews[0].editor;
+
+      editor.modifyBlocks((frag) => {
+        let indentDiv = frag.querySelector('*').closest('div[data-indentwrapper="1"]');
+        let toReturn  = frag;
+
+        if (! indentDiv) {
+          console.log("creating a new data-indentwrapper");
+          indentDiv = document.createElement("div");
+          indentDiv.setAttribute('data-indentwrapper', 1);
+          indentDiv.style.marginLeft = '0px';
+          indentDiv.appendChild(frag);
+          toReturn = indentDiv;
+        }
+
+        let px = parseInt(indentDiv.style.marginLeft) || 0;
+        px -= 40;
+        if (px < 0) px = 0;
+        indentDiv.style.marginLeft = px + "px";
+
+        return toReturn;
+      });
+    };
+
     shortcut('Cmd-Shift-D', encloseDisclose);
     shortcut('Cmd-Shift-Z', makeCallout);
+    shortcut('Alt-Cmd-0', doIndent);
+    shortcut('Alt-Cmd-9', doOutdent);
 
     FM.classes.Mailbox.prototype.badgeProperty = function () {
       var role = this.get('role');
