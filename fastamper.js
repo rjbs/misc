@@ -29,37 +29,65 @@
       FM.ViewEventsController.kbShortcuts.register(keystroke, { do: fn }, 'do');
     };
 
-    shortcut(
-      'Cmd-Shift-L',
-      () => {
-        if (FM.preferences.get('themeAppearance') === 'light') {
-          FM.preferences.set('themeAppearance', 'dark');
-        } else {
-          FM.preferences.set('themeAppearance', 'light');
-        }
-      },
+    const getMail = () => FM.router.getAppController('mail');
+
+    FM.classes.Mailbox.prototype.badgeProperty = function () {
+      var role = this.get('role');
+
+      if ( role === 'drafts' ) return 'totalEmails';
+      if ( role === 'archive' || role === 'sent' || role === 'trash' || role === 'snoozed' ) {
+        return null;
+      }
+
+      var forceEmail = this.get('isShared') && !this.get('isSeenShared');
+
+      // No easy reference to HIDE_IF_EMPTY so use hardcoded value
+      if ( this.get('hidden') === 3) {
+        return forceEmail ? 'totalEmails' : 'total';
+      }
+
+      return forceEmail ? 'unreadEmails' : 'unread';
+    }.property( 'role', 'isShared', 'isSeenShared', 'hidden' );
+
+    FM.store.getAll(FM.classes.Mailbox).forEach(
+      mailbox => mailbox.computedPropertyDidChange('badgeProperty')
     );
 
-    const getMail = () => FM.router.getAppController('mail');
-    shortcut('<', () => getMail().sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', true)));
-    shortcut('>', () => getMail().sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', false)));
+    FM.classes.MailboxSourceView.prototype.className = function () {
+      var role = this.get( 'content' ).get( 'role' );
+      var isCollapsed = !this.get( 'hasSubfolders' ) || this.get( 'isCollapsed' );
 
-    shortcut('1', () => getMail().set('mailboxFilter', ''));
-    shortcut('2', () => getMail().set('mailboxFilter', 'inbox'));
-    shortcut('3', () => getMail().set('mailboxFilter', 'unread'));
+      return 'v-MailboxSource' +
+      ( role ? ' v-MailboxSource--' + role : '' ) +
+      ( ' rjbs-MSV-Hidden-' + this.get('content').get('hidden') ) +
+      ( isCollapsed ? '' : ' is-expanded' ) +
+      ( isCollapsed && this.get( 'hasUnreadChildren' ) ? ' u-bold' : '' );
+    }.property( 'hasSubfolders', 'isCollapsed', 'hasUnreadChildren' );
 
-    shortcut('Cmd-Shift-2', () => FM.preferences.toggle('enableConversations'));
-    shortcut('Cmd-Shift-D', () => FM.preferences.toggle('showSidebar'));
-    shortcut('Cmd-Shift-G', () => getMail().toggle('searchIsGlobal'));
-    shortcut('Cmd-Shift-P', () => FM.preferences.toggle('showReadingPane'));
+    const getViewsByClass = (viewClass) => {
+      return Object.values(FM.activeViews).filter(view => view instanceof viewClass);
+    }
 
-    const stylize = (bg, text, border) => {
+    getViewsByClass(FM.classes.MailboxSourceView).forEach(
+      view => view.computedPropertyDidChange('className')
+    );
+
+    const stylize = (text, bg, border) => {
       return (e) => {
-        if (bg !== null)     e.style.backgroundColor = bg;
-        if (text   !== null) e.style.color           = text;
-        if (border !== null) {
-          e.style.border = '1px solid';
-          e.style.borderColor = border;
+        if (bg !== undefined) {
+          e.style.backgroundColor = bg;
+        }
+        if (text !== undefined) {
+          console.log(`color is ${text}`);
+          e.style.color = text;
+        }
+        if (border !== undefined) {
+          if (border === null) {
+            e.style.border = 'none';
+          } else {
+            e.style.border = '1px solid';
+            e.style.borderColor = border;
+          }
         }
       }
     };
@@ -74,10 +102,10 @@
         cycle: 0,
         range: null,
         opts : [
-          (e) => { e.style.backgroundColor = '#dacae0'; e.style.color = '#54365e'; },
-          (e) => { e.style.backgroundColor = '#f5fca7'; e.style.color = '#9c6500'; },
-          (e) => { e.style.backgroundColor = '#c3e0c9'; e.style.color = '#275731'; },
-          (e) => { e.style.backgroundColor = null; e.style.color = null; },
+          stylize('#54365e', '#dacae0'),
+          stylize('#9c6500', '#f5fca7'),
+          stylize('#275731', '#c3e0c9'),
+          stylize(null,       null),
         ],
       },
       callout: {
@@ -85,16 +113,16 @@
         range: null,
         opts : [
           // Success
-          stylize('#F3F8F5', '#285A37', '#B9D8C2'),
+          stylize('#285A37', '#F3F8F5', '#B9D8C2'),
 
           // Critical: fbf2f4
-          stylize('#FBF2F4', '#78202E', '#EAB4BC'),
+          stylize('#78202E', '#FBF2F4', '#EAB4BC'),
 
           // Warning : fff8e6
-          stylize('#FFF8E6', '#997B22', '#FFECB4'),
+          stylize('#997B22', '#FFF8E6', '#FFECB4'),
 
           // Informative: f2f7fb
-          stylize('#F2F7FB', '#1F5077', '#B2D1EA'),
+          stylize('#1F5077', '#F2F7FB', '#B2D1EA'),
         ],
       },
       nextFor: function (key, range) {
@@ -106,10 +134,6 @@
         return state.opts[ state.cycle ];
       },
     };
-
-    const getViewsByClass = (viewClass) => {
-      return Object.values(FM.activeViews).filter(view => view instanceof viewClass);
-    }
 
     const krazyKolour = () => {
       let editorViews = getViewsByClass(FM.classes.RichTextView);
@@ -157,8 +181,6 @@
         clippy.text.range = editor.getSelection();
       }
     };
-
-    shortcut('Cmd-Shift-K', krazyKolour);
 
     const encloseDisclose = () => {
       let editorViews = getViewsByClass(FM.classes.RichTextView);
@@ -298,45 +320,38 @@
       });
     };
 
+    shortcut('<', () => getMail().sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', true)));
+    shortcut('>', () => getMail().sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', false)));
+
+    shortcut('1', () => getMail().set('mailboxFilter', ''));
+    shortcut('2', () => getMail().set('mailboxFilter', 'inbox'));
+    shortcut('3', () => getMail().set('mailboxFilter', 'unread'));
+
+    shortcut('Cmd-Shift-2', () => FM.preferences.toggle('enableConversations'));
+    shortcut('Cmd-Shift-D', () => FM.preferences.toggle('showSidebar'));
+    shortcut('Cmd-Shift-G', () => getMail().toggle('searchIsGlobal'));
+    shortcut('Cmd-Shift-P', () => FM.preferences.toggle('showReadingPane'));
+
+    shortcut('Cmd-Shift-K', krazyKolour);
+
+
     shortcut('Alt-Cmd-D', encloseDisclose);
     shortcut('Cmd-Shift-Z', makeCallout);
     shortcut('Alt-Cmd-0', doIndent);
     shortcut('Alt-Cmd-9', doOutdent);
 
-    FM.classes.Mailbox.prototype.badgeProperty = function () {
-      var role = this.get('role');
-
-      if ( role === 'drafts' ) return 'totalEmails';
-      if ( role === 'archive' || role === 'sent' || role === 'trash' || role === 'snoozed' ) {
-        return null;
-      }
-
-      var forceEmail = this.get('isShared') && !this.get('isSeenShared');
-
-      // No easy reference to HIDE_IF_EMPTY so use hardcoded value
-      if ( this.get('hidden') === 3) {
-        return forceEmail ? 'totalEmails' : 'total';
-      }
-
-      return forceEmail ? 'unreadEmails' : 'unread';
-    }.property( 'role', 'isShared', 'isSeenShared', 'hidden' );
-
-    FM.store.getAll(FM.classes.Mailbox).forEach(mailbox => mailbox.computedPropertyDidChange('badgeProperty'));
-
-    FM.classes.MailboxSourceView.prototype.className = function () {
-      var role = this.get( 'content' ).get( 'role' );
-      var isCollapsed = !this.get( 'hasSubfolders' ) || this.get( 'isCollapsed' );
-
-      return 'v-MailboxSource' +
-      ( role ? ' v-MailboxSource--' + role : '' ) +
-      ( ' rjbs-MSV-Hidden-' + this.get('content').get('hidden') ) +
-      ( isCollapsed ? '' : ' is-expanded' ) +
-      ( isCollapsed && this.get( 'hasUnreadChildren' ) ? ' u-bold' : '' );
-    }.property( 'hasSubfolders', 'isCollapsed', 'hasUnreadChildren' );
-
-    getViewsByClass(FM.classes.MailboxSourceView).forEach(
-      view => view.computedPropertyDidChange('className')
+    shortcut(
+      'Cmd-Shift-L',
+      () => {
+        if (FM.preferences.get('themeAppearance') === 'light') {
+          FM.preferences.set('themeAppearance', 'dark');
+        } else {
+          FM.preferences.set('themeAppearance', 'light');
+        }
+      },
     );
+
+
   });
   observer.observe(document.body, { childList: true });
 })();
