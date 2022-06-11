@@ -13,6 +13,13 @@
 (function() {
   'use strict';
   const observer = new MutationObserver(() => {
+    // Here, we boot up only once the JMAP UI is actually loaded and has
+    // eliminated the bootstrap content from the DOM.
+    //
+    // I think a problem here is that because we disconnect the observer, then
+    // when the page reloads the application, the Tampermonkey code is not
+    // re-applied.  I'm not sure if that's true.  To diagnose it, I think I'll
+    // need to do shenanigans to trigger the reloading. -- rjbs, 2022-06-11
     if (document.getElementById('bootstrap-page')) {
       return;
     }
