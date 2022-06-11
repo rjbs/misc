@@ -3,7 +3,7 @@
 // @downloadURL   https://raw.githubusercontent.com/rjbs/misc/main/fastamper.js
 // @namespace     https://rjbs.cloud/
 // @homepage      https://github.com/rjbs/misc/blob/main/fastamper.js
-// @version       0.100
+// @version       0.101
 // @description   mouse less, keyboard more
 // @author        Ricardo Signes
 // @match         https://*.fastmail.com/*
@@ -49,7 +49,7 @@
     shortcut('3', () => mail.set('mailboxFilter', 'unread'));
 
     shortcut('Cmd-Shift-2', () => FM.preferences.toggle('enableConversations'));
-    shortcut('Cmd-Shift-D', () => FM.preferences.toggle('showSidebar'));
+    shortcut('Cmd-Shift-S', () => FM.preferences.toggle('showSidebar'));
     shortcut('Cmd-Shift-G', () => mail.toggle('searchIsGlobal'));
     shortcut('Cmd-Shift-P', () => FM.preferences.toggle('showReadingPane'));
 
