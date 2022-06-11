@@ -68,42 +68,44 @@
     // the badge to indicate how many messages are there, not (as usual) how
     // many are unread.  We also add the rjbs-MSV-Hidden class so we can style
     // those badges differently, to remind us which ones mean what!
-    FM.classes.Mailbox.prototype.badgeProperty = function () {
-      const role = this.get('role');
+    {
+      FM.classes.Mailbox.prototype.badgeProperty = function () {
+        const role = this.get('role');
 
-      if ( role === 'drafts' ) return 'totalEmails';
-      if ( role === 'archive' || role === 'sent' || role === 'trash' || role === 'snoozed' ) {
-        return null;
-      }
+        if ( role === 'drafts' ) return 'totalEmails';
+        if ( role === 'archive' || role === 'sent' || role === 'trash' || role === 'snoozed' ) {
+          return null;
+        }
 
-      const forceEmail = this.get('isShared') && !this.get('isSeenShared');
+        const forceEmail = this.get('isShared') && !this.get('isSeenShared');
 
-      // No easy reference to HIDE_IF_EMPTY so use hardcoded value
-      if ( this.get('hidden') === 3) {
-        return forceEmail ? 'totalEmails' : 'total';
-      }
+        // No easy reference to HIDE_IF_EMPTY so use hardcoded value
+        if ( this.get('hidden') === 3) {
+          return forceEmail ? 'totalEmails' : 'total';
+        }
 
-      return forceEmail ? 'unreadEmails' : 'unread';
-    }.property( 'role', 'isShared', 'isSeenShared', 'hidden' );
+        return forceEmail ? 'unreadEmails' : 'unread';
+      }.property( 'role', 'isShared', 'isSeenShared', 'hidden' );
 
-    FM.store.getAll(FM.classes.Mailbox).forEach(
-      mailbox => mailbox.computedPropertyDidChange('badgeProperty')
-    );
+      FM.store.getAll(FM.classes.Mailbox).forEach(
+        mailbox => mailbox.computedPropertyDidChange('badgeProperty')
+      );
 
-    FM.classes.MailboxSourceView.prototype.className = function () {
-      const role = this.get( 'content' ).get( 'role' );
-      const isCollapsed = !this.get( 'hasSubfolders' ) || this.get( 'isCollapsed' );
+      FM.classes.MailboxSourceView.prototype.className = function () {
+        const role = this.get( 'content' ).get( 'role' );
+        const isCollapsed = !this.get( 'hasSubfolders' ) || this.get( 'isCollapsed' );
 
-      return 'v-MailboxSource' +
-      ( role ? ' v-MailboxSource--' + role : '' ) +
-      ( ' rjbs-MSV-Hidden-' + this.get('content').get('hidden') ) +
-      ( isCollapsed ? '' : ' is-expanded' ) +
-      ( isCollapsed && this.get( 'hasUnreadChildren' ) ? ' u-bold' : '' );
-    }.property( 'hasSubfolders', 'isCollapsed', 'hasUnreadChildren' );
+        return 'v-MailboxSource' +
+        ( role ? ' v-MailboxSource--' + role : '' ) +
+        ( ' rjbs-MSV-Hidden-' + this.get('content').get('hidden') ) +
+        ( isCollapsed ? '' : ' is-expanded' ) +
+        ( isCollapsed && this.get( 'hasUnreadChildren' ) ? ' u-bold' : '' );
+      }.property( 'hasSubfolders', 'isCollapsed', 'hasUnreadChildren' );
 
-    getViewsByClass(FM.classes.MailboxSourceView).forEach(
-      view => view.computedPropertyDidChange('className')
-    );
+      getViewsByClass(FM.classes.MailboxSourceView).forEach(
+        view => view.computedPropertyDidChange('className')
+      );
+    }
 
     const stylize = (text, bg, border) => {
       return (e) => {
