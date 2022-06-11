@@ -30,10 +30,6 @@
     // HELPER FUNCTIONS
     //
     // // //
-    // shortcut: given a keystroke, register a shortcut to call a function
-    const shortcut = (keystroke, fn) => {
-      FM.ViewEventsController.kbShortcuts.register(keystroke, { do: fn }, 'do');
-    };
 
     // getMail: get the active mail controller
     const getMail = () => FM.router.getAppController('mail');
@@ -211,7 +207,7 @@
       }
     };
 
-    const encloseDisclose = () => {
+    const makeDetails = () => {
       let editorViews = getViewsByClass(FM.classes.RichTextView);
       if (editorViews.length != 1) {
         console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
@@ -225,6 +221,7 @@
         let didSummary = false;
 
         const details = document.createElement("details");
+        details.setAttribute('open', 'open');
         details.style.border = "1px black solid";
         details.style.padding = "0.5rem 1rem";
 
@@ -349,35 +346,48 @@
       });
     };
 
-    shortcut('<', () => getMail().sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', true)));
-    shortcut('>', () => getMail().sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', false)));
+    // // //
+    //
+    // KEYBOARD SHORTCUTS
+    //
+    // // //
 
+    // shortcut: given a keystroke, register a shortcut to call a function
+    const shortcut = (keystroke, fn) => {
+      FM.ViewEventsController.kbShortcuts.register(keystroke, { do: fn }, 'do');
+    };
+
+    // What view of the mailbox?
+    // 1 - All mail in mailbox
+    // 2 - All mail in mailbox *and* Inbox
+    // 3 - Unread mail in mailbox
     shortcut('1', () => getMail().set('mailboxFilter', ''));
     shortcut('2', () => getMail().set('mailboxFilter', 'inbox'));
     shortcut('3', () => getMail().set('mailboxFilter', 'unread'));
 
+    shortcut('Cmd-Shift-G', () => getMail().toggle('searchIsGlobal'));
+
+    // Display-related preferences
     shortcut('Cmd-Shift-2', () => FM.preferences.toggle('enableConversations'));
     shortcut('Cmd-Shift-D', () => FM.preferences.toggle('showSidebar'));
-    shortcut('Cmd-Shift-G', () => getMail().toggle('searchIsGlobal'));
     shortcut('Cmd-Shift-P', () => FM.preferences.toggle('showReadingPane'));
-
-    shortcut('Cmd-Shift-K', krazyKolour);
-
-    shortcut('Alt-Cmd-D', encloseDisclose);
-    shortcut('Cmd-Shift-Z', makeCallout);
-    shortcut('Alt-Cmd-0', doIndent);
-    shortcut('Alt-Cmd-9', doOutdent);
 
     shortcut(
       'Cmd-Shift-L',
-      () => {
-        if (FM.preferences.get('themeAppearance') === 'light') {
-          FM.preferences.set('themeAppearance', 'dark');
-        } else {
-          FM.preferences.set('themeAppearance', 'light');
-        }
-      },
+      () => FM.preferences.set(
+        'themeAppearance',
+        FM.preferences.get('themeAppearance') === 'light' ? 'dark' : 'light'
+      )
     );
+
+    // Editor shortcuts
+    shortcut('Cmd-Shift-K', krazyKolour);
+
+    shortcut('Cmd-Shift-.', makeDetails);
+    shortcut('Cmd-Shift-1', makeCallout);
+
+    shortcut('Alt-Cmd-0', doIndent);
+    shortcut('Alt-Cmd-9', doOutdent);
   });
   observer.observe(document.body, { childList: true });
 })();
