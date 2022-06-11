@@ -25,6 +25,36 @@
     }
     observer.disconnect();
 
+    // // //
+    //
+    // HELPER FUNCTIONS
+    //
+    // // //
+    // shortcut: given a keystroke, register a shortcut to call a function
+    const shortcut = (keystroke, fn) => {
+      FM.ViewEventsController.kbShortcuts.register(keystroke, { do: fn }, 'do');
+    };
+
+    // getMail: get the active mail controller
+    const getMail = () => FM.router.getAppController('mail');
+
+    // getViewsByClass: find all the views of a given class in the app
+    const getViewsByClass = (viewClass) => {
+      return Object.values(FM.activeViews).filter(view => view instanceof viewClass);
+    };
+
+    // // //
+    //
+    // INITIALIZATION OF NON-SHORTCUT BEHAVIOR
+    //
+    // // //
+
+    // Here's all (?) the CSS that I want applied to the application.  Right
+    // now, this is just for restyling the mailbox count badge on some
+    // mailboxes.  There's more CSS throughout this script, but it's stuff that
+    // gets directly applied to the content being edited in the composer.  That
+    // needs to be on the elements, not in the CSS environment, so that it will
+    // be sent in the outgoing HTML email! -- rjbs, 2022-06-11
     const css = FM.el(
       'style',
       { type: 'text/css' },
@@ -32,21 +62,21 @@
     );
     document.body.appendChild(css);
 
-    const shortcut = (keystroke, fn) => {
-      FM.ViewEventsController.kbShortcuts.register(keystroke, { do: fn }, 'do');
-    };
-
-    const getMail = () => FM.router.getAppController('mail');
-
+    // We replace how the badges on some mailboxes are drawn.  Any mailbox
+    // that's marked "hide if empty", we take to be a "workflow mailbox",
+    // meaning that any mail at all in that mailbox is a todo item.  We'll use
+    // the badge to indicate how many messages are there, not (as usual) how
+    // many are unread.  We also add the rjbs-MSV-Hidden class so we can style
+    // those badges differently, to remind us which ones mean what!
     FM.classes.Mailbox.prototype.badgeProperty = function () {
-      var role = this.get('role');
+      const role = this.get('role');
 
       if ( role === 'drafts' ) return 'totalEmails';
       if ( role === 'archive' || role === 'sent' || role === 'trash' || role === 'snoozed' ) {
         return null;
       }
 
-      var forceEmail = this.get('isShared') && !this.get('isSeenShared');
+      const forceEmail = this.get('isShared') && !this.get('isSeenShared');
 
       // No easy reference to HIDE_IF_EMPTY so use hardcoded value
       if ( this.get('hidden') === 3) {
@@ -61,8 +91,8 @@
     );
 
     FM.classes.MailboxSourceView.prototype.className = function () {
-      var role = this.get( 'content' ).get( 'role' );
-      var isCollapsed = !this.get( 'hasSubfolders' ) || this.get( 'isCollapsed' );
+      const role = this.get( 'content' ).get( 'role' );
+      const isCollapsed = !this.get( 'hasSubfolders' ) || this.get( 'isCollapsed' );
 
       return 'v-MailboxSource' +
       ( role ? ' v-MailboxSource--' + role : '' ) +
@@ -70,10 +100,6 @@
       ( isCollapsed ? '' : ' is-expanded' ) +
       ( isCollapsed && this.get( 'hasUnreadChildren' ) ? ' u-bold' : '' );
     }.property( 'hasSubfolders', 'isCollapsed', 'hasUnreadChildren' );
-
-    const getViewsByClass = (viewClass) => {
-      return Object.values(FM.activeViews).filter(view => view instanceof viewClass);
-    }
 
     getViewsByClass(FM.classes.MailboxSourceView).forEach(
       view => view.computedPropertyDidChange('className')
