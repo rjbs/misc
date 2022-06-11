@@ -1,11 +1,13 @@
 // ==UserScript==
-// @name         Fastmail Shortcuts
-// @namespace    http://tampermonkey.net/
-// @version      2022-06-09
-// @description  mouse less, keyboard more
-// @author       rjbs
-// @match        https://*.fastmail.com/*
-// @grant        none
+// @name          Fastmail Shortcuts
+// @downloadURL   https://raw.githubusercontent.com/rjbs/misc/main/fastamper.js
+// @namespace     https://rjbs.cloud/
+// @homepage      https://github.com/rjbs/misc/blob/main/fastamper.js
+// @version       2022-06-09
+// @description   mouse less, keyboard more
+// @author        rjbs
+// @match         https://*.fastmail.com/*
+// @grant         none
 // ==/UserScript==
 
 (function() {
