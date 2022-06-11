@@ -3,9 +3,9 @@
 // @downloadURL   https://raw.githubusercontent.com/rjbs/misc/main/fastamper.js
 // @namespace     https://rjbs.cloud/
 // @homepage      https://github.com/rjbs/misc/blob/main/fastamper.js
-// @version       2022-06-09
+// @version       0.100
 // @description   mouse less, keyboard more
-// @author        rjbs
+// @author        Ricardo Signes
 // @match         https://*.fastmail.com/*
 // @grant         none
 // ==/UserScript==
