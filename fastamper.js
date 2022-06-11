@@ -3,7 +3,7 @@
 // @downloadURL   https://raw.githubusercontent.com/rjbs/misc/main/fastamper.js
 // @namespace     https://rjbs.cloud/
 // @homepage      https://github.com/rjbs/misc/blob/main/fastamper.js
-// @version       0.102
+// @version       0.103
 // @description   mouse less, keyboard more
 // @author        Ricardo Signes
 // @match         https://*.fastmail.com/*
@@ -40,17 +40,17 @@
       },
     );
 
-    const mail = FM.router.getAppController('mail');
-    shortcut('<', () => mail.sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', true)));
-    shortcut('>', () => mail.sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', false)));
+    const getMail = () => FM.router.getAppController('mail');
+    shortcut('<', () => getMail().sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', true)));
+    shortcut('>', () => getMail().sources.get('sourceGroups')[0].content.forEach(s => s.set('isCollapsed', false)));
 
-    shortcut('1', () => mail.set('mailboxFilter', ''));
-    shortcut('2', () => mail.set('mailboxFilter', 'inbox'));
-    shortcut('3', () => mail.set('mailboxFilter', 'unread'));
+    shortcut('1', () => getMail().set('mailboxFilter', ''));
+    shortcut('2', () => getMail().set('mailboxFilter', 'inbox'));
+    shortcut('3', () => getMail().set('mailboxFilter', 'unread'));
 
     shortcut('Cmd-Shift-2', () => FM.preferences.toggle('enableConversations'));
     shortcut('Cmd-Shift-D', () => FM.preferences.toggle('showSidebar'));
-    shortcut('Cmd-Shift-G', () => mail.toggle('searchIsGlobal'));
+    shortcut('Cmd-Shift-G', () => getMail().toggle('searchIsGlobal'));
     shortcut('Cmd-Shift-P', () => FM.preferences.toggle('showReadingPane'));
 
     const stylize = (bg, text, border) => {
