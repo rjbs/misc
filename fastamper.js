@@ -45,30 +45,24 @@
 
     // // //
     //
-    // INITIALIZATION OF NON-SHORTCUT BEHAVIOR
+    // ALTERNATIVE BADGES
     //
-    // // //
-
-    // Here's all (?) the CSS that I want applied to the application.  Right
-    // now, this is just for restyling the mailbox count badge on some
-    // mailboxes.  There's more CSS throughout this script, but it's stuff that
-    // gets directly applied to the content being edited in the composer.  That
-    // needs to be on the elements, not in the CSS environment, so that it will
-    // be sent in the outgoing HTML email! -- rjbs, 2022-06-11
-    const css = FM.el(
-      'style',
-      { type: 'text/css' },
-      [ '.rjbs-MSV-Hidden-3 .v-MailboxSource-badge { background-color: #e3d8f0; color: #000; padding: 0 0.35em; border-radius: 7px; }' ],
-    );
-    document.body.appendChild(css);
-
     // We replace how the badges on some mailboxes are drawn.  Any mailbox
     // that's marked "hide if empty", we take to be a "workflow mailbox",
     // meaning that any mail at all in that mailbox is a todo item.  We'll use
     // the badge to indicate how many messages are there, not (as usual) how
     // many are unread.  We also add the rjbs-MSV-Hidden class so we can style
     // those badges differently, to remind us which ones mean what!
+    //
+    // // //
     {
+      const css = FM.el(
+        'style',
+        { type: 'text/css' },
+        [ '.rjbs-MSV-Hidden-3 .v-MailboxSource-badge { background-color: #e3d8f0; color: #000; padding: 0 0.35em; border-radius: 7px; }' ],
+      );
+      document.body.appendChild(css);
+
       FM.classes.Mailbox.prototype.badgeProperty = function () {
         const role = this.get('role');
 
