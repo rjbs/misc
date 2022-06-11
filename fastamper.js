@@ -363,7 +363,6 @@
 
     shortcut('Cmd-Shift-K', krazyKolour);
 
-
     shortcut('Alt-Cmd-D', encloseDisclose);
     shortcut('Cmd-Shift-Z', makeCallout);
     shortcut('Alt-Cmd-0', doIndent);
@@ -379,8 +378,6 @@
         }
       },
     );
-
-
   });
   observer.observe(document.body, { childList: true });
 })();
