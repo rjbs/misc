@@ -215,9 +215,13 @@
         const details = document.createElement("details");
         details.setAttribute('open', 'open');
         details.style.border = "1px black solid";
-        details.style.backgroundColor = '#80808080';
         details.style.padding = "0.5rem 1rem";
         details.style.borderRadius = "4px";
+
+        // I liked the idea of giving this some kind of slightly tinted
+        // background, but this is too dark and I don't feel like thinking
+        // about dark mode. -- rjbs, 2022-06-11
+        // details.style.backgroundColor = '#80808080';
 
         for (let outer of frag.childNodes) {
           if (! didSummary) {
