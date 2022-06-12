@@ -157,19 +157,19 @@
       },
     };
 
-    const krazyKolour = () => {
+    const getEditor = () => {
       let editorViews = getViewsByClass(FM.classes.RichTextView);
       if (editorViews.length != 1) {
-        console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
+        console("Fastamper:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
         return null;
       }
 
-      let editor = editorViews[0].editor;
+      return editorViews[0].editor;
+    };
 
-      if (! editor) {
-        console.log("No editor?  I give up.");
-        return null;
-      }
+    const krazyKolour = () => {
+      let editor = getEditor();
+      if (editor === null) return null;
 
       const range = editor.getSelection();
       if (range.collapsed) {
@@ -205,13 +205,8 @@
     };
 
     const makeDetails = () => {
-      let editorViews = getViewsByClass(FM.classes.RichTextView);
-      if (editorViews.length != 1) {
-        console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
-        return null;
-      }
-
-      let editor = editorViews[0].editor;
+      let editor = getEditor();
+      if (editor === null) return null;
 
       editor.modifyBlocks((frag) => {
         console.log(frag);
@@ -256,13 +251,8 @@
     };
 
     const makeCallout = () => {
-      let editorViews = getViewsByClass(FM.classes.RichTextView);
-      if (editorViews.length != 1) {
-        console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
-        return null;
-      }
-
-      let editor = editorViews[0].editor;
+      let editor = getEditor();
+      if (editor === null) return null;
 
       editor.modifyBlocks((frag) => {
         console.log(frag);
@@ -295,13 +285,8 @@
     };
 
     const doIndent = () => {
-      let editorViews = getViewsByClass(FM.classes.RichTextView);
-      if (editorViews.length != 1) {
-        console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
-        return null;
-      }
-
-      let editor = editorViews[0].editor;
+      let editor = getEditor();
+      if (editor === null) return null;
 
       editor.modifyBlocks((frag) => {
         let indentDiv = frag.querySelector('*').closest('div[data-indentwrapper="1"]');
@@ -325,13 +310,8 @@
     };
 
     const doOutdent = () => {
-      let editorViews = getViewsByClass(FM.classes.RichTextView);
-      if (editorViews.length != 1) {
-        console("RJBS:  Wanted exactly one v-RichText but got " + editorViews.length + ".");
-        return null;
-      }
-
-      let editor = editorViews[0].editor;
+      let editor = getEditor();
+      if (editor === null) return null;
 
       editor.modifyBlocks((frag) => {
         let indentDiv = frag.querySelector('*').closest('div[data-indentwrapper="1"]');
