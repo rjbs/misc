@@ -220,6 +220,7 @@
         const details = document.createElement("details");
         details.setAttribute('open', 'open');
         details.style.border = "1px black solid";
+        details.style.backgroundColor = '#80808080';
         details.style.padding = "0.5rem 1rem";
         details.style.borderRadius = "4px";
 
@@ -229,13 +230,24 @@
                 (outer.nodeType == Node.ELEMENT_NODE && outer.tagName == 'DIV')
             ) {
               const summary = document.createElement("summary");
+              summary.style.fontWeight = 'bold';
+
               for (let n of outer.childNodes) {
                 summary.appendChild(n.cloneNode(true));
               }
               outer = summary;
             }
             didSummary = true;
+            details.appendChild(outer.cloneNode(true));
+
+            // Absurd. -- rjbs, 2022-06-11
+            const spacer = FM.el('p', {}, [ '\xA0' ]);
+            spacer.style.fontSize = '25%';
+            details.appendChild(spacer);
+
+            continue;
           }
+
           details.appendChild(outer.cloneNode(true));
         }
 
