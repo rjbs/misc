@@ -99,13 +99,9 @@
 
     const stylize = (text, bg, border) => {
       return (e) => {
-        if (bg !== undefined) {
-          e.style.backgroundColor = bg;
-        }
-        if (text !== undefined) {
-          console.log(`color is ${text}`);
-          e.style.color = text;
-        }
+        if (bg   !== undefined) e.style.backgroundColor = bg;
+        if (text !== undefined) e.style.color = text;
+
         if (border !== undefined) {
           if (border === null) {
             e.style.border = 'none';
