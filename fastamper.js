@@ -108,6 +108,7 @@
           } else {
             e.style.border = '1px solid';
             e.style.borderColor = border;
+            e.style.borderRadius = '4px';
           }
         }
       }
@@ -220,6 +221,7 @@
         details.setAttribute('open', 'open');
         details.style.border = "1px black solid";
         details.style.padding = "0.5rem 1rem";
+        details.style.borderRadius = "4px";
 
         for (let outer of frag.childNodes) {
           if (! didSummary) {
@@ -256,7 +258,6 @@
         const callout = document.createElement("div");
         callout.className = 'callout';
         callout.setAttribute('data-rjbscallout', 1);
-        callout.style.borderRadius = '4px';
         callout.style.padding = "1em";
         callout.style.fontWeight = "bold";
 
