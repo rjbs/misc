@@ -171,11 +171,13 @@
       let editor = getEditor();
       if (editor === null) return null;
 
+      const closestSelector = 'div[data-rjbs-callout], div[class$="rjbs-callout"]';
+
       const range = editor.getSelection();
       if (range.collapsed) {
         const callout = (range.startContainer instanceof Element)
-          ? range.startContainer.closest('div[data-rjbs-callout]')
-          : range.startContainer.parentElement.closest('div[data-rjbs-callout]');
+          ? range.startContainer.closest(closestSelector)
+          : range.startContainer.parentElement.closest(closestSelector);
 
         if (callout) {
           const munger = clippy.nextFor('callout', range);
@@ -262,7 +264,7 @@
         console.log(frag);
 
         const callout = document.createElement("div");
-        callout.className = 'callout';
+        callout.className = 'rjbs-callout';
         callout.setAttribute('data-rjbs-callout', 1);
         callout.style.padding = "1em";
         callout.style.fontWeight = "bold";
@@ -289,11 +291,13 @@
     };
 
     const ensureIndentWrapper = (frag) => {
-      let wrapper = frag.querySelector('*').closest('div[data-rjbs-indent]');
+      const closestSelector = 'div[data-rjbs-indent], div[class$="rjbs-indent"]';
+      let wrapper = frag.querySelector('*').closest(closestSelector);
       let created = false;
 
       if (! wrapper) {
         wrapper = document.createElement("div");
+        wrapper.className = 'rjbs-indent';
         wrapper.setAttribute('data-rjbs-indent', 1);
         wrapper.style.marginLeft = '0px';
         wrapper.appendChild(frag);
