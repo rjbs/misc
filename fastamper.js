@@ -174,8 +174,8 @@
       const range = editor.getSelection();
       if (range.collapsed) {
         const callout = (range.startContainer instanceof Element)
-          ? range.startContainer.closest('div[data-rjbscallout="1"]')
-          : range.startContainer.parentElement.closest('div[data-rjbscallout="1"]');
+          ? range.startContainer.closest('div[data-rjbs-callout]')
+          : range.startContainer.parentElement.closest('div[data-rjbs-callout]');
 
         if (callout) {
           const munger = clippy.nextFor('callout', range);
@@ -263,7 +263,7 @@
 
         const callout = document.createElement("div");
         callout.className = 'callout';
-        callout.setAttribute('data-rjbscallout', 1);
+        callout.setAttribute('data-rjbs-callout', 1);
         callout.style.padding = "1em";
         callout.style.fontWeight = "bold";
 
@@ -288,26 +288,32 @@
       });
     };
 
+    const ensureIndentWrapper = (frag) => {
+      let wrapper = frag.querySelector('*').closest('div[data-rjbs-indent]');
+      let created = false;
+
+      if (! wrapper) {
+        wrapper = document.createElement("div");
+        wrapper.setAttribute('data-rjbs-indent', 1);
+        wrapper.style.marginLeft = '0px';
+        wrapper.appendChild(frag);
+        created  = true;
+      }
+
+      return { wrapper, created }
+    };
+
     const doIndent = () => {
       let editor = getEditor();
       if (editor === null) return null;
 
       editor.modifyBlocks((frag) => {
-        let indentDiv = frag.querySelector('*').closest('div[data-indentwrapper="1"]');
-        let toReturn  = frag;
+        let { wrapper, created } = ensureIndentWrapper(frag);
+        let toReturn  = created ? wrapper : frag;
 
-        if (! indentDiv) {
-          console.log("creating a new data-indentwrapper");
-          indentDiv = document.createElement("div");
-          indentDiv.setAttribute('data-indentwrapper', 1);
-          indentDiv.style.marginLeft = '0px';
-          indentDiv.appendChild(frag);
-          toReturn = indentDiv;
-        }
-
-        let px = parseInt(indentDiv.style.marginLeft) || 0;
+        let px = parseInt(wrapper.style.marginLeft) || 0;
         px += 40;
-        indentDiv.style.marginLeft = px + "px";
+        wrapper.style.marginLeft = px + "px";
 
         return toReturn;
       });
@@ -318,22 +324,13 @@
       if (editor === null) return null;
 
       editor.modifyBlocks((frag) => {
-        let indentDiv = frag.querySelector('*').closest('div[data-indentwrapper="1"]');
-        let toReturn  = frag;
+        let { wrapper, created } = ensureIndentWrapper(frag);
+        let toReturn  = created ? wrapper : frag;
 
-        if (! indentDiv) {
-          console.log("creating a new data-indentwrapper");
-          indentDiv = document.createElement("div");
-          indentDiv.setAttribute('data-indentwrapper', 1);
-          indentDiv.style.marginLeft = '0px';
-          indentDiv.appendChild(frag);
-          toReturn = indentDiv;
-        }
-
-        let px = parseInt(indentDiv.style.marginLeft) || 0;
+        let px = parseInt(wrapper.style.marginLeft) || 0;
         px -= 40;
         if (px < 0) px = 0;
-        indentDiv.style.marginLeft = px + "px";
+        wrapper.style.marginLeft = px + "px";
 
         return toReturn;
       });
