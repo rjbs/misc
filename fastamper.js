@@ -340,6 +340,24 @@
       });
     };
 
+    const gitlabify = () => {
+      let editor = getEditor();
+      if (editor === null) return null;
+
+      const range = editor.getSelection();
+      if (range.collapsed) return;
+
+      const text  = editor.getSelectedText();
+      const match = text.match(/^hm!([0-9]+)$/);
+
+      if (match) {
+        const url = `https://gitlab.fm/fastmail/hm/-/merge_requests/${match[1]}`;
+        editor.makeLink(url);
+      }
+
+      return;
+    };
+
     // // //
     //
     // KEYBOARD SHORTCUTS
@@ -382,6 +400,9 @@
 
     shortcut('Alt-Cmd-0', doIndent);
     shortcut('Alt-Cmd-9', doOutdent);
+
+    shortcut('Alt-Cmd-4', gitlabify);
   });
   observer.observe(document.body, { childList: true });
 })();
+
