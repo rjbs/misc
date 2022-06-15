@@ -340,7 +340,16 @@
       });
     };
 
-    const gitlabify = () => {
+    const linkMacros = new Map;
+    linkMacros.set(
+      (/^hm!([0-9]+)$/),
+      (editor, match) => {
+        const url = `https://gitlab.fm/fastmail/hm/-/merge_requests/${match[1]}`;
+        editor.makeLink(url);
+      }
+    );
+
+    const expandMacros = () => {
       let editor = getEditor();
       if (editor === null) return null;
 
@@ -348,11 +357,13 @@
       if (range.collapsed) return;
 
       const text  = editor.getSelectedText();
-      const match = text.match(/^hm!([0-9]+)$/);
 
-      if (match) {
-        const url = `https://gitlab.fm/fastmail/hm/-/merge_requests/${match[1]}`;
-        editor.makeLink(url);
+      for (const [ regex, fn ] of linkMacros) {
+        const match = text.match(regex);
+        if (match) {
+          fn(editor, match);
+          break;
+        }
       }
 
       return;
@@ -401,7 +412,7 @@
     shortcut('Alt-Cmd-0', doIndent);
     shortcut('Alt-Cmd-9', doOutdent);
 
-    shortcut('Alt-Cmd-Enter', gitlabify);
+    shortcut('Alt-Cmd-Enter', expandMacros);
   });
   observer.observe(document.body, { childList: true });
 })();
