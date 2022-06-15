@@ -401,7 +401,7 @@
     shortcut('Alt-Cmd-0', doIndent);
     shortcut('Alt-Cmd-9', doOutdent);
 
-    shortcut('Alt-Cmd-4', gitlabify);
+    shortcut('Alt-Cmd-Enter', gitlabify);
   });
   observer.observe(document.body, { childList: true });
 })();
