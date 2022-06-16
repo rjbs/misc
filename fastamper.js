@@ -340,8 +340,8 @@
       });
     };
 
-    const linkMacros = new Map;
-    linkMacros.set(
+    const macros = new Map;
+    macros.set(
       (/^hm!([0-9]+)$/),
       (editor, match) => {
         const url = `https://gitlab.fm/fastmail/hm/-/merge_requests/${match[1]}`;
@@ -354,11 +354,36 @@
       if (editor === null) return null;
 
       const range = editor.getSelection();
-      if (range.collapsed) return;
+      if (range.collapsed) {
+        // Get the element we're inside of.  If it's a text node, great.  If
+        // not, give up.
+        if (! range.anchorNode instanceof Text) return;
 
-      const text  = editor.getSelectedText();
+        // Okay, we're in text.  Executive decision:  macros must be runs of
+        // non-whitespace.  So we expand outward to include the current run of
+        // non-whitespace.
+        const lhs = range.startContainer.textContent.substring(0, range.startOffset);
+        const rhs = range.startContainer.textContent.substring(range.startOffset);
 
-      for (const [ regex, fn ] of linkMacros) {
+        const lhs_match = lhs.match(/(\S+)$/);
+        const rhs_match = rhs.match(/^(\S+)/);
+
+        // If both sides of the caret are whitespace, give up.
+        if (! lhs_match && ! rhs_match) return;
+
+        const moveLeft  = lhs_match ? lhs_match[1].length : 0;
+        const moveRight = rhs_match ? rhs_match[1].length : 0;
+
+        const newRange = range.cloneRange();
+        newRange.setStart(range.startContainer, range.startOffset - moveLeft);
+        newRange.setEnd(range.startContainer,   range.startOffset + moveRight);
+
+        editor.setSelection(newRange);
+      }
+
+      const text = editor.getSelectedText();
+
+      for (const [ regex, fn ] of macros) {
         const match = text.match(regex);
         if (match) {
           fn(editor, match);
