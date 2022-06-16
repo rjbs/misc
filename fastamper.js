@@ -349,6 +349,15 @@
       }
     );
 
+    macros.set(
+      (/^cpan:((([A-Za-z0-9]+)::)*([A-Za-z0-9]+))$/),
+      (editor, match) => {
+        const url = `https://metacpan.org/pod/${match[1]}`;
+        const html = `<a href='${url}'>${match[1]}</a>`;
+        editor.insertHTML(html);
+      }
+    );
+
     const expandMacros = () => {
       let editor = getEditor();
       if (editor === null) return null;
