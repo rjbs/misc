@@ -431,6 +431,46 @@
     shortcut('2', () => getMail().set('mailboxFilter', 'inbox'));
     shortcut('3', () => getMail().set('mailboxFilter', 'unread'));
 
+    // I hate these shortcuts.
+    shortcut('4', () => {
+      const mailboxes = FM.store.getAll(FM.classes.Mailbox);
+      getMail().goSource(
+        FM.findMailbox(mailboxes, 'Staff Mail to Me'),
+        null,
+        null,
+        'inbox'
+      );
+    });
+
+    shortcut('5', () => {
+      const mailboxes = FM.store.getAll(FM.classes.Mailbox);
+      getMail().goSource(
+        FM.findMailbox(mailboxes, 'Outsiders'),
+        null,
+        null,
+        'inbox'
+      );
+    });
+
+    shortcut('6', () => {
+      getMail().goSource(
+        null,
+        'in:"Fm Tx.*" AND in:inbox',
+        true,
+        null
+      );
+    });
+
+    shortcut('7', () => {
+      const mailboxes = FM.store.getAll(FM.classes.Mailbox);
+      getMail().goSource(
+        FM.findMailbox(mailboxes, 'Group Mail'),
+        null,
+        null,
+        'inbox'
+      );
+    });
+
     shortcut('Cmd-Shift-G', () => getMail().toggle('searchIsGlobal'));
 
     // Display-related preferences
@@ -459,4 +499,3 @@
   });
   observer.observe(document.body, { childList: true });
 })();
-
