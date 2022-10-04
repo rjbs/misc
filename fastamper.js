@@ -341,6 +341,15 @@
     };
 
     const macros = new Map;
+
+    macros.set(
+      (/(BAK|CLI|CYR|DSC|MGMT|MKT|PLAT|PLU|PROD|SUP)-([0-9]+)/i),
+      (editor, match) => {
+        const url = `https://linear.app/fastmail/issue/${match[1].toUpperCase()}-${match[2]}`;
+        editor.makeLink(url);
+      }
+    );
+
     macros.set(
       (/^hm!([0-9]+)$/),
       (editor, match) => {
