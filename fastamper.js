@@ -201,7 +201,7 @@
       } else {
         const color = clippy.nextFor('text', range);
 
-        editor.setTextColour( color );
+        editor.setTextColor( color );
         clippy.text.range = editor.getSelection();
       }
     };
