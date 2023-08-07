@@ -55,7 +55,7 @@
       const css = FM.el(
         'style',
         { type: 'text/css' },
-        [ '.rjbs-MSV-Hidden-3 .v-MailboxSource-badge { background-color: #e3d8f0; color: #000; padding: 0 0.35em; border-radius: 7px; }' ],
+        [ '.rjbs-MSV-Workflow .v-MailboxSource-badge { background-color: #e3d8f0; color: #000; padding: 0 0.35em; border-radius: 7px; }' ],
       );
       document.body.appendChild(css);
 
@@ -70,7 +70,7 @@
         const forceEmail = this.get('isShared') && !this.get('isSeenShared');
 
         // No easy reference to HIDE_IF_EMPTY so use hardcoded value
-        if ( this.get('hidden') === 3) {
+        if ( this.get('hidden') === 3 || role === 'inbox' ) {
           return forceEmail ? 'totalEmails' : 'total';
         }
 
@@ -84,10 +84,11 @@
       FM.classes.MailboxSourceView.prototype.className = function () {
         const role = this.get( 'content' ).get( 'role' );
         const isCollapsed = !this.get( 'hasSubfolders' ) || this.get( 'isCollapsed' );
+        const isWorkflow  =  this.get('content').get('hidden') === 3 || role === 'inbox';
 
         return 'v-MailboxSource' +
         ( role ? ' v-MailboxSource--' + role : '' ) +
-        ( ' rjbs-MSV-Hidden-' + this.get('content').get('hidden') ) +
+        ( isWorkflow ? ' rjbs-MSV-Workflow' : '' ) +
         ( isCollapsed ? '' : ' is-expanded' ) +
         ( isCollapsed && this.get( 'hasUnreadChildren' ) ? ' u-bold' : '' );
       }.property( 'hasSubfolders', 'isCollapsed', 'hasUnreadChildren' );
