@@ -1,0 +1,144 @@
+#!perl
+use v5.34.0;
+use warnings;
+use utf8;
+
+use experimental 'signatures';
+
+use Data::Printer;
+use Fastmail::Client::Config;
+use Getopt::Long::Descriptive;
+
+my ($opt, $usage) = describe_options(
+  '%c %o',
+  [ 'email-id|e=s', 'email to which to reply', { required => 1 }  ],
+  [ 'multipart|M',  'also send a plain part?',                    ],
+  [ 'send',         "send the email, don't just create a draft",  ],
+);
+
+my $client = Fastmail::Client::Config->new->client;
+
+my $ident_res = $client->request([ [ 'Identity/get', {} ] ])->get;
+
+my $mbox_res = $client->request([ [ 'Mailbox/get', {}, ] ])->get;
+
+my ($drafts_mailbox) =
+  grep {; ($_->{role}//'') eq 'drafts' }
+  map  {; $_->single_sentence('Mailbox/get')->arguments->{list}->@* }
+  $mbox_res;
+
+my ($sent_mailbox) =
+  grep {; ($_->{role}//'') eq 'sent' }
+  map  {; $_->single_sentence('Mailbox/get')->arguments->{list}->@* }
+  $mbox_res;
+
+my ($email) =
+  $client->request([ [ 'Email/get', { ids => [ $opt->email_id ] }, ] ])
+         ->get
+         ->single_sentence('Email/get')
+         ->arguments->{list}->[0];
+
+die "could not find email\n" unless $email;
+
+my $draft_res = create_draft({
+  send      => $opt->send,
+  multipart => $opt->multipart,
+});
+
+p $draft_res;
+
+unless ($opt->send) {
+  my $draft = $draft_res->sentence_named('Email/set')
+                        ->as_set
+                        ->created->{draft};
+
+  p $draft;
+
+  my $blob = $client->download_for(Email => {
+    blobId => $draft->{blobId},
+    type   => 'message/rfc822',
+  })->get;
+
+  say $blob->bytes_ref->$*;
+}
+
+sub create_draft ($arg) {
+  my $drafts_mailbox_id = $drafts_mailbox->{id};
+
+  my $draft = {
+    from      => [
+      { name  => 'Ricardo Signes', email => 'rjbs@fastmailteam.com' }
+    ],
+    to        => [
+      ($email->{replyTo} && $email->{replyTo}->@*)
+      ? { $email->{replyTo}[0]->%{ qw( name email ) } }
+      : { $email->{from}[0]->%{ qw( name email ) } }
+    ],
+    subject   => "Re: " . ($email->{subject} =~ s/\ARe: //r),
+    keywords  => { '$draft' => \1, '$seen' => \1 },
+    mailboxIds => { $drafts_mailbox_id => \1 },
+
+    inReplyTo => [ $email->{messageId}->[0] ],
+
+    bodyValues => {
+      react => {
+        value    => "\N{THUMBS UP SIGN}\n",
+        charset => 'utf-8',
+      },
+      reply => {
+        value   => "I think this is a great idea!\n",
+        charset => 'utf-8',
+      },
+    },
+
+    ($arg->{multipart}
+      ? (bodyStructure => {
+          type      => 'multipart/mixed',
+          subParts  => [
+            {
+              type    => 'text/plain',
+              partId  => 'react',
+              disposition => 'reaction',
+            },
+            {
+              type    => 'text/plain',
+              partId  => 'reply',
+            },
+          ],
+        })
+      : (bodyStructure => {
+          type    => 'text/plain',
+          partId  => 'react',
+          disposition => 'reaction',
+        }))
+  };
+
+  my $res = $client->request([
+    [ 'Email/set', { create => { draft => $draft } } ],
+    ($arg->{send}
+    ?
+      [ 'EmailSubmission/set', {
+          onSuccessUpdateEmail => {
+            '#sendIt' => {
+              'keywords/$draft' => undef,
+              "mailboxIds/$drafts_mailbox->{id}" => undef,
+              "mailboxIds/$sent_mailbox->{id}"   => \1,
+            },
+          },
+          create => {
+            sendIt => {
+              emailId => '#draft',
+              envelope => {
+                mailFrom => { email => 'rjbs@fastmailteam.com' },
+                rcptTo   => [ { email => $draft->{to}[0]{email} } ],
+              },
+              identityId => '25795005',
+            }
+          }
+        }
+      ]
+    : ())
+  ]);
+
+  return $res->get;
+}
