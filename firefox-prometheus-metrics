@@ -1,0 +1,37 @@
+#!//Users/rjbs/.plenv/versions/5.38.0/bin/perl5.38.0
+use v5.36.0;
+
+use Compress::LZ4;
+use JSON::MaybeXS;
+use Path::Tiny;
+
+# I should not really hardcode the profile path.  But I don't want to look at
+# them all, because it seems sometimes ancient ones linger.  I'll sort it out
+# if this ever breaks. -- rjbs, 2024-04-14
+my $profiles_root = path('/Users/rjbs/Library/Application Support/Firefox/Profiles');
+my $backups_dir   = $profiles_root->child('eoone60x.default-release-1/sessionstore-backups');
+my $backup_file   = $backups_dir->child('recovery.jsonlz4');
+
+# This is some nonsense container data.  I learned this trick from this blog
+# post's code: https://alexandre.deverteuil.net/post/firefox-tabs-analysis/
+my $bytes = $backup_file->slurp;
+substr $bytes, 0, 8, '';
+
+my $json  = decompress($bytes);
+my $data  = decode_json($json);
+
+my $tab_count = 0;
+my $window_count = 0;
+
+for my $window ($data->{windows}->@*) {
+  $window_count++;
+  for my $tab ($window->{tabs}->@*) {
+    # I don't use this, but just in case, now I have it.
+    my $live = $tab->{entries}[-1];
+    # $live->{url} # <-- real url
+    $tab_count++;
+  }
+}
+
+say "firefox_open_windows $window_count";
+say "firefox_open_tabs $tab_count";
