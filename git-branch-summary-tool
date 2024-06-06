@@ -17,22 +17,41 @@ use LWP::UserAgent;
 use Path::Tiny;
 use String::Truncate qw(elide);
 
+my $BIG_SPACE = "\N{IDEOGRAPHIC SPACE}";
+
 my ($opt, $usage) = describe_options(
   '%c %o',
-  [ 'send',  'do not just create a draft, actually send' ],
-  [ 'print', 'do not even create a draft, just print the text' ],
-  [ 'cgnu',  'attempt to find the same commit in blead by commit msg' ],
-  [ 'prelude=s', 'text file containing introductory text for email', { required => 1 } ],
+  [ 'repo|r=s',   'what github repository for the API? owner/repo format', { required => 1 } ],
+  [ 'since=s',    'start from what commit?', { required => 1 } ],
+  # TODO: make this use the "find main or master" logic from BranchManager
+  # -- rjbs, 2024-06-05
+  [ 'remote=s',   'what remote are we cleaning up? default: origin', { default => 'origin' } ],
+  [ 'branch=s',   'what branch is the default? default: master', { default => 'master' } ],
+  [ 'cgnu',       'attempt to find the same commit in blead by commit msg' ],
+  [],
+  [ 'prelude=s',  'text file containing introductory text for email', { required => 1 } ],
+  [ 'user|u=s',   'what Fastmail user?' ],
+  [ 'send',       'do not just create a draft, actually send' ],
+  [ 'print',      'do not even create a draft, just print the text' ],
 );
 
 die "you can't --send and --print\n" if $opt->send && $opt->print;
 
 my $prelude = path($opt->prelude)->slurp_utf8;
 
+my $branch_count = 0;
+my $cleanable_count = 0;
+
+# Put these into variables so we can interpolate them often:
+my $REPO    = $opt->repo;
+my $SINCE   = $opt->since;
+my $REMOTE  = $opt->remote;
+my $BRANCH  = $opt->branch;
+
 my %commits_by_msg;
 if ($opt->cgnu) {
   # 557b887a4219c4f375c8d0bd3219fb4da7bbc7ff is roughly first commit of 2005
-  my @lines = `git log 557b887a4219c4f375c8d0bd3219fb4da7bbc7ff..blead --pretty='format:%H%n%ai %ae%n%B%nCUT-CUT-CUT'`;
+  my @lines = `git log $SINCE..$REMOTE/$BRANCH --pretty='format:%H%n%ai %ae%n%B%nCUT-CUT-CUT'`;
   chomp @lines;
 
   warn 0+@lines;
@@ -70,21 +89,20 @@ sub h { goto &HTML::Entities::encode_entities }
 
 my $JSON = Cpanel::JSON::XS->new->utf8->canonical;
 
-my @branch = `git branch -r | grep ' github'`;
+my @branch = `git branch -r | grep ' $REMOTE'`;
 chomp @branch;
 s/^..// for @branch;
 $_ = decode('UTF-8', $_) for @branch;
 
+# TODO: parameterize/config this
 my @special = (
-  qr{^github/blead$},
-  qr{^github/maint-votes},
-  qr{^github/maint-5\.},
-
-  qr{^github/smoke-me/},
+  qr{^\Q$REMOTE\E/main$},
+  qr{^\Q$REMOTE\E/master$},
+  qr{^\Q$REMOTE\E/cyrus-imapd-\d\.},
 );
 
 my %is_merged = do {
-  my @merged = `git branch --remote --merged github/blead | grep ' github'`;
+  my @merged = `git branch --remote --merged $REMOTE/$BRANCH | grep ' $REMOTE'`;
   chomp @merged;
   s/^..// for @merged;
   map {; $_ => 1 } @merged;
@@ -115,7 +133,7 @@ for my $branch (@branch) {
   my ($sha, $who, $date) = split /\s/, scalar `git show --pretty='format:%H %cE %ci' $branch`;
 
   my $res = $gh_ua->get(
-    "https://api.github.com/repos/Perl/perl5/commits/$sha/pulls",
+    "https://api.github.com/repos/$REPO/commits/$sha/pulls",
     Accept => 'application/vnd.github.groot-preview+json',
   );
 
@@ -123,12 +141,12 @@ for my $branch (@branch) {
 
   my $mrs = $JSON->decode($res->decoded_content(charset => undef));
 
-  my @keep = map {; +{ $_->%{ qw( number title state html_url ) } } } @$mrs;
+  my @keep = map {; +{ $_->%{ qw( number title state html_url merged_at draft ) } } } @$mrs;
 
   if (@$mrs) {
-    warn "$branch - " . join(q{, }, map {; $_->{number} } @keep) . "\n";
+    # warn "$branch - " . join(q{, }, map {; $_->{number} } @keep) . "\n";
   } else {
-    warn "$branch - n/a\n";
+    # warn "$branch - n/a\n";
   }
 
   push $found{ $who }->@*, [ $date, $branch, \@keep ];
@@ -141,6 +159,9 @@ my $html = <<'END-HTML';
   th    { text-align: left; padding-top: 1em }
   td    { border: 1px solid black; padding: 0.25em 0.5em; vertical-align: top }
   td a  { text-decoration: none }
+  td.date { font-face: monospace }
+  td.already-merged   { background: #f2f2e2 }
+  td.has-pull-request { background: #fde2fd }
 </style>
 END-HTML
 
@@ -154,6 +175,8 @@ for my $email (sort keys %found) {
   $html .= sprintf "<tr><th colspan='3'>%s</th></tr>", h($email);
 
   for my $got (sort { $a->[0] cmp $b->[0] } $found{$email}->@*) {
+    $branch_count++;
+
     my ($date, $branch, \@mrs) = @$got;
 
     $text .= "  - $date - $branch\n";
@@ -161,38 +184,55 @@ for my $email (sort keys %found) {
 
     my @extra;
 
+    my $cleanable = 0;
+
     for (@mrs) {
-      $text .= sprintf "%*s%s%s\n%*s%s\n",
+      my $icon = $_->{state} eq 'open'  ? ($_->{draft} ? "🚧" : "🌀")
+               : $_->{merged_at}        ? "✅"
+               :                          "❌";
+
+      $cleanable = 1 if $_->{state} eq 'closed';
+      $cleanable = 1 if $_->{merged_at};
+
+      $text .= sprintf "%*s%s\n%*s%s\n",
         (length($date) + 7), '', # leader plus indent past " - date -"
-        ($_->{state} eq 'open' ? '' : '[CLOSED] '),
-        $_->{title},
+        "$icon $_->{title}",
         (length($date) + 7), '', # leader plus indent past " - date -"
         $_->{html_url};
 
-      push @extra, sprintf "<a href='%s'>%s</a> — %s%s%s</a>",
+      push @extra, sprintf "<a href='%s'>%s</a> — %s</a>",
         h($_->{html_url}),
-        h($_->{number}),
-        ($_->{state} eq 'open' ? '' : '<s>'),
-        h(elide($_->{title}, 50)),
-        ($_->{state} eq 'open' ? '' : '</s>');
+        h("$BIG_SPACE$icon $_->{number}"),
+        h(elide($_->{title}, 48));
     }
 
+    my $class = (grep {; $_->{merged_at} } @mrs)  ? 'already-merged'
+              : (0+@{$present_as{$branch}//[]})   ? 'already-merged'
+              : (0+@mrs)                          ? 'has-pull-request'
+              :                                     'unknown';
+
+    $cleanable = 1 if $class eq 'already-merged';
+    $cleanable_count++ if $cleanable;
+
     for my $merged (($present_as{$branch} // [])->@*) {
-      $text .= sprintf "%*sApparently merged as %s\n",
+      state $icon = "\N{BALLOT BOX WITH CHECK}\N{VARIATION SELECTOR-16}";
+
+      $text .= sprintf "%*s$icon Apparently merged as %s\n",
         (length($date) + 7), '', # leader plus indent past " - date -"
         $merged;
 
-      push @extra, sprintf "Apparently merged as <a href='%s'>%s</a>",
-        h('https://github.com/Perl/perl5/commit/%s'),
+      push @extra, sprintf "$BIG_SPACE$icon Apparently merged as <a href='%s'>%s</a>",
+        h("https://github.com/$REPO/commit/$merged"),
         substr($merged, 0, 8);
     }
 
     my $no_remote = $branch =~ s{^github/}{}r;
 
-    $html .= sprintf "<td>%s</td><td><a href='%s'>%s</a>%s</td>",
+    $html .= sprintf "<td class='date'>%s</td><td class='%s'><a href='%s'>%s</a>%s</td>",
       h($date),
-      h("https://github.com/Perl/perl5/tree/$no_remote"),
-      h(elide($no_remote, 50)),
+      $class,
+      h("https://github.com/$REPO/tree/$no_remote"),
+      h(elide($no_remote, 48)),
       join q{<br />}, (@extra ? '' : ()), @extra;
 
     $html .= "</tr>\n";
@@ -205,7 +245,9 @@ if ($opt->print) {
 }
 
 require Fastmail::Client::Config;
-my $fm_client = Fastmail::Client::Config->new->client('rjbs@manxome.org');
+my $fm_client = Fastmail::Client::Config->new->client(
+  $opt->user ? $opt->user : ()
+);
 
 my @mailboxes = $fm_client->request([[ 'Mailbox/get', {} ]])
                           ->get
@@ -225,22 +267,28 @@ my @prelude = split /\n\n/, $prelude;
 $html = join(qq{\n}, map {; sprintf "<p>%s</p>", h($_) } @prelude) . "\n$html";
 $text = join(qq{\n\n}, @prelude, $text);
 
+$html .= sprintf "<p>Branches found: %i</p>", $branch_count;
+$html .= sprintf "<p>Cleanable branches: %i</p>", $cleanable_count;
+
+$text .= "Branches found: $branch_count\n";
+$text .= "Cleanable branches: $cleanable_count\n";
+
 my $draft = {
   from      => [
     {
       name  => 'Ricardo Signes',
-      email => 'perl.p5p@rjbs.manxome.org',
+      email => 'rjbs@semiotic.systems',
     }
   ],
 
   to      => [
     {
-      name  => 'Perl 5 Porters',
-      email => 'perl5-porters@perl.org',
+      name  => 'Ricardo Signes',
+      email => 'rjbs@semiotic.systems',
     },
   ],
 
-  subject   => 'branches in Perl/perl5.git',
+  subject   => "branches in $REPO.git",
   keywords  => {
     '$draft' => \1,
   },
