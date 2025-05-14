@@ -1,4 +1,4 @@
-#!//Users/rjbs/.plenv/versions/5.38.0/bin/perl5.38.0
+#!/Users/rjbs/.plenv/versions/5.40.1/bin/perl5.40.1
 use v5.36.0;
 
 use Compress::LZ4;
@@ -9,7 +9,7 @@ use Path::Tiny;
 # them all, because it seems sometimes ancient ones linger.  I'll sort it out
 # if this ever breaks. -- rjbs, 2024-04-14
 my $profiles_root = path('/Users/rjbs/Library/Application Support/Firefox/Profiles');
-my $backups_dir   = $profiles_root->child('eoone60x.default-release-1/sessionstore-backups');
+my $backups_dir   = $profiles_root->child('l5tgiq5o.RJBS/sessionstore-backups');
 my $backup_file   = $backups_dir->child('recovery.jsonlz4');
 
 # This is some nonsense container data.  I learned this trick from this blog
