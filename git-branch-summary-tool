@@ -73,7 +73,8 @@ if ($opt->cgnu) {
       push @$target, $sha;
 
       if (@$target > 1) {
-        warn "Woah, repeated commit msg in @$target\n";
+        my @short = map {; substr $_, 0, 12 } @$target;
+        warn "Woah, repeated commit msg in @short\n";
       }
 
       undef $sha;
